@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="方便自己线上查找资料，越努力越幸运">
-<meta name="keywords" content="高其森的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="简单才是快乐">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux+nginx+tomcat的java项目打包war部署">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/linux+nginx+tomcat的java项目打包war部署/index.html">
 <meta property="og:site_name" content="简单才是快乐">
-<meta property="og:description" content="方便自己线上查找资料，越努力越幸运">
+<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-30T15:35:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单才是快乐">
-<meta name="twitter:description" content="方便自己线上查找资料，越努力越幸运">
+<meta name="twitter:title" content="linux+nginx+tomcat的java项目打包war部署">
+<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/30/linux+nginx+tomcat的java项目打包war部署/"/>
 
 
 
 
 
-  <title>归档 | 简单才是快乐</title>
+  <title>linux+nginx+tomcat的java项目打包war部署 | 简单才是快乐</title>
   
 
 
@@ -144,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -218,411 +221,246 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/linux+nginx+tomcat的java项目打包war部署/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="高其森">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简单才是快乐">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">linux+nginx+tomcat的java项目打包war部署</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T22:50:11+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/30/linux+nginx+tomcat的java项目打包war部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/30/linux+nginx+tomcat的java项目打包war部署/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/09/30/linux+nginx+tomcat的java项目打包war部署/" class="leancloud_visitors" data-flag-title="linux+nginx+tomcat的java项目打包war部署">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/设计模式（java）- 模版方法模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式－模版方法模式</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎/" itemprop="url">
-              
-                <span itemprop="name">linux+elasticsearch+logstash 自动同步mysql实现搜索引擎</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/linux+nginx+tomcat的java项目打包war部署/" itemprop="url">
-              
-                <span itemprop="name">linux+nginx+tomcat的java项目打包war部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p> 环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境)</p>
+<h3 id="1-将java代码进行war打包"><a href="#1-将java代码进行war打包" class="headerlink" title="1.将java代码进行war打包"></a>1.将java代码进行war打包</h3><ul>
+<li><p>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打包war.png"></p>
+<ul>
+<li><p>选择路径，点击finish即可</p>
+<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><p>通过ftp或者scp可以直接将本地的代码放到linux服务器上面<br>scp命令：scp 文件名 root@地址:/root   （scp test.war <a href="mailto:root@107.1.0.1" target="_blank" rel="noopener">root@107.1.0.1</a>:/root）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
+<ul>
+<li>可以用命令：netstat -ltunp    。查看所有的端口号使用情况</li>
+<li>如果有（tomcat默认使用8080、8009、8005）端口运行；直接用命令：kill -9 端口号</li>
+<li>重启<h3 id="4-安装nginx-1-12-1"><a href="#4-安装nginx-1-12-1" class="headerlink" title="4.安装nginx-1.12.1"></a>4.安装nginx-1.12.1</h3></li>
+<li>安装的sh脚本如下</li>
+</ul>
+<pre><code>#!/bin/sh
+yum install pcre-devel -y
+yum install openssl-devel -y
+yum install zlib-devel -y
+wget http://nginx.org/download/nginx-1.12.1.tar.gz
+tar -zvxf nginx-1.12.1.tar.gz
+cd nginx-1.12.1
+./configure
+make
+make install
+cd /usr/local/nginx/sbin/
+./nginx -t
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre><p>详情：<a href="https://www.jianshu.com/p/73efd33b9da4" target="_blank" rel="noopener">https://www.jianshu.com/p/73efd33b9da4</a></p>
+<ul>
+<li>配置nginx.conf文件</li>
+</ul>
+<pre><code>server_name  自己的域名
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/java实现redis缓存功能/" itemprop="url">
-              
-                <span itemprop="name">java实现redis缓存功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+location ^~ /自己的项目 {
+        proxy_pass http://localhost:8080;
+}
+</code></pre><h3 id="5-重启nginx服务器"><a href="#5-重启nginx服务器" class="headerlink" title="5.重启nginx服务器"></a>5.重启nginx服务器</h3><p>如果使用的上面的脚本安装的可以使用一下方式停止nginx，和启动nginx</p>
+<ul>
+<li>停止nginx: /usr/local/nginx/sbin/nginx -s stop</li>
+<li>启动nginx: /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf<h3 id="6-开放nginx默认的80端口"><a href="#6-开放nginx默认的80端口" class="headerlink" title="6.开放nginx默认的80端口"></a>6.开放nginx默认的80端口</h3>阿里云服务器可以直接在配置安全组里面配置</li>
+</ul>
+<hr>
+<p>之后就可以通过域名访问啦</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/记一次数据库迁移的经历（数据库表的格式有变动）/" itemprop="url">
-              
-                <span itemprop="name">记录一次数据库迁移的失败经历</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/设计模式（java）- 命令模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式－命令模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/设计模式（java）- 单例模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式－单例模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/设计模式（java）- 工厂模式(简单工厂、工厂方法、抽象工厂)/" itemprop="url">
-              
-                <span itemprop="name">设计模式－工厂模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/centos7 安装git服务器/" itemprop="url">
-              
-                <span itemprop="name">centos7安装git服务器</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/30/设计模式（java）- 迭代器模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式－迭代器模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-30T22:50:11+08:00"
-              content="2018-09-30" >
-          09-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/30/java实现redis缓存功能/" rel="next" title="java实现redis缓存功能">
+                <i class="fa fa-chevron-left"></i> java实现redis缓存功能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/30/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎/" rel="prev" title="linux+elasticsearch+logstash 自动同步mysql实现搜索引擎">
+                linux+elasticsearch+logstash 自动同步mysql实现搜索引擎 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -630,6 +468,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -652,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -733,6 +594,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-将java代码进行war打包"><span class="nav-number">1.</span> <span class="nav-text">1.将java代码进行war打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将war包移动到tomcat的webapps目录下面"><span class="nav-number">2.</span> <span class="nav-text">2.将war包移动到tomcat的webapps目录下面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动tomcat"><span class="nav-number">3.</span> <span class="nav-text">3.启动tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装nginx-1-12-1"><span class="nav-number">4.</span> <span class="nav-text">4.安装nginx-1.12.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-重启nginx服务器"><span class="nav-number">5.</span> <span class="nav-text">5.重启nginx服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开放nginx默认的80端口"><span class="nav-number">6.</span> <span class="nav-text">6.开放nginx默认的80端口</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -875,6 +752,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -892,6 +773,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/09/30/linux+nginx+tomcat的java项目打包war部署/';
+          this.page.identifier = '2018/09/30/linux+nginx+tomcat的java项目打包war部署/';
+          this.page.title = 'linux+nginx+tomcat的java项目打包war部署';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
