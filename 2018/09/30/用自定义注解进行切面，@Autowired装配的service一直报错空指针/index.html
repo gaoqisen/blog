@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="redis," />
+  <meta name="keywords" content="Autowired," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
-<meta name="keywords" content="redis">
+<meta name="description" content="切面的方法是public就可以了">
+<meta name="keywords" content="Autowired">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java实现redis缓存功能">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/java实现redis缓存功能/index.html">
+<meta property="og:title" content="用自定义注解进行切面，@Autowired装配的service一直报错空指针">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/index.html">
 <meta property="og:site_name" content="简单才是快乐">
-<meta property="og:description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
+<meta property="og:description" content="切面的方法是public就可以了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T15:37:15.000Z">
+<meta property="og:updated_time" content="2018-09-30T15:41:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java实现redis缓存功能">
-<meta name="twitter:description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
+<meta name="twitter:title" content="用自定义注解进行切面，@Autowired装配的service一直报错空指针">
+<meta name="twitter:description" content="切面的方法是public就可以了">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/java实现redis缓存功能/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/"/>
 
 
 
 
 
-  <title>java实现redis缓存功能 | 简单才是快乐</title>
+  <title>用自定义注解进行切面，@Autowired装配的service一直报错空指针 | 简单才是快乐</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/java实现redis缓存功能/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高其森">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java实现redis缓存功能</h1>
+          <h1 class="post-title" itemprop="name headline">用自定义注解进行切面，@Autowired装配的service一直报错空指针</h1>
         
 
         <div class="post-meta">
@@ -357,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/30/java实现redis缓存功能/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/30/java实现redis缓存功能/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,7 +367,7 @@
 
           
           
-             <span id="/2018/09/30/java实现redis缓存功能/" class="leancloud_visitors" data-flag-title="java实现redis缓存功能">
+             <span id="/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/" class="leancloud_visitors" data-flag-title="用自定义注解进行切面，@Autowired装配的service一直报错空指针">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,121 +403,10 @@
       
 
       
-        <h2 id="一、安装redis"><a href="#一、安装redis" class="headerlink" title="一、安装redis"></a>一、安装redis</h2><h3 id="1-mac安装，如果有安装brew-可以直接快捷安装："><a href="#1-mac安装，如果有安装brew-可以直接快捷安装：" class="headerlink" title="1.mac安装，如果有安装brew  可以直接快捷安装："></a>1.mac安装，如果有安装brew  可以直接快捷安装：</h3><pre><code>brew install redis
-</code></pre><h3 id="2-linux下载安装"><a href="#2-linux下载安装" class="headerlink" title="2.linux下载安装"></a>2.linux下载安装</h3><pre><code>wget http://download.redis.io/releases/redis-2.8.17.tar.gz
-tar xzf redis-2.8.17.tar.gz
-cd redis-2.8.17
-make
-</code></pre><h2 id="二、redis常用命令"><a href="#二、redis常用命令" class="headerlink" title="二、redis常用命令"></a>二、redis常用命令</h2><pre><code>redis-cli  // 进入命令行
-/usr/local/bin/redis-server /usr/local/etc/redis.conf // 启动  找到你的redis-server、redis-server路径
-quit   // 退出
-keys * // 查询所有的key
-set a 123  //创建字符串key（a）, value(123)  
-get a   // 查看字符串key为a的value
-del a  //删除字符串key为a的数据
-hmset key name &quot;a&quot; description &quot;123&quot; // hashmap的创建
-hgetall a  //hashmap通过key获取
-lpush a 123  // list创建
-lrange a 0 10  //list 获取
-sadd a 123  // 集合set创建
-smembers a  // 集合set 获取
-zadd a 123  // 有序集合set创建
-zrange a 1 10 smembers  // 集合set 获取
-</code></pre><p>注：初期使用的命令，后期遇到之后在进行添加</p>
-<h2 id="三、spring-boot集成redis"><a href="#三、spring-boot集成redis" class="headerlink" title="三、spring boot集成redis"></a>三、spring boot集成redis</h2><h3 id="1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）"><a href="#1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）" class="headerlink" title="1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:"></a>1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:</h3><pre><code>&lt;dependency&gt;
- &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
- &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre><h3 id="2-配置redis，在application-propertise-的文件里面添加如下："><a href="#2-配置redis，在application-propertise-的文件里面添加如下：" class="headerlink" title="2.配置redis，在application.propertise 的文件里面添加如下："></a>2.配置redis，在application.propertise 的文件里面添加如下：</h3><pre><code>spring.redis.database=0
-spring.redis.host=localhost    
-spring.redis.port=6379     // 端口号
-spring.redis.password=redispass  // 密码
-spring.redis.pool.max-active=8
-spring.redis.pool.max-wait=-1
-spring.redis.pool.max-idle=8
-spring.redis.pool.min-idle=0
-spring.redis.timeout=5000   // 链接超时时间，可以设置大一些
-</code></pre><h3 id="3-创建一个service接口（redisService）："><a href="#3-创建一个service接口（redisService）：" class="headerlink" title="3.创建一个service接口（redisService）："></a>3.创建一个service接口（redisService）：</h3><pre><code>@Service
-public class RedisService {
-@Autowired
-private StringRedisTemplate redisTemplate;
-/**
- * 一周有多少秒
- */
-private static final long WEEK_SECONDS = 7 * 24 * 60 * 60;
-/**
- * 将 key，value 存放到redis数据库中，默认设置过期时间为一周
- * @param key
- * @param value
- */
-public void set(String key, Object value) {
-    redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), WEEK_SECONDS, TimeUnit.SECONDS);
-}
+        <blockquote>
+<p>切面的方法是public就可以了</p>
+</blockquote>
 
-/**
- * 将 key，value 存放到redis数据库中，设置过期时间单位是秒
- *
- * @param key
- * @param value
- * @param expireTime
- */
-public void set(String key, Object value, long expireTime) {
-    redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), expireTime, TimeUnit.SECONDS);
-}
-
-/**
- * 判断 key 是否在 redis 数据库中
- *
- * @param key
- * @return
- */
-public boolean exists(final String key) {
-    return redisTemplate.hasKey(key);
-}
-
-/**
- * 获取与 key 对应的对象
- * @param key
- * @param clazz 目标对象类型
- * @param &lt;T&gt;
- * @return
- */
-public &lt;T&gt; T get(String key, Class&lt;T&gt; clazz) {
-    String s = get(key);
-    if (s == null) {
-        return null;
-    }
-    return JsonUtil.convertString2Obj(s, clazz);
-}
-
-/**
- * 获取 key 对应的字符串
- * @param key
- * @return
- */
-public String get(String key) {
-    return redisTemplate.opsForValue().get(key);
-}
-
-/**
- * 删除 key 对应的 value
- * @param key
- */
-public void delete(String key) {
-    redisTemplate.delete(key);
-}
-}
-</code></pre><h3 id="4-在PifajiaOfficialApplicationTests里面进行测试"><a href="#4-在PifajiaOfficialApplicationTests里面进行测试" class="headerlink" title="4.在PifajiaOfficialApplicationTests里面进行测试"></a>4.在PifajiaOfficialApplicationTests里面进行测试</h3><pre><code>@Test
-public void redisService(){
-    String str = &quot;test&quot;;
-    String retStr = this.redisService.get(&quot;test&quot;);
-    if(retStr == null) {
-        this.redisService.set(&quot;test&quot;, str);
-        retStr = str;
-    }
-    System.out.println(&quot;:::&quot;+retStr);
-}
-</code></pre><h4 id="end"><a href="#end" class="headerlink" title="end"></a>end</h4>
       
     </div>
     
@@ -534,7 +423,7 @@ public void redisService(){
       
         <div class="post-tags">
           
-            <a href="/tags/redis/" rel="tag"># redis</a>
+            <a href="/tags/Autowired/" rel="tag"># Autowired</a>
           
         </div>
       
@@ -547,8 +436,8 @@ public void redisService(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/30/设计模式（java）- 工厂模式(简单工厂、工厂方法、抽象工厂)/" rel="next" title="设计模式－工厂模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－工厂模式
+              <a href="/2018/09/30/centos7 安装git服务器/" rel="next" title="centos7安装git服务器">
+                <i class="fa fa-chevron-left"></i> centos7安装git服务器
               </a>
             
           </div>
@@ -557,8 +446,8 @@ public void redisService(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/30/设计模式（java）- 单例模式/" rel="prev" title="设计模式－单例模式">
-                设计模式－单例模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/30/linux+nginx+tomcat的java项目打包war部署/" rel="prev" title="linux+nginx+tomcat的java项目打包war部署">
+                linux+nginx+tomcat的java项目打包war部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,17 +518,8 @@ public void redisService(){
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -719,22 +599,6 @@ public void redisService(){
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装redis"><span class="nav-number">1.</span> <span class="nav-text">一、安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-mac安装，如果有安装brew-可以直接快捷安装："><span class="nav-number">1.1.</span> <span class="nav-text">1.mac安装，如果有安装brew  可以直接快捷安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-linux下载安装"><span class="nav-number">1.2.</span> <span class="nav-text">2.linux下载安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、redis常用命令"><span class="nav-number">2.</span> <span class="nav-text">二、redis常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、spring-boot集成redis"><span class="nav-number">3.</span> <span class="nav-text">三、spring boot集成redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）"><span class="nav-number">3.1.</span> <span class="nav-text">1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置redis，在application-propertise-的文件里面添加如下："><span class="nav-number">3.2.</span> <span class="nav-text">2.配置redis，在application.propertise 的文件里面添加如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建一个service接口（redisService）："><span class="nav-number">3.3.</span> <span class="nav-text">3.创建一个service接口（redisService）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在PifajiaOfficialApplicationTests里面进行测试"><span class="nav-number">3.4.</span> <span class="nav-text">4.在PifajiaOfficialApplicationTests里面进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#end"><span class="nav-number">3.4.1.</span> <span class="nav-text">end</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -917,9 +781,9 @@ public void redisService(){
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/09/30/java实现redis缓存功能/';
-          this.page.identifier = '2018/09/30/java实现redis缓存功能/';
-          this.page.title = 'java实现redis缓存功能';
+          this.page.url = 'http://yoursite.com/2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/';
+          this.page.identifier = '2018/09/30/用自定义注解进行切面，@Autowired装配的service一直报错空指针/';
+          this.page.title = '用自定义注解进行切面，@Autowired装配的service一直报错空指针';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
