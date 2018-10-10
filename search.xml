@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[设计模式总结]]></title>
+    <title><![CDATA[设计模式总结。]]></title>
     <url>%2F2018%2F10%2F09%2F2018-10-09%2F</url>
     <content type="text"><![CDATA[已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个) 创建型 singleton 单例 builder 生成器 prototype 原型 abstract factory 抽象工厂 factory method 工厂方法 行为型 template method 模版方法 command 命令 observer 观察者 iterator 迭代器 strategy 策略 interpreter 解释器 visitor 访问者 mediator 中介 memento 备忘录 chain of responsibility 责任链 state 状态 结构型 proxy 代理 decorator 装饰 composite 复合 flyweight 享元 bridge 桥接 adapter 适配器 facade 外观 模式的定义和自己理解的用途一、策略模式 定义：封装可以交互的行为，并使用委托来决定要使用那一个 用途：策略模式就是通过不同的策略可以给对象组装不同的行为，比如给小猫小狗添加不同的行为等。 二、观察者模式 定义：让对象在状态改变时被通知 用途：观察者模式就是相当于公众号一样，你关注公众号就会受到消息，取消就收不到消息，一对多的关系。 三、装饰者模式 定义：包装一个对象，并提供新的行为 用途：就像装修房子一样，选择不同的厂商，不同的材料装饰房子。java io流就是使用的装饰模式 四、工厂方法/) 定义：由子类决定要创建的具体类是那一个 理解：]]></content>
       <categories>
