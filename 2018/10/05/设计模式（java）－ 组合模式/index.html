@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
-<meta name="keywords" content="nginx">
+<meta name="description" content="已经有一段时间没有写模式了，在把迭代器模式写了之后，本应该是写组合模式的，但是组合模式涉及到递归，感觉很麻烦，于是就跳跃了，没有及时写下来，之后看了代理模式，复合模式等。都没有记录下来。现在是时候好好理一下这些模式了，昨天复习了下之前的模式，特别感觉工厂方法和抽象工厂都有些模糊了。看来要努力了，加油！ 一、对组合模式的理解组合模式定义：允许你将对象组合成树形结构来表现“整体／部分”层次结构。组合能">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux+nginx+tomcat的java项目打包war部署">
-<meta property="og:url" content="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/index.html">
+<meta property="og:title" content="设计模式 - 组合模式">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/设计模式（java）－ 组合模式/index.html">
 <meta property="og:site_name" content="简单才是快乐">
-<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta property="og:description" content="已经有一段时间没有写模式了，在把迭代器模式写了之后，本应该是写组合模式的，但是组合模式涉及到递归，感觉很麻烦，于是就跳跃了，没有及时写下来，之后看了代理模式，复合模式等。都没有记录下来。现在是时候好好理一下这些模式了，昨天复习了下之前的模式，特别感觉工厂方法和抽象工厂都有些模糊了。看来要努力了，加油！ 一、对组合模式的理解组合模式定义：允许你将对象组合成树形结构来表现“整体／部分”层次结构。组合能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:13:36.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181010230245.png">
+<meta property="og:updated_time" content="2018-10-10T15:09:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux+nginx+tomcat的java项目打包war部署">
-<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="设计模式 - 组合模式">
+<meta name="twitter:description" content="已经有一段时间没有写模式了，在把迭代器模式写了之后，本应该是写组合模式的，但是组合模式涉及到递归，感觉很麻烦，于是就跳跃了，没有及时写下来，之后看了代理模式，复合模式等。都没有记录下来。现在是时候好好理一下这些模式了，昨天复习了下之前的模式，特别感觉工厂方法和抽象工厂都有些模糊了。看来要努力了，加油！ 一、对组合模式的理解组合模式定义：允许你将对象组合成树形结构来表现“整体／部分”层次结构。组合能">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201810/20181010230245.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/05/设计模式（java）－ 组合模式/"/>
 
 
 
 
 
-  <title>linux+nginx+tomcat的java项目打包war部署 | 简单才是快乐</title>
+  <title>设计模式 - 组合模式 | 简单才是快乐</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/设计模式（java）－ 组合模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高其森">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux+nginx+tomcat的java项目打包war部署</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式 - 组合模式</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T22:50:11+08:00">
-                2018-09-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T22:50:11+08:00">
+                2018-10-05
               </time>
             
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
                   </a>
                 </span>
 
@@ -359,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/18/linux+nginx+tomcat的java项目打包war部署/#comments" itemprop="discussionUrl">
+                <a href="/2018/10/05/设计模式（java）－ 组合模式/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/18/linux+nginx+tomcat的java项目打包war部署/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/10/05/设计模式（java）－ 组合模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -369,7 +369,7 @@
 
           
           
-             <span id="/2018/09/18/linux+nginx+tomcat的java项目打包war部署/" class="leancloud_visitors" data-flag-title="linux+nginx+tomcat的java项目打包war部署">
+             <span id="/2018/10/05/设计模式（java）－ 组合模式/" class="leancloud_visitors" data-flag-title="设计模式 - 组合模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,52 +405,50 @@
       
 
       
-        <p> 环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境)</p>
-<h3 id="1-将java代码进行war打包"><a href="#1-将java代码进行war打包" class="headerlink" title="1.将java代码进行war打包"></a>1.将java代码进行war打包</h3><ul>
-<li><p>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打包war.png"></p>
-<ul>
-<li><p>选择路径，点击finish即可</p>
-<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><p>通过ftp或者scp可以直接将本地的代码放到linux服务器上面<br>scp命令：scp 文件名 root@地址:/root   （scp test.war <a href="mailto:root@107.1.0.1" target="_blank" rel="noopener">root@107.1.0.1</a>:/root）</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
-<ul>
-<li>可以用命令：netstat -ltunp    。查看所有的端口号使用情况</li>
-<li>如果有（tomcat默认使用8080、8009、8005）端口运行；直接用命令：kill -9 端口号</li>
-<li>重启<h3 id="4-安装nginx-1-12-1"><a href="#4-安装nginx-1-12-1" class="headerlink" title="4.安装nginx-1.12.1"></a>4.安装nginx-1.12.1</h3></li>
-<li>安装的sh脚本如下</li>
-</ul>
-<pre><code>#!/bin/sh
-yum install pcre-devel -y
-yum install openssl-devel -y
-yum install zlib-devel -y
-wget http://nginx.org/download/nginx-1.12.1.tar.gz
-tar -zvxf nginx-1.12.1.tar.gz
-cd nginx-1.12.1
-./configure
-make
-make install
-cd /usr/local/nginx/sbin/
-./nginx -t
-/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
-</code></pre><p>详情：<a href="https://www.jianshu.com/p/73efd33b9da4" target="_blank" rel="noopener">https://www.jianshu.com/p/73efd33b9da4</a></p>
-<ul>
-<li>配置nginx.conf文件</li>
-</ul>
-<pre><code>server_name  自己的域名
+        <p>已经有一段时间没有写模式了，在把迭代器模式写了之后，本应该是写组合模式的，但是组合模式涉及到递归，感觉很麻烦，于是就跳跃了，没有及时写下来，之后看了代理模式，复合模式等。都没有记录下来。现在是时候好好理一下这些模式了，昨天复习了下之前的模式，特别感觉工厂方法和抽象工厂都有些模糊了。看来要努力了，加油！</p>
+<h2 id="一、对组合模式的理解"><a href="#一、对组合模式的理解" class="headerlink" title="一、对组合模式的理解"></a>一、对组合模式的理解</h2><p>组合模式定义：允许你将对象组合成树形结构来表现“整体／部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象集合。</p>
+<p>个人理解就是处理树形结构集合的一种模式<br>就想树一样，是有根，有无数的树枝，无数的叶子，一成一层的，就像电脑文件夹一样</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>实现抽象类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 抽象组合类</span><br><span class="line">public abstract class Component &#123;</span><br><span class="line">	String name;</span><br><span class="line">	public Component(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public abstract void operation(int index); // 操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实现叶子类,继承抽象组合类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 叶子</span><br><span class="line">public class Leaf extends Component&#123;</span><br><span class="line"></span><br><span class="line">	public Leaf(String name) &#123;</span><br><span class="line">		super(name);</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void operation(int index) &#123;</span><br><span class="line">		String str = &quot;&quot;;</span><br><span class="line">		for (int i=0; i&lt;index; i++) &#123;</span><br><span class="line">			str = str+ &quot;    &quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(str + name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现树枝类，继承抽象组合类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class Composite extends Component&#123;</span><br><span class="line">	private LinkedList&lt;Component&gt; childer; </span><br><span class="line">	public Composite(String name) &#123;</span><br><span class="line">		super(name);</span><br><span class="line">		this.childer = new LinkedList&lt;&gt;();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public void operation(int index) &#123;</span><br><span class="line">		String str = &quot;&quot;;</span><br><span class="line">		for (int i=0; i&lt;index; i++) &#123;</span><br><span class="line">			str = str+ &quot;    &quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		LinkedList&lt;Component&gt; list = this.getChilder();</span><br><span class="line">		System.out.println(str + name);</span><br><span class="line">		for (Component c : list) &#123;</span><br><span class="line">			c.operation(index+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public void add(Component com) &#123;</span><br><span class="line">		this.childer.add(com);</span><br><span class="line">	&#125;</span><br><span class="line">	public void remove(Component com) &#123;</span><br><span class="line">		this.childer.remove(com);</span><br><span class="line">	&#125;</span><br><span class="line">	public LinkedList&lt;Component&gt; getChilder()&#123;</span><br><span class="line">		return this.childer;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main方法实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		Composite root = new Composite(&quot;root&quot;);</span><br><span class="line">		</span><br><span class="line">		Composite branch = new Composite(&quot;branch&quot;);</span><br><span class="line">		Composite branch1 = new Composite(&quot;branch1&quot;);</span><br><span class="line">		Composite branch2 = new Composite(&quot;branch2&quot;);</span><br><span class="line">		Composite branch3 = new Composite(&quot;branch3&quot;);</span><br><span class="line">		</span><br><span class="line">		branch.add(new Leaf(&quot;leaf1&quot;));</span><br><span class="line">		branch.add(new Leaf(&quot;leaf2&quot;));</span><br><span class="line">		branch1.add(new Leaf(&quot;leaf3&quot;));</span><br><span class="line">		branch2.add(new Leaf(&quot;leaf4&quot;));</span><br><span class="line">		branch1.add(branch2);</span><br><span class="line">		</span><br><span class="line">		branch2.add(new Leaf(&quot;leaf5&quot;));</span><br><span class="line">		branch2.add(new Leaf(&quot;leaf6&quot;));</span><br><span class="line">		branch3.add(new Leaf(&quot;leaf7&quot;));</span><br><span class="line">		branch3.add(new Leaf(&quot;leaf8&quot;));</span><br><span class="line">		branch2.add(branch3);</span><br><span class="line">		</span><br><span class="line">		root.add(branch);</span><br><span class="line">		root.add(branch1);</span><br><span class="line">		root.operation(0);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>运行结果
 
-location ^~ /自己的项目 {
-        proxy_pass http://localhost:8080;
-}
-</code></pre><h3 id="5-重启nginx服务器"><a href="#5-重启nginx服务器" class="headerlink" title="5.重启nginx服务器"></a>5.重启nginx服务器</h3><p>如果使用的上面的脚本安装的可以使用一下方式停止nginx，和启动nginx</p>
-<ul>
-<li>停止nginx: /usr/local/nginx/sbin/nginx -s stop</li>
-<li>启动nginx: /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf<h3 id="6-开放nginx默认的80端口"><a href="#6-开放nginx默认的80端口" class="headerlink" title="6.开放nginx默认的80端口"></a>6.开放nginx默认的80端口</h3>阿里云服务器可以直接在配置安全组里面配置</li>
-</ul>
-<hr>
-<p>之后就可以通过域名访问啦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line">    branch</span><br><span class="line">       leaf1</span><br><span class="line">       leaf2</span><br><span class="line">    branch1</span><br><span class="line">       leaf3</span><br><span class="line">       branch2</span><br><span class="line">           leaf4</span><br><span class="line">           leaf5</span><br><span class="line">           leaf6</span><br><span class="line">           branch3</span><br><span class="line">               leaf7</span><br><span class="line">               leaf8</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://gaoqisen.github.io/GraphBed/201810/20181010230245.png" alt="组合模式"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>oo原则 </p>
+<blockquote>
+<p>封装变化</p>
+</blockquote>
+<blockquote>
+<p>多用组合，少用继承</p>
+</blockquote>
+<blockquote>
+<p>针对接口编程，不针对实现编程</p>
+</blockquote>
+<blockquote>
+<p>为交互对象之间的松耦合设计而努力</p>
+</blockquote>
+<blockquote>
+<p>类应该对扩展开放，对修改关闭</p>
+</blockquote>
+<blockquote>
+<p>依赖抽象，不依赖具体类</p>
+</blockquote>
+<blockquote>
+<p>只和朋友交谈</p>
+</blockquote>
+<blockquote>
+<p>别找我，我会找你</p>
+</blockquote>
+<blockquote>
+<p>类应该只有一个改变的理由</p>
+</blockquote>
+<p>组合模式：允许你将对象组成树形结构来表现“整体／部分”的层次结构，组合能让客户以一致的方式处理个别对象和对象组合。</p>
+<p>组合也可以和迭代器一起使用</p>
 
       
     </div>
@@ -468,7 +466,7 @@ location ^~ /自己的项目 {
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -481,8 +479,8 @@ location ^~ /自己的项目 {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/16/设计模式（java）－观察者模式/" rel="next" title="设计模式－观察者模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－观察者模式
+              <a href="/2018/10/05/设计模式（java）- 状态模式/" rel="next" title="设计模式 - 状态模式">
+                <i class="fa fa-chevron-left"></i> 设计模式 - 状态模式
               </a>
             
           </div>
@@ -491,8 +489,8 @@ location ^~ /自己的项目 {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/20/centos7 安装git服务器/" rel="prev" title="centos7安装git服务器">
-                centos7安装git服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/09/2018-10-09/" rel="prev" title="设计模式总结">
+                设计模式总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -663,7 +661,7 @@ location ^~ /自己的项目 {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-将java代码进行war打包"><span class="nav-number">1.</span> <span class="nav-text">1.将java代码进行war打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将war包移动到tomcat的webapps目录下面"><span class="nav-number">2.</span> <span class="nav-text">2.将war包移动到tomcat的webapps目录下面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动tomcat"><span class="nav-number">3.</span> <span class="nav-text">3.启动tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装nginx-1-12-1"><span class="nav-number">4.</span> <span class="nav-text">4.安装nginx-1.12.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-重启nginx服务器"><span class="nav-number">5.</span> <span class="nav-text">5.重启nginx服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开放nginx默认的80端口"><span class="nav-number">6.</span> <span class="nav-text">6.开放nginx默认的80端口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对组合模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对组合模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
             
 
           </div>
@@ -851,9 +849,9 @@ location ^~ /自己的项目 {
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/';
-          this.page.identifier = '2018/09/18/linux+nginx+tomcat的java项目打包war部署/';
-          this.page.title = 'linux+nginx+tomcat的java项目打包war部署';
+          this.page.url = 'http://yoursite.com/2018/10/05/设计模式（java）－ 组合模式/';
+          this.page.identifier = '2018/10/05/设计模式（java）－ 组合模式/';
+          this.page.title = '设计模式 - 组合模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

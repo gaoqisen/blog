@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
-<meta name="keywords" content="nginx">
+<meta name="description" content="已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个)   创建型       singleton 单例 builder 生成器 prototype  原型   abstract factor">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux+nginx+tomcat的java项目打包war部署">
-<meta property="og:url" content="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/index.html">
+<meta property="og:title" content="设计模式总结">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/2018-10-09/index.html">
 <meta property="og:site_name" content="简单才是快乐">
-<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta property="og:description" content="已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个)   创建型       singleton 单例 builder 生成器 prototype  原型   abstract factor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:13:36.000Z">
+<meta property="og:updated_time" content="2018-10-10T14:11:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux+nginx+tomcat的java项目打包war部署">
-<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="设计模式总结">
+<meta name="twitter:description" content="已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个)   创建型       singleton 单例 builder 生成器 prototype  原型   abstract factor">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/2018-10-09/"/>
 
 
 
 
 
-  <title>linux+nginx+tomcat的java项目打包war部署 | 简单才是快乐</title>
+  <title>设计模式总结 | 简单才是快乐</title>
   
 
 
@@ -289,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/2018-10-09/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="高其森">
@@ -306,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux+nginx+tomcat的java项目打包war部署</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式总结</h1>
         
 
         <div class="post-meta">
@@ -318,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T22:50:11+08:00">
-                2018-09-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T22:50:11+08:00">
+                2018-10-09
               </time>
             
 
@@ -341,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
                   </a>
                 </span>
 
@@ -359,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/18/linux+nginx+tomcat的java项目打包war部署/#comments" itemprop="discussionUrl">
+                <a href="/2018/10/09/2018-10-09/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/18/linux+nginx+tomcat的java项目打包war部署/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/10/09/2018-10-09/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -369,7 +367,7 @@
 
           
           
-             <span id="/2018/09/18/linux+nginx+tomcat的java项目打包war部署/" class="leancloud_visitors" data-flag-title="linux+nginx+tomcat的java项目打包war部署">
+             <span id="/2018/10/09/2018-10-09/" class="leancloud_visitors" data-flag-title="设计模式总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,52 +403,105 @@
       
 
       
-        <p> 环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境)</p>
-<h3 id="1-将java代码进行war打包"><a href="#1-将java代码进行war打包" class="headerlink" title="1.将java代码进行war打包"></a>1.将java代码进行war打包</h3><ul>
-<li><p>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打包war.png"></p>
-<ul>
-<li><p>选择路径，点击finish即可</p>
-<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><p>通过ftp或者scp可以直接将本地的代码放到linux服务器上面<br>scp命令：scp 文件名 root@地址:/root   （scp test.war <a href="mailto:root@107.1.0.1" target="_blank" rel="noopener">root@107.1.0.1</a>:/root）</p>
+        <p>已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。</p>
+<h2 id="整理一下模式需要用到的词汇-23个"><a href="#整理一下模式需要用到的词汇-23个" class="headerlink" title="整理一下模式需要用到的词汇(23个)"></a>整理一下模式需要用到的词汇(23个)</h2><table>
+<thead>
+<tr>
+<th>创建型</th>
+<th style="text-align:center"></th>
+<th style="text-align:right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>singleton 单例</td>
+<td style="text-align:center">builder 生成器</td>
+<td style="text-align:right">prototype  原型</td>
+</tr>
+<tr>
+<td>abstract factory 抽象工厂</td>
+<td style="text-align:center">factory method 工厂方法</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>行为型</th>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template method 模版方法</td>
+<td style="text-align:center">command 命令</td>
+<td>observer 观察者</td>
+</tr>
+<tr>
+<td>iterator  迭代器</td>
+<td style="text-align:center">strategy 策略</td>
+<td>interpreter 解释器</td>
+</tr>
+<tr>
+<td>visitor 访问者</td>
+<td style="text-align:center">mediator 中介</td>
+<td>memento 备忘录</td>
+</tr>
+<tr>
+<td>chain of responsibility 责任链</td>
+<td style="text-align:center">state 状态</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>结构型</th>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proxy 代理</td>
+<td style="text-align:center">decorator 装饰</td>
+<td>composite 复合</td>
+</tr>
+<tr>
+<td>flyweight 享元</td>
+<td style="text-align:center">bridge 桥接</td>
+<td>adapter 适配器</td>
+</tr>
+<tr>
+<td>facade 外观</td>
+</tr>
+</tbody>
+</table>
+<h2 id="模式的定义和自己理解的用途"><a href="#模式的定义和自己理解的用途" class="headerlink" title="模式的定义和自己理解的用途"></a>模式的定义和自己理解的用途</h2><h4 id="一、策略模式"><a href="#一、策略模式" class="headerlink" title="一、策略模式"></a>一、<a href="https://gaoqisen.github.io/2018/09/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89%EF%BC%8D%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" target="_blank" rel="noopener">策略模式</a></h4><ul>
+<li><p>定义：封装可以交互的行为，并使用委托来决定要使用那一个</p>
+</li>
+<li><p>用途：策略模式就是通过不同的策略可以给对象组装不同的行为，比如给小猫小狗添加不同的行为等。</p>
 </li>
 </ul>
+<h4 id="二、观察者模式"><a href="#二、观察者模式" class="headerlink" title="二、观察者模式"></a>二、<a href="https://gaoqisen.github.io/2018/09/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89%EF%BC%8D%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" target="_blank" rel="noopener">观察者模式</a></h4><ul>
+<li><p>定义：让对象在状态改变时被通知</p>
+</li>
+<li><p>用途：观察者模式就是相当于公众号一样，你关注公众号就会受到消息，取消就收不到消息，一对多的关系。</p>
 </li>
 </ul>
-<h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
-<ul>
-<li>可以用命令：netstat -ltunp    。查看所有的端口号使用情况</li>
-<li>如果有（tomcat默认使用8080、8009、8005）端口运行；直接用命令：kill -9 端口号</li>
-<li>重启<h3 id="4-安装nginx-1-12-1"><a href="#4-安装nginx-1-12-1" class="headerlink" title="4.安装nginx-1.12.1"></a>4.安装nginx-1.12.1</h3></li>
-<li>安装的sh脚本如下</li>
+<h4 id="三、装饰者模式"><a href="#三、装饰者模式" class="headerlink" title="三、装饰者模式"></a>三、<a href="https://gaoqisen.github.io/2018/09/23/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89%EF%BC%8D%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" target="_blank" rel="noopener">装饰者模式</a></h4><ul>
+<li><p>定义：包装一个对象，并提供新的行为 </p>
+</li>
+<li><p>用途：就像装修房子一样，选择不同的厂商，不同的材料装饰房子。java io流就是使用的装饰模式</p>
+</li>
 </ul>
-<pre><code>#!/bin/sh
-yum install pcre-devel -y
-yum install openssl-devel -y
-yum install zlib-devel -y
-wget http://nginx.org/download/nginx-1.12.1.tar.gz
-tar -zvxf nginx-1.12.1.tar.gz
-cd nginx-1.12.1
-./configure
-make
-make install
-cd /usr/local/nginx/sbin/
-./nginx -t
-/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
-</code></pre><p>详情：<a href="https://www.jianshu.com/p/73efd33b9da4" target="_blank" rel="noopener">https://www.jianshu.com/p/73efd33b9da4</a></p>
-<ul>
-<li>配置nginx.conf文件</li>
+<h4 id="四、工厂方法"><a href="#四、工厂方法" class="headerlink" title="四、工厂方法/)"></a>四、<a href="https://gaoqisen.github.io/2018/09/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89-%20%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E3%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E3%80%81%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82" target="_blank" rel="noopener">工厂方法</a>/)</h4><ul>
+<li><p>定义：由子类决定要创建的具体类是那一个</p>
+</li>
+<li><p>理解：</p>
+</li>
 </ul>
-<pre><code>server_name  自己的域名
-
-location ^~ /自己的项目 {
-        proxy_pass http://localhost:8080;
-}
-</code></pre><h3 id="5-重启nginx服务器"><a href="#5-重启nginx服务器" class="headerlink" title="5.重启nginx服务器"></a>5.重启nginx服务器</h3><p>如果使用的上面的脚本安装的可以使用一下方式停止nginx，和启动nginx</p>
-<ul>
-<li>停止nginx: /usr/local/nginx/sbin/nginx -s stop</li>
-<li>启动nginx: /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf<h3 id="6-开放nginx默认的80端口"><a href="#6-开放nginx默认的80端口" class="headerlink" title="6.开放nginx默认的80端口"></a>6.开放nginx默认的80端口</h3>阿里云服务器可以直接在配置安全组里面配置</li>
-</ul>
-<hr>
-<p>之后就可以通过域名访问啦</p>
 
       
     </div>
@@ -468,7 +519,7 @@ location ^~ /自己的项目 {
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -481,8 +532,8 @@ location ^~ /自己的项目 {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/16/设计模式（java）－观察者模式/" rel="next" title="设计模式－观察者模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－观察者模式
+              <a href="/2018/10/05/设计模式（java）－ 组合模式/" rel="next" title="设计模式 - 组合模式">
+                <i class="fa fa-chevron-left"></i> 设计模式 - 组合模式
               </a>
             
           </div>
@@ -490,10 +541,6 @@ location ^~ /自己的项目 {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/20/centos7 安装git服务器/" rel="prev" title="centos7安装git服务器">
-                centos7安装git服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +710,7 @@ location ^~ /自己的项目 {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-将java代码进行war打包"><span class="nav-number">1.</span> <span class="nav-text">1.将java代码进行war打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将war包移动到tomcat的webapps目录下面"><span class="nav-number">2.</span> <span class="nav-text">2.将war包移动到tomcat的webapps目录下面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动tomcat"><span class="nav-number">3.</span> <span class="nav-text">3.启动tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装nginx-1-12-1"><span class="nav-number">4.</span> <span class="nav-text">4.安装nginx-1.12.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-重启nginx服务器"><span class="nav-number">5.</span> <span class="nav-text">5.重启nginx服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开放nginx默认的80端口"><span class="nav-number">6.</span> <span class="nav-text">6.开放nginx默认的80端口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理一下模式需要用到的词汇-23个"><span class="nav-number">1.</span> <span class="nav-text">整理一下模式需要用到的词汇(23个)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式的定义和自己理解的用途"><span class="nav-number">2.</span> <span class="nav-text">模式的定义和自己理解的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、策略模式"><span class="nav-number">2.0.1.</span> <span class="nav-text">一、策略模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、观察者模式"><span class="nav-number">2.0.2.</span> <span class="nav-text">二、观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、装饰者模式"><span class="nav-number">2.0.3.</span> <span class="nav-text">三、装饰者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、工厂方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">四、工厂方法/)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -851,9 +898,9 @@ location ^~ /自己的项目 {
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/09/18/linux+nginx+tomcat的java项目打包war部署/';
-          this.page.identifier = '2018/09/18/linux+nginx+tomcat的java项目打包war部署/';
-          this.page.title = 'linux+nginx+tomcat的java项目打包war部署';
+          this.page.url = 'http://yoursite.com/2018/10/09/2018-10-09/';
+          this.page.identifier = '2018/10/09/2018-10-09/';
+          this.page.title = '设计模式总结';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
