@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="简单才是快乐">
 <meta property="og:description" content="已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个)   创建型       singleton 单例 builder 生成器 prototype  原型   abstract factor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-10T15:37:53.000Z">
+<meta property="og:updated_time" content="2018-10-11T13:49:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式总结">
 <meta name="twitter:description" content="已经将head first一书看完了，应该总结一下这本书学到了些什么。总的来说就是学到了设计模式，下面就将自己学习的设计模式整理一个目录，方便自己后期复习，以及简短的描述各个设计模式的定义，以及在哪些方面需要使用到设计模式。 整理一下模式需要用到的词汇(23个)   创建型       singleton 单例 builder 生成器 prototype  原型   abstract factor">
@@ -407,19 +407,19 @@
 <h2 id="整理一下模式需要用到的词汇-23个"><a href="#整理一下模式需要用到的词汇-23个" class="headerlink" title="整理一下模式需要用到的词汇(23个)"></a>整理一下模式需要用到的词汇(23个)</h2><table>
 <thead>
 <tr>
-<th>创建型</th>
+<th style="text-align:center">创建型</th>
 <th style="text-align:center"></th>
-<th style="text-align:right"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>singleton 单例</td>
+<td style="text-align:center">singleton 单例</td>
 <td style="text-align:center">builder 生成器</td>
-<td style="text-align:right">prototype  原型</td>
+<td style="text-align:center">prototype  原型</td>
 </tr>
 <tr>
-<td>abstract factory 抽象工厂</td>
+<td style="text-align:center">abstract factory 抽象工厂</td>
 <td style="text-align:center">factory method 工厂方法</td>
 </tr>
 </tbody>
@@ -427,29 +427,29 @@
 <table>
 <thead>
 <tr>
-<th>行为型</th>
+<th style="text-align:center">行为型</th>
 <th style="text-align:center"></th>
-<th></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>template method 模版方法</td>
+<td style="text-align:center">template method 模版方法</td>
 <td style="text-align:center">command 命令</td>
-<td>observer 观察者</td>
+<td style="text-align:center">observer 观察者</td>
 </tr>
 <tr>
-<td>iterator  迭代器</td>
+<td style="text-align:center">iterator  迭代器</td>
 <td style="text-align:center">strategy 策略</td>
-<td>interpreter 解释器</td>
+<td style="text-align:center">interpreter 解释器</td>
 </tr>
 <tr>
-<td>visitor 访问者</td>
+<td style="text-align:center">visitor 访问者</td>
 <td style="text-align:center">mediator 中介</td>
-<td>memento 备忘录</td>
+<td style="text-align:center">memento 备忘录</td>
 </tr>
 <tr>
-<td>chain of responsibility 责任链</td>
+<td style="text-align:center">chain of responsibility 责任链</td>
 <td style="text-align:center">state 状态</td>
 </tr>
 </tbody>
@@ -457,24 +457,24 @@
 <table>
 <thead>
 <tr>
-<th>结构型</th>
+<th style="text-align:center">结构型</th>
 <th style="text-align:center"></th>
-<th></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>proxy 代理</td>
+<td style="text-align:center">proxy 代理</td>
 <td style="text-align:center">decorator 装饰</td>
-<td>composite 复合</td>
+<td style="text-align:center">composite 复合</td>
 </tr>
 <tr>
-<td>flyweight 享元</td>
+<td style="text-align:center">flyweight 享元</td>
 <td style="text-align:center">bridge 桥接</td>
-<td>adapter 适配器</td>
+<td style="text-align:center">adapter 适配器</td>
 </tr>
 <tr>
-<td>facade 外观</td>
+<td style="text-align:center">facade 外观</td>
 </tr>
 </tbody>
 </table>
@@ -499,7 +499,13 @@
 <h4 id="四、工厂方法"><a href="#四、工厂方法" class="headerlink" title="四、工厂方法/)"></a>四、<a href="https://gaoqisen.github.io/2018/09/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89-%20%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E3%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E3%80%81%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82" target="_blank" rel="noopener">工厂方法</a>/)</h4><ul>
 <li><p>定义：由子类决定要创建的具体类是那一个</p>
 </li>
-<li><p>理解：</p>
+<li><p>用途：由工厂生产产品，如果用简单工厂模式生产新的产品，就要更改工厂类，违背了开闭原则。工厂方法模式就是将类更工厂化，让扩展更简单。</p>
+</li>
+</ul>
+<h4 id="五、抽象工厂方法"><a href="#五、抽象工厂方法" class="headerlink" title="五、抽象工厂方法/)"></a>五、<a href="https://gaoqisen.github.io/2018/09/25/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%88java%EF%BC%89-%20%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F(%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E3%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E3%80%81%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82" target="_blank" rel="noopener">抽象工厂方法</a>/)</h4><ul>
+<li><p>定义：提供一个创建一系列相关或相互依赖对象的接口。</p>
+</li>
+<li><p>用途：系统中有多个的产品族，而每次只使用一个产品族。用来创建一系列相关或相互依赖对象的接口</p>
 </li>
 </ul>
 
@@ -541,6 +547,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/11/2018-10-11/" rel="prev" title="Linux 使用jenkins+maven+git实现自动化部署java项目">
+                Linux 使用jenkins+maven+git实现自动化部署java项目 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -639,7 +649,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -650,7 +660,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -661,7 +671,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -710,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理一下模式需要用到的词汇-23个"><span class="nav-number">1.</span> <span class="nav-text">整理一下模式需要用到的词汇(23个)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式的定义和自己理解的用途"><span class="nav-number">2.</span> <span class="nav-text">模式的定义和自己理解的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、策略模式"><span class="nav-number">2.0.1.</span> <span class="nav-text">一、策略模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、观察者模式"><span class="nav-number">2.0.2.</span> <span class="nav-text">二、观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、装饰者模式"><span class="nav-number">2.0.3.</span> <span class="nav-text">三、装饰者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、工厂方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">四、工厂方法/)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理一下模式需要用到的词汇-23个"><span class="nav-number">1.</span> <span class="nav-text">整理一下模式需要用到的词汇(23个)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式的定义和自己理解的用途"><span class="nav-number">2.</span> <span class="nav-text">模式的定义和自己理解的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、策略模式"><span class="nav-number">2.0.1.</span> <span class="nav-text">一、策略模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、观察者模式"><span class="nav-number">2.0.2.</span> <span class="nav-text">二、观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、装饰者模式"><span class="nav-number">2.0.3.</span> <span class="nav-text">三、装饰者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、工厂方法"><span class="nav-number">2.0.4.</span> <span class="nav-text">四、工厂方法/)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、抽象工厂方法"><span class="nav-number">2.0.5.</span> <span class="nav-text">五、抽象工厂方法/)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
