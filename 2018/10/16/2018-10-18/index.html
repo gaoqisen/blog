@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181018093114.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181018100047.png">
-<meta property="og:updated_time" content="2018-10-18T03:41:30.000Z">
+<meta property="og:updated_time" content="2018-10-18T03:49:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7 API在线文档管理系统">
 <meta name="twitter:description" content="由于是前后端分离的项目，API是前后端最重要的沟通工具，用一个好的在线文档管理系统代替FTP等文本传输API是一个很不错的选择。在线文档比较好的开源文档系统就是wiki。MediaWiki是基于wiki用PHP开发的，配置起来比较复杂。后来发现一个MinDoc使用go语言开发的，特别方便。我将两种配置方式都记录一下。两种方式都需要安装mysql，CentOS7 的yum里面没有mysql，需要手动">
@@ -400,6 +400,7 @@
 <h4 id="4-出现Install-Successfully-之后就可以运行并访问"><a href="#4-出现Install-Successfully-之后就可以运行并访问" class="headerlink" title="4. 出现Install Successfully! 之后就可以运行并访问"></a>4. 出现Install Successfully! 之后就可以运行并访问</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./mindoc_linux_amd64   // 在线运行，不能退出</span><br><span class="line"></span><br><span class="line">nohup ./mindoc_linux_amd64 &amp; // 后台运行</span><br></pre></td></tr></table></figure>
 <p>访问<a href="http://IP:8181" target="_blank" rel="noopener">http://IP:8181</a> 即可，帐号admin 密码123456</p>
 <p><img src="https://gaoqisen.github.io/GraphBed/201810/20181018093114.png" alt="MinDoc"></p>
+<p>end</p>
 <h2 id="二、mediawiki"><a href="#二、mediawiki" class="headerlink" title="二、mediawiki"></a>二、mediawiki</h2><h4 id="1-安装需要的一些配置"><a href="#1-安装需要的一些配置" class="headerlink" title="1. 安装需要的一些配置"></a>1. 安装需要的一些配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install httpd php php-mysql php-gd php-xml mysql-server mysql libxml2</span><br></pre></td></tr></table></figure>
 <h4 id="2-在mysql启动的状态下配置mysql"><a href="#2-在mysql启动的状态下配置mysql" class="headerlink" title="2. 在mysql启动的状态下配置mysql"></a>2. 在mysql启动的状态下配置mysql</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
 <h4 id="3-在mysql里面配置项目"><a href="#3-在mysql里面配置项目" class="headerlink" title="3. 在mysql里面配置项目"></a>3. 在mysql里面配置项目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create database wikidb;  </span><br><span class="line">grant all on wikidb.* to root;  </span><br><span class="line">grant all on wikidb.* to root@localhost;  </span><br><span class="line">grant all on wikidb.* to wikiuser;  </span><br><span class="line">grant all on wikidb.* to wikiuser@localhost;  </span><br><span class="line">set password for wikiuser@localhost=password(&apos;wikipw&apos;);</span><br></pre></td></tr></table></figure>
@@ -440,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/设计模式（java）－mvc模式/" rel="next" title="设计模式－mvc模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－mvc模式
+              <a href="/2018/10/16/2018-10-16/" rel="next" title="设计模式－复合模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－复合模式
               </a>
             
           </div>
@@ -449,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/16/2018-10-16/" rel="prev" title="设计模式－复合模式">
-                设计模式－复合模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
