@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2018/10/18/2018-10-18-2/</loc>
+    <lastmod>2018-10-18T15:18:40.000Z</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2018/10/09/2018-10-09/</loc>
+    <lastmod>2018-10-18T13:10:41.000Z</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2018/10/18/2018-10-18-1/</loc>
+    <lastmod>2018-10-18T13:07:39.000Z</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2018/10/16/2018-10-18/</loc>
-    <lastmod>2018-10-18T03:49:08.000Z</lastmod>
+    <lastmod>2018-10-18T11:23:59.000Z</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2018/10/10/2018-10-13/</loc>
     <lastmod>2018-10-17T01:36:04.000Z</lastmod>
@@ -12,9 +21,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2018/10/16/2018-10-16/</loc>
     <lastmod>2018-10-16T14:16:15.000Z</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2018/10/09/2018-10-09/</loc>
-    <lastmod>2018-10-16T02:47:42.000Z</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2018/09/20/centos7%20%E5%AE%89%E8%A3%85git%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2018-10-13T03:13:25.000Z</lastmod>
