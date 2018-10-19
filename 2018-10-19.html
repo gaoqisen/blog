@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="data," />
+  <meta name="keywords" content="chainOfResponsibility" />
 
 
 
@@ -79,22 +79,20 @@
 
 
 
-<meta name="description" content="s表数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 ##原因：   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的">
-<meta name="keywords" content="data">
+<meta name="description" content="当你有一个以上对象有机会处理某个请求的时候，就使用责任链模式。">
+<meta name="keywords" content="chainOfResponsibility">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录一次数据库迁移的失败经历">
-<meta property="og:url" content="https://gaoqisen.github.io/201809013.html">
+<meta property="og:title" content="设计模式－责任链模式">
+<meta property="og:url" content="https://gaoqisen.github.io/2018-10-19.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="s表数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 ##原因：   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的">
+<meta property="og:description" content="当你有一个以上对象有机会处理某个请求的时候，就使用责任链模式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:13:27.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181019221342.png">
+<meta property="og:updated_time" content="2018-10-19T14:52:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录一次数据库迁移的失败经历">
-<meta name="twitter:description" content="s表数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 ##原因：   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="设计模式－责任链模式">
+<meta name="twitter:description" content="当你有一个以上对象有机会处理某个请求的时候，就使用责任链模式。">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201810/20181019221342.png">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/201809013.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/2018-10-19.html"/>
 
 
 
 
 
-  <title>记录一次数据库迁移的失败经历 | 一份耕耘，一份收获。</title>
+  <title>设计模式－责任链模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -291,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/201809013.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/2018-10-19.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -308,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记录一次数据库迁移的失败经历</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式－责任链模式</h1>
         
 
         <div class="post-meta">
@@ -320,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T22:50:11+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T20:50:11+08:00">
+                2018-10-19
               </time>
             
 
@@ -343,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
                   </a>
                 </span>
 
@@ -361,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/201809013.html#comments" itemprop="discussionUrl">
+                <a href="/2018-10-19.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="201809013.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018-10-19.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,6 +374,10 @@
 
           
 
+          
+              <div class="post-description">
+                  当你有一个以上对象有机会处理某个请求的时候，就使用责任链模式。
+              </div>
           
 
         </div>
@@ -391,18 +393,43 @@
       
 
       
-        <p>s表数据结构</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表一"><br>表一<br><img src="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表二"><br>表二<br><img src="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表三"><br>表三</p>
-<p>目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格</p>
-<p>##原因：<br>   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的ID。最终导致现在上传了2915个产品（包括多规格）。管理很混乱，数据比较多，不可能手工重新传了的。只能做数据迁移。</p>
-<h2 id="实现思路有两种办法："><a href="#实现思路有两种办法：" class="headerlink" title="实现思路有两种办法："></a>实现思路有两种办法：</h2><p>####一、通过实体类迁移数据。<br> 1.创建originCommodity(表一),commodity（表二），commodityDetail（表三）实体类<br>2.通过dao获取所有的originCommodity数据（获取所有的数据）。用for循环将originCommodity里面的数据分割为两张表commodity、commodity。并通过dao的inster批量创建commodity、commodityDetail数据（需要写sql批量插入数据）</p>
-<p>####二、手动navicat软件＋少量sql</p>
-<h4 id="将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。"><a href="#将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。" class="headerlink" title="将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。"></a>将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。</h4><p>  1.将表一分成两个表，commodity、commodityDetail。  commodity里面全部放checked=1的数据（主体）。commodityDetail里面存checked!=1的数据（多规格）。（创建两个表，复制表一里面的全部数据，将commodity里面的checked!=1的删除，将commodityDetail表里面的checked=1的数据删除，完成创建）<br>2.增加一个在commodity里面增加一个origin_id(原来的uuid),用来存放之前的ID。将commodity的ID更改为origin_id。id为自增ID<br>3.更改commodityDetail表里面的checked字段，需要将commodityDetail里面的checked等于commodity表里面的origin_id的数据变为commodity的自增ID。</p>
-<p> ###用方法二处理数据遇到的问题：<br>  由于想要尽快的处理这个问题，我选择了方法二，用最笨的方法处理数据。一路都很顺利的处理完成了。结束之后，我就将原来的commodity删除了。因为要将表里面的数据的ID更改为自增ID，而且开始的时候是新增了自增ID的字段的，之后将原来的uuid字段更改为了origin_id。这样方便其他表关联这张表的时候，可以通过origin_id获取更改之后的ID。但是有一张表我遗漏了，没有将表里面的ID更改，就将这个origin_id删除了。导致现在有一张表无法获取ID。因此，这种方法是一个很笨切不能从用的笨办法，如果用第一种方法，就不会出现这种问题了。<br>还好这次更改的只是测试数据，下次重新用第一种方法试一次</p>
-<p>##数据库需要用到的命令</p>
-<p>###一、 将sql数据签出并放到本地：<br>    mysqldump  -hlocalhost  -uroot –databases  数据库名 | gzip &gt; /root/DatabaseName_$(date +%Y%m%d_%H%M%S).sql.gz</p>
-<pre><code>scp root@ip地址:/root/sql文件名 ./Desktop   // 将文件复制到本地
-</code></pre><p>边纪录，边成长<br>end</p>
+        <h2 id="一、对责任链模式的理解"><a href="#一、对责任链模式的理解" class="headerlink" title="一、对责任链模式的理解"></a>一、对责任链模式的理解</h2><p>一个请求需要由多个对象处理，这些对象可以链接成为一条链。具体由那个类处理，由判断条件决定，如果该对象不能处理，则传给下一个对象处理。责任链将请求和处理分开。责任链比较好的例子就向请假一样，你需要请假10天，需要由你的主管确认，经理确认，总经理确认，全部通过才可以休假。但是如果请假5天，可能总经理就不用审核了，经理直接就可以处理这件事情。还有Logger的异常处理也是这种方式。下面的代码就是基于日志实现的。</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建一个抽象日志类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 抽象日志</span><br><span class="line">public abstract class AbstractLogger &#123;</span><br><span class="line">	public static int INFO = 1;</span><br><span class="line">	public static int DEBUG = 2;</span><br><span class="line">	public static int ERROR = 3;</span><br><span class="line">	</span><br><span class="line">	public int level;</span><br><span class="line">	</span><br><span class="line">	public AbstractLogger nextLogger;</span><br><span class="line">	// 下一个链条</span><br><span class="line">	public void setNextLogger(AbstractLogger al) &#123;</span><br><span class="line">		this.nextLogger = al;</span><br><span class="line">	&#125;</span><br><span class="line">	public void logMessage(int le, String message) &#123;</span><br><span class="line">		if (this.level&lt;=le) &#123;</span><br><span class="line">			write(message);</span><br><span class="line">		&#125;</span><br><span class="line">		if (this.nextLogger != null) &#123;</span><br><span class="line">			this.nextLogger.logMessage(le, message);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	abstract public void write(String message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建其他类继承抽象日志类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 打印日志</span><br><span class="line">public class ConsoleLogger extends AbstractLogger&#123;</span><br><span class="line">	public ConsoleLogger(int le) &#123;</span><br><span class="line">		this.level = le;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public void write(String message) &#123;</span><br><span class="line">		System.out.println(&quot;打印日志:&quot;+message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ErrorLogger extends AbstractLogger&#123;</span><br><span class="line">	public ErrorLogger(int le) &#123;</span><br><span class="line">		this.level = le;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public void write(String message) &#123;</span><br><span class="line">		System.out.println(&quot;异常日志:&quot;+message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 文件日志</span><br><span class="line">class FileLogger extends AbstractLogger&#123;</span><br><span class="line">	public FileLogger(int le) &#123;</span><br><span class="line">		this.level = le;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public void write(String message) &#123;</span><br><span class="line">		System.out.println(&quot;文件日志:&quot; + message);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建责任链链条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Chain &#123;</span><br><span class="line">	public static AbstractLogger getChainOfLogger() &#123;</span><br><span class="line">		AbstractLogger el = new ErrorLogger(AbstractLogger.ERROR);</span><br><span class="line">		AbstractLogger fl = new FileLogger(AbstractLogger.DEBUG);</span><br><span class="line">		AbstractLogger cl = new ConsoleLogger(AbstractLogger.INFO);</span><br><span class="line">		el.setNextLogger(fl);</span><br><span class="line">		fl.setNextLogger(cl);</span><br><span class="line">		return el;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main方法实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		AbstractLogger al = Chain.getChainOfLogger();</span><br><span class="line">		al.logMessage(AbstractLogger.INFO, &quot;文件信息&quot;);</span><br><span class="line">		al.logMessage(AbstractLogger.DEBUG, &quot;debug信息&quot;);</span><br><span class="line">		al.logMessage(AbstractLogger.ERROR, &quot;异常信息&quot;);</span><br><span class="line">	</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果</p>
+<pre><code>打印日志:文件信息
+文件日志:debug信息
+打印日志:debug信息
+异常日志:异常信息
+文件日志:异常信息
+打印日志:异常信息
+
+</code></pre><h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://gaoqisen.github.io/GraphBed/201810/20181019221342.png" alt="chainOfResponsibility"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><blockquote>
+<p>责任链定义: 避免请求发送者和接收者耦合到一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。责任链模式是一种对象行为行模式。</p>
+</blockquote>
+<h4 id="责任链优点"><a href="#责任链优点" class="headerlink" title="责任链优点"></a>责任链优点</h4><ul>
+<li><p>将请求的发送者和接收者解耦。</p>
+</li>
+<li><p>简化对象，它不需要知道链的结构。</p>
+</li>
+<li><p>通过改变或调用链内成员的次序，允许动态新增和删除责任</p>
+</li>
+</ul>
+<h4 id="责任链的用途和缺点"><a href="#责任链的用途和缺点" class="headerlink" title="责任链的用途和缺点"></a>责任链的用途和缺点</h4><ul>
+<li><p>经常用到窗口系统中，处理鼠标键盘等事件。</p>
+</li>
+<li><p>并不保证请求一定会被执行，如果没有处理类去处理请求的话，可以会落到链尾之外。有好有坏</p>
+</li>
+<li><p>不较不容易观察运行特征，不好排除错误。 </p>
+</li>
+</ul>
 
       
     </div>
@@ -420,7 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/data/" rel="tag"># data</a>
+            <a href="/tags/java-chainOfResponsibility/" rel="tag"># java chainOfResponsibility</a>
           
         </div>
       
@@ -433,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20181012.html" rel="next" title="设计模式－策略模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－策略模式
+              <a href="/201809011.html" rel="next" title="设计模式－桥接模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－桥接模式
               </a>
             
           </div>
@@ -442,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20180906.html" rel="prev" title="设计模式－观察者模式">
-                设计模式－观察者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路有两种办法："><span class="nav-number">1.</span> <span class="nav-text">实现思路有两种办法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。"><span class="nav-number">1.0.1.</span> <span class="nav-text">将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对责任链模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对责任链模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#责任链优点"><span class="nav-number">4.0.1.</span> <span class="nav-text">责任链优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#责任链的用途和缺点"><span class="nav-number">4.0.2.</span> <span class="nav-text">责任链的用途和缺点</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -783,9 +806,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/201809013.html';
-          this.page.identifier = '201809013.html';
-          this.page.title = '记录一次数据库迁移的失败经历';
+          this.page.url = 'https://gaoqisen.github.io/2018-10-19.html';
+          this.page.identifier = '2018-10-19.html';
+          this.page.title = '设计模式－责任链模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
