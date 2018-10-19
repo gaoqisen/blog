@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Gao Qisen" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
-<meta name="keywords" content="GaoQisen">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一份耕耘，一份收获。">
-<meta property="og:url" content="https://gaoqisen.github.io/archives/2018/page/3/index.html">
+<meta name="description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式 - 代理模式">
+<meta property="og:url" content="https://gaoqisen.github.io/设计模式（java）- 代理模式.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
+<meta property="og:description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png">
+<meta property="og:updated_time" content="2018-10-11T14:10:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一份耕耘，一份收获。">
-<meta name="twitter:description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
+<meta name="twitter:title" content="设计模式 - 代理模式">
+<meta name="twitter:description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/archives/2018/page/3/"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/设计模式（java）- 代理模式.html"/>
 
 
 
 
 
-  <title>归档 | 一份耕耘，一份收获。</title>
+  <title>设计模式 - 代理模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -144,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,300 +275,232 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/设计模式（java）- 代理模式.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一份耕耘，一份收获。">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">设计模式 - 代理模式</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T22:50:11+08:00">
+                2018-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 27 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/设计模式（java）- 代理模式.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="设计模式（java）- 代理模式.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/centos7 安装git服务器.html" itemprop="url">
-              
-                <span itemprop="name">centos7安装git服务器</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-20T22:50:11+08:00"
-              content="2018-09-20" >
-          09-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/linux+nginx+tomcat的java项目打包war部署.html" itemprop="url">
-              
-                <span itemprop="name">linux+nginx+tomcat的java项目打包war部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T22:50:11+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/设计模式（java）－观察者模式.html" itemprop="url">
-              
-                <span itemprop="name">设计模式－观察者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-16T22:50:11+08:00"
-              content="2018-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/记一次数据库迁移的经历（数据库表的格式有变动）.html" itemprop="url">
-              
-                <span itemprop="name">记录一次数据库迁移的失败经历</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T22:50:11+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。</p>
+<h2 id="一、对于代理模式的理解"><a href="#一、对于代理模式的理解" class="headerlink" title="一、对于代理模式的理解"></a>一、对于代理模式的理解</h2><p>定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。<br>就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建一个主题，用于黄牛和真实的我继承。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 创建主题接口</span><br><span class="line">public interface Subject &#123;</span><br><span class="line">	//  买票</span><br><span class="line">	public void buyTicket();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个真的我，买票.实现主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 真实主题（我）</span><br><span class="line">public class RealSubject implements Subject&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void buyTicket() &#123;</span><br><span class="line">		System.out.println(&quot;我要买票回家&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建代理类，实现主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 代理买票（黄牛）</span><br><span class="line">public class Proxy implements Subject&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void buyTicket() &#123;</span><br><span class="line">		RealSubject rs = new RealSubject();</span><br><span class="line">		rs.buyTicket();</span><br><span class="line">		this.compterTicket();</span><br><span class="line">	&#125;</span><br><span class="line">	// 不公开的买票方式，通过电脑买票</span><br><span class="line">	private void compterTicket() &#123;</span><br><span class="line">		System.out.println(&quot;黄牛进行买票&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>mian方法运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		// 调用者完全不知道是谁买票，只知道是一个黄牛保护目标</span><br><span class="line">		Subject sb =new Proxy();</span><br><span class="line">		sb.buyTicket();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我要买票回家</span><br><span class="line">黄牛进行买票</span><br></pre></td></tr></table></figure>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png" alt="代理模式"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><blockquote>
+<p>封装变化</p>
+</blockquote>
+<blockquote>
+<p>针对接口编程，不针对实现编程</p>
+</blockquote>
+<blockquote>
+<p>对修改关闭，对扩展开放</p>
+</blockquote>
+<blockquote>
+<p>多用组合，少用继承</p>
+</blockquote>
+<blockquote>
+<p>为交互对象之间的松耦合设计而努力</p>
+</blockquote>
+<blockquote>
+<p>依赖抽象，不依赖具体类</p>
+</blockquote>
+<blockquote>
+<p>只和朋友交谈</p>
+</blockquote>
+<blockquote>
+<p>别找我，我会找你</p>
+</blockquote>
+<blockquote>
+<p>类应该只有一个改变的理由</p>
+</blockquote>
+<blockquote>
+<p>定义: 为另一个对象提供一个替身或占位符以访问这个对象</p>
+</blockquote>
+<p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a> </p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018-10-12.html" itemprop="url">
-              
-                <span itemprop="name">设计模式－策略模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T22:50:11+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/用自定义注解进行切面，@Autowired装配的service一直报错空指针.html" itemprop="url">
-              
-                <span itemprop="name">用自定义注解进行切面，@Autowired装配的service一直报错空指针</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T22:50:11+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/java实现redis缓存功能.html" itemprop="url">
-              
-                <span itemprop="name">java实现redis缓存功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T22:50:11+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-10-11.html" rel="next" title="Linux 使用jenkins+maven+git实现自动化部署java项目">
+                <i class="fa fa-chevron-left"></i> Linux 使用jenkins+maven+git实现自动化部署java项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/设计模式（java）－mvc模式.html" rel="prev" title="设计模式－mvc模式">
+                设计模式－mvc模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -573,6 +508,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -595,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -676,6 +634,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对于代理模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对于代理模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +788,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -831,6 +809,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/设计模式（java）- 代理模式.html';
+          this.page.identifier = '设计模式（java）- 代理模式.html';
+          this.page.title = '设计模式 - 代理模式';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

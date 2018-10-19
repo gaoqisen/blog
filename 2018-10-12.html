@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Gao Qisen" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
-<meta name="keywords" content="GaoQisen">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一份耕耘，一份收获。">
-<meta property="og:url" content="https://gaoqisen.github.io/archives/2018/page/3/index.html">
+<meta name="description" content="最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。 一、对策略模式的理解&amp;">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式－策略模式">
+<meta property="og:url" content="https://gaoqisen.github.io/2018-10-12.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
+<meta property="og:description" content="最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。 一、对策略模式的理解&amp;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-0d16b6383d232c30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-12T00:53:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一份耕耘，一份收获。">
-<meta name="twitter:description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
+<meta name="twitter:title" content="设计模式－策略模式">
+<meta name="twitter:description" content="最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。 一、对策略模式的理解&amp;">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-0d16b6383d232c30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/archives/2018/page/3/"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/2018-10-12.html"/>
 
 
 
 
 
-  <title>归档 | 一份耕耘，一份收获。</title>
+  <title>设计模式－策略模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -144,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,300 +275,284 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/2018-10-12.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一份耕耘，一份收获。">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">设计模式－策略模式</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T22:50:11+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 27 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018-10-12.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018-10-12.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/centos7 安装git服务器.html" itemprop="url">
-              
-                <span itemprop="name">centos7安装git服务器</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-20T22:50:11+08:00"
-              content="2018-09-20" >
-          09-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/linux+nginx+tomcat的java项目打包war部署.html" itemprop="url">
-              
-                <span itemprop="name">linux+nginx+tomcat的java项目打包war部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T22:50:11+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/设计模式（java）－观察者模式.html" itemprop="url">
-              
-                <span itemprop="name">设计模式－观察者模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-16T22:50:11+08:00"
-              content="2018-09-16" >
-          09-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p>最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。</p>
+<h2 id="一、对策略模式的理解"><a href="#一、对策略模式的理解" class="headerlink" title="一、对策略模式的理解"></a>一、对策略模式的理解</h2><p>&emsp;&emsp;关于策略模式，我看完书之后回忆的起来的大概就是建立一个抽象类，抽象除类的不改变的属性，如动物的名字、年龄等这些都是每个动物都有的，不会改变的。</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建一个动物类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   public abstract class animal &#123;</span><br><span class="line">      private String name;</span><br><span class="line">      private int age;</span><br><span class="line">｝</span><br></pre></td></tr></table></figure></p>
+<p>然后多个类继承该抽象类，如小猫、小狗等。</p>
+<pre><code>public class Dog extends animal{}
+</code></pre><p>之后就是动物有的会飞、会叫等。这些都是动物的行为。之后把动物的飞行、叫喊接口化。</p>
+<pre><code>public interface CallBehavior {   // 叫喊行为
+    public void call();
+}
+public interface FlyBehavior {  // 飞行行为
+    public void fly();
+}
+</code></pre><p>会飞、会叫都可以是动物的行为。就可以将会飞、会叫的接口组合在动物类里面，当成动物的属性</p>
+<pre><code>public abstract class animal {
+    private String name;
+    private int age;
+    FlyBehavior flyBehavior;  // 让所有的动物都继承这个行为
+    CallBehavior callBehavior;
+ // 添加方法，用于被继承的动物共用方法
+ public void performFly() {  // 执行飞行
+    flyBehavior.fly();
+ }
+ public void performCall() { // 执行叫喊
+    callBehavior.call(); 
+ }
+ public void setFlyBehavior(FlyBehavior fly){   // 动态的设置飞行的实现类，可以在运行时改变动物的飞行方式
+    this.flyBehavior = fly;
+ }
+ public void setCallBehavior(CallBehavior call){
+    this.callBehavior = call;
+ }
+｝
+</code></pre><p>之后就用不同的实现类实现会飞、会叫的接口</p>
+<pre><code>// 叫喊接口实现
+public class CallBig implements CallBehavior{
+  @Override
+  public void call() {
+    System.out.println(&quot;特别大声的叫&quot;);
+  }
+}
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/记一次数据库迁移的经历（数据库表的格式有变动）.html" itemprop="url">
-              
-                <span itemprop="name">记录一次数据库迁移的失败经历</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T22:50:11+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+public class CallNoWay implements CallBehavior{
+  @Override
+  public void call() {
+    System.out.println(&quot;不会叫&quot;);
+  }
+}
+// 飞行接口实现
+public class FlyNoWay implements FlyBehavior{
+  @Override
+  public void fly() {
+    System.out.println(&quot;不会飞行&quot;);
+  }
+}
+public class FlyWithWings implements FlyBehavior{
+  @Override
+  public void fly() {
+    System.out.println(&quot;我要飞的更高&quot;);
+  }
+}
+</code></pre><p>然后就可以给小狗类添加默认的构造器。</p>
+<pre><code>public class Dog extends animal{
+  public Dog() {  // 小狗的构造器
+    callBehavior = new CallBig();   // 大声叫callBehavior 使用的是父类的变量
+    flyBehavior = new FlyNoWay();  
+  }  
+}
+</code></pre><p>调用</p>
+<pre><code>public static void main(String args[]) {
+    animal dw = new DogModle();
+    dw.performFly();  // 默认飞行
+    dw.performCall();  // 默认叫喊
+    dw.setFlyBehavior(new FlyWithWings());  //动态绑定飞行行为
+    dw.performFly();   // 更改之后的飞行方式
+}
+</code></pre><p>执行结果</p>
+<pre><code>不会飞行
+特别大声的叫
+我要飞的更高
+</code></pre><p>这样就动态实现了数据的绑定，根据不同的策略，绑定不同的接口。动态的完成功能，后期添加其他动物，也不需要更改之前的代码。完全做到了，对新增开放、对修改闭合的开闭原则。</p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p>画的不正规的uml图<br><img src="https://upload-images.jianshu.io/upload_images/7172355-0d16b6383d232c30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="策略模式-UML.png"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><h4 id="1、学到的三个原则"><a href="#1、学到的三个原则" class="headerlink" title="1、学到的三个原则"></a>1、学到的三个原则</h4><blockquote>
+<p>将会变动的代码进行封装</p>
+</blockquote>
+<blockquote>
+<p>针对接口编程，不针对实现编程</p>
+</blockquote>
+<blockquote>
+<p>多用组合、少用继承</p>
+</blockquote>
+<p>####2、策略模式定义</p>
+<blockquote>
+<p>定义算法族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化独立于使用算法的客户</p>
+</blockquote>
+<p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018-10-12.html" itemprop="url">
-              
-                <span itemprop="name">设计模式－策略模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-10T22:50:11+08:00"
-              content="2018-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/用自定义注解进行切面，@Autowired装配的service一直报错空指针.html" itemprop="url">
-              
-                <span itemprop="name">用自定义注解进行切面，@Autowired装配的service一直报错空指针</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T22:50:11+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/java实现redis缓存功能.html" itemprop="url">
-              
-                <span itemprop="name">java实现redis缓存功能</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T22:50:11+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/用自定义注解进行切面，@Autowired装配的service一直报错空指针.html" rel="next" title="用自定义注解进行切面，@Autowired装配的service一直报错空指针">
+                <i class="fa fa-chevron-left"></i> 用自定义注解进行切面，@Autowired装配的service一直报错空指针
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/记一次数据库迁移的经历（数据库表的格式有变动）.html" rel="prev" title="记录一次数据库迁移的失败经历">
+                记录一次数据库迁移的失败经历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -573,6 +560,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -595,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -676,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对策略模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对策略模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、学到的三个原则"><span class="nav-number">4.0.1.</span> <span class="nav-text">1、学到的三个原则</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +840,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -831,6 +861,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/2018-10-12.html';
+          this.page.identifier = '2018-10-12.html';
+          this.page.title = '设计模式－策略模式';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
