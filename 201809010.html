@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="elasticsearch," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="一、安装elasticsearch作用：将数据放到elasticsearch进行搜索 1、配置elasticsearch的yum源1234567891011vim /etc/yum.repos.d/elasticsearch.repo   // 配置yum源// 在elasticsearch.repo（如果没有就新建） 中加入一下内容6.x版本以上，将6改为2即可变更为2.x版本[elastics">
-<meta name="keywords" content="elasticsearch">
+<meta name="description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux+elasticsearch+logstash 自动同步mysql实现搜索引擎">
-<meta property="og:url" content="https://gaoqisen.github.io/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html">
+<meta property="og:title" content="设计模式 - 代理模式">
+<meta property="og:url" content="https://gaoqisen.github.io/201809010.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="一、安装elasticsearch作用：将数据放到elasticsearch进行搜索 1、配置elasticsearch的yum源1234567891011vim /etc/yum.repos.d/elasticsearch.repo   // 配置yum源// 在elasticsearch.repo（如果没有就新建） 中加入一下内容6.x版本以上，将6改为2即可变更为2.x版本[elastics">
+<meta property="og:description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-04T16:13:43.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png">
+<meta property="og:updated_time" content="2018-10-11T14:10:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux+elasticsearch+logstash 自动同步mysql实现搜索引擎">
-<meta name="twitter:description" content="一、安装elasticsearch作用：将数据放到elasticsearch进行搜索 1、配置elasticsearch的yum源1234567891011vim /etc/yum.repos.d/elasticsearch.repo   // 配置yum源// 在elasticsearch.repo（如果没有就新建） 中加入一下内容6.x版本以上，将6改为2即可变更为2.x版本[elastics">
+<meta name="twitter:title" content="设计模式 - 代理模式">
+<meta name="twitter:description" content="昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。 一、对于代理模式的理解定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等 二、代码实现创">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/201809010.html"/>
 
 
 
 
 
-  <title>linux+elasticsearch+logstash 自动同步mysql实现搜索引擎 | 一份耕耘，一份收获。</title>
+  <title>设计模式 - 代理模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -287,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/201809010.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -304,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux+elasticsearch+logstash 自动同步mysql实现搜索引擎</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式 - 代理模式</h1>
         
 
         <div class="post-meta">
@@ -316,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T22:50:11+08:00">
-                2018-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T22:50:11+08:00">
+                2018-10-11
               </time>
             
 
@@ -339,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
                   </a>
                 </span>
 
@@ -357,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html#comments" itemprop="discussionUrl">
+                <a href="/201809010.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="201809010.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -387,21 +389,49 @@
       
 
       
-        <h2 id="一、安装elasticsearch"><a href="#一、安装elasticsearch" class="headerlink" title="一、安装elasticsearch"></a>一、安装elasticsearch</h2><p>作用：将数据放到elasticsearch进行搜索</p>
-<h4 id="1、配置elasticsearch的yum源"><a href="#1、配置elasticsearch的yum源" class="headerlink" title="1、配置elasticsearch的yum源"></a>1、配置elasticsearch的yum源</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/elasticsearch.repo   // 配置yum源</span><br><span class="line"></span><br><span class="line">// 在elasticsearch.repo（如果没有就新建） 中加入一下内容6.x版本以上，将6改为2即可变更为2.x版本</span><br><span class="line">[elasticsearch-6.x]</span><br><span class="line">name=Elasticsearch repository for 6.x packages</span><br><span class="line">baseurl=https://artifacts.elastic.co/packages/6.x/yum</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line">enabled=1</span><br><span class="line">autorefresh=1</span><br><span class="line">type=rpm-md</span><br></pre></td></tr></table></figure>
-<h4 id="2、yum安装"><a href="#2、yum安装" class="headerlink" title="2、yum安装"></a>2、yum安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install elasticsearch</span><br></pre></td></tr></table></figure>
-<h4 id="3、启动"><a href="#3、启动" class="headerlink" title="3、启动"></a>3、启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service elasticsearch start   // 启动命令</span><br></pre></td></tr></table></figure>
-<p>Starting elasticsearch (via systemctl):                    [  确定  ]  // 出现这个表示启动成功</p>
-<h2 id="二、安装logstash"><a href="#二、安装logstash" class="headerlink" title="二、安装logstash"></a>二、安装logstash</h2><p>用于将mysql里面的数据同步到elasticsearch</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.1.zip  // 下载到目录解压文件</span><br><span class="line">cd logstash-6.4.1   // 进入logstash文件夹</span><br><span class="line">vim mysql.conf   // 新建mysql.conf文件</span><br></pre></td></tr></table></figure>
-<p>在mysql.conf文件中配置如下信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">     stdin &#123;</span><br><span class="line">     &#125;</span><br><span class="line">     jdbc &#123;</span><br><span class="line">       # mysql数据库连接</span><br><span class="line">       jdbc_connection_string =&gt; &quot;jdbc:mysql://localhost/basesdataName?characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=UTC&quot;</span><br><span class="line">       # mysqly用户名和密码</span><br><span class="line">       jdbc_user =&gt; &quot;root&quot;</span><br><span class="line">       jdbc_password =&gt; &quot;password&quot;</span><br><span class="line">       # 驱动配置(可以自己下载mysql-connector-java-6.0.5.jar，填写路径即可)</span><br><span class="line">       jdbc_driver_library =&gt; &quot;./lib/mysql-connector-java-6.0.5.jar&quot;</span><br><span class="line">       # 驱动类名</span><br><span class="line">       jdbc_driver_class =&gt; &quot;com.mysql.cj.jdbc.Driver&quot;</span><br><span class="line">       jdbc_paging_enabled =&gt; &quot;true&quot;</span><br><span class="line">       jdbc_page_size =&gt; &quot;50000&quot;</span><br><span class="line">       # 执行指定的sql文件</span><br><span class="line">       statement_filepath =&gt; &quot;./data.sql&quot;</span><br><span class="line">       # 设置监听 各字段含义 分 时 天 月  年 ，默认全部为*代表含义：每分钟都更新</span><br><span class="line">       schedule =&gt; &quot;* * * * *&quot;</span><br><span class="line">       # 索引类型</span><br><span class="line">       type =&gt; &quot;product&quot;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> filter &#123;</span><br><span class="line">     json &#123;</span><br><span class="line">         source =&gt; &quot;message&quot;</span><br><span class="line">         remove_field =&gt; [&quot;message&quot;]</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> output &#123;</span><br><span class="line"></span><br><span class="line">     elasticsearch &#123;</span><br><span class="line">         #es服务器</span><br><span class="line">         hosts =&gt; [&quot;localhost:9200&quot;]</span><br><span class="line">         #ES索引名称</span><br><span class="line">         index =&gt; &quot;sl_product&quot;</span><br><span class="line">         #自增ID</span><br><span class="line">         document_id =&gt; &quot;%&#123;id&#125;&quot;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     stdout &#123;</span><br><span class="line">         codec =&gt; json_lines</span><br><span class="line">     &#125;</span><br><span class="line"> ｝</span><br></pre></td></tr></table></figure>
-<p>新建data.sql</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim data.sql     // 新建</span><br><span class="line"></span><br><span class="line">写入如下内容</span><br><span class="line">SELECT * FROM tableName   // 查询语句</span><br></pre></td></tr></table></figure>
-<p>启动logstash</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/logstash -f mysql.conf   // 在logstash-6.4.1目录启动，如果其它目录，需要更改路径</span><br></pre></td></tr></table></figure>
-<h2 id="三、测试是否安装成功"><a href="#三、测试是否安装成功" class="headerlink" title="三、测试是否安装成功"></a>三、测试是否安装成功</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;http://127.0.0.1:9200/_search?pretty&apos;  // 出现数据库里面的数据表示成功</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;took&quot;: 153,</span><br><span class="line">    &quot;timed_out&quot;: false,</span><br><span class="line">    &quot;_shards&quot;: &#123;</span><br><span class="line">        &quot;total&quot;: 15,</span><br><span class="line">        &quot;successful&quot;: 15,</span><br><span class="line">        &quot;skipped&quot;: 0,</span><br><span class="line">        &quot;failed&quot;: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;hits&quot;: &#123;</span><br><span class="line">        &quot;total&quot;: 6,</span><br><span class="line">        &quot;max_score&quot;: 1,</span><br><span class="line">        &quot;hits&quot;: [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;2&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;add_time&quot;: &quot;426&quot;,</span><br><span class="line">                    &quot;summary&quot;: null,</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T05:41:00.179Z&quot;,</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;sl_product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;2&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;id&quot;: 2,</span><br><span class="line">                    &quot;category_id&quot;: null,</span><br><span class="line">                    &quot;sub_image&quot;: null,</span><br><span class="line">                    &quot;status&quot;: 1,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T07:56:00.437Z&quot;,</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;1&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;add_time&quot;: &quot;123&quot;,</span><br><span class="line">                    &quot;summary&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;sub_image&quot;: &quot;test&quot;,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T05:41:00.178Z&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;sl_product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;1&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;add_time&quot;: &quot;123&quot;,</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T07:56:00.436Z&quot;,</span><br><span class="line">                    &quot;type&quot;: &quot;product&quot;,</span><br><span class="line">                    &quot;tag_price&quot;: null</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;3&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;add_time&quot;: &quot;2018-09-22 12:04:14&quot;,</span><br><span class="line">                    &quot;summary&quot;: &quot;&lt;p&gt;123&lt;/p&gt;&lt;audio controls=\&quot;controls\&quot; style=\&quot;display: none;\&quot;&gt;&lt;/audio&gt;&quot;,</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;status&quot;: 1,</span><br><span class="line">                    &quot;retail_price&quot;: 12,</span><br><span class="line">                    &quot;sub_image&quot;: &quot;test asdf&quot;,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T05:41:00.180Z&quot;,</span><br><span class="line">                    &quot;tag_price&quot;: &quot;123&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;_index&quot;: &quot;sl_product&quot;,</span><br><span class="line">                &quot;_type&quot;: &quot;doc&quot;,</span><br><span class="line">                &quot;_id&quot;: &quot;3&quot;,</span><br><span class="line">                &quot;_score&quot;: 1,</span><br><span class="line">                &quot;_source&quot;: &#123;</span><br><span class="line">                    &quot;version&quot;: 1,</span><br><span class="line">                    &quot;retail_price&quot;: 12,</span><br><span class="line">                    &quot;add_time&quot;: &quot;2018-09-22 12:04:14&quot;,</span><br><span class="line">                    &quot;@version&quot;: &quot;1&quot;,</span><br><span class="line">                    &quot;@timestamp&quot;: &quot;2018-09-26T07:56:00.442Z&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>昨天将组合模式完成了，组合模式可以遍历树状的集合。迭代器模式可以遍历不同类型的集合。如果有树状结构的集合，可以优先考虑使用组合模式。</p>
+<h2 id="一、对于代理模式的理解"><a href="#一、对于代理模式的理解" class="headerlink" title="一、对于代理模式的理解"></a>一、对于代理模式的理解</h2><p>定义：给目标对象提供一个代理对象，并由代理对象控制对目标对象的引用。<br>就想黄牛一样，委托代买票业务给黄牛，黄牛收钱买票，我不知道黄牛是如何买票的，卖票的人不知道是谁买票的，便于保护真实用户。代理模式也经常用于远程代理，和虚拟代理等</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建一个主题，用于黄牛和真实的我继承。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 创建主题接口</span><br><span class="line">public interface Subject &#123;</span><br><span class="line">	//  买票</span><br><span class="line">	public void buyTicket();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个真的我，买票.实现主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 真实主题（我）</span><br><span class="line">public class RealSubject implements Subject&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void buyTicket() &#123;</span><br><span class="line">		System.out.println(&quot;我要买票回家&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建代理类，实现主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 代理买票（黄牛）</span><br><span class="line">public class Proxy implements Subject&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void buyTicket() &#123;</span><br><span class="line">		RealSubject rs = new RealSubject();</span><br><span class="line">		rs.buyTicket();</span><br><span class="line">		this.compterTicket();</span><br><span class="line">	&#125;</span><br><span class="line">	// 不公开的买票方式，通过电脑买票</span><br><span class="line">	private void compterTicket() &#123;</span><br><span class="line">		System.out.println(&quot;黄牛进行买票&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>mian方法运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		// 调用者完全不知道是谁买票，只知道是一个黄牛保护目标</span><br><span class="line">		Subject sb =new Proxy();</span><br><span class="line">		sb.buyTicket();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我要买票回家</span><br><span class="line">黄牛进行买票</span><br></pre></td></tr></table></figure>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://gaoqisen.github.io/GraphBed/201810/20181011211920.png" alt="代理模式"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><blockquote>
+<p>封装变化</p>
+</blockquote>
+<blockquote>
+<p>针对接口编程，不针对实现编程</p>
+</blockquote>
+<blockquote>
+<p>对修改关闭，对扩展开放</p>
+</blockquote>
+<blockquote>
+<p>多用组合，少用继承</p>
+</blockquote>
+<blockquote>
+<p>为交互对象之间的松耦合设计而努力</p>
+</blockquote>
+<blockquote>
+<p>依赖抽象，不依赖具体类</p>
+</blockquote>
+<blockquote>
+<p>只和朋友交谈</p>
+</blockquote>
+<blockquote>
+<p>别找我，我会找你</p>
+</blockquote>
+<blockquote>
+<p>类应该只有一个改变的理由</p>
+</blockquote>
+<blockquote>
+<p>定义: 为另一个对象提供一个替身或占位符以访问这个对象</p>
+</blockquote>
+<p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a> </p>
 
       
     </div>
@@ -419,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/elasticsearch/" rel="tag"># elasticsearch</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -432,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/centos7 安装git服务器.html" rel="next" title="centos7安装git服务器">
-                <i class="fa fa-chevron-left"></i> centos7安装git服务器
+              <a href="/2018-10-11.html" rel="next" title="Linux 使用jenkins+maven+git实现自动化部署java项目">
+                <i class="fa fa-chevron-left"></i> Linux 使用jenkins+maven+git实现自动化部署java项目
               </a>
             
           </div>
@@ -442,8 +472,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/设计模式（java）－装饰者模式.html" rel="prev" title="设计模式－装饰者模式">
-                设计模式－装饰者模式 <i class="fa fa-chevron-right"></i>
+              <a href="/20180901.html" rel="prev" title="设计模式－mvc模式">
+                设计模式－mvc模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -614,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装elasticsearch"><span class="nav-number">1.</span> <span class="nav-text">一、安装elasticsearch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、配置elasticsearch的yum源"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、配置elasticsearch的yum源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、yum安装"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、yum安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、启动"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装logstash"><span class="nav-number">2.</span> <span class="nav-text">二、安装logstash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、测试是否安装成功"><span class="nav-number">3.</span> <span class="nav-text">三、测试是否安装成功</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对于代理模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对于代理模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
             
 
           </div>
@@ -782,9 +812,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html';
-          this.page.identifier = 'Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html';
-          this.page.title = 'linux+elasticsearch+logstash 自动同步mysql实现搜索引擎';
+          this.page.url = 'https://gaoqisen.github.io/201809010.html';
+          this.page.identifier = '201809010.html';
+          this.page.title = '设计模式 - 代理模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

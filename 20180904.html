@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="之前学习的是适配器模式与外观模式。 对外观模式与适配器模式的理解适配器模式的意思就是适配，将三孔插座转换为二孔插座的转换头。通过适配器可以将两个不一样的接口（有共同点）适配在一起。外观模式就是统一接口，将很多方法，统一在一个类里面实现。让使用者不会感觉方法太多杂乱。就像一个开关控制所有电器，和每个电器单独使用的一样。如果使用一个开关控制所有，就会特别方便。但是之前的开关也存在，如果需要单独使用，也">
+<meta name="description" content="之前学习的是命令模式 对于命令模式的理解命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作 一、 对适配器模式和观察者模式的理解适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式－模版方法模式">
-<meta property="og:url" content="https://gaoqisen.github.io/设计模式（java）- 模版方法模式.html">
+<meta property="og:title" content="设计模式－适配器与外观模式">
+<meta property="og:url" content="https://gaoqisen.github.io/20180904.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="之前学习的是适配器模式与外观模式。 对外观模式与适配器模式的理解适配器模式的意思就是适配，将三孔插座转换为二孔插座的转换头。通过适配器可以将两个不一样的接口（有共同点）适配在一起。外观模式就是统一接口，将很多方法，统一在一个类里面实现。让使用者不会感觉方法太多杂乱。就像一个开关控制所有电器，和每个电器单独使用的一样。如果使用一个开关控制所有，就会特别方便。但是之前的开关也存在，如果需要单独使用，也">
+<meta property="og:description" content="之前学习的是命令模式 对于命令模式的理解命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作 一、 对适配器模式和观察者模式的理解适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-2b166f930c4b510e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:13:49.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-04T16:14:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式－模版方法模式">
-<meta name="twitter:description" content="之前学习的是适配器模式与外观模式。 对外观模式与适配器模式的理解适配器模式的意思就是适配，将三孔插座转换为二孔插座的转换头。通过适配器可以将两个不一样的接口（有共同点）适配在一起。外观模式就是统一接口，将很多方法，统一在一个类里面实现。让使用者不会感觉方法太多杂乱。就像一个开关控制所有电器，和每个电器单独使用的一样。如果使用一个开关控制所有，就会特别方便。但是之前的开关也存在，如果需要单独使用，也">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-2b166f930c4b510e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="设计模式－适配器与外观模式">
+<meta name="twitter:description" content="之前学习的是命令模式 对于命令模式的理解命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作 一、 对适配器模式和观察者模式的理解适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -122,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/设计模式（java）- 模版方法模式.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/20180904.html"/>
 
 
 
 
 
-  <title>设计模式－模版方法模式 | 一份耕耘，一份收获。</title>
+  <title>设计模式－适配器与外观模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -289,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/设计模式（java）- 模版方法模式.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/20180904.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -306,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式－模版方法模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式－适配器与外观模式</h1>
         
 
         <div class="post-meta">
@@ -318,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T22:50:11+08:00">
-                2018-09-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T22:50:11+08:00">
+                2018-09-26
               </time>
             
 
@@ -359,9 +360,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/设计模式（java）- 模版方法模式.html#comments" itemprop="discussionUrl">
+                <a href="/20180904.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="设计模式（java）- 模版方法模式.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="20180904.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,49 +390,49 @@
       
 
       
-        <p>之前学习的是适配器模式与外观模式。</p>
-<h4 id="对外观模式与适配器模式的理解"><a href="#对外观模式与适配器模式的理解" class="headerlink" title="对外观模式与适配器模式的理解"></a>对外观模式与适配器模式的理解</h4><p>适配器模式的意思就是适配，将三孔插座转换为二孔插座的转换头。通过适配器可以将两个不一样的接口（有共同点）适配在一起。<br>外观模式就是统一接口，将很多方法，统一在一个类里面实现。让使用者不会感觉方法太多杂乱。就像一个开关控制所有电器，和每个电器单独使用的一样。如果使用一个开关控制所有，就会特别方便。但是之前的开关也存在，如果需要单独使用，也是可以的。</p>
-<p>先看下定义</p>
+        <p>之前学习的是命令模式</p>
+<h3 id="对于命令模式的理解"><a href="#对于命令模式的理解" class="headerlink" title="对于命令模式的理解"></a>对于命令模式的理解</h3><p>命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作</p>
+<h2 id="一、-对适配器模式和观察者模式的理解"><a href="#一、-对适配器模式和观察者模式的理解" class="headerlink" title="一、 对适配器模式和观察者模式的理解"></a>一、 对适配器模式和观察者模式的理解</h2><p>适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。<br>外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是。我们可以把所有的插头都插在一个大插板上面。每次使用的时候，就可以只用开、关大插板就可以。不用每次都插很多插头。</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><h4 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h4><p>三孔插座<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 三孔插座</span><br><span class="line">public interface SocketThree &#123;</span><br><span class="line">	public void chargeThree();</span><br><span class="line">&#125;</span><br><span class="line">class SocketThreeImpl implements SocketThree&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void chargeThree() &#123;</span><br><span class="line">		System.out.println(&quot;三孔插座&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>两孔插座<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 两孔插座</span><br><span class="line">public interface SocketTwo &#123;</span><br><span class="line">	public void chargeTwo();</span><br><span class="line">&#125;</span><br><span class="line">class SocketTwoImpl implements SocketTwo&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void chargeTwo() &#123;</span><br><span class="line">		System.out.println(&quot;两孔插座&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>插座适配器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 插座适配器 将三孔插座转换为二孔插座， 看着像二孔，但是实际上还是三孔</span><br><span class="line">public class SocketAdapter implements SocketTwo&#123;</span><br><span class="line">	SocketThree socketThree;</span><br><span class="line">	public SocketAdapter(SocketThree socketThree) &#123;</span><br><span class="line">		this.socketThree = socketThree;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public void chargeTwo() &#123;</span><br><span class="line">		System.out.println(&quot;转换后的两孔插座&quot;);</span><br><span class="line">		this.socketThree.chargeThree();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>main方法运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 适配器模式</span><br><span class="line">		SocketThree st = new SocketThreeImpl();</span><br><span class="line">		st.chargeThree();</span><br><span class="line">		// 通过转换器将三孔插座转换为两孔插座</span><br><span class="line">		SocketTwo stwo = new SocketAdapter(st);</span><br><span class="line">		stwo.chargeTwo();</span><br></pre></td></tr></table></figure>
+<p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">三孔插座</span><br><span class="line">转换后的两孔插座</span><br><span class="line">三孔插座</span><br></pre></td></tr></table></figure></p>
+<h4 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h4><p>新建电视、电灯、烤火炉类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class TV &#123;</span><br><span class="line">	public void on() &#123;</span><br><span class="line">		System.out.println(&quot;开电视&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void off() &#123;</span><br><span class="line">		System.out.println(&quot;关电视&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Light&#123;</span><br><span class="line">	public void on() &#123;</span><br><span class="line">		System.out.println(&quot;开电灯&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void off() &#123;</span><br><span class="line">		System.out.println(&quot;关电灯&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Stove&#123;</span><br><span class="line">	public void on() &#123;</span><br><span class="line">		System.out.println(&quot;开火炉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void off() &#123;</span><br><span class="line">		System.out.println(&quot;关火炉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>大插板（不让插头凌乱，外观好看）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 买了一个大插板，将电视、烤火炉、电灯的插头都插在这个大插板上面</span><br><span class="line">public class FacadeSocket &#123;</span><br><span class="line">	TV tv;</span><br><span class="line">	Light light;</span><br><span class="line">	Stove stove;</span><br><span class="line">	public FacadeSocket(TV tv,Light light,Stove stove) &#123;</span><br><span class="line">		this.tv = tv;</span><br><span class="line">		this.light = light;</span><br><span class="line">		this.stove = stove;</span><br><span class="line">	&#125;</span><br><span class="line">	// 通过外观模式统一处理</span><br><span class="line">	public void on() &#123;</span><br><span class="line">		this.tv.on();</span><br><span class="line">		this.light.on();</span><br><span class="line">		this.stove.on();</span><br><span class="line">	&#125;</span><br><span class="line">	public void off() &#123;</span><br><span class="line">		this.tv.off();</span><br><span class="line">		this.light.off();</span><br><span class="line">		this.stove.off();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>main方法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String srgs[])&#123;</span><br><span class="line">            // 外观模式</span><br><span class="line">		TV tv = new TV();</span><br><span class="line">		Light light = new Light();</span><br><span class="line">		Stove stove = new Stove();</span><br><span class="line">		// 创建大插板， 统一开关</span><br><span class="line">		FacadeSocket fs = new FacadeSocket(tv, light,stove);</span><br><span class="line">		fs.on();</span><br><span class="line">		fs.off();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开电视</span><br><span class="line">开电灯</span><br><span class="line">开火炉</span><br><span class="line">关电视</span><br><span class="line">关电灯</span><br><span class="line">关火炉</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="适配器模式"><br><img src="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="外观模式"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>oo设计原则</p>
 <blockquote>
-<p>模版方法：在一个方法中定义一个算法的骨架，而将一些步骤延伸到子类中。模版方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤</p>
-</blockquote>
-<h2 id="一、-对模版方法的理解"><a href="#一、-对模版方法的理解" class="headerlink" title="一、 对模版方法的理解"></a>一、 对模版方法的理解</h2><p>模版方法就是将重复的方法封装在一个类中，变动的方法就用抽象方法抽象出来。将方法模版化，其它子类使用的时候，公用的方法就不用再次实现类，只需要实现抽象方法。大大的降低类代码的重复。比较好玩的就是钩子方法，可以通过子类控制父类的通用方法，很方便。我用炒大白菜和炒生菜举了个例子。</p>
-<h2 id="二、-代码实现"><a href="#二、-代码实现" class="headerlink" title="二、 代码实现"></a>二、 代码实现</h2><p>创建烹饪抽象类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Cooking &#123;</span><br><span class="line">	// 准备烹饪</span><br><span class="line">	public void prepareCooking() &#123;</span><br><span class="line">		WashingVegetables();</span><br><span class="line">		addVegetables();</span><br><span class="line">		addSalt();</span><br><span class="line">		// 根据菜的样式判断是否加辣椒</span><br><span class="line">		if (isChiliHooks()) &#123;</span><br><span class="line">			addChili();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	// 洗菜</span><br><span class="line">	public void WashingVegetables() &#123;</span><br><span class="line">		System.out.println(&quot;洗菜&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	// 加盐</span><br><span class="line">	public void addSalt()&#123;</span><br><span class="line">		System.out.println(&quot;加盐&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	// 加辣椒</span><br><span class="line">	public void addChili() &#123;</span><br><span class="line">		System.out.println(&quot;加辣椒&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	// 是否加辣椒钩子</span><br><span class="line">	public boolean isChiliHooks() &#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	// 放菜进锅炒，根据不同的实现，炒不同的菜</span><br><span class="line">	abstract void addVegetables();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建大白菜类，大白菜重构类模版方法的抽象方法，放入类大白菜<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 大白菜</span><br><span class="line">public class ChineseCabbage extends Cooking&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	void addVegetables() &#123;</span><br><span class="line">		System.out.println(&quot;放入大白菜&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建生菜类，也实现类抽象方法。最后重写类父类的钩子，实现类不加辣椒</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 炒生菜</span><br><span class="line">public class lettuce extends Cooking&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	void addVegetables() &#123;</span><br><span class="line">		System.out.println(&quot;放入生菜&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	// 不放辣椒</span><br><span class="line">	public boolean isChiliHooks() &#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>main方法实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String agrs[]) &#123;</span><br><span class="line">		ChineseCabbage cc = new ChineseCabbage();</span><br><span class="line">		cc.prepareCooking();</span><br><span class="line">		System.out.println(&quot;+++++++++&quot;);</span><br><span class="line">		lettuce lt = new lettuce();</span><br><span class="line">		lt.prepareCooking();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">洗菜</span><br><span class="line">放入大白菜</span><br><span class="line">加盐</span><br><span class="line">加辣椒</span><br><span class="line">+++++++++</span><br><span class="line">洗菜</span><br><span class="line">放入生菜</span><br><span class="line">加盐</span><br></pre></td></tr></table></figure>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-2b166f930c4b510e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模版方法模式"></p>
-<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><blockquote>
 <p>封装变化</p>
 </blockquote>
 <blockquote>
-<p>多用组合、少用继承</p>
-</blockquote>
-<blockquote>
-<p>面向接口编程、不面向实现编程</p>
-</blockquote>
-<blockquote>
-<p>只和朋友交谈</p>
-</blockquote>
-<blockquote>
-<p>对修改关闭、对扩展开放</p>
+<p>依赖接口编程，不依赖实现编程</p>
 </blockquote>
 <blockquote>
 <p>为交互对象之间的松耦合设计而努力</p>
 </blockquote>
 <blockquote>
-<p>别找我、我会找你（好莱坞原则）</p>
+<p>对修改关闭、对扩展开放</p>
 </blockquote>
 <blockquote>
-<p>依赖抽象、不要依赖具体类</p>
+<p>多用组合，少用继承</p>
 </blockquote>
-<p>巩固模版方法定义:</p>
 <blockquote>
-<p>在一个方法中定义一个算法的骨架，而将一些步骤延伸到子类中。模版方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤</p>
+<p>依赖抽象、不依赖具体类</p>
+</blockquote>
+<blockquote>
+<p>只和朋友交谈</p>
+</blockquote>
+<p>适配器模式定义：</p>
+<blockquote>
+<p>将一个类的接口，转移成为可以期望的另一个接口。适配器让原本不兼容的两个类可以合作无间</p>
+</blockquote>
+<p>外观模式定义：</p>
+<blockquote>
+<p>提供类一个统一的接口，用来访问子系统中的一群接口。外观定义类一个高层接口，让子系统更容易使用。</p>
 </blockquote>
 <p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a> </p>
 
@@ -464,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/设计模式（java）- 迭代器模式.html" rel="next" title="设计模式－迭代器模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－迭代器模式
+              <a href="/201809017.html" rel="next" title="设计模式－工厂模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－工厂模式
               </a>
             
           </div>
@@ -474,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/设计模式（java）- 命令模式.html" rel="prev" title="设计模式－命令模式">
-                设计模式－命令模式 <i class="fa fa-chevron-right"></i>
+              <a href="/20180902.html" rel="prev" title="设计模式－迭代器模式">
+                设计模式－迭代器模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#对外观模式与适配器模式的理解"><span class="nav-number">1.</span> <span class="nav-text">对外观模式与适配器模式的理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-对模版方法的理解"><span class="nav-number"></span> <span class="nav-text">一、 对模版方法的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-代码实现"><span class="nav-number"></span> <span class="nav-text">二、 代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number"></span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number"></span> <span class="nav-text">四、笔记</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#对于命令模式的理解"><span class="nav-number">1.</span> <span class="nav-text">对于命令模式的理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-对适配器模式和观察者模式的理解"><span class="nav-number"></span> <span class="nav-text">一、 对适配器模式和观察者模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number"></span> <span class="nav-text">二、代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#适配器模式"><span class="nav-number">0.1.</span> <span class="nav-text">适配器模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#外观模式"><span class="nav-number">0.2.</span> <span class="nav-text">外观模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number"></span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number"></span> <span class="nav-text">四、笔记</span></a></div>
             
 
           </div>
@@ -814,9 +815,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/设计模式（java）- 模版方法模式.html';
-          this.page.identifier = '设计模式（java）- 模版方法模式.html';
-          this.page.title = '设计模式－模版方法模式';
+          this.page.url = 'https://gaoqisen.github.io/20180904.html';
+          this.page.identifier = '20180904.html';
+          this.page.title = '设计模式－适配器与外观模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

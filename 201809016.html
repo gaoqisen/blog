@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="之前学习的是观察模式，复习观察者模式 观察者模式一般在那些地方使用：比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。 使用观察者模式的好处：第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被">
-<meta name="keywords" content="java">
+<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式－装饰者模式">
-<meta property="og:url" content="https://gaoqisen.github.io/设计模式（java）－装饰者模式.html">
+<meta property="og:title" content="linux+nginx+tomcat的java项目打包war部署">
+<meta property="og:url" content="https://gaoqisen.github.io/201809016.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="之前学习的是观察模式，复习观察者模式 观察者模式一般在那些地方使用：比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。 使用观察者模式的好处：第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被">
+<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:14:49.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-04T16:13:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式－装饰者模式">
-<meta name="twitter:description" content="之前学习的是观察模式，复习观察者模式 观察者模式一般在那些地方使用：比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。 使用观察者模式的好处：第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="linux+nginx+tomcat的java项目打包war部署">
+<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/设计模式（java）－装饰者模式.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/201809016.html"/>
 
 
 
 
 
-  <title>设计模式－装饰者模式 | 一份耕耘，一份收获。</title>
+  <title>linux+nginx+tomcat的java项目打包war部署 | 一份耕耘，一份收获。</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/设计模式（java）－装饰者模式.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/201809016.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式－装饰者模式</h1>
+          <h1 class="post-title" itemprop="name headline">linux+nginx+tomcat的java项目打包war部署</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T22:50:11+08:00">
-                2018-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T22:50:11+08:00">
+                2018-09-18
               </time>
             
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/patterm/" itemprop="url" rel="index">
-                    <span itemprop="name">patterm</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -359,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/设计模式（java）－装饰者模式.html#comments" itemprop="discussionUrl">
+                <a href="/201809016.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="设计模式（java）－装饰者模式.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="201809016.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,43 +389,52 @@
       
 
       
-        <p>之前学习的是观察模式，复习观察者模式</p>
-<h2 id="观察者模式一般在那些地方使用："><a href="#观察者模式一般在那些地方使用：" class="headerlink" title="观察者模式一般在那些地方使用："></a>观察者模式一般在那些地方使用：</h2><p>比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。</p>
-<h2 id="使用观察者模式的好处："><a href="#使用观察者模式的好处：" class="headerlink" title="使用观察者模式的好处："></a>使用观察者模式的好处：</h2><p>第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被观察者角色所知道的只是一个具体观察者列表，每一个具体观察者都符合一个抽象观察者的接口。被观察者并不认识任何一个具体观察者，它只知道它们都有一个共同的接口。由于被观察者和观察者没有紧密地耦合在一起，因此它们可以属于不同的抽象化层次。如果被观察者和观察者都被扔到一起，那么这个对象必然跨越抽象化和具体化层次。</p>
-<p>第二、观察者模式支持广播通讯。被观察者会向所有的登记过的观察者发出通知，</p>
-<h2 id="观察者模式有下面的缺点："><a href="#观察者模式有下面的缺点：" class="headerlink" title="观察者模式有下面的缺点："></a>观察者模式有下面的缺点：</h2><p>第一、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。<br>第二、如果在被观察者之间有循环依赖的话，被观察者会触发它们之间进行循环调用，导致系统崩溃。在使用观察者模式是要特别注意这一点。<br>第三、如果对观察者的通知是通过另外的线程进行异步投递的话，系统必须保证投递是以自恰的方式进行的。<br>第四、虽然观察者模式可以随时使观察者知道所观察的对象发生了变化，但是观察者模式没有相应的机制使观察者知道所观察的对象是怎么发生变化的。</p>
-<h2 id="一、对装饰者模式的理解"><a href="#一、对装饰者模式的理解" class="headerlink" title="一、对装饰者模式的理解"></a>一、对装饰者模式的理解</h2><p>可以想象为给房子装修，有英式风格的房子、中式风格的房子，英式风格有英式风格的桌子、椅子，中式风格有中式风格的桌子椅子、等等。但是我们在装修房子的时候会自己去找材料，椅子有不同的风格、不同的厂家等。最后我们用这些不同的材料来装饰自己的房子。<br>我们可以建立一个房子的抽象类，用材料去实现房子的抽象类。中式风格的房子、英式风格的房子都去实现房子的抽象类。之后用桌子、椅子具体的实现去继承材料抽象类。这样就可以用多态（父类的引用指向自类的对象），具体的看下面的代码</p>
-<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建房子抽象类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 房子抽象类</span><br><span class="line">public abstract class House &#123;</span><br><span class="line">	String description = &quot;毛坯房&quot;;  // 房子的描述</span><br><span class="line">	public String getDescription() &#123;</span><br><span class="line">		return this.description;</span><br><span class="line">	&#125;</span><br><span class="line">	public abstract double cost();   // 房子的成本成本</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建材料抽象类、继承房子类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 装修材料</span><br><span class="line">public abstract class Material extends House&#123;</span><br><span class="line">	public abstract String getDescription();  // 重写获取房子描述的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>中式风格的房子类、中式风格椅子类、中式风格桌子类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 中式风格的房子</span><br><span class="line">public class ChineseStyle extends House&#123;</span><br><span class="line">	public ChineseStyle() &#123;</span><br><span class="line">		description = &quot;中式风格的房子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public double cost() &#123;</span><br><span class="line">		return 888;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">// 中式风格的椅子</span><br><span class="line">class ChineseChair extends Material&#123;</span><br><span class="line">	House house;</span><br><span class="line">	public ChineseChair(House house)&#123;</span><br><span class="line">		this.house = house;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getDescription() &#123;</span><br><span class="line">		return house.getDescription() + &quot;＊＊＊中式风格的椅子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public double cost () &#123;</span><br><span class="line">		return 20 + house.cost();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 中式风格的桌子</span><br><span class="line">class ChineseDesk extends Material&#123;</span><br><span class="line">	House house;</span><br><span class="line">	public ChineseDesk(House house)&#123;</span><br><span class="line">		this.house = house;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getDescription() &#123;</span><br><span class="line">		return house.getDescription() + &quot;***中式风格的桌子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public double cost () &#123;</span><br><span class="line">		return 50 + house.cost();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>英式风格的房子、英式风格的桌子、英式风格的椅子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// 英式风格</span><br><span class="line">public class EnglandStyle extends House&#123;</span><br><span class="line">	public EnglandStyle() &#123;</span><br><span class="line">		description = &quot;英式风格的房子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public double cost() &#123;</span><br><span class="line">		return 666;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class EnglandChair extends Material&#123;</span><br><span class="line">	House house;</span><br><span class="line">	public EnglandChair(House house)&#123;</span><br><span class="line">		this.house = house;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getDescription() &#123;</span><br><span class="line">		return house.getDescription() + &quot;＊＊＊英式风格的椅子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public double cost () &#123;</span><br><span class="line">		return 20 + house.cost();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class EnglandDesk extends Material&#123;</span><br><span class="line">	House house;</span><br><span class="line">	public EnglandDesk(House house)&#123;</span><br><span class="line">		this.house = house;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getDescription() &#123;</span><br><span class="line">		return house.getDescription() + &quot;***英式风格的桌子&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public double cost () &#123;</span><br><span class="line">		return 50 + house.cost();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>代码运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[]) &#123;</span><br><span class="line">		House house  = new ChineseStyle();</span><br><span class="line">		System.out.println(house.getDescription() + &quot;***&quot; +house.cost());</span><br><span class="line">		// 英式风格的房子用 一张中式风格的桌子，和两把椅子，一把中式风格的，一把英式风格的椅子</span><br><span class="line">		House house1 = new EnglandStyle();  // 英式风格的房子</span><br><span class="line">		house1 = new ChineseDesk(house1);  </span><br><span class="line">		house1 = new ChineseChair(house1);  </span><br><span class="line">		house1 = new EnglandChair(house1);  </span><br><span class="line">		System.out.println(house1.getDescription() + &quot;***&quot; +house1.cost());</span><br><span class="line">		// 中式风格的房子用 一张中式风格的桌子，和两把椅子，一把中式风格的，一把英式风格的椅子</span><br><span class="line">		House house2 = new ChineseStyle();  // 中式风格的房子</span><br><span class="line">		house2 = new ChineseDesk(house2);  </span><br><span class="line">		house2 = new ChineseChair(house2);  </span><br><span class="line">		house2 = new EnglandChair(house2);  </span><br><span class="line">		System.out.println(house2.getDescription() + &quot;***&quot; +house2.cost());</span><br><span class="line">		// 后面就可以按照自己的喜欢装修自己的房子了</span><br><span class="line">		// 其它的家具也可以更加灵活的添加了</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">中式风格的房子***888.0</span><br><span class="line">英式风格的房子***中式风格的桌子＊＊＊中式风格的椅子＊＊＊英式风格的椅子***756.0</span><br><span class="line">中式风格的房子***中式风格的桌子＊＊＊中式风格的椅子＊＊＊英式风格的椅子***978.0</span><br></pre></td></tr></table></figure>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="装饰者模式－UML"></p>
-<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>面向对象原则</p>
-<blockquote>
-<p>封装变化</p>
-</blockquote>
-<blockquote>
-<p>多用组合、少用继承</p>
-</blockquote>
-<blockquote>
-<p>针对接口编程、不针对实现编程</p>
-</blockquote>
-<blockquote>
-<p>为交互对象之间的松耦合设计而努力</p>
-</blockquote>
-<blockquote>
-<p>对扩展开发、对修改关闭</p>
-</blockquote>
-<p>装饰者模式的定义</p>
-<blockquote>
-<p>动态的将责任附加到对象上。想要扩展功能，装饰折提供有别于继承的另一种选择</p>
-</blockquote>
-<p>java 的 io流就是用装饰者模式实现的</p>
-<p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a> </p>
+        <p> 环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境)</p>
+<h3 id="1-将java代码进行war打包"><a href="#1-将java代码进行war打包" class="headerlink" title="1.将java代码进行war打包"></a>1.将java代码进行war打包</h3><ul>
+<li><p>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打包war.png"></p>
+<ul>
+<li><p>选择路径，点击finish即可</p>
+<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><p>通过ftp或者scp可以直接将本地的代码放到linux服务器上面<br>scp命令：scp 文件名 root@地址:/root   （scp test.war <a href="mailto:root@107.1.0.1" target="_blank" rel="noopener">root@107.1.0.1</a>:/root）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
+<ul>
+<li>可以用命令：netstat -ltunp    。查看所有的端口号使用情况</li>
+<li>如果有（tomcat默认使用8080、8009、8005）端口运行；直接用命令：kill -9 端口号</li>
+<li>重启<h3 id="4-安装nginx-1-12-1"><a href="#4-安装nginx-1-12-1" class="headerlink" title="4.安装nginx-1.12.1"></a>4.安装nginx-1.12.1</h3></li>
+<li>安装的sh脚本如下</li>
+</ul>
+<pre><code>#!/bin/sh
+yum install pcre-devel -y
+yum install openssl-devel -y
+yum install zlib-devel -y
+wget http://nginx.org/download/nginx-1.12.1.tar.gz
+tar -zvxf nginx-1.12.1.tar.gz
+cd nginx-1.12.1
+./configure
+make
+make install
+cd /usr/local/nginx/sbin/
+./nginx -t
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+</code></pre><p>详情：<a href="https://www.jianshu.com/p/73efd33b9da4" target="_blank" rel="noopener">https://www.jianshu.com/p/73efd33b9da4</a></p>
+<ul>
+<li>配置nginx.conf文件</li>
+</ul>
+<pre><code>server_name  自己的域名
+
+location ^~ /自己的项目 {
+        proxy_pass http://localhost:8080;
+}
+</code></pre><h3 id="5-重启nginx服务器"><a href="#5-重启nginx服务器" class="headerlink" title="5.重启nginx服务器"></a>5.重启nginx服务器</h3><p>如果使用的上面的脚本安装的可以使用一下方式停止nginx，和启动nginx</p>
+<ul>
+<li>停止nginx: /usr/local/nginx/sbin/nginx -s stop</li>
+<li>启动nginx: /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf<h3 id="6-开放nginx默认的80端口"><a href="#6-开放nginx默认的80端口" class="headerlink" title="6.开放nginx默认的80端口"></a>6.开放nginx默认的80端口</h3>阿里云服务器可以直接在配置安全组里面配置</li>
+</ul>
+<hr>
+<p>之后就可以通过域名访问啦</p>
 
       
     </div>
@@ -443,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
         </div>
       
@@ -456,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Linux 部署elasticsearch + logstash 自动同步mysql实现搜索引擎.html" rel="next" title="linux+elasticsearch+logstash 自动同步mysql实现搜索引擎">
-                <i class="fa fa-chevron-left"></i> linux+elasticsearch+logstash 自动同步mysql实现搜索引擎
+              <a href="/20180906.html" rel="next" title="设计模式－观察者模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－观察者模式
               </a>
             
           </div>
@@ -466,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/设计模式（java）- 工厂模式(简单工厂、工厂方法、抽象工厂).html" rel="prev" title="设计模式－工厂模式">
-                设计模式－工厂模式 <i class="fa fa-chevron-right"></i>
+              <a href="/201809015.html" rel="prev" title="centos7安装git服务器">
+                centos7安装git服务器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -638,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式一般在那些地方使用："><span class="nav-number">1.</span> <span class="nav-text">观察者模式一般在那些地方使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用观察者模式的好处："><span class="nav-number">2.</span> <span class="nav-text">使用观察者模式的好处：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#观察者模式有下面的缺点："><span class="nav-number">3.</span> <span class="nav-text">观察者模式有下面的缺点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对装饰者模式的理解"><span class="nav-number">4.</span> <span class="nav-text">一、对装饰者模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">5.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">6.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">7.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-将java代码进行war打包"><span class="nav-number">1.</span> <span class="nav-text">1.将java代码进行war打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将war包移动到tomcat的webapps目录下面"><span class="nav-number">2.</span> <span class="nav-text">2.将war包移动到tomcat的webapps目录下面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-启动tomcat"><span class="nav-number">3.</span> <span class="nav-text">3.启动tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装nginx-1-12-1"><span class="nav-number">4.</span> <span class="nav-text">4.安装nginx-1.12.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-重启nginx服务器"><span class="nav-number">5.</span> <span class="nav-text">5.重启nginx服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开放nginx默认的80端口"><span class="nav-number">6.</span> <span class="nav-text">6.开放nginx默认的80端口</span></a></li></ol></div>
             
 
           </div>
@@ -806,9 +815,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/设计模式（java）－装饰者模式.html';
-          this.page.identifier = '设计模式（java）－装饰者模式.html';
-          this.page.title = '设计模式－装饰者模式';
+          this.page.url = 'https://gaoqisen.github.io/201809016.html';
+          this.page.identifier = '201809016.html';
+          this.page.title = 'linux+nginx+tomcat的java项目打包war部署';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

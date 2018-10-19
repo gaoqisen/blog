@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="redis," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
-<meta name="keywords" content="redis">
+<meta name="description" content="之前学习是简单工厂模式、工厂方法模式、抽象工厂模式，复习一下 简单工厂模式简单工厂模式大概就是创建一个简单工厂类，由工厂类实例化对象。由参数决定实例化那个类 工厂方法模式创建一个抽象工厂类，里面包含一个抽象方法。由这个工厂去生产产品，具体的就是实现类实现工厂，并完成抽象方法的功能实现（如月饼抽象生产类，南方月饼类实现月饼抽象生产类，北方月饼实现月饼抽象生产类，等等）。调用不是由参数决定，是由创建者">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java实现redis缓存功能">
-<meta property="og:url" content="https://gaoqisen.github.io/java实现redis缓存功能.html">
+<meta property="og:title" content="设计模式－单例模式">
+<meta property="og:url" content="https://gaoqisen.github.io/20180905.html">
 <meta property="og:site_name" content="一份耕耘，一份收获。">
-<meta property="og:description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
+<meta property="og:description" content="之前学习是简单工厂模式、工厂方法模式、抽象工厂模式，复习一下 简单工厂模式简单工厂模式大概就是创建一个简单工厂类，由工厂类实例化对象。由参数决定实例化那个类 工厂方法模式创建一个抽象工厂类，里面包含一个抽象方法。由这个工厂去生产产品，具体的就是实现类实现工厂，并完成抽象方法的功能实现（如月饼抽象生产类，南方月饼类实现月饼抽象生产类，北方月饼实现月饼抽象生产类，等等）。调用不是由参数决定，是由创建者">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-04T16:13:22.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-112d7b6958cc8047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-04T16:14:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java实现redis缓存功能">
-<meta name="twitter:description" content="一、安装redis1.mac安装，如果有安装brew  可以直接快捷安装：brew install redis 2.linux下载安装wget http://download.redis.io/releases/redis-2.8.17.tar.gz tar xzf redis-2.8.17.tar.gz cd redis-2.8.17 make 二、redis常用命令redis-cli  //">
+<meta name="twitter:title" content="设计模式－单例模式">
+<meta name="twitter:description" content="之前学习是简单工厂模式、工厂方法模式、抽象工厂模式，复习一下 简单工厂模式简单工厂模式大概就是创建一个简单工厂类，由工厂类实例化对象。由参数决定实例化那个类 工厂方法模式创建一个抽象工厂类，里面包含一个抽象方法。由这个工厂去生产产品，具体的就是实现类实现工厂，并完成抽象方法的功能实现（如月饼抽象生产类，南方月饼类实现月饼抽象生产类，北方月饼实现月饼抽象生产类，等等）。调用不是由参数决定，是由创建者">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-112d7b6958cc8047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/java实现redis缓存功能.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/20180905.html"/>
 
 
 
 
 
-  <title>java实现redis缓存功能 | 一份耕耘，一份收获。</title>
+  <title>设计模式－单例模式 | 一份耕耘，一份收获。</title>
   
 
 
@@ -287,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/java实现redis缓存功能.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/20180905.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -304,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java实现redis缓存功能</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式－单例模式</h1>
         
 
         <div class="post-meta">
@@ -316,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-30T22:50:11+08:00">
-                2018-08-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T22:50:11+08:00">
+                2018-09-29
               </time>
             
 
@@ -339,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
                   </a>
                 </span>
 
@@ -357,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/java实现redis缓存功能.html#comments" itemprop="discussionUrl">
+                <a href="/20180905.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="java实现redis缓存功能.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="20180905.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -387,121 +389,33 @@
       
 
       
-        <h2 id="一、安装redis"><a href="#一、安装redis" class="headerlink" title="一、安装redis"></a>一、安装redis</h2><h3 id="1-mac安装，如果有安装brew-可以直接快捷安装："><a href="#1-mac安装，如果有安装brew-可以直接快捷安装：" class="headerlink" title="1.mac安装，如果有安装brew  可以直接快捷安装："></a>1.mac安装，如果有安装brew  可以直接快捷安装：</h3><pre><code>brew install redis
-</code></pre><h3 id="2-linux下载安装"><a href="#2-linux下载安装" class="headerlink" title="2.linux下载安装"></a>2.linux下载安装</h3><pre><code>wget http://download.redis.io/releases/redis-2.8.17.tar.gz
-tar xzf redis-2.8.17.tar.gz
-cd redis-2.8.17
-make
-</code></pre><h2 id="二、redis常用命令"><a href="#二、redis常用命令" class="headerlink" title="二、redis常用命令"></a>二、redis常用命令</h2><pre><code>redis-cli  // 进入命令行
-/usr/local/bin/redis-server /usr/local/etc/redis.conf // 启动  找到你的redis-server、redis-server路径
-quit   // 退出
-keys * // 查询所有的key
-set a 123  //创建字符串key（a）, value(123)  
-get a   // 查看字符串key为a的value
-del a  //删除字符串key为a的数据
-hmset key name &quot;a&quot; description &quot;123&quot; // hashmap的创建
-hgetall a  //hashmap通过key获取
-lpush a 123  // list创建
-lrange a 0 10  //list 获取
-sadd a 123  // 集合set创建
-smembers a  // 集合set 获取
-zadd a 123  // 有序集合set创建
-zrange a 1 10 smembers  // 集合set 获取
-</code></pre><p>注：初期使用的命令，后期遇到之后在进行添加</p>
-<h2 id="三、spring-boot集成redis"><a href="#三、spring-boot集成redis" class="headerlink" title="三、spring boot集成redis"></a>三、spring boot集成redis</h2><h3 id="1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）"><a href="#1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）" class="headerlink" title="1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:"></a>1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:</h3><pre><code>&lt;dependency&gt;
- &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
- &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre><h3 id="2-配置redis，在application-propertise-的文件里面添加如下："><a href="#2-配置redis，在application-propertise-的文件里面添加如下：" class="headerlink" title="2.配置redis，在application.propertise 的文件里面添加如下："></a>2.配置redis，在application.propertise 的文件里面添加如下：</h3><pre><code>spring.redis.database=0
-spring.redis.host=localhost    
-spring.redis.port=6379     // 端口号
-spring.redis.password=redispass  // 密码
-spring.redis.pool.max-active=8
-spring.redis.pool.max-wait=-1
-spring.redis.pool.max-idle=8
-spring.redis.pool.min-idle=0
-spring.redis.timeout=5000   // 链接超时时间，可以设置大一些
-</code></pre><h3 id="3-创建一个service接口（redisService）："><a href="#3-创建一个service接口（redisService）：" class="headerlink" title="3.创建一个service接口（redisService）："></a>3.创建一个service接口（redisService）：</h3><pre><code>@Service
-public class RedisService {
-@Autowired
-private StringRedisTemplate redisTemplate;
-/**
- * 一周有多少秒
- */
-private static final long WEEK_SECONDS = 7 * 24 * 60 * 60;
-/**
- * 将 key，value 存放到redis数据库中，默认设置过期时间为一周
- * @param key
- * @param value
- */
-public void set(String key, Object value) {
-    redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), WEEK_SECONDS, TimeUnit.SECONDS);
-}
+        <p>之前学习是简单工厂模式、工厂方法模式、抽象工厂模式，复习一下</p>
+<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><p>简单工厂模式大概就是创建一个简单工厂类，由工厂类实例化对象。由参数决定实例化那个类</p>
+<h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h2><p>创建一个抽象工厂类，里面包含一个抽象方法。由这个工厂去生产产品，具体的就是实现类实现工厂，并完成抽象方法的功能实现（如月饼抽象生产类，南方月饼类实现月饼抽象生产类，北方月饼实现月饼抽象生产类，等等）。调用不是由参数决定，是由创建者决定</p>
+<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p>创建抽象工厂类生产工厂，创建抽象产品类生产产品，并各自实现。形成产品族（一个大的家族）<br>对于之前的理解模糊可以看这个：<a href="https://www.zhihu.com/question/20367734" target="_blank" rel="noopener">https://www.zhihu.com/question/20367734</a></p>
+<h2 id="一、-对单例模式的理解"><a href="#一、-对单例模式的理解" class="headerlink" title="一、 对单例模式的理解"></a>一、 对单例模式的理解</h2><p>单例模式就像太阳一样，只有一个。在使用的时候，只能实例化一次。不能多次实例化。<br>二、代码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">// 单例模式  太阳（synchronized，重量级）</span><br><span class="line">public class sun &#123;</span><br><span class="line">	private static sun s = null;</span><br><span class="line">	</span><br><span class="line">	private sun() &#123;&#125;</span><br><span class="line">	// 单例模式  这种方式多线程时会出现混乱的情况，不建议使用</span><br><span class="line">	public static sun getSun() &#123;</span><br><span class="line">		if (s == null) &#123;</span><br><span class="line">			s = new sun();</span><br><span class="line">		&#125;</span><br><span class="line">		return s;</span><br><span class="line">	&#125;</span><br><span class="line">	// (同步方法)添加同步锁，在不考虑性能的时候可以使用该方法</span><br><span class="line">	public static synchronized sun getSunSyn() &#123;</span><br><span class="line">		if (s == null) &#123;</span><br><span class="line">			s = new sun();</span><br><span class="line">		&#125;</span><br><span class="line">		return s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 月亮（双重检查加锁）</span><br><span class="line">class moon &#123;</span><br><span class="line">	// volatile 当moon初始化为实例时，能保证多个线程正确的处理moon变量</span><br><span class="line">	private volatile static moon m;</span><br><span class="line">	</span><br><span class="line">	private moon() &#123;&#125;;</span><br><span class="line">	//  减少synchronized的使用</span><br><span class="line">	public static moon getMoon() &#123;</span><br><span class="line">		if (m == null) &#123;</span><br><span class="line">			synchronized (moon.class) &#123;</span><br><span class="line">				if (m == null) &#123;</span><br><span class="line">					m = new moon();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 地球（急切）</span><br><span class="line">class earth&#123;</span><br><span class="line">	// 在静态初始化器中创建单件，这段代码保证了线程安全</span><br><span class="line">	private static earth e = new earth();</span><br><span class="line">	</span><br><span class="line">	private earth()&#123;&#125;;</span><br><span class="line">	// 在jvm 加载这个类的时候创建此唯一的单例模式。</span><br><span class="line">	public static earth getEarth() &#123;</span><br><span class="line">		return e;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-112d7b6958cc8047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单例模式"></p>
+<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>oo设计原则</p>
+<blockquote>
+<p>封装变化</p>
+</blockquote>
+<blockquote>
+<p> 多用组合、少用继承</p>
+</blockquote>
+<blockquote>
+<p>针对接口编程、不针对实现编程</p>
+</blockquote>
+<blockquote>
+<p>为对象之间的松耦合设计而努力</p>
+</blockquote>
+<blockquote>
+<p>类应该对扩展开发、修改关闭</p>
+</blockquote>
+<blockquote>
+<p>依赖抽象、不要依赖具体类<br>单例模式定义：<br>确保一个类只有一个实例，并提供全局访问点</p>
+</blockquote>
+<p>github源码：<a href="https://github.com/gaoqisen/java-pattern" target="_blank" rel="noopener">https://github.com/gaoqisen/java-pattern</a> </p>
 
-/**
- * 将 key，value 存放到redis数据库中，设置过期时间单位是秒
- *
- * @param key
- * @param value
- * @param expireTime
- */
-public void set(String key, Object value, long expireTime) {
-    redisTemplate.opsForValue().set(key, JsonUtil.convertObj2String(value), expireTime, TimeUnit.SECONDS);
-}
-
-/**
- * 判断 key 是否在 redis 数据库中
- *
- * @param key
- * @return
- */
-public boolean exists(final String key) {
-    return redisTemplate.hasKey(key);
-}
-
-/**
- * 获取与 key 对应的对象
- * @param key
- * @param clazz 目标对象类型
- * @param &lt;T&gt;
- * @return
- */
-public &lt;T&gt; T get(String key, Class&lt;T&gt; clazz) {
-    String s = get(key);
-    if (s == null) {
-        return null;
-    }
-    return JsonUtil.convertString2Obj(s, clazz);
-}
-
-/**
- * 获取 key 对应的字符串
- * @param key
- * @return
- */
-public String get(String key) {
-    return redisTemplate.opsForValue().get(key);
-}
-
-/**
- * 删除 key 对应的 value
- * @param key
- */
-public void delete(String key) {
-    redisTemplate.delete(key);
-}
-}
-</code></pre><h3 id="4-在PifajiaOfficialApplicationTests里面进行测试"><a href="#4-在PifajiaOfficialApplicationTests里面进行测试" class="headerlink" title="4.在PifajiaOfficialApplicationTests里面进行测试"></a>4.在PifajiaOfficialApplicationTests里面进行测试</h3><pre><code>@Test
-public void redisService(){
-    String str = &quot;test&quot;;
-    String retStr = this.redisService.get(&quot;test&quot;);
-    if(retStr == null) {
-        this.redisService.set(&quot;test&quot;, str);
-        retStr = str;
-    }
-    System.out.println(&quot;:::&quot;+retStr);
-}
-</code></pre><h4 id="end"><a href="#end" class="headerlink" title="end"></a>end</h4>
       
     </div>
     
@@ -518,7 +432,7 @@ public void redisService(){
       
         <div class="post-tags">
           
-            <a href="/tags/redis/" rel="tag"># redis</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -531,14 +445,18 @@ public void redisService(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/201809018.html" rel="next" title="设计模式－命令模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－命令模式
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/用自定义注解进行切面，@Autowired装配的service一直报错空指针.html" rel="prev" title="用自定义注解进行切面，@Autowired装配的service一直报错空指针">
-                用自定义注解进行切面，@Autowired装配的service一直报错空指针 <i class="fa fa-chevron-right"></i>
+              <a href="/20180907.html" rel="prev" title="微信朋友圈python爬虫">
+                微信朋友圈python爬虫 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -709,7 +627,7 @@ public void redisService(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装redis"><span class="nav-number">1.</span> <span class="nav-text">一、安装redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-mac安装，如果有安装brew-可以直接快捷安装："><span class="nav-number">1.1.</span> <span class="nav-text">1.mac安装，如果有安装brew  可以直接快捷安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-linux下载安装"><span class="nav-number">1.2.</span> <span class="nav-text">2.linux下载安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、redis常用命令"><span class="nav-number">2.</span> <span class="nav-text">二、redis常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、spring-boot集成redis"><span class="nav-number">3.</span> <span class="nav-text">三、spring boot集成redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-项目基于spring-boot创建的，eclipse-集成spring-boot-后，可以选择redis，之后自动生成如下代码（pom-xml）"><span class="nav-number">3.1.</span> <span class="nav-text">1.项目基于spring boot创建的，eclipse 集成spring boot 后，可以选择redis，之后自动生成如下代码（pom.xml）:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置redis，在application-propertise-的文件里面添加如下："><span class="nav-number">3.2.</span> <span class="nav-text">2.配置redis，在application.propertise 的文件里面添加如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建一个service接口（redisService）："><span class="nav-number">3.3.</span> <span class="nav-text">3.创建一个service接口（redisService）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在PifajiaOfficialApplicationTests里面进行测试"><span class="nav-number">3.4.</span> <span class="nav-text">4.在PifajiaOfficialApplicationTests里面进行测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#end"><span class="nav-number">3.4.1.</span> <span class="nav-text">end</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单工厂模式"><span class="nav-number">1.</span> <span class="nav-text">简单工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂方法模式"><span class="nav-number">2.</span> <span class="nav-text">工厂方法模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象工厂模式"><span class="nav-number">3.</span> <span class="nav-text">抽象工厂模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-对单例模式的理解"><span class="nav-number">4.</span> <span class="nav-text">一、 对单例模式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">5.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">6.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
             
 
           </div>
@@ -877,9 +795,9 @@ public void redisService(){
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/java实现redis缓存功能.html';
-          this.page.identifier = 'java实现redis缓存功能.html';
-          this.page.title = 'java实现redis缓存功能';
+          this.page.url = 'https://gaoqisen.github.io/20180905.html';
+          this.page.identifier = '20180905.html';
+          this.page.title = '设计模式－单例模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
