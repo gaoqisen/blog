@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="之前学习的是策略模式，复习一下之前的策略模式 ###策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属">
+<meta name="description" content="之前学习的是策略模式，复习一下之前的策略模式 策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属性有相">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式－观察者模式">
 <meta property="og:url" content="https://gaoqisen.github.io/20180906.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="之前学习的是策略模式，复习一下之前的策略模式 ###策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属">
+<meta property="og:description" content="之前学习的是策略模式，复习一下之前的策略模式 策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属性有相">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-d7da88a3cf293893.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-0d648cd23685d4a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-04T16:14:38.000Z">
+<meta property="og:updated_time" content="2018-10-28T15:02:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式－观察者模式">
-<meta name="twitter:description" content="之前学习的是策略模式，复习一下之前的策略模式 ###策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属">
+<meta name="twitter:description" content="之前学习的是策略模式，复习一下之前的策略模式 策略模式一般在哪方面使用“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属性有相">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-d7da88a3cf293893.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -391,22 +391,21 @@
 
       
         <p>之前学习的是策略模式，复习一下之前的策略模式</p>
-<p>###策略模式一般在哪方面使用<br>“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。<br>就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略<br>程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属性有相同的地方。带式行为方法不同，为了以后添加类特别方便，就可以考虑使用策略模式。</p>
-<p>###使用策略模式有什么好处</p>
-<ul>
+<h3 id="策略模式一般在哪方面使用"><a href="#策略模式一般在哪方面使用" class="headerlink" title="策略模式一般在哪方面使用"></a>策略模式一般在哪方面使用</h3><p>“策略”百科中指[计策]。一般是指：1. 可以实现目标的方案集合；2. 根据形势发展而制定的行动方针和斗争方法；3. 有斗争艺术，能注意方式方法。<br>就是用不同的策略解决不同的问题。如出门的方式有自驾、火车、飞机等。选择不同的出行方式就是不同的策略<br>程序中就是对各个算法的封装。让客服端非常方便的可以调用。我理解为就是在一个类中属性有相同的地方。带式行为方法不同，为了以后添加类特别方便，就可以考虑使用策略模式。</p>
+<h3 id="使用策略模式有什么好处"><a href="#使用策略模式有什么好处" class="headerlink" title="使用策略模式有什么好处"></a>使用策略模式有什么好处</h3><ul>
 <li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li>
 <li>策略模式提供了管理相关的算法族的办法。</li>
 <li>策略模式提供了可以替换继承关系的办法。</li>
 <li>使用策略模式可以避免使用多重条件转移语句。</li>
 </ul>
-<p>##一、对观察者模式的理解：<br>  观察者模式可以理解为很多人去观察一个事物。我打个微信公众好的比喻，就像微信的公众号一样，可以经常给用户推送信息（一周可以给每个用户推送4篇文章）。用户可以取消关注，取消之后，公众号就无法给该用户发送消息了。当用户关注该公众号之后，就可以每月接收文章了。观察者模式可以很好的实现这种功能。话不多说，代码实现功能</p>
-<p>##二、代码实现<br>观察者模式在java中有两种实现，一种是自己实现，还有一种就是java自带的jdk中已经写好了的，我两种都实现</p>
+<h2 id="一、对观察者模式的理解："><a href="#一、对观察者模式的理解：" class="headerlink" title="一、对观察者模式的理解："></a>一、对观察者模式的理解：</h2><p>  观察者模式可以理解为很多人去观察一个事物。我打个微信公众好的比喻，就像微信的公众号一样，可以经常给用户推送信息（一周可以给每个用户推送4篇文章）。用户可以取消关注，取消之后，公众号就无法给该用户发送消息了。当用户关注该公众号之后，就可以每月接收文章了。观察者模式可以很好的实现这种功能。话不多说，代码实现功能</p>
+<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>观察者模式在java中有两种实现，一种是自己实现，还有一种就是java自带的jdk中已经写好了的，我两种都实现</p>
 <h4 id="1、自己用代码实现观察者模式"><a href="#1、自己用代码实现观察者模式" class="headerlink" title="1、自己用代码实现观察者模式"></a>1、自己用代码实现观察者模式</h4><p>创建公众号接口，用于其他公众号实现</p>
 <pre><code>public interface OfficialAccounts {
  public void follow(User user);   // 关注公众号
  public void unfollow(User user);    // 取消关注
  public void sendMessageAll();  // 给所有的用户发送消息
-}     
+}   
 </code></pre><p>创建一个新闻的公众号用于实现公众号接口，新增其它公众号，直接实现OfficialAccounts就好了</p>
 <pre><code>// 新闻公众号
 public class NewsOfficialAccounts implements OfficialAccounts{
@@ -496,7 +495,7 @@ public UserTom(OfficialAccounts os) {  // 构造器作为关注公众号用
 tom接收到了新闻消息2
 jason接收到了新闻消息2
 tom接收到了新闻消息3
-</code></pre><p>####2、用java jdk 自带的Observable、Observer实现<br>创建公众号</p>
+</code></pre><h4 id="2、用java-jdk-自带的Observable、Observer实现"><a href="#2、用java-jdk-自带的Observable、Observer实现" class="headerlink" title="2、用java jdk 自带的Observable、Observer实现"></a>2、用java jdk 自带的Observable、Observer实现</h4><p>创建公众号</p>
 <pre><code>public class BankOffcialAccounts extends Observable{ // 实现java自带的可观察者接口
   private String content;  // 接受的消息
  public BankOffcialAccounts(){};  // 构造器
@@ -605,8 +604,8 @@ jdk接收到了发送消息4
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20181012.html" rel="next" title="设计模式－策略模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－策略模式
+              <a href="/201809013.html" rel="next" title="记录一次数据库迁移的失败经历">
+                <i class="fa fa-chevron-left"></i> 记录一次数据库迁移的失败经历
               </a>
             
           </div>
@@ -787,7 +786,7 @@ jdk接收到了发送消息4
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、自己用代码实现观察者模式"><span class="nav-number">1.</span> <span class="nav-text">1、自己用代码实现观察者模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number"></span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number"></span> <span class="nav-text">四、笔记</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#策略模式一般在哪方面使用"><span class="nav-number">1.</span> <span class="nav-text">策略模式一般在哪方面使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用策略模式有什么好处"><span class="nav-number">2.</span> <span class="nav-text">使用策略模式有什么好处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对观察者模式的理解："><span class="nav-number"></span> <span class="nav-text">一、对观察者模式的理解：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number"></span> <span class="nav-text">二、代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、自己用代码实现观察者模式"><span class="nav-number">0.1.</span> <span class="nav-text">1、自己用代码实现观察者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、用java-jdk-自带的Observable、Observer实现"><span class="nav-number">0.2.</span> <span class="nav-text">2、用java jdk 自带的Observable、Observer实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number"></span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number"></span> <span class="nav-text">四、笔记</span></a></div>
             
 
           </div>

@@ -88,7 +88,7 @@
 <meta property="og:description" content="原型模式是简单容易使用的创建型模式，用复制这个原型对象的办法创建出更多同类型的对象。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181027132200.png">
-<meta property="og:updated_time" content="2018-10-28T12:28:07.000Z">
+<meta property="og:updated_time" content="2018-10-28T14:25:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式－原型模式">
 <meta name="twitter:description" content="原型模式是简单容易使用的创建型模式，用复制这个原型对象的办法创建出更多同类型的对象。">
@@ -393,7 +393,7 @@
       
 
       
-        <h2 id="一、对原型模式的理解"><a href="#一、对原型模式的理解" class="headerlink" title="一、对原型模式的理解"></a>一、对原型模式的理解</h2><p>运行模式是创建模式的一种，主要通过复制一个实例来创建一个实例，而不是通过新建一个实例。被复制的实例，我们称之为原型，这个原型是可定制的。</p>
+        <h2 id="一、对原型模式的理解"><a href="#一、对原型模式的理解" class="headerlink" title="一、对原型模式的理解"></a>一、对原型模式的理解</h2><p>原型模式是创建模式的一种，主要通过复制一个实例来创建一个实例，而不是通过新建一个实例。被复制的实例，我们称之为原型，这个原型是可定制的。</p>
 <h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建原型类，实现原型接口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 原型</span><br><span class="line">public abstract class Prototype implements Cloneable&#123;</span><br><span class="line">	public Object clone() throws CloneNotSupportedException&#123;</span><br><span class="line">		return super.clone();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class ConcretePrototype1 extends Prototype&#123;</span><br><span class="line">	public static int classFlay = 1;</span><br><span class="line">	// 克隆自身方法</span><br><span class="line">	public Object clone() throws CloneNotSupportedException&#123;</span><br><span class="line">		return (ConcretePrototype1)super.clone();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class ConcretePrototype2 extends Prototype&#123;</span><br><span class="line">	public static int classFlay = 2;</span><br><span class="line">	// 克隆自身方法</span><br><span class="line">	public Object clone() throws CloneNotSupportedException&#123;</span><br><span class="line">		return (ConcretePrototype2)super.clone();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>main方法实现 </p>
@@ -411,7 +411,7 @@
 </li>
 <li><p>提供然客户能够产生未知类型对象的选项</p>
 </li>
-<li><p>在有些时候，负责对象比创建对象更有效</p>
+<li><p>在有些时候，复制对象比创建对象更有效</p>
 </li>
 </ul>
 <p>原型的用途和缺点</p>
