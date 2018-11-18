@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-11T11:38:08.000Z">
+<meta property="og:updated_time" content="2018-11-18T12:57:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="看《码农翻身》的一些收获">
 <meta name="twitter:description" content="开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。">
@@ -391,8 +391,13 @@
       
 
       
-        <p>今天是双十一，哪里也没去，早晨10点多就出门了，在新华书店里面呆了一天，在书架中找到了这本书，很容易的就看了进去，这本书用故事的方式描述生涩的代码以及程序。前段时间看的head frist也是比较很容易理解的书籍，自己购买的java并发编程实战看了几页总是无法集中精力看下去，内容很充实，可能一直在家里躺在床上太安逸的看书，导致看着看着就放弃了，希望坚持下去。</p>
-<h2 id="一、到现在还记得的内容"><a href="#一、到现在还记得的内容" class="headerlink" title="一、到现在还记得的内容"></a>一、到现在还记得的内容</h2><p>书籍用第一人称描述计算机的各个组成如：内存、进程等，和日本的《工作细胞》动漫差不多。从底层描述描述进程、线程、cpu、内存、硬盘等。</p>
+        <blockquote>
+<p>今天是双十一，哪里也没去，早晨10点多就出门了，在新华书店里面呆了一天，在书架中找到了这本书，很容易的就看了进去，这本书用故事的方式描述生涩的代码以及程序。前段时间看的head frist也是比较很容易理解的书籍，自己购买的java并发编程实战看了几页总是无法集中精力看下去，内容很充实，可能一直在家里躺在床上太安逸的看书，导致看着看着就放弃了，希望坚持下去。</p>
+</blockquote>
+<blockquote>
+<p>这本书学会了一个很重要的做事方式&lt;凡事必先骑上虎背&gt;，在自己做一件事情犹豫不决的时候，想想这句话,在做事情的时候，需要先骑在老虎的背上。和明知山有虎，偏上虎山行差不多。在这种状态下，经常会出现骑虎难下的尴尬情况。只要不恐惧这种情况，那么在这种状态下学习就收获更多的东西。</p>
+</blockquote>
+<h2 id="一、大概的内容"><a href="#一、大概的内容" class="headerlink" title="一、大概的内容"></a>一、大概的内容</h2><p>书籍用第一人称描述计算机的各个组成如：内存、进程等，和日本的《工作细胞》动漫差不多。从底层描述描述进程、线程、cpu、内存、硬盘等。整本书籍阅读起来相当的有趣，看的时候完全当成一本小说在读，但是读到最后，确实学到很多知识，虽然很多东西都是之前学习过的，但是很多也是自己理解不够透彻的。还是推荐大家可以阅读以下，一方面可以巩固自己的知识，一方面也可以学习一些自己没接触过的东西。</p>
 <h4 id="计算机的世界"><a href="#计算机的世界" class="headerlink" title="计算机的世界"></a>计算机的世界</h4><ul>
 <li><p>进程：比如QQ运行，QQ音乐运行，微信运行，都需要一个进程去处理，一个计算机可以有多个进程。进程之间的切换实现了多个程序同时运行的效果。（理解不够透彻，需要完善）</p>
 </li>
@@ -422,7 +427,31 @@
 </li>
 <li><p>消息队列（JMS - java message service）：为了实现分布式项目的数据传递问题。如订单服务器给物流服务器发送订单，物流服务器出现问题，暂时无法接受订单。就可以由一个消息队列处理，有订单了，由订单服务器发送订单到消息队列排队，物流服务器可以随时接收订单，就是物流服务器有事情，也不会影响到订单服务器。</p>
 </li>
-<li><p>动态代理：下次继续</p>
+<li><p>动态代理：可以实现给一个类动态的添加新的行为。动态代理可以实现aop的切面功能。</p>
+</li>
+<li><p>java注解：注解相当于加强的注释。注解有元注解^(注解的注解)，通过注解可以减少xml文件的编写，只好的方式就是xml和注解配合一起使用。</p>
+</li>
+<li><p>泛形：泛形就是可以限制一组数据的数据类型。&lt;? extends Object&gt; 的意思就是可以传入继承了对象类的任意对象。</p>
+</li>
+<li><p>序列化：把java对象编程二进制字节流存储在硬盘上，当然还有一种办法就是把二进制字节流反序列化为java对象。</p>
+</li>
+<li><p>java程序的锁：在java中synchronized就是同步锁，每个线程需要访问锁里面的内容必须要拿到锁，没有拿到的就需要在线程池里面等待。这个是一个重量级的悲观锁（觉得线程随时都会更改数据）。另一种办法就是乐观锁（认为大部分情况多线程的情况都比较少），可以给数据添加一个版本号，每次更改数据后版本变化。在实现功能的时候，可以把数据获取出来更改之后，在修改的时候对比版本号是否一致，如果不一致则继续重新获取，直到版本号一致为止。这样就减少了同步锁导致的线程在线程里面等待所消耗的资源。</p>
+</li>
+<li><p>spring DI和IOC、AOP: 在一个大型的项目中日志、事务、登录等功能都会涉及到程序的各个层面，如果统一管理，就回出现大量冗余的代码，而去大量的代码会导致代码的臃肿。想这些经常会出现的代码，可以用模版方法和装饰者模式区封装常用的代码，但是这样很多类都需要实现接口。为了避免这种情况，于是出现了控制反转ioc，和依赖注入di（把类的依赖情况转交给spring容器）。aop利用的java动态代理实现的面向切面编程。</p>
+</li>
+</ul>
+<h4 id="web冲浪"><a href="#web冲浪" class="headerlink" title="web冲浪"></a>web冲浪</h4><ul>
+<li><p>hyperText Transfer Protocol (HTTP) : 超文本传输协议,这里的超文本就是HyperText Markup Language (HTML，一种文本的标记形语言)</p>
+</li>
+<li><p>HTTPS : 在使用HTTP在网上传输HTML的时候是使用的明文，如果中途被截取了，隐私就会被泄露。HTTPS解决了安全性问题，用对称数据加密和非对称数据加密结合解决了网络传输HTML的安全性问题。对称加密利用一个公匙和私匙，公匙加密（所有人都可以知道公私），私匙解密（对应的公私加密的文件只有对应的私匙解密）。解密的私匙是需要双方都持有的，因为双方都需要加密解密，所以在保证安全的情况下把私匙传给对方就需要非对称加密了。非对称加密需要第三方的证书＋签名，才可以完成（非对称加密还需要理解一下）。</p>
+</li>
+<li><p>SSO : 一个由很多子系统组合在一起的大型项目就需要实现在一个小的项目中登录之后，进入相关的项目就不用再次登录的单点功能。实现原理就是利用一个认证中心实现登录，用户首次登录时会获取到认证中心的一个token，浏览器上面存两个cookie，一个时认证中心的cookie一个是当前访问应用的cookie。用户访问另一个应用是，只需要将之前的cookie携带访问应用，应用验证cookie是否有效即可判断用户是否已经登录。</p>
+</li>
+<li><p>授权 ： 比如QQ、微信、微博第三方登录等，都是使用的授权登录方法。应用可以通过自己申请的第三方的appid和密匙，获取授权的code，授权code会有超时时间等，通过code就可以返回一个地方的登录页面，用户登录之后，就会重定向到回调接口，在回调接口里面我们实现登录逻辑后跳转到登录页面即可。</p>
+</li>
+<li><p>负载均衡 ： 多台服务器运行相同的应用，nginx在进行接口转发时均衡的转化，不出现有的服务器严重负载，有的服务器轻松自在。</p>
+</li>
+<li><p>高可用 ： 当服务器出现故障之后，有备用的服务器顶上去，不会出现无法访问的情况。</p>
 </li>
 </ul>
 
@@ -566,7 +595,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +606,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +617,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -637,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、到现在还记得的内容"><span class="nav-number">1.</span> <span class="nav-text">一、到现在还记得的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机的世界"><span class="nav-number">1.0.1.</span> <span class="nav-text">计算机的世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java帝国"><span class="nav-number">1.0.2.</span> <span class="nav-text">java帝国</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、大概的内容"><span class="nav-number">1.</span> <span class="nav-text">一、大概的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机的世界"><span class="nav-number">1.0.1.</span> <span class="nav-text">计算机的世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java帝国"><span class="nav-number">1.0.2.</span> <span class="nav-text">java帝国</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web冲浪"><span class="nav-number">1.0.3.</span> <span class="nav-text">web冲浪</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
