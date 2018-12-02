@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Gao Qisen" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="// JavaScript Document //functions var g_strCurTab = &quot;CURTABINRESULTPAGE&quot;; var g_strCurWebTranStatus = &quot;WT_1_STATUS&quot;;  var q_strWebTransFirstSubStatus = &quot;FIRSTSUBSTATUS&quot;; var q_strToggleStatus = &quot;TOGG">
+<meta name="keywords" content="GaoQisen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Record">
+<meta property="og:url" content="https://gaoqisen.github.io/media/网易有道词典.app/Contents/Resources/ui.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="// JavaScript Document //functions var g_strCurTab = &quot;CURTABINRESULTPAGE&quot;; var g_strCurWebTranStatus = &quot;WT_1_STATUS&quot;;  var q_strWebTransFirstSubStatus = &quot;FIRSTSUBSTATUS&quot;; var q_strToggleStatus = &quot;TOGG">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-27T03:30:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning Record">
+<meta name="twitter:description" content="// JavaScript Document //functions var g_strCurTab = &quot;CURTABINRESULTPAGE&quot;; var g_strCurWebTranStatus = &quot;WT_1_STATUS&quot;;  var q_strWebTransFirstSubStatus = &quot;FIRSTSUBSTATUS&quot;; var q_strToggleStatus = &quot;TOGG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/media/网易有道词典.app/Contents/Resources/ui.html"/>
+
+
+
+
+
+  <title> | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/media/网易有道词典.app/Contents/Resources/ui.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T11:30:33+08:00">
+                2017-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/media/网易有道词典.app/Contents/Resources/ui.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="media/网易有道词典.app/Contents/Resources/ui.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        // JavaScript Document
+//functions
+var g_strCurTab = "CURTABINRESULTPAGE";
+var g_strCurWebTranStatus = "WT_1_STATUS";
+
+var q_strWebTransFirstSubStatus = "FIRSTSUBSTATUS";
+var q_strToggleStatus = "TOGGLESTATUS";
+
+function showLoadMsg() {
+    $('#actionTips').fadeIn();
+}
+function hideLoadMsg() {
+    $('#actionTips').fadeOut();
+}
+function toggleFav(bl) {
+    var word = $('.add-fav').attr('ref');
+    bl ? $('.add-fav').addClass('add-faved').attr({href:'app:modword:' + word,title:'单词[' + word + ']已添加到单词本，点击修改'}) : $('.add-fav').removeClass('add-faved').attr({href:'app:addword:' + word,title:'添加到单词本'});
+}
+
+function changeWebTranFirstItemState(obj, id) {
+    if (id == 1) {
+        if (obj > -1)
+            window.external.saveString(g_strCurWebTranStatus, "1");
+        else
+            window.external.saveString(g_strCurWebTranStatus, "0");
+    }
+}
+var saveToggleStatus = function(el) {
+    var allToggle = $(".toggle");
+    var indexOfCurrentToggle = allToggle.index(el);
+    if (el.attr("class").indexOf("toggleOpen") < 0) {
+        window.external.saveString(q_strToggleStatus + el.attr("rel"), "close");
+    } else {
+        window.external.saveString(q_strToggleStatus + el.attr("rel"), "open");
+    }
+};
+
+$.fn.extend({
+    hasSubMenu:function(t, c) {
+        this.each(function() {
+            var $this = $(this);
+            var $title = $(this).find(t);
+            $title.css('cursor', 'pointer').click(function() {
+                if ($title.index($(this)) === 0) {
+                    $(this).addClass();
+                }
+                $this.toggleClass(c);
+                $title.blur();
+                return false;
+            });
+        });
+        return this;
+    }
+    ,hasTab:function(tab, content, cc, def) {
+        this.each(function() {
+            var self = this;
+            var $tab = $(this).find(tab);
+            var $toggle = $(this).find(".toggle");
+            // load the tab num saved last time
+            var openContent = function() {
+                $toggle.removeClass("toggleClose").addClass("toggleOpen");
+                $($toggle.attr("rel")).show();
+                saveToggleStatus($toggle);
+            };
+            var cur_tab = window.external.loadString(g_strCurTab + "_" + $(this).attr('id'));
+            var real_def = (($("a[rel='" + cur_tab + "']").length == 0 || cur_tab === "") ? $tab.eq(def).attr("rel") : cur_tab);
+            if (real_def === undefined) return;
+            var $tabCurrent = $("a[rel='" + real_def + "']").addClass(cc);
+            var $tabContent = $(this).find(content).hide();
+            $(real_def).show();
+            $tab.click(function() {
+                $tabCurrent.removeClass(cc);
+                $tabContent.hide();
+                var $t = $(this).addClass(cc);
+                $tabCurrent = $t;
+                $($t.attr('rel')).show();
+                $t.blur();
+                openContent();
+                // save current tab,if it has the class name "dontRemember", dont save
+                if ($(self).attr('class').indexOf("dontRemember") < 0)
+                    window.external.saveString(g_strCurTab + "_" + $(self).attr('id'), $t.attr('rel'));
+                return false;
+            });
+        });
+        return this;
+    }
+});
+
+
+function InitLj() {
+    if (document.getElementById('example_navigator')) {
+        document.getElementById('example_content').focus();
+
+        var drawer = new UI.Drawer("example_navigator");
+
+        var getType = function(el) {
+            var typeArr = ["ljblng", "ljblngcont_0", "ljblngcont_1", "ljblngcont_2", "ljblngcont_3",
+                "ljmdia", "ljmdia_0", "ljmdia_1", "ljmdia_2", "ljauth"];
+            var className = $(el).attr("class");
+            for (var i = 0; i < typeArr.length; i++) {
+                if (!(className.indexOf(typeArr[i] + " ") < 0)) {
+                    return typeArr[i];
+                }
+            }
+        };
+
+        drawer.init({
+            mainFn:function(el) {
+                OnClickLjTab(getType(el));
+            },
+            subFn:function(el) {
+                OnClickLjTab(getType(el));
+            }
+        });
+
+        var lj_tab_id = document.getElementById('param_ljtype').innerText;
+        if (lj_tab_id == 'mdia') { // 原声例句
+            drawer.setMainCatalogSelectedStatus(2);
+            var lj_mdia_tab_id = document.getElementById('param_ljmdia').innerText;
+            if (lj_mdia_tab_id != '0' && lj_mdia_tab_id != '1' && lj_mdia_tab_id != '2') {
+                lj_mdia_tab_id = '0';
+            }
+            drawer.setSubCatalogSelectedStatus("ljmdia_" + lj_mdia_tab_id);
+        }
+        else if (lj_tab_id == 'auth') { // 权威例句
+            drawer.setMainCatalogSelectedStatus(3);
+        }
+        else { // 双语例句
+            drawer.setMainCatalogSelectedStatus(1);
+            var lj_cont_tab_id = document.getElementById('param_ljblngcont').innerText;
+            if (lj_cont_tab_id != 0 && lj_cont_tab_id != 1 && lj_cont_tab_id != 2 && lj_cont_tab_id != 3) {
+                lj_cont_tab_id = 0;
+            }
+            drawer.setSubCatalogSelectedStatus("ljblngcont_" + lj_cont_tab_id);
+        }
+
+        $("#see_originalSound").click(function() {
+            $("#example_navigator .ljmdia").click();
+        });
+        $("#see_authority").click(function() {
+            $("#example_navigator .ljauth").click();
+        });
+        $("#see_bilingual").click(function() {
+            $("#example_navigator .ljblng").click();
+        });
+    }
+
+}
+
+function OnClickLjTab(tab_id) {
+    var query = document.getElementById('queryword').innerText;
+    query = encodeURI(query);
+    var query_tran = "";
+    var query_tran_tag = document.getElementById('querytran');
+    if (query_tran_tag) {
+        query_tran = '&ljtran=' + encodeURI(query_tran_tag.innerText);
+    }
+    if (tab_id == 'ljblng') {
+        window.location.href = "app:lj:" + query + "?ljtype=blng&ljblngcont=0" + query_tran;
+    }
+    else if (tab_id == 'ljblngcont_0' || tab_id == 'ljblngcont_1' || tab_id == 'ljblngcont_2' || tab_id == 'ljblngcont_3') {
+        window.location.href = "app:lj:" + query + "?ljtype=blng&ljblngcont=" + tab_id.substr(11) + query_tran;
+    }
+    else if (tab_id == 'ljmdia') {
+        window.location.href = "app:lj:" + query + "?ljtype=mdia&ljmdia=0";
+    }
+    else if (tab_id == 'ljmdia_0' || tab_id == 'ljmdia_1' || tab_id == 'ljmdia_2') {
+        window.location.href = "app:lj:" + query + "?ljtype=mdia&ljmdia=" + tab_id.substr(7);
+    }
+    else if (tab_id == 'ljauth') {
+        window.location.href = "app:lj:" + query + "?ljtype=auth";
+    }
+}
+
+function LjHighlightAlign(items_string) {
+    $(items_string).addClass("highLight");
+}
+
+function LjUnhighlightAlign(items_string) {
+    $(items_string).removeClass("highLight");
+}
+
+var UI = {};//命名空间
+(function($) {
+    UI.Drawer = function(id) {
+        this.id = id;
+    };
+    UI.Drawer.prototype = {
+        /**
+         * 取Jquery的方法名，只能是 show 或者 hide
+         * @param status
+         */
+        toggleCatalog:function(status) {
+            var self = this;
+            $("#" + self.id + " .main-catalog").each(function(i) {
+                if (status === "show" || status === "hide") {
+                    $("#" + self.id + " .group_" + (i + 1))[status]();
+                }
+            });
+        },
+        setMainCatalogSelectedStatus:function(catalog) {
+            this.toggleCatalog('hide');
+            if ($("#" + this.id + " .group_" + catalog).length > 0) {
+                $($("#" + this.id + " .main-catalog")[catalog - 1]).addClass("main-catalog-selected-has-sub");
+                $("#" + this.id + " .group_" + catalog).show();
+            } else {
+                $($("#" + this.id + " .main-catalog")[catalog - 1]).addClass("main-catalog-selected");
+            }
+        },
+        setSubCatalogSelectedStatus:function() {
+            $("#" + this.id + " .sub-catalog").each(function(i) {
+                $($(this).find("li")).removeClass("sub-catalog-selected");
+            });
+            for (var idx = 0; idx < arguments.length; idx++) {
+                $("#" + this.id + " ." + arguments[idx]).addClass("sub-catalog-selected");
+            }
+        },
+        /**
+         * 打开catalog 组
+         * @param catalog type
+         */
+        openMainCatalog:function(type) {
+            $("#" + this.id + " ." + type).click();
+        },
+        /**
+         * 打开子选项
+         * @param type
+         */
+        openSubCatalogs:function() {
+            for (var idx = 0; idx < arguments.length; idx++) {
+                $("#" + this.id + " ." + arguments[idx]).click();
+            }
+        },
+        /**
+         * 初始化主标题事件
+         * @param mainClickfn
+         * @param args
+         */
+        initMain:function(mainFn) {
+            var self = this;
+            var allMainCatalog = $("#" + self.id + " .main-catalog");
+            allMainCatalog.each(function(i) {
+                if ($("#" + self.id + " .group_" + (i + 1)).length > 0) {
+                    $(this).addClass("hasSub");
+                }
+                $(this).click(function() {
+                    allMainCatalog.removeClass("main-catalog-selected");
+                    allMainCatalog.removeClass("main-catalog-selected-has-sub");
+                    if ($("#" + self.id + " .group_" + (i + 1)).length > 0) {
+                        $(this).addClass("main-catalog-selected-has-sub");
+                    } else {
+                        $(this).addClass("main-catalog-selected");
+                    }
+                    self.setMainCatalogSelectedStatus(i + 1);
+                    mainFn(this);//传入当前点击的 element
+                });
+            });
+        },
+        /**
+         * 初始化
+         * @param subClickfn
+         */
+        initSubSelected:function(subFn) {
+            $("#" + this.id + " .sub-catalog").each(function(i) {
+                var self = this;
+                var liInThisSubCatalog = $(this).find("li");
+                //set selected status of sub catalog
+                liInThisSubCatalog.click(function() {
+                    liInThisSubCatalog.each(function() {
+                        $(this).removeClass("sub-catalog-selected");
+                    });
+                    $(this).addClass("sub-catalog-selected");
+                    subFn(this);//传入当前点击的 element
+                });
+            });
+        },
+        init:function(param) {
+            this.toggleCatalog('hide');
+            var mainFn = $.isFunction(param.mainFn) ? param.mainFn : function() {
+            };
+            var subFn = $.isFunction(param.subFn) ? param.subFn : function() {
+            };
+            this.initMain(mainFn);
+            this.initSubSelected(subFn);
+            if (!!param.main && !!param.main > 0) {
+                this.setMainCatalogSelectedStatus(param.main);
+            }
+            if (!!param.sub) {
+                this.setSubCatalogSelectedStatus(param.sub);
+            }
+            if ($(".dont_show_nav").length == 0) $("#" + this.id).show();
+        }
+    };
+    UI.toggle = function() {
+        $(".toggle").click(function() {
+            if ($(this).attr("class").indexOf("toggleOpen") < 0) {
+                $(this).removeClass("toggleClose");
+                $(this).addClass("toggleOpen");
+                $($(this).attr("rel")).show();
+            } else {
+                $(this).removeClass("toggleOpen");
+                $(this).addClass("toggleClose");
+                $($(this).attr("rel")).hide();
+            }
+                           alert("toggle!");
+            return false;
+        });
+    };
+})(jQuery);
+
+var timeFoo = {};
+$.fn.extend({
+    isVideo:function() {//播放器路径，自动播放
+        var swfStr = function(path) {
+            var swf = '<div style="width:320px;height:240px;" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" type="application/x-shockwave-flash" id="simplayer" name="simplayer" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">'
+                    + '<param name="movie" value="' + path + '">'
+                    + '<param name="menu" value="false">'
+                    + '<param name="scale" value="noScale">'
+                    + '<param name="allowFullscreen" value="true">'
+                    + '<param name="allowScriptAccess" value="always">'
+                    + '<param name="bgcolor" value="#FFFFFF">'
+                    + '<embed src="' + path + '" quality="high" bgcolor="#ffffff" width="320" height="240" name="simplayer" align="middle" play="true" loop="false" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">'
+                    + '</div>';
+            return $(swf);
+        };
+        var $play = $(this).find('.play');
+        var $close = $(this).find('.close').hide();
+
+        $play.click(function() {
+            stopVoice();
+            $('#simplayer').siblings('.close').click();
+            $(this).hide();
+            $(this).parent().append(swfStr($(this).attr('href')));
+            $(this).siblings('.close').show();
+            return false;
+        });
+        $close.click(function() {
+            $('#simplayer').remove();
+            $(this).siblings('.play').show();
+            $(this).hide();
+            return false;
+        });
+    }
+});
+$.extend({
+    stopVideo:function() {
+        $('#simplayer').siblings('.close').click();
+    }
+});
+function playVoice(path) {
+    $.stopVideo();
+    window.external.playSound(path);
+}
+function stopVoice() {
+    window.external.stopSound();
+}
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/media/网易有道词典.app/Contents/Resources/dict4-mac.html" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/media/网易有道词典.app/Contents/Resources/result.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/media/网易有道词典.app/Contents/Resources/ui.html';
+          this.page.identifier = 'media/网易有道词典.app/Contents/Resources/ui.html';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
