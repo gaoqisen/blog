@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="interpreter" />
+  <meta name="keywords" content="english" />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="如果一种特定类型的问题发生的频率足够高，那就可以将该实例表述为一个简单的语言句子。这样就可以构建一个解释器。解释器就是解释句子来解决问题的。">
-<meta name="keywords" content="interpreter">
+<meta name="description" content="开始学习英语的第三周，时间过得好快，第三周了。">
+<meta name="keywords" content="english">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式－解释器模式">
-<meta property="og:url" content="https://gaoqisen.github.io/201810231.html">
+<meta property="og:title" content="Thirdly week of English learning">
+<meta property="og:url" content="https://gaoqisen.github.io/2018-1203.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="如果一种特定类型的问题发生的频率足够高，那就可以将该实例表述为一个简单的语言句子。这样就可以构建一个解释器。解释器就是解释句子来解决问题的。">
+<meta property="og:description" content="开始学习英语的第三周，时间过得好快，第三周了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201810/20181023231153.png">
-<meta property="og:updated_time" content="2018-10-23T15:20:11.000Z">
+<meta property="og:updated_time" content="2018-12-03T14:03:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式－解释器模式">
-<meta name="twitter:description" content="如果一种特定类型的问题发生的频率足够高，那就可以将该实例表述为一个简单的语言句子。这样就可以构建一个解释器。解释器就是解释句子来解决问题的。">
-<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201810/20181023231153.png">
+<meta name="twitter:title" content="Thirdly week of English learning">
+<meta name="twitter:description" content="开始学习英语的第三周，时间过得好快，第三周了。">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/201810231.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/2018-1203.html"/>
 
 
 
 
 
-  <title>设计模式－解释器模式 | Learning Record</title>
+  <title>Thirdly week of English learning | Learning Record</title>
   
 
 
@@ -289,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/201810231.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/2018-1203.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -306,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式－解释器模式</h1>
+          <h1 class="post-title" itemprop="name headline">Thirdly week of English learning</h1>
         
 
         <div class="post-meta">
@@ -318,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T21:50:11+08:00">
-                2018-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T20:10:11+08:00">
+                2018-11-26
               </time>
             
 
@@ -341,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/patterm/" itemprop="url" rel="index">
-                    <span itemprop="name">patterm</span>
+                  <a href="/categories/english/" itemprop="url" rel="index">
+                    <span itemprop="name">english</span>
                   </a>
                 </span>
 
@@ -359,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/201810231.html#comments" itemprop="discussionUrl">
+                <a href="/2018-1203.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="201810231.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018-1203.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,7 +374,7 @@
 
           
               <div class="post-description">
-                  如果一种特定类型的问题发生的频率足够高，那就可以将该实例表述为一个简单的语言句子。这样就可以构建一个解释器。解释器就是解释句子来解决问题的。
+                  开始学习英语的第三周，时间过得好快，第三周了。
               </div>
           
 
@@ -393,42 +391,42 @@
       
 
       
-        <h2 id="一、对解释器的理解"><a href="#一、对解释器的理解" class="headerlink" title="一、对解释器的理解"></a>一、对解释器的理解</h2><p>解释器就像翻译一样，将我们不认识的语言（简化的语言如o2o）翻译为我们认识的普通的语言。如果事物频繁的出现，但是比较复杂，不容易看懂。我们就可以把它表述为一个简单的事物，最用用一个解释器去解释简单的事物就可以了。</p>
-<h2 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h2><p>创建表达式接口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个表达式接口</span><br><span class="line">public interface Expression &#123;</span><br><span class="line">	public boolean interpret(String content);  // 解释</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>终端表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 终端表达式</span><br><span class="line">public class TerminalExpression implements Expression&#123;</span><br><span class="line">	private String data;</span><br><span class="line">	public TerminalExpression(String data)&#123;</span><br><span class="line">		this.data = data;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean interpret(String content) &#123;</span><br><span class="line">		if (content.contains(data)) &#123;  // 包含</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>与表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 与表达式</span><br><span class="line">public class OrExpression implements Expression&#123;</span><br><span class="line">	private Expression ex1;</span><br><span class="line">	private Expression ex2;</span><br><span class="line">	public OrExpression (Expression ex1, Expression ex2) &#123;</span><br><span class="line">		this.ex1 = ex1;</span><br><span class="line">		this.ex2 = ex2;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean interpret(String content) &#123;</span><br><span class="line">		return this.ex1.interpret(content) || this.ex2.interpret(content);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>和表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 和表达式</span><br><span class="line">public class AndExpression implements Expression&#123;</span><br><span class="line">	private Expression ex1;</span><br><span class="line">	private Expression ex2;</span><br><span class="line">	public AndExpression(Expression ex1, Expression ex2) &#123;</span><br><span class="line">		this.ex1 = ex1;</span><br><span class="line">		this.ex2 = ex2;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean interpret(String content) &#123;</span><br><span class="line">		return ex1.interpret(content) &amp;&amp; ex2.interpret(content);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>解析器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 解析器</span><br><span class="line">public class Interpreter &#123;</span><br><span class="line">	// 获取男性表达式</span><br><span class="line">	public static Expression getMaleExpression()&#123;</span><br><span class="line">		Expression wang = new TerminalExpression(&quot;小王&quot;);</span><br><span class="line">		Expression zhang = new TerminalExpression(&quot;小张&quot;);</span><br><span class="line">		return new OrExpression(wang,zhang);</span><br><span class="line">	&#125;</span><br><span class="line">	// 获取女性表达式</span><br><span class="line">	public static Expression getWomanExpression() &#123;</span><br><span class="line">		Expression wu = new TerminalExpression(&quot;小吴&quot;);</span><br><span class="line">		Expression li = new TerminalExpression(&quot;小李&quot;);</span><br><span class="line">		return new OrExpression(wu,li);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>main方法实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		Expression isMale = Interpreter.getMaleExpression();</span><br><span class="line">		Expression isWoman = Interpreter.getWomanExpression();</span><br><span class="line">		System.out.println(&quot;小李是女的&quot;+ isWoman.interpret(&quot;小李&quot;));</span><br><span class="line">		System.out.println(&quot;小王是男的&quot;+ isMale.interpret(&quot;小王&quot;));</span><br><span class="line">		System.out.println(&quot;小王是男的&quot;+ isMale.interpret(&quot;小李&quot;));</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">小李是女的true</span><br><span class="line">小王是男的true</span><br><span class="line">小王是男的false</span><br></pre></td></tr></table></figure>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://gaoqisen.github.io/GraphBed/201810/20181023231153.png" alt="interpreter"></p>
-<h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>解释器模式的优点: </p>
-<ul>
-<li><p>将每一个语法规则表示成一个类，方便与实现语言.</p>
-</li>
-<li><p>因为语法由多个类组成，因此你可以轻易的扩张语言.</p>
-</li>
-<li><p>可以在新的类中增加新的方法，可以在解释的同时增加新的行为。</p>
-</li>
+        <h2 id="星期一"><a href="#星期一" class="headerlink" title="星期一"></a>星期一</h2><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ul>
+<li>看</li>
 </ul>
-<p>解释器的用途和缺点:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">look // 不看内容， look at（小心）／ look out （小心）／ look after（照顾）， 不看内容</span><br><span class="line"></span><br><span class="line">whatch // 有思想的看，watch＋内容（watch TV）,有动作的。</span><br><span class="line"></span><br><span class="line">read // read book(看书)／ newspaper／mind **mind reader**</span><br><span class="line"></span><br><span class="line">see // 看到实质，会面。见到一个朋友。看到一只狗。see sb doing。see tv（想看电视）</span><br><span class="line"></span><br><span class="line">meet // 接近see   meet-see-visit(参观)。 visit＋place</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>当需要实现一个简单的语言的时候，可以使用解释器。</p>
-</li>
-<li><p>当有一个简单的语法，简单比效率更重要是，使用解释器。</p>
-</li>
-<li><p>可以处理脚本语言和编程语言</p>
-</li>
-<li><p>如果语法规则数量太多，使用解释器模式可能会很复杂。这个时候可以使用解析器／编译器的产生器更合适。</p>
-</li>
+<li>听</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">listen  //不听内容。listen-look</span><br><span class="line"></span><br><span class="line">hear //听见有实质的内容。 hear-watch/read。hear from sb/n-</span><br><span class="line">receive    // 收到来信，收取</span><br><span class="line"></span><br><span class="line">sound // 声音  sounds good(听起来很棒)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>拿</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">take // take up (占据)，take away(带走), take off(脱掉，起飞),拿起来</span><br><span class="line"></span><br><span class="line">pick // pick up(接送某人)，pick out(挑出来)</span><br><span class="line"></span><br><span class="line">get  // get up （起床）， get out(滚)，get on ， get down，get away from(离某人或某物远) ，get in</span><br><span class="line"></span><br><span class="line">grab   // grab sth（抢夺）／sb</span><br><span class="line"></span><br><span class="line">carry   //挑、抗。carry on （坚持前行），carry out(执行)</span><br><span class="line"></span><br><span class="line">hold  // hold a meeting(举办)， be held in（在哪里举办什么内容）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>被动语态 Be held in</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Be + Ved2 </span><br><span class="line"></span><br><span class="line">The woman killed a dog last night.</span><br><span class="line">The dog is killed by the woman last night.</span><br><span class="line">The school published some English books last summer.</span><br><span class="line">Some English books were published by the school.</span><br><span class="line"></span><br><span class="line">Be - ving</span><br><span class="line"></span><br><span class="line">she is reading a book.</span><br><span class="line"></span><br><span class="line">Be - ved</span><br><span class="line"></span><br><span class="line">The book is read by her.</span><br></pre></td></tr></table></figure>
+<h3 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">four 四</th>
+<th style="text-align:left">three 三</th>
+<th style="text-align:left">two 二</th>
+<th style="text-align:left">one 一</th>
+<th style="text-align:left">box 盒子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">house 房子</td>
+<td style="text-align:left">monster 怪物</td>
+<td style="text-align:left">monkey 猴子</td>
+<td style="text-align:left">kite 风筝</td>
+<td style="text-align:left">crayon 蜡笔</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -446,7 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java-interpreter/" rel="tag"># java interpreter</a>
+            <a href="/tags/englishLearning/" rel="tag"># englishLearning</a>
           
         </div>
       
@@ -459,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20181023.html" rel="next" title="translation spring">
-                <i class="fa fa-chevron-left"></i> translation spring
+              <a href="/20181128.html" rel="next" title="Second week of English learning">
+                <i class="fa fa-chevron-left"></i> Second week of English learning
               </a>
             
           </div>
@@ -468,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20181024.html" rel="prev" title="设计模式－中介者模式">
-                设计模式－中介者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对解释器的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对解释器的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码实现"><span class="nav-number">2.</span> <span class="nav-text">二、代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、UML类图"><span class="nav-number">3.</span> <span class="nav-text">三、UML类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、笔记"><span class="nav-number">4.</span> <span class="nav-text">四、笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#星期一"><span class="nav-number">1.</span> <span class="nav-text">星期一</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记"><span class="nav-number">1.1.</span> <span class="nav-text">笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单词"><span class="nav-number">1.2.</span> <span class="nav-text">单词</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -809,9 +803,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/201810231.html';
-          this.page.identifier = '201810231.html';
-          this.page.title = '设计模式－解释器模式';
+          this.page.url = 'https://gaoqisen.github.io/2018-1203.html';
+          this.page.identifier = '2018-1203.html';
+          this.page.title = 'Thirdly week of English learning';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
