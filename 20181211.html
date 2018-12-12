@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="实现一个代码同步，并自动化部署的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T15:39:53.000Z">
+<meta property="og:updated_time" content="2018-12-12T01:18:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目集群，实现单个服务器操作其余服务器自动同步。">
 <meta name="twitter:description" content="实现一个代码同步，并自动化部署的功能。">
@@ -391,14 +391,14 @@
       
 
       
-        <h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>项目是一个分布式集群的项目，一个项目运行在多个tomcat服务器上面。由于功能需要改动，如果手动管理代码，是一件很容易出现操作失误导致项目代码同步不一致的情况。</p>
-<h2 id="实现目标："><a href="#实现目标：" class="headerlink" title="实现目标："></a>实现目标：</h2><ol>
+        <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>项目是一个分布式集群的项目，一个项目运行在多个tomcat服务器上面。由于功能需要改动，如果手动管理代码，是一件很容易出现操作失误导致项目代码同步不一致的情况。</p>
+<h2 id="实现目标"><a href="#实现目标" class="headerlink" title="实现目标"></a>实现目标</h2><ol>
 <li><p>在一个地方操作，其余服务器中的代码自动同步。</p>
 </li>
 <li><p>支持回滚操作，如果同步之后的代码有问题，立马回滚到之前的版本（不影响线上操作）。</p>
 </li>
 </ol>
-<h2 id="实现思路："><a href="#实现思路：" class="headerlink" title="实现思路："></a>实现思路：</h2><h3 id="方式一：同步工具"><a href="#方式一：同步工具" class="headerlink" title="方式一：同步工具"></a>方式一：同步工具</h3><ul>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><h3 id="方式一：同步工具"><a href="#方式一：同步工具" class="headerlink" title="方式一：同步工具"></a>方式一：同步工具</h3><ul>
 <li>用代码同步工具<a href="http://www.cnblogs.com/itech/archive/2009/08/10/1542945.html" target="_blank" rel="noopener">rsync</a>, 或者remote synchronize等同步工具进行同步。这种方式也是在网上看到的同步方式，我也没有测试过。</li>
 </ul>
 <blockquote>
@@ -431,7 +431,7 @@
 <li><p>用工具远程执行脚本。如果配置了ssh免密码登陆，可以用：ssh user@remoteNode “sh /home/sync.sh” 来执行远程脚本。也可以在服务器A上面写一个执行多个服务器远程命令的命令脚本。</p>
 </li>
 </ul>
-<h3 id="方式三-jenkins"><a href="#方式三-jenkins" class="headerlink" title="方式三: jenkins"></a>方式三: jenkins</h3><ul>
+<h3 id="方式三-jenkins-rsync-git-svn"><a href="#方式三-jenkins-rsync-git-svn" class="headerlink" title="方式三: jenkins + rsync + git/svn"></a>方式三: jenkins + rsync + git/svn</h3><ul>
 <li><a href="https://blog.csdn.net/mlx212/article/details/80918843" target="_blank" rel="noopener">jenkins+svn+rsync+php_一键自动化部署可持续化集成服务器集群项目_支持回滚</a>  这个写的比较详细，只是语言是php的，换成java的语言应该影响不大。</li>
 </ul>
 
@@ -642,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因："><span class="nav-number">1.</span> <span class="nav-text">原因：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现目标："><span class="nav-number">2.</span> <span class="nav-text">实现目标：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路："><span class="nav-number">3.</span> <span class="nav-text">实现思路：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：同步工具"><span class="nav-number">3.1.</span> <span class="nav-text">方式一：同步工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：git-＋-shell（svn和git的部署方式思路一致）"><span class="nav-number">3.2.</span> <span class="nav-text">方式二：git ＋ shell（svn和git的部署方式思路一致）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式三-jenkins"><span class="nav-number">3.3.</span> <span class="nav-text">方式三: jenkins</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现目标"><span class="nav-number">2.</span> <span class="nav-text">实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：同步工具"><span class="nav-number">3.1.</span> <span class="nav-text">方式一：同步工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：git-＋-shell（svn和git的部署方式思路一致）"><span class="nav-number">3.2.</span> <span class="nav-text">方式二：git ＋ shell（svn和git的部署方式思路一致）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式三-jenkins-rsync-git-svn"><span class="nav-number">3.3.</span> <span class="nav-text">方式三: jenkins + rsync + git/svn</span></a></li></ol></li></ol></div>
             
 
           </div>
