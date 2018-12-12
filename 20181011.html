@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="之前项目如果需要发布出现，就需要将jar获取war通过scp传到服务器，之后就移动到指定的目录，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：1、本地将项目打包为war或者jar包2、将打包后的文件传到服务器3、将之前项目kill掉4、将新项目移动到指定位置启动但是有了jenkins我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要">
+<meta name="description" content="要将项目发布到通过外网访问，就需要将jar或者war通过scp传到服务器，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：  本地将项目打包为war或者jar包 将打包后的文件传到服务器 将之前项目kill掉 将新项目移动到指定位置启动  但有了jenkins后我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要实现这个功能大概的思路如">
 <meta name="keywords" content="linux jenkins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 使用jenkins+maven+git实现自动化部署java项目">
 <meta property="og:url" content="https://gaoqisen.github.io/20181011.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="之前项目如果需要发布出现，就需要将jar获取war通过scp传到服务器，之后就移动到指定的目录，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：1、本地将项目打包为war或者jar包2、将打包后的文件传到服务器3、将之前项目kill掉4、将新项目移动到指定位置启动但是有了jenkins我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要">
+<meta property="og:description" content="要将项目发布到通过外网访问，就需要将jar或者war通过scp传到服务器，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：  本地将项目打包为war或者jar包 将打包后的文件传到服务器 将之前项目kill掉 将新项目移动到指定位置启动  但有了jenkins后我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要实现这个功能大概的思路如">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-94f52d212942da67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-56400f88e17f8e14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -98,10 +98,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-c7b08050fdf477a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-5ed23615d1c30b3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-4f7fb05ab2b74afc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-11T14:10:45.000Z">
+<meta property="og:updated_time" content="2018-12-11T14:43:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 使用jenkins+maven+git实现自动化部署java项目">
-<meta name="twitter:description" content="之前项目如果需要发布出现，就需要将jar获取war通过scp传到服务器，之后就移动到指定的目录，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：1、本地将项目打包为war或者jar包2、将打包后的文件传到服务器3、将之前项目kill掉4、将新项目移动到指定位置启动但是有了jenkins我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要">
+<meta name="twitter:description" content="要将项目发布到通过外网访问，就需要将jar或者war通过scp传到服务器，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：  本地将项目打包为war或者jar包 将打包后的文件传到服务器 将之前项目kill掉 将新项目移动到指定位置启动  但有了jenkins后我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。要实现这个功能大概的思路如">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-94f52d212942da67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -399,7 +399,14 @@
       
 
       
-        <p>之前项目如果需要发布出现，就需要将jar获取war通过scp传到服务器，之后就移动到指定的目录，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：<br>1、本地将项目打包为war或者jar包<br>2、将打包后的文件传到服务器<br>3、将之前项目kill掉<br>4、将新项目移动到指定位置启动<br>但是有了jenkins我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。<br>要实现这个功能大概的思路如下：</p>
+        <p>要将项目发布到通过外网访问，就需要将jar或者war通过scp传到服务器，在启动项目。如果项目中更改了一行代码，那么就需要进行一下步骤：</p>
+<ol>
+<li>本地将项目打包为war或者jar包</li>
+<li>将打包后的文件传到服务器</li>
+<li>将之前项目kill掉</li>
+<li>将新项目移动到指定位置启动</li>
+</ol>
+<p>但有了jenkins后我们就可以只需要将代码提交到git或者svn上面就可以了，其它的事情全部交给jenkins去完成。<br>要实现这个功能大概的思路如下：</p>
 <h3 id="1、安装jenkins（自动化配置）"><a href="#1、安装jenkins（自动化配置）" class="headerlink" title="1、安装jenkins（自动化配置）"></a>1、安装jenkins（自动化配置）</h3><h3 id="2、安装git（管理项目）"><a href="#2、安装git（管理项目）" class="headerlink" title="2、安装git（管理项目）"></a>2、安装git（管理项目）</h3><h3 id="3、安装maven-编译项目"><a href="#3、安装maven-编译项目" class="headerlink" title="3、安装maven(编译项目)"></a>3、安装maven(编译项目)</h3><h3 id="4、配置jenkins如下"><a href="#4、配置jenkins如下" class="headerlink" title="4、配置jenkins如下"></a>4、配置jenkins如下</h3><ul>
 <li>安装插件 （jenkins集成tomcat、svn、git等的插件）</li>
 <li>全局工具配置（让jenkins找到jdk,maven,git的环境变量等）</li>
@@ -569,7 +576,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +598,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
