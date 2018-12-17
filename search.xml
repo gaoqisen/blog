@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[The fifth week of English learning]]></title>
+    <url>%2F20181217.html</url>
+    <content type="text"><![CDATA[星期一 together 一起 play 玩 lion 狮子 like 喜欢 ping-pong 兵乓 football 足球 clothes 衣服 put on 穿上 sock 袜子 swim 游泳]]></content>
+      <categories>
+        <category>english</category>
+      </categories>
+      <tags>
+        <tag>englishLearning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[项目集群，实现单个服务器操作其余服务器自动同步。]]></title>
     <url>%2F20181211.html</url>
     <content type="text"><![CDATA[原因项目是一个分布式集群的项目，一个项目运行在多个tomcat服务器上面。由于功能需要改动，如果手动管理代码，是一件很容易出现操作失误导致项目代码同步不一致的情况。 实现目标 在一个地方操作，其余服务器中的代码自动同步。 支持回滚操作，如果同步之后的代码有问题，立马回滚到之前的版本（不影响线上操作）。 实现思路方式一：同步工具 用代码同步工具rsync, 或者remote synchronize等同步工具进行同步。这种方式也是在网上看到的同步方式，我也没有测试过。 后面的方式是用代码持续集成的思路实现的。之前有单独的用过git或svn的钩子方式实现过持续集成，后面看到jenkins很不错，也就用了jenkins实现一次。最终的效果都是代码的自动化部署。 方式二：git ＋ shell（svn和git的部署方式思路一致） git是程序员常用的代码版本控制工具，比较重要的功能就是分支和版本，回退到之前的版本是一件很很容易的事情。第一种方式可以利用git的版本机制。 用一台服务器A专门管理代码，并创建git仓库。 在这台服务器A上面用maven进行代码编译生成.class文件。（非maven管理的项目，可以在本地编译成功后上传到git仓库） 在其他需要同步的服务器上面clone服务器A上面的代码。 在其他服务器上面创建同步脚本和回退脚本。 同步脚本： 拉取最新代码 关闭tomcat服务器 启动tomcat服务器 如果代码出现问题的回退脚本: 关闭tomcat服务器 代码回退 启动tomcat 用工具远程执行脚本。如果配置了ssh免密码登陆，可以用：ssh user@remoteNode “sh /home/sync.sh” 来执行远程脚本。也可以在服务器A上面写一个执行多个服务器远程命令的命令脚本。 方式三: jenkins + rsync + git/svn jenkins+svn+rsync+php_一键自动化部署可持续化集成服务器集群项目_支持回滚 这个写的比较详细，只是语言是php的，换成java的语言应该影响不大。]]></content>
@@ -14,7 +25,7 @@
   <entry>
     <title><![CDATA[Fourthly week of English learning]]></title>
     <url>%2F20181210.html</url>
-    <content type="text"><![CDATA[第四周星期一单词 toy 玩具 n under 在…之下 prep in 在…里 prep on 在…上 prep nurse 护士 n hat 帽子 n pupil 护士 n policeman 警察 n doctor 医生 n driver 医生 n 星期二单词 nose 鼻子 touch 触摸 head 头 tree 树 fish 鱼 know 知道 bear 熊 at 在 look 看 bed 床]]></content>
+    <content type="text"><![CDATA[第四周星期一单词 toy 玩具 n under 在…之下 prep in 在…里 prep on 在…上 prep nurse 护士 n hat 帽子 n pupil 护士 n policeman 警察 n doctor 医生 n driver 医生 n 星期二单词 nose 鼻子 touch 触摸 head 头 tree 树 fish 鱼 know 知道 bear 熊 at 在 look 看 bed 床 星期三单词 cow 奶牛 baby 宝贝 feet 脚 hand 手 leg 腿 body 身体 eye 眼睛 mouth 嘴巴 ear 耳朵 face 脸 星期四 snake 蛇 little 少的 big 大的 fat 肥胖的 thin 瘦的 egg 蛋 chicken 鸡肉 duck 鸭 farm 农场 pig 猪 星期五 cute 宝贝 tiger 老虎 tall 高大的 giraffe 长颈鹿 long 长的 zoo 动物园 go 走 elephant 大象 small 小的 short 短的 星期天主语 位置：句子开头 充当者：名词、代词、数词、短语。 描述：需要描述的事物或者对象。 例子：I^主语 will drink water. // 我要喝水的“我”就是主语 谓语 位置：主语之后 描述：描述表示主语的动作或状态。 充当者：be动词（am,is,are）、行为动词（跑、动等实际动作意义的词） 例子：I will^谓语 drink water. // 我要喝水的“要”就是谓语 表语 位置：放在be动词（与感觉有关的东西。look、smell等）和系动词（包括be动词，表示状态变化的动词）的后面。 描述：表明主语的身份或者特征。 充当者：名词、代词、数词、介词短语、副词 例子： 宾语 位置：动词后面、谓语后面。 描述：动作承受的对象就是宾语 充当者：名词、代词、数词构成。 例子：我敲打了电视。“电视”就是宾语。 宾语补足语（宾补） 位置：宾语的后面。 描述：就是对宾语的描述（有时如果没有宾语补足语，句子就不完整）。 充当者： 例子： 定语 位置：名词前。 描述：修饰名词或代词（即在汉语里的……的），一般起描述作用。 例子：优秀的人。“优秀的”就是定语 状语 位置：不定（开头，中间，末尾都可以） 描述：修饰动词，形容词或副词，有的修饰全句，用于说明地点，时间，方式，程度，原因，目的，结果，条件，让步等。 例子：]]></content>
       <categories>
         <category>english</category>
       </categories>
@@ -25,7 +36,7 @@
   <entry>
     <title><![CDATA[Thirdly week of English learning]]></title>
     <url>%2F20181203.html</url>
-    <content type="text"><![CDATA[第三周星期一笔记 看 123456789look // 不看内容， look at（小心）／ look out （小心）／ look after（照顾）， 不看内容whatch // 有思想的看，watch＋内容（watch TV）,有动作的。read // read book(看书)／ newspaper／mind **mind reader**see // 看到实质，会面。见到一个朋友。看到一只狗。see sb doing。see tv（想看电视）meet // 接近see meet-see-visit(参观)。 visit＋place 听 123456listen //不听内容。listen-lookhear //听见有实质的内容。 hear-watch/read。hear from sb/n-receive // 收到来信，收取sound // 声音 sounds good(听起来很棒) 拿 123456789101112take // take up (占据)，take away(带走), take off(脱掉，起飞),拿起来pick // pick up(接送某人)，pick out(挑出来)get // get up （起床）， get out(滚)，get on ， get down，get away from(离某人或某物远) ，get ingrab // grab sth（抢夺）／sbcarry //挑、抗。carry on （坚持前行），carry out(执行)hold // hold a meeting(举办)， be held in（在哪里举办什么内容） 被动语态 Be held in 1234567891011121314Be + Ved2 The woman killed a dog last night.The dog is killed by the woman last night.The school published some English books last summer.Some English books were published by the school.Be - vingshe is reading a book.Be - vedThe book is read by her. 单词 four 四 three 三 two 二 one 一 box 盒子 house 房子 monster 怪物 monkey 猴子 kite 风筝 crayon 蜡笔 星期三单词 ball 球 pink 粉色 ten 10 nine 9 eight 8 seven 7 six 6 five 5 say 说 count 计算 星期四 has 他的 friend 朋友 grandpa 爷爷 mother 妈妈 father 爸爸 but 但是 birthday 生日 happy 快乐 brown 棕色 many 许多 星期天词性分类名词(noun,n) 描述：表示人或者事物的名称 分类： 可数名词(countable noun,c)（有单数变复数的变化[plural,pl]，apple – apples） 不可数名词(uncountable noun,u)， 没有变化形式。 常见 toy 玩具 pupil 小学生 driver 驾驶员 doctor 医生 head 头 tree 树 bear 熊 hat 名词 policeman 警察 nurse 护士 nose 鼻子 fish 树 bed 床 代词 (pronoun,pron) 描述：代替名词、数词、形容词(人称代词) 常见 第一人称、我 第二人称、你 第三人称、他她它 单数 I you It 复数 we You They 形容词(adjective,a) 描述：用来修饰名词、表示人或事物的特征 位置：放在名词前面修饰名词 副词(adverb,ad) 描述：表示行为或状态特征的词 位置：修饰动词或者形容词 动词(verb,v) 描述：表示动作或者状态 位置：动作或者状态的词 touch 触摸 look 看 know 认识 数词(numeral,num) 描述：表示数量或顺序的词语 冠词(article,art) 描述：帮忙说明名词名词所指的范围 位置：用在名词前 共三个 an a 不定冠词 一、一个 the 定冠词 这、这个 中文样式：我今天买了一支^不定冠词 笔，这^定冠词 支笔很好看 介词(preposition, prep) 位置：用在名词或者代词前。 描述：说明它与别的词之间的关系，时间介词，方位介词 常见： in 在…离,on 在 … 上,down,up,under 在 … 之下，at 在 连词(conjunction,conj) 描述：逻辑关系词,表示人或事物的名称。 常见：if,because,but 感叹词(interjection,int) 描述：语气词，代替代替名词，数词，形容词等。 常见：oh,hello,hi,yeah]]></content>
+    <content type="text"><![CDATA[第三周星期一笔记 看 123456789look // 不看内容， look at（小心）／ look out （小心）／ look after（照顾）， 不看内容whatch // 有思想的看，watch＋内容（watch TV）,有动作的。read // read book(看书)／ newspaper／mind **mind reader**see // 看到实质，会面。见到一个朋友。看到一只狗。see sb doing。see tv（想看电视）meet // 接近see meet-see-visit(参观)。 visit＋place 听 123456listen //不听内容。listen-lookhear //听见有实质的内容。 hear-watch/read。hear from sb/n-receive // 收到来信，收取sound // 声音 sounds good(听起来很棒) 拿 123456789101112take // take up (占据)，take away(带走), take off(脱掉，起飞),拿起来pick // pick up(接送某人)，pick out(挑出来)get // get up （起床）， get out(滚)，get on ， get down，get away from(离某人或某物远) ，get ingrab // grab sth（抢夺）／sbcarry //挑、抗。carry on （坚持前行），carry out(执行)hold // hold a meeting(举办)， be held in（在哪里举办什么内容） 被动语态 Be held in 1234567891011121314Be + Ved2 The woman killed a dog last night.The dog is killed by the woman last night.The school published some English books last summer.Some English books were published by the school.Be - vingshe is reading a book.Be - vedThe book is read by her. 单词 four 四 three 三 two 二 one 一 box 盒子 house 房子 monster 怪物 monkey 猴子 kite 风筝 crayon 蜡笔 星期三单词 ball 球 pink 粉色 ten 10 nine 9 eight 8 seven 7 six 6 five 5 say 说 count 计算 星期四 has 他的 friend 朋友 grandpa 爷爷 mother 妈妈 father 爸爸 but 但是 birthday 生日 happy 快乐 brown 棕色 many 许多 星期天词性分类名词(noun,n) 描述：表示人或者事物的名称 分类： 可数名词(countable noun,c)（有单数变复数的变化[plural,pl]，apple – apples） 不可数名词(uncountable noun,u)， 没有变化形式。 常见 toy 玩具 pupil 小学生 driver 驾驶员 doctor 医生 head 头 tree 树 bear 熊 baby 宝贝 feet 脚 body 身体 eye 眼睛 face 脸 hat 名词 policeman 警察 nurse 护士 nose 鼻子 fish 树 bed 床 cow 奶牛 mouth 嘴 ear 耳朵 代词 (pronoun,pron) 描述：代替名词、数词、形容词(人称代词) 常见 第一人称、我 第二人称、你 第三人称、他她它 单数 I you It 复数 we You They 形容词(adjective,adj) 描述：用来修饰名词、表示人或事物的特征 位置：放在名词前面修饰名词 常见：little 小的，fat 肥胖的，thin 瘦的，big 大的 副词(adverb,adv) 描述：表示行为或状态特征的词 位置：修饰动词或者形容词 动词(verb,v) 描述：表示动作或者状态 位置：动作或者状态的词 touch 触摸 look 看 know 认识 数词(numeral,num) 描述：表示数量或顺序的词语 冠词(article,art) 描述：帮忙说明名词名词所指的范围 位置：用在名词前 共三个 an a 不定冠词 一、一个 the 定冠词 这、这个 中文样式：我今天买了一支^不定冠词 笔，这^定冠词 支笔很好看 介词(preposition, prep) 位置：用在名词或者代词前。 描述：说明它与别的词之间的关系，时间介词，方位介词 常见： in 在…离,on 在 … 上,down,up,under 在 … 之下，at 在 连词(conjunction,conj) 描述：逻辑关系词,表示人或事物的名称。 常见：if,because,but 感叹词(interjection,int) 描述：语气词，代替代替名词，数词，形容词等。 常见：oh,hello,hi,yeah]]></content>
       <categories>
         <category>english</category>
       </categories>
@@ -452,17 +463,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[记录一次数据库迁移的失败经历]]></title>
-    <url>%2F201809013.html</url>
-    <content type="text"><![CDATA[sql数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 原因： 由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的ID。最终导致现在上传了2915个产品（包括多规格）。管理很混乱，数据比较多，不可能手工重新传了的。只能做数据迁移。 实现思路有两种办法：一、通过实体类迁移数据。 1.创建originCommodity(表一),commodity（表二），commodityDetail（表三）实体类 2.通过dao获取所有的originCommodity数据（获取所有的数据）。用for循环将originCommodity里面的数据分割为两张表commodity、commodity。并通过dao的inster批量创建commodity、commodityDetail数据（需要写sql批量插入数据） 二、手动navicat软件＋少量sql 将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。 1.将表一分成两个表，commodity、commodityDetail。 commodity里面全部放checked=1的数据（主体）。commodityDetail里面存checked!=1的数据（多规格）。（创建两个表，复制表一里面的全部数据，将commodity里面的checked!=1的删除，将commodityDetail表里面的checked=1的数据删除，完成创建） 2.增加一个在commodity里面增加一个origin_id(原来的uuid),用来存放之前的ID。将commodity的ID更改为origin_id。id为自增ID 3.更改commodityDetail表里面的checked字段，需要将commodityDetail里面的checked等于commodity表里面的origin_id的数据变为commodity的自增ID。 用方法二处理数据遇到的问题： 由于想要尽快的处理这个问题，我选择了方法二，用最笨的方法处理数据。一路都很顺利的处理完成了。结束之后，我就将原来的commodity删除了。因为要将表里面的数据的ID更改为自增ID，而且开始的时候是新增了自增ID的字段的，之后将原来的uuid字段更改为了origin_id。这样方便其他表关联这张表的时候，可以通过origin_id获取更改之后的ID。但是有一张表我遗漏了，没有将表里面的ID更改，就将这个origin_id删除了。导致现在有一张表无法获取ID。因此，这种方法是一个很笨切不能从用的笨办法，如果用第一种方法，就不会出现这种问题了。还好这次更改的只是测试数据，下次重新用第一种方法试一次 数据库需要用到的命令###一、 将sql数据签出并放到本地： 123mysqldump -hlocalhost -uroot --databases 数据库名 | gzip &gt; /root/DatabaseName_$(date +%Y%m%d_%H%M%S).sql.gzscp root@ip地址:/root/sql文件名 ./Desktop // 将文件复制到本地 失败使人进步，加油。end]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>data</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[设计模式－策略模式]]></title>
     <url>%2F20181012.html</url>
     <content type="text"><![CDATA[最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。 一、对策略模式的理解&emsp;&emsp;关于策略模式，我看完书之后回忆的起来的大概就是建立一个抽象类，抽象除类的不改变的属性，如动物的名字、年龄等这些都是每个动物都有的，不会改变的。 二、代码实现创建一个动物类1234 public abstract class animal &#123; private String name; private int age;｝ 然后多个类继承该抽象类，如小猫、小狗等。 public class Dog extends animal{} 之后就是动物有的会飞、会叫等。这些都是动物的行为。之后把动物的飞行、叫喊接口化。 public interface CallBehavior { // 叫喊行为 public void call(); } public interface FlyBehavior { // 飞行行为 public void fly(); } 会飞、会叫都可以是动物的行为。就可以将会飞、会叫的接口组合在动物类里面，当成动物的属性 public abstract class animal { private String name; private int age; FlyBehavior flyBehavior; // 让所有的动物都继承这个行为 CallBehavior callBehavior; // 添加方法，用于被继承的动物共用方法 public void performFly() { // 执行飞行 flyBehavior.fly(); } public void performCall() { // 执行叫喊 callBehavior.call(); } public void setFlyBehavior(FlyBehavior fly){ // 动态的设置飞行的实现类，可以在运行时改变动物的飞行方式 this.flyBehavior = fly; } public void setCallBehavior(CallBehavior call){ this.callBehavior = call; } ｝ 之后就用不同的实现类实现会飞、会叫的接口 // 叫喊接口实现 public class CallBig implements CallBehavior{ @Override public void call() { System.out.println(&quot;特别大声的叫&quot;); } } public class CallNoWay implements CallBehavior{ @Override public void call() { System.out.println(&quot;不会叫&quot;); } } // 飞行接口实现 public class FlyNoWay implements FlyBehavior{ @Override public void fly() { System.out.println(&quot;不会飞行&quot;); } } public class FlyWithWings implements FlyBehavior{ @Override public void fly() { System.out.println(&quot;我要飞的更高&quot;); } } 然后就可以给小狗类添加默认的构造器。 public class Dog extends animal{ public Dog() { // 小狗的构造器 callBehavior = new CallBig(); // 大声叫callBehavior 使用的是父类的变量 flyBehavior = new FlyNoWay(); } } 调用 public static void main(String args[]) { animal dw = new DogModle(); dw.performFly(); // 默认飞行 dw.performCall(); // 默认叫喊 dw.setFlyBehavior(new FlyWithWings()); //动态绑定飞行行为 dw.performFly(); // 更改之后的飞行方式 } 执行结果 不会飞行 特别大声的叫 我要飞的更高 这样就动态实现了数据的绑定，根据不同的策略，绑定不同的接口。动态的完成功能，后期添加其他动物，也不需要更改之前的代码。完全做到了，对新增开放、对修改闭合的开闭原则。 三、UML类图画的不正规的uml图 四、笔记1、学到的三个原则 将会变动的代码进行封装 针对接口编程，不针对实现编程 多用组合、少用继承 ####2、策略模式定义 定义算法族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化独立于使用算法的客户 github源码：https://github.com/gaoqisen/java-pattern]]></content>
@@ -471,6 +471,17 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[记录一次数据库迁移的失败经历]]></title>
+    <url>%2F201809013.html</url>
+    <content type="text"><![CDATA[sql数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 原因： 由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的ID。最终导致现在上传了2915个产品（包括多规格）。管理很混乱，数据比较多，不可能手工重新传了的。只能做数据迁移。 实现思路有两种办法：一、通过实体类迁移数据。 1.创建originCommodity(表一),commodity（表二），commodityDetail（表三）实体类 2.通过dao获取所有的originCommodity数据（获取所有的数据）。用for循环将originCommodity里面的数据分割为两张表commodity、commodity。并通过dao的inster批量创建commodity、commodityDetail数据（需要写sql批量插入数据） 二、手动navicat软件＋少量sql 将表一里面的数据导入本地的数据库，通过navicat软件手动将不同的字段更改为表二里面的字段，不需要的字段直接删除。之后将数据直接导入到表二，完成迁移。（这是最笨的方法进行迁移。但是迁移的时候需要注意的是ID，表一的是uuid生成的ID，表二是自增ID）。 1.将表一分成两个表，commodity、commodityDetail。 commodity里面全部放checked=1的数据（主体）。commodityDetail里面存checked!=1的数据（多规格）。（创建两个表，复制表一里面的全部数据，将commodity里面的checked!=1的删除，将commodityDetail表里面的checked=1的数据删除，完成创建） 2.增加一个在commodity里面增加一个origin_id(原来的uuid),用来存放之前的ID。将commodity的ID更改为origin_id。id为自增ID 3.更改commodityDetail表里面的checked字段，需要将commodityDetail里面的checked等于commodity表里面的origin_id的数据变为commodity的自增ID。 用方法二处理数据遇到的问题： 由于想要尽快的处理这个问题，我选择了方法二，用最笨的方法处理数据。一路都很顺利的处理完成了。结束之后，我就将原来的commodity删除了。因为要将表里面的数据的ID更改为自增ID，而且开始的时候是新增了自增ID的字段的，之后将原来的uuid字段更改为了origin_id。这样方便其他表关联这张表的时候，可以通过origin_id获取更改之后的ID。但是有一张表我遗漏了，没有将表里面的ID更改，就将这个origin_id删除了。导致现在有一张表无法获取ID。因此，这种方法是一个很笨切不能从用的笨办法，如果用第一种方法，就不会出现这种问题了。还好这次更改的只是测试数据，下次重新用第一种方法试一次 数据库需要用到的命令###一、 将sql数据签出并放到本地： 123mysqldump -hlocalhost -uroot --databases 数据库名 | gzip &gt; /root/DatabaseName_$(date +%Y%m%d_%H%M%S).sql.gzscp root@ip地址:/root/sql文件名 ./Desktop // 将文件复制到本地 失败使人进步，加油。end]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>data</tag>
       </tags>
   </entry>
   <entry>
