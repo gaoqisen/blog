@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="实现一个代码同步，并自动化部署的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-12T01:18:14.000Z">
+<meta property="og:updated_time" content="2018-12-31T06:04:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目集群，实现单个服务器操作其余服务器自动同步。">
 <meta name="twitter:description" content="实现一个代码同步，并自动化部署的功能。">
@@ -434,6 +434,21 @@
 <h3 id="方式三-jenkins-rsync-git-svn"><a href="#方式三-jenkins-rsync-git-svn" class="headerlink" title="方式三: jenkins + rsync + git/svn"></a>方式三: jenkins + rsync + git/svn</h3><ul>
 <li><a href="https://blog.csdn.net/mlx212/article/details/80918843" target="_blank" rel="noopener">jenkins+svn+rsync+php_一键自动化部署可持续化集成服务器集群项目_支持回滚</a>  这个写的比较详细，只是语言是php的，换成java的语言应该影响不大。</li>
 </ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="方式一（用rsync-实现同步）"><a href="#方式一（用rsync-实现同步）" class="headerlink" title="方式一（用rsync 实现同步）"></a>方式一（用rsync 实现同步）</h3><ul>
+<li><p>环境: ssh, rsync</p>
+</li>
+<li><p>安装： apt-get install openssh-server rsync -y</p>
+</li>
+<li><p>ssh启动：/etc/init.d/ssh start  </p>
+</li>
+<li><p>直接用rsync的ssh命令同步： rsync -e “ssh -p 8000” -avH /home <a href="mailto:root@172.17.0.2" target="_blank" rel="noopener">root@172.17.0.2</a>:/home</p>
+</li>
+<li><p>每次执行的时候都需要输入密码， 可以安装sshpass在脚本中写入密码实现不输入密码自动同步（在执行的命令前加sshpass -p password即可）。或者让两台服务器的ssh互信，实现免密码远程执行ssh命令（）。</p>
+</li>
+</ul>
+<blockquote>
+<p>还有一种通过daemon方式通过tcp同步的，需要写配置文件，没有实现出来。</p>
+</blockquote>
 
       
     </div>
@@ -575,7 +590,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +601,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -597,7 +612,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -646,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现目标"><span class="nav-number">2.</span> <span class="nav-text">实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：同步工具"><span class="nav-number">3.1.</span> <span class="nav-text">方式一：同步工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：git-＋-shell（svn和git的部署方式思路一致）"><span class="nav-number">3.2.</span> <span class="nav-text">方式二：git ＋ shell（svn和git的部署方式思路一致）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式三-jenkins-rsync-git-svn"><span class="nav-number">3.3.</span> <span class="nav-text">方式三: jenkins + rsync + git/svn</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原因"><span class="nav-number">1.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现目标"><span class="nav-number">2.</span> <span class="nav-text">实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：同步工具"><span class="nav-number">3.1.</span> <span class="nav-text">方式一：同步工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：git-＋-shell（svn和git的部署方式思路一致）"><span class="nav-number">3.2.</span> <span class="nav-text">方式二：git ＋ shell（svn和git的部署方式思路一致）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式三-jenkins-rsync-git-svn"><span class="nav-number">3.3.</span> <span class="nav-text">方式三: jenkins + rsync + git/svn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一（用rsync-实现同步）"><span class="nav-number">4.1.</span> <span class="nav-text">方式一（用rsync 实现同步）</span></a></li></ol></li></ol></div>
             
 
           </div>
