@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="hadoop学习的一些笔记,还在记录中， 加油！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-12T03:34:10.000Z">
+<meta property="og:updated_time" content="2019-02-20T12:03:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hadoop学习笔记">
 <meta name="twitter:description" content="hadoop学习的一些笔记,还在记录中， 加油！">
@@ -434,8 +434,6 @@
 <li>启动hadoop</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在sbin文件夹下依次执行：</span><br><span class="line">start-dfs.sh </span><br><span class="line">start-yarn.sh </span><br><span class="line"></span><br><span class="line">如果报错：ERROR: Attempting to launch hdfs namenode as root 需要在start-dfs.sh和sbin/stop-dfs.sh 顶部空白处添加内容：</span><br><span class="line"></span><br><span class="line">HDFS_DATANODE_USER=root  </span><br><span class="line">HDFS_DATANODE_SECURE_USER=hdfs  </span><br><span class="line">HDFS_NAMENODE_USER=root  </span><br><span class="line">HDFS_SECONDARYNAMENODE_USER=root</span><br></pre></td></tr></table></figure>
-<p>在网办搜索里面没有搜索到！我先看下搜索接口的逻辑。</p>
-<p>limit_scene_num</p>
 
       
     </div>
@@ -466,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20190108.html" rel="next" title="短语">
-                <i class="fa fa-chevron-left"></i> 短语
+              <a href="/20190106.html" rel="next" title="Lead in开班笔记">
+                <i class="fa fa-chevron-left"></i> Lead in开班笔记
               </a>
             
           </div>
@@ -475,6 +473,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/20190218.html" rel="prev" title="OracleDatabase9i10g11g编程艺术深入数据库体系结构(第2版)－学习笔记">
+                OracleDatabase9i10g11g编程艺术深入数据库体系结构(第2版)－学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +575,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +586,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +597,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
