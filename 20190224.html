@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201902/20190224154857.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201902/20190224153702.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201902/20190224155816.png">
-<meta property="og:updated_time" content="2019-02-24T08:09:17.000Z">
+<meta property="og:updated_time" content="2019-02-24T08:14:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyCat－学习笔记">
 <meta name="twitter:description" content="MyCat的一些学习笔记">
@@ -399,7 +399,7 @@
       
         <h1 id="MyCat－学习笔记"><a href="#MyCat－学习笔记" class="headerlink" title="MyCat－学习笔记"></a>MyCat－学习笔记</h1><p><a href="http://www.mycat.io/document/Mycat_V1.6.0.pdf" target="_blank" rel="noopener">MyCat权威指南</a></p>
 <h2 id="拆表学习"><a href="#拆表学习" class="headerlink" title="拆表学习"></a><a href="https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39326" target="_blank" rel="noopener">拆表学习</a></h2><blockquote>
-<p>当一张表的数量达到千万数据量以上的时候，加了索引可以正常查询， 但是在往上增加的话，可能就会出现查询速度慢的情况， 所有需要一些解决方案防止这种情况的发生。常用的解决方案如下：</p>
+<p>当一张表的数量达到千万数据量以上的时候，加了索引可以正常查询， 但是在往上增加的话，可能就会出现查询速度慢的情况， 所有需要一些解决方案防止这种情况的发生。我暂时知道的解决方案如下：</p>
 </blockquote>
 <ul>
 <li>数据读写分离：将应用的读写请求分到多个服务器上面，降低服务器访问压力。（适用于并发量大的情况下）</li>
@@ -433,11 +433,11 @@
 <p>管理着 MyCat 的逻辑库、表、分片规则、 DataNode 以及 DataSource</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 定义逻辑库，MyCat可以有多个逻辑库，每个逻辑库都有自己的相关配置。用schema 标签划分不同的逻辑库，checkSQLschema：否去掉表前面的数据库的名称，缺省未false，db1的名称不是schema的名称则不会去掉，官方不建议设置为true。sqlMaxLimit：每次执行语句，如果没有加上 limit 语句，mycat自动加。--&gt;</span><br><span class="line">&lt;schema name=&quot;db1&quot; checkSQLschema=&quot;false&quot; sqlMaxLimit=&quot;100&quot;&gt;</span><br><span class="line">    &lt;!--  定义逻辑表，所有需要拆分的表都需要在这个标签中定义。具体含义相见表1-1</span><br><span class="line">    &lt;table name=&quot;travelrecord&quot; dataNode=&quot;dn1,dn2,dn3&quot; rule=&quot;auto-sharding-long&quot; &gt;</span><br><span class="line">        &lt;!-- 定义 E-R 分片的子表。通过标签上的属性与父表进行关联。 具体含义相见表1-2--&gt;</span><br><span class="line">        &lt;childTable name=&quot;c_a&quot; primaryKey=&quot;ID&quot; joinKey=&quot;customer_id&quot; parentKey=&quot;id&quot; /&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/schema&gt;</span><br><span class="line">&lt;!--  定义了 MyCat 中的数据节点，也就是我们通常说所的数据分片。一个 dataNode 标签就是一个独立的数据分片。具体含义相见表1-3--&gt;</span><br><span class="line">&lt;dataNode name=&quot;dNode1&quot;  dataHost=&quot;dHost128&quot;  database=&quot;db1&quot; &gt;&lt;/dataNode&gt;</span><br><span class="line">&lt;!--  具体的数据库实例、读写分离配置和心跳语句.具体含义相见表1-4--&gt;</span><br><span class="line">&lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;0&quot;  writeType=&quot;0&quot; dbType=&quot;mysql&quot; dbDriver=&quot;native&quot;&gt;</span><br><span class="line">    &lt;!--这个标签内指明用于和后端数据库进行心跳检查的语句。 例如：MYSQL 可以使用 select user()，Oracle 可以使用 select 1 from dual 等。--&gt;</span><br><span class="line">    &lt;heartbeat&gt;select user()&lt;/heartbeat&gt;</span><br><span class="line">    &lt;!-- writeHost /readHost:这两个标签都指定后端数据库的相关配置，用于实例化后端连接池。唯一不同的是，writeHost 指定写实例、readHost 指定读实例。 在一个 dataHost 内可以定义多个 writeHost 和 readHost。但是，如果 writeHost 指定的后端数据库宕机，那么这个 writeHost 绑定的所有 readHost 都将不可用。另一方面，由于这个 writeHost 宕机，系统会自动的检测到，并切换到备用的 writeHost 上去. 具体含义相见表1-5--&gt;</span><br><span class="line">    &lt;writeHost  host=&quot;hostM1&quot;  url=&quot;localhost:3306&quot;  user=&quot;root&quot; password=&quot;123456&quot;&gt;</span><br><span class="line">    &lt;/writeHost&gt;</span><br><span class="line">&lt;/dataHost&gt;</span><br></pre></td></tr></table></figure>
-<p>  <center>1-1:table</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224153934.png" alt="1-1:table"></p>
-<p>  <center>1-2:childTable</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224154621.png" alt="1-2:childTable"></p>
-<p>  <center>1-3:dataNode</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224154857.png" alt="1-3:dataNode"></p>
-<p>  <center>1-4:dataHost</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224153702.png" alt="1-4:dataHost"></p>
-<p>  <center>1-5:writeHost</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224155816.png" alt="1-5:writeHost"></p>
+<p>  <center>table标签：1-1</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224153934.png" alt="1-1:table"></p>
+<p>  <center>childTable标签：1-2</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224154621.png" alt="1-2:childTable"></p>
+<p>  <center>dataNode标签：1-3</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224154857.png" alt="1-3:dataNode"></p>
+<p>  <center>dataHost标签：1-4</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224153702.png" alt="1-4:dataHost"></p>
+<p>  <center>writeHost/readHost标签：1-5</center><br>  <img src="https://gaoqisen.github.io/GraphBed/201902/20190224155816.png" alt="1-5:writeHost"></p>
 </li>
 </ul>
 <ul>
