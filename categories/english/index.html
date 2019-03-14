@@ -83,7 +83,7 @@
 <meta name="keywords" content="GaoQisen">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Learning Record">
-<meta property="og:url" content="https://gaoqisen.github.io/categories/english/index.html">
+<meta property="og:url" content="https://gaoqisen.github.io/categories/English/index.html">
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。">
 <meta property="og:locale" content="zh-Hans">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/categories/english/"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/categories/English/"/>
 
 
 
 
 
-  <title>分类: english | Learning Record</title>
+  <title>分类: English | Learning Record</title>
   
 
 
@@ -279,7 +279,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>english<small>分类</small>
+        <h1>English<small>分类</small>
         </h1>
       </div>
 
@@ -291,37 +291,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/20190106.html" itemprop="url">
+            <a class="post-title-link" href="/20190225.html" itemprop="url">
               
-                <span itemprop="name">Lead in开班笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-06T20:10:11+08:00"
-              content="2019-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/20181217.html" itemprop="url">
-              
-                <span itemprop="name">The fifth week of English learning</span>
+                <span itemprop="name">Core复习</span>
               
             </a>
         
@@ -329,65 +301,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-17T20:10:11+08:00"
-              content="2018-12-17" >
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/20181231.html" itemprop="url">
-              
-                <span itemprop="name">归类记忆单词</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-17T20:10:11+08:00"
-              content="2018-12-17" >
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/20181119.html" itemprop="url">
-              
-                <span itemprop="name">The first month of English learning</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-16T20:10:11+08:00"
-              content="2018-11-16" >
-          11-16
+              datetime="2019-02-25T12:10:11+08:00"
+              content="2019-02-25" >
+          02-25
         </time>
       </div>
 
@@ -454,7 +370,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -465,7 +381,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -476,7 +392,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -964,6 +880,88 @@
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
                   return resultRight.searchTextCount - resultLeft.searchTextCount;
                 } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
+ (resultLeft.hitCount !== resultRight.hitCount) {
                   return resultRight.hitCount - resultLeft.hitCount;
                 } else {
                   return resultRight.id - resultLeft.id;
