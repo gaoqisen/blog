@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="SpringCloud学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T02:14:27.000Z">
+<meta property="og:updated_time" content="2019-05-19T11:08:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud学习">
 <meta name="twitter:description" content="SpringCloud学习">
@@ -391,50 +391,47 @@
       
 
       
-        <ul>
-<li>Spring Cloud Config：配置管理开发工具包，可以让你把配置放到远程服务器，目前支持本地存储、Git以及Subversion。</li>
-</ul>
-<ul>
+        <h2 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h2><p>服务注册中心 &gt; 分布式配置中心 &gt; 服务提供者 &gt; 服务消费者 &gt; API网关</p>
+<h3 id="服务注册中心-Eureka"><a href="#服务注册中心-Eureka" class="headerlink" title="服务注册中心(Eureka)"></a>服务注册中心(Eureka)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">    </span><br><span class="line">// yml 配置</span><br><span class="line">spring:</span><br><span class="line"> application:</span><br><span class="line">   name: hello-spring-cloud-eureka</span><br><span class="line">server:</span><br><span class="line"> port: 8761</span><br><span class="line">eureka:</span><br><span class="line"> instance:</span><br><span class="line">   hostname: localhost</span><br><span class="line"> client:</span><br><span class="line">   registerWithEureka: false</span><br><span class="line">   fetchRegistry: false</span><br><span class="line">   serviceUrl:</span><br><span class="line">     defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure>
+<h3 id="分布式配置中心"><a href="#分布式配置中心" class="headerlink" title="分布式配置中心"></a>分布式配置中心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 服务端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// 客户端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">// 配置服务端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      label: master</span><br><span class="line">      server:</span><br><span class="line">        git:</span><br><span class="line">          uri: https://github.com/topsale/spring-cloud-config</span><br><span class="line">          search-paths: respo</span><br><span class="line">          username:</span><br><span class="line">          password:</span><br><span class="line">// 客户端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config-client</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      uri: http://localhost:8888</span><br><span class="line">      name: config-client</span><br><span class="line">      label: master</span><br><span class="line">      profile: dev</span><br></pre></td></tr></table></figure>
+<h3 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// ribbon服务提供者</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yml配置</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8761/eureka/</span><br></pre></td></tr></table></figure>
+<h3 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// ribbon服务消费</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-ribbon&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">//Feign服务消费</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yml配置</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8761/eureka/</span><br></pre></td></tr></table></figure>
+<h3 id="API网关"><a href="#API网关" class="headerlink" title="API网关"></a>API网关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// zuul配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">// yum 配置</span><br><span class="line">zuul:</span><br><span class="line">  routes:</span><br><span class="line">    api-a:</span><br><span class="line">      path: /api/a/**</span><br><span class="line">      serviceId: hello-spring-cloud-web-admin-ribbon</span><br><span class="line">    api-b:</span><br><span class="line">      path: /api/b/**</span><br><span class="line">      serviceId: hello-spring-cloud-web-admin-feign</span><br></pre></td></tr></table></figure>
+<h2 id="熔断器防止服务雪崩"><a href="#熔断器防止服务雪崩" class="headerlink" title="熔断器防止服务雪崩"></a>熔断器防止服务雪崩</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// pom 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yum配置</span><br><span class="line">feign:</span><br><span class="line">  hystrix:</span><br><span class="line">    enabled: true</span><br><span class="line">// application里面添加@EnableHystrix注解，调用方法上面增加@HystrixCommand(fallbackMethod = &quot;hiError&quot;)注解</span><br></pre></td></tr></table></figure>
+<h2 id="熔断器仪表盘监控"><a href="#熔断器仪表盘监控" class="headerlink" title="熔断器仪表盘监控"></a>熔断器仪表盘监控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix-dashboard&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// application中添加@EnableHystrixDashboard注解</span><br><span class="line">//创建 hystrix.stream 的 Servlet 配置</span><br><span class="line">@Configuration</span><br><span class="line">public class HystrixDashboardConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public ServletRegistrationBean getServlet() &#123;</span><br><span class="line">        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();</span><br><span class="line">        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);</span><br><span class="line">        registrationBean.setLoadOnStartup(1);</span><br><span class="line">        registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);</span><br><span class="line">        registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);</span><br><span class="line">        return registrationBean;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="服务链路追踪"><a href="#服务链路追踪" class="headerlink" title="服务链路追踪"></a>服务链路追踪</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin-autoconfigure-ui&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// aplication添加@EnableZipkinServer注解</span><br><span class="line">// yml配置</span><br><span class="line">management:</span><br><span class="line">  metrics:</span><br><span class="line">    web:</span><br><span class="line">      server:</span><br><span class="line">        auto-time-requests: false</span><br></pre></td></tr></table></figure>
+<h2 id="Spring-Boot-Admin"><a href="#Spring-Boot-Admin" class="headerlink" title="Spring Boot Admin"></a>Spring Boot Admin</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 服务端pom.xml依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jolokia&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// 客户端pom.xml依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jolokia&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// application添加@EnableAdminServer依赖</span><br><span class="line">// 服务端yml配置</span><br><span class="line">management:</span><br><span class="line">  endpoint:</span><br><span class="line">    health:</span><br><span class="line">      show-details: always</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: health,info</span><br><span class="line">// 客户端yml配置</span><br><span class="line">spring:</span><br><span class="line">  boot:</span><br><span class="line">    admin:</span><br><span class="line">      client:</span><br><span class="line">        url: http://localhost:8084</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</li>
 </ul>
 <ul>
 <li>Spring Cloud Netflix：针对多种Netflix组件提供的开发工具包，其中包括Eureka、Hystrix、Zuul、Archaius等。</li>
 </ul>
 <ul>
-<li>Netflix Eureka：云端负载均衡，一个基于REST 的服务，用于定位服务，以实现云端的负载均衡和中间层服务器的故障转移。</li>
-</ul>
-<ul>
-<li>Netflix Hystrix：容错管理工具，旨在通过控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。</li>
-</ul>
-<ul>
-<li>Netflix Zuul：边缘服务工具，是提供动态路由，监控，弹性，安全等的边缘服务。</li>
-</ul>
-<ul>
-<li>Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</li>
-</ul>
-<ul>
-<li>Spring Cloud for Cloud Foundry：通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</li>
-</ul>
-<ul>
-<li>Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin和HTrace操作。</li>
-</ul>
-<ul>
-<li>Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</li>
-</ul>
-<ul>
-<li>Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</li>
-</ul>
-<ul>
-<li>Spring Cloud Consul：封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</li>
-</ul>
-<ul>
-<li>Spring Cloud Zookeeper：操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</li>
-</ul>
-<ul>
-<li>Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</li>
-</ul>
-<ul>
-<li>Spring Cloud CLI：基于 SpringBoot CLI，可以让你以命令行方式快速建立云组件。</li>
+<li><p>Netflix Eureka：云端负载均衡，一个基于REST 的服务，用于定位服务，以实现云端的负载均衡和中间层服务器的故障转移。</p>
+</li>
+<li><p>Netflix Hystrix：容错管理工具，旨在通过控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。</p>
+</li>
+<li><p>Netflix Zuul：边缘服务工具，是提供动态路由，监控，弹性，安全等的边缘服务。</p>
+</li>
+<li><p>Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p>
+</li>
+<li><p>Spring Cloud for Cloud Foundry：通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p>
+</li>
+<li><p>Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin和HTrace操作。 </p>
+</li>
+<li><p>Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</p>
+</li>
+<li><p>Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p>
+</li>
+<li><p>Spring Cloud Consul：封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p>
+</li>
+<li><p>Spring Cloud Zookeeper：操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p>
+</li>
+<li><p>Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p>
+</li>
+<li><p>Spring Cloud CLI：基于 SpringBoot CLI，可以让你以命令行方式快速建立云组件。</p>
+</li>
 </ul>
 
       
@@ -548,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -568,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,6 +635,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动顺序"><span class="nav-number">1.</span> <span class="nav-text">启动顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册中心-Eureka"><span class="nav-number">1.1.</span> <span class="nav-text">服务注册中心(Eureka)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式配置中心"><span class="nav-number">1.2.</span> <span class="nav-text">分布式配置中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务提供者"><span class="nav-number">1.3.</span> <span class="nav-text">服务提供者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务消费者"><span class="nav-number">1.4.</span> <span class="nav-text">服务消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API网关"><span class="nav-number">1.5.</span> <span class="nav-text">API网关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器防止服务雪崩"><span class="nav-number">2.</span> <span class="nav-text">熔断器防止服务雪崩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器仪表盘监控"><span class="nav-number">3.</span> <span class="nav-text">熔断器仪表盘监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务链路追踪"><span class="nav-number">4.</span> <span class="nav-text">服务链路追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-Admin"><span class="nav-number">5.</span> <span class="nav-text">Spring Boot Admin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
