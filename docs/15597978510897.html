@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Gao Qisen" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="文档 最后更新时间 2019/5/10 一、证照数据处理 名词解释 重复数据删除 通过获取同一个证照编码的条数大于2（结婚离婚证）或者1（非结婚离婚证）的证照编码。删除其他数据仅仅保留1或2条数据（已上传[ex_state=1]的不删除）。 查看证照编码重复数据sql： SELECT CERTIFICATE_NUMBER FROM ( SELECT COUNT(CERTIFICATE_NUMBER">
+<meta name="keywords" content="GaoQisen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Record">
+<meta property="og:url" content="https://gaoqisen.github.io/docs/15597978510897.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="文档 最后更新时间 2019/5/10 一、证照数据处理 名词解释 重复数据删除 通过获取同一个证照编码的条数大于2（结婚离婚证）或者1（非结婚离婚证）的证照编码。删除其他数据仅仅保留1或2条数据（已上传[ex_state=1]的不删除）。 查看证照编码重复数据sql： SELECT CERTIFICATE_NUMBER FROM ( SELECT COUNT(CERTIFICATE_NUMBER">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gaoqisen.github.io/docs/media/15597978510897/zhengzhaoshujuchuli.png">
+<meta property="og:image" content="https://gaoqisen.github.io/docs/media/15597978510897/2019425.png">
+<meta property="og:updated_time" content="2019-06-06T05:10:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning Record">
+<meta name="twitter:description" content="文档 最后更新时间 2019/5/10 一、证照数据处理 名词解释 重复数据删除 通过获取同一个证照编码的条数大于2（结婚离婚证）或者1（非结婚离婚证）的证照编码。删除其他数据仅仅保留1或2条数据（已上传[ex_state=1]的不删除）。 查看证照编码重复数据sql： SELECT CERTIFICATE_NUMBER FROM ( SELECT COUNT(CERTIFICATE_NUMBER">
+<meta name="twitter:image" content="https://gaoqisen.github.io/docs/media/15597978510897/zhengzhaoshujuchuli.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/docs/15597978510897.html"/>
+
+
+
+
+
+  <title> | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/docs/15597978510897.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T13:10:51+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/docs/15597978510897.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="docs/15597978510897.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p> 最后更新时间 2019/5/10</p>
+<h2 id="一、证照数据处理"><a href="#一、证照数据处理" class="headerlink" title="一、证照数据处理"></a>一、证照数据处理</h2><p><img src="media/15597978510897/zhengzhaoshujuchuli.png" alt="zhengzhaoshujuchuli"></p>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>重复数据删除<ul>
+<li>通过获取同一个证照编码的条数大于2（结婚离婚证）或者1（非结婚离婚证）的证照编码。删除其他数据仅仅保留1或2条数据（已上传[ex_state=1]的不删除）。</li>
+<li>查看证照编码重复数据sql： SELECT CERTIFICATE_NUMBER FROM ( SELECT COUNT(CERTIFICATE_NUMBER) num, CERTIFICATE_NUMBER  FROM LOUSHANGFPE.LIC_DATA_EX  where  CERTIFICATE_NAME in (‘证照名称’)  AND EX_STATE &lt;&gt; ‘4’ GROUP BY CERTIFICATE_NUMBER HAVING count(CERTIFICATE_NUMBER) &gt; ？ ORDER BY num DESC) </li>
+<li>非结婚离婚证：重复数据有ex_state=1的， 删除ex_state=2的数据。否则保留一条数据，删除其他ex_state=2的数据。</li>
+</ul>
+</li>
+<li><p>时间格式处理：将 《31-10月-05 12.00.00.000000000 上午》 格式的时间刷新为 《yyyy-MM-dd》格式。</p>
+<ul>
+<li>查看时间异常sql: SELECT * FROM LIC_DATA_EX WHERE EX_STATE = ‘2’ and length( ISSUE_DATE ) &lt;&gt; lengthb( ISSUE_DATE ) and ISSUE_DATE is not null。 并刷新时间。</li>
+</ul>
+</li>
+<li><p>部门信息找回：</p>
+<ul>
+<li>通过部门名称和指定的区县的编码等刷新部门编码以及部门名称，部门信息在loushagnpfe的DEPT_INFO_FULL里面。</li>
+<li>生成执行sql如：UPDATE LIC_DATA_EX SET ISSUE_DEPT = ‘重庆市九龙坡区民政局’, ISSUE_DEPT_CODE = ‘11500107009293137E’,CERTIFICATE_AREA_CODE = ‘500107000000’ where ISSUE_DEPT LIKE ‘%九龙坡%’ AND CERTIFICATE_NAME in (‘结婚证’, ‘离婚证’, ‘结婚证补办’, ‘离婚证补办’) AND ex_state = 2</li>
+</ul>
+</li>
+<li><p>证书信息找回：</p>
+<ul>
+<li>通过证书信息批量更新证书信息。证书信息在loushagnpfe的CERTIFICATE_INFO_FULL。</li>
+<li>生成执行sql如：UPDATE LIC_DATA_EX SET CERTIFICATE_TYPE = ‘中华人民共和国结婚证’,CERTIFICATE_TYPE_CODE = ‘中华人民共和国结婚证’, CERTIFICATE_HOLDER_CODE = ‘111’, CERTIFICATE_NAME_CODE = ‘5000000010-20190125173606’ where CERTIFICATE_NAME = ‘结婚证’ AND ex_state = 2</li>
+</ul>
+</li>
+<li><p>找回部门名称（只是针对结婚离婚证照, 暂时弃用）</p>
+<ul>
+<li>证照数据部门名称：证照系统处理数据之后，部门名称很多都是重庆市民政局，是不正确的。通过证照编码在124数据源里面找回证照数据的部门名称。</li>
+</ul>
+</li>
+<li><p>证书名称：用户选择证书名称，处理相应的数据。</p>
+</li>
+<li><p>SQL文本：用户填写限制条件，通过限制条件处理数据。</p>
+</li>
+<li><p>数据状态：lic_data_ex表里面的ex_state指定的状态。1 已上传、2 待处理、8 结婚离婚证待上传(数据处理后没问题的)、7 食品许可证待上传(数据处理后没问题的)</p>
+</li>
+</ul>
+<h3 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h3><ul>
+<li>需要按照步骤依次处理：时间格式处理 &gt; 重复数据删除 &gt; 部门信息找回 &gt; 证照信息找回 </li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>尽量按照步骤执行处理数据。</li>
+</ul>
+<h2 id="二、证照数据上报"><a href="#二、证照数据上报" class="headerlink" title="二、证照数据上报"></a>二、证照数据上报</h2><p>将处理正常的数据批量推送到国家中间库。并在对账表里面添加记录与更改推送过的数据状态。</p>
+<h3 id="名词解释-1"><a href="#名词解释-1" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li><p>证书名称：用户选择证书名称，处理相应的数据。</p>
+</li>
+<li><p>SQL文本：用户填写限制条件，通过限制条件处理数据。</p>
+</li>
+<li><p>数据状态：lic_data_ex表里面的ex_state指定的状态。1 已上传、2 待处理、8 待上传(数据处理后没问题的)</p>
+</li>
+<li><p>推送数量：填写推送数据，进行指定数量的数据推送。</p>
+</li>
+</ul>
+<h3 id="操作流程-1"><a href="#操作流程-1" class="headerlink" title="操作流程"></a>操作流程</h3><p>用户填写证书名称、SQL文本（选填）、数据状态、推送数量。</p>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li><p>注意推送是的数据状态，需要选择待上传选项。待上传ex_state=8、待处理ex_state=2</p>
+</li>
+<li><p>在点击推送数据至国家中间库之后，会返回一条正常的数据， 用户确认数据无误之后，点击确认按钮进行推送。</p>
+</li>
+</ul>
+<h2 id="三、用户数据处理"><a href="#三、用户数据处理" class="headerlink" title="三、用户数据处理"></a>三、用户数据处理</h2><p>通过用户名、身份证号码、手机号码推送用户数据到用户库，密码为身份证号码后6位。</p>
+<h3 id="名词解释-2"><a href="#名词解释-2" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li><p>表名： 将用户数据存放在新建的一张表（身份证号码、手机号、用户名、状态、ID）里面。通过表里面的数据进行上传。</p>
+</li>
+<li><p>统一身份认证数据推送：点击后将填写表里面的数据推送到用户数据库。</p>
+</li>
+<li><p>用户重复删除：由于推送是用多线程批量处理的数据，线程数量为10， 每批推送1000条。 如果这10批数据每批里面都有重复的数据，那可能会出现重复数据上传。该按钮保证数据不重复。</p>
+</li>
+<li><p>导入数据类型: 导入2批数据， 一批没有手机号码（REGISTER_TYPE＝4），一批有是手机号码（REGISTER_TYPE＝3）。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">// 建表语句</span><br><span class="line">create table NORMAL_PUSH_DATA</span><br><span class="line">(</span><br><span class="line">  IDCARD VARCHAR2(50)           not null,</span><br><span class="line">  PHONE  VARCHAR2(50)           not null,</span><br><span class="line">  NAME   VARCHAR2(30)           not null,</span><br><span class="line">  STATE  VARCHAR2(10) default 0 not null,</span><br><span class="line">  ID     VARCHAR2(32)           not null</span><br><span class="line">)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### 操作流程</span><br><span class="line"></span><br><span class="line">- 步骤一：输入表名</span><br><span class="line"></span><br><span class="line">- 步骤二：点击统一身份认证数据推送按钮， 之后点击确认按钮进行推送。</span><br><span class="line"></span><br><span class="line">- 步骤三：点击用户重复删除按钮，在点击确认，删除用户重复数据。</span><br><span class="line"></span><br><span class="line">- 步骤四：检查数据是否推送成功。</span><br><span class="line"></span><br><span class="line">### 注意事项</span><br><span class="line"></span><br><span class="line">- 推送后的数据会改变输入表的state字段，state=1为导入成功，state=2为查询到数据已存在为导入。</span><br><span class="line"></span><br><span class="line">- 导入的数据是通过手机号、身份证号码、登录名进行判断的，如果任意一个在用户表里面已存在，则不进行推送。</span><br><span class="line"></span><br><span class="line">## 四、入库数据修改</span><br><span class="line"></span><br><span class="line">修改给国家入库后的数据，如时间戳等。</span><br><span class="line"></span><br><span class="line">### 名词解释</span><br><span class="line"></span><br><span class="line">- 表名： 需要更改的表名</span><br><span class="line"></span><br><span class="line">- SET区限制： 需要变更的字段喝字段值。点击添加一行可以添加字段。</span><br><span class="line"></span><br><span class="line">- WHERE子句限制：  用于定位数据，便于更改数据。点击添加一行可以添加字段。</span><br><span class="line"></span><br><span class="line">- 修改： 点击修改进行执行操作。</span><br><span class="line"></span><br><span class="line">### 操作流程</span><br><span class="line"></span><br><span class="line">- 填写完数据后点击修改，进行数据更改。</span><br><span class="line"></span><br><span class="line">### 注意事项</span><br><span class="line"></span><br><span class="line">修改时时间格式必须为YYYY-MM-DD HH:MM:SS，请不要有多余空格。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 五、定时任务</span><br><span class="line"></span><br><span class="line">动态创建定时任务</span><br><span class="line"></span><br><span class="line">### 名词解释</span><br><span class="line"></span><br><span class="line">- 创建定时任务：创建一个定时任务</span><br><span class="line">    </span><br><span class="line">    ![20190426](media/15597978510897/20190426.png)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 任务名称：任务名称的别名，尽量详细的表述定时任务的功能、便于区分和了解定时任务的作用。</span><br><span class="line"></span><br><span class="line">- 执行参数：给定时任务传递的参数如：定时每天推送10条数据，参数写为20则每天定时推送20条数据。</span><br><span class="line"></span><br><span class="line">- 执行频度：通过下面的描述填写，需要填写一个Crontab表达式。 可以在[http://www.bejson.com/othertools/cron/](http://www.bejson.com/othertools/cron/)里面进行创建。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>每隔5秒执行一次：”<em>/5 </em> <em> </em> <em> ?”<br>每隔1分钟执行一次：”0 </em>/1 <em> </em> ?”<br>每天23点执行一次：”0 0 23 <em> </em> ?”<br>每天凌晨1点执行一次：”0 0 1 <em> </em> ?”<br>每月1号凌晨1点执行一次：”0 0 1 1 <em> ?”<br>每月最后一天23点执行一次：”0 0 23 L </em> ?”<br>每周星期天凌晨1点实行一次：”0 0 1 ? <em> L”<br>在26分、29分、33分执行一次：”0 26,29,33 </em> <em> </em> ?”<br>每天的0点、13点、18点、21点都执行一次：”0 0 0,13,18,21 <em> </em> ?”<br>表示在每月的1日的凌晨2点调度任务：”0 0 2 1 <em> ? </em>“<br>表示周一到周五每天上午10：15执行作业：”0 15 10 ? * MON-FRI”<br>表示2002-2006年的每个月的最后一个星期五上午10:15执行：”0 15 10 ? 6L 2002-2006”<br><code>`</code></p>
+<ul>
+<li><p>删除：删除一个定时任务，如果定时任务在执行，则先停止任务后在删除任务。</p>
+</li>
+<li><p>修改：修改定时任务参数。 如果定时任务已经运行，则需要重启定时任务。</p>
+</li>
+<li><p>开始/停止：点击开始按钮后，按钮会变为停止。点击停止按钮后，按钮会变为开始。</p>
+</li>
+</ul>
+<h3 id="操作流程-2"><a href="#操作流程-2" class="headerlink" title="操作流程"></a>操作流程</h3><p>点击创建定时任务后填写相应表单数据后，点击确认则创建了一个定时任务，默认未启动，如果需要启动定时任务则点击开始按钮。</p>
+<h3 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li><p>Crontab表达式必须填写正确</p>
+</li>
+<li><p>任务名称尽量详细的表述定时任务的功能、便于区分和了解定时任务的作用。</p>
+</li>
+<li><p>系统启动后，会初始化定时任务， 如果需要启动后不执行定时任务，需要先停止定制任务。</p>
+</li>
+</ul>
+<h2 id="六、数据源"><a href="#六、数据源" class="headerlink" title="六、数据源"></a>六、数据源</h2><p>添加多个数据源，便于后期更改推送数据。</p>
+<p><img src="media/15597978510897/2019425.png" alt="Screen Shot 2019-04-25 at 5.23.33 P"></p>
+<h3 id="名词解释-3"><a href="#名词解释-3" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>别名：用于区分多个数据源的名称。建议：Mysql_db_ipAddress。</li>
+<li>URL：连接数据库的链接包含IP和参数。如：jdbc:mysql://192.168.0.100:3306/shgb_fz?useUnicode=true&amp;characterEncoding=UTF8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull</li>
+<li>username: 连接用户名。</li>
+<li>password: 对应用户名的密码。</li>
+</ul>
+<h3 id="操作流程-3"><a href="#操作流程-3" class="headerlink" title="操作流程"></a>操作流程</h3><p>数据填写完之后点击保存即可。</p>
+<h3 id="注意事项-3"><a href="#注意事项-3" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>url填写详细。</li>
+<li>用户名、密码必须正确。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/docs/15597978510961.html" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/docs/15597978510862.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">300</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档"><span class="nav-number">1.</span> <span class="nav-text">文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、证照数据处理"><span class="nav-number">1.1.</span> <span class="nav-text">一、证照数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释"><span class="nav-number">1.1.1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作流程"><span class="nav-number">1.1.2.</span> <span class="nav-text">操作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、证照数据上报"><span class="nav-number">1.2.</span> <span class="nav-text">二、证照数据上报</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作流程-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">操作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、用户数据处理"><span class="nav-number">1.3.</span> <span class="nav-text">三、用户数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作流程-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">操作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、数据源"><span class="nav-number">1.4.</span> <span class="nav-text">六、数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名词解释-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作流程-3"><span class="nav-number">1.4.2.</span> <span class="nav-text">操作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-3"><span class="nav-number">1.4.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/docs/15597978510897.html';
+          this.page.identifier = 'docs/15597978510897.html';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

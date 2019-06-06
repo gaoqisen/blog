@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CodeBook" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。">
+<meta name="keywords" content="CodeBook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="看《码农翻身》的一些收获">
+<meta property="og:url" content="https://gaoqisen.github.io/docs/15597978863240.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-06T05:11:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="看《码农翻身》的一些收获">
+<meta name="twitter:description" content="开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/docs/15597978863240.html"/>
+
+
+
+
+
+  <title>看《码农翻身》的一些收获 | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/docs/15597978863240.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">看《码农翻身》的一些收获</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-11T20:10:11+08:00">
+                2018-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/book/" itemprop="url" rel="index">
+                    <span itemprop="name">book</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/docs/15597978863240.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="docs/15597978863240.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  开发了这么久的时间里，想要在以后的工作中能更好的写出优雅的代码，需要看很多的书籍，今天看了《码农翻身》这本书，看了一半。还是有很大收获的，书用了很通俗的故事描述了计算机的底层原理和java的一些技术。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>今天是双十一，哪里也没去，早晨10点多就出门了，在新华书店里面呆了一天，在书架中找到了这本书，很容易的就看了进去，这本书用故事的方式描述生涩的代码以及程序。前段时间看的head frist也是比较很容易理解的书籍，自己购买的java并发编程实战看了几页总是无法集中精力看下去，内容很充实，可能一直在家里躺在床上太安逸的看书，导致看着看着就放弃了，希望坚持下去。</p>
+</blockquote>
+<blockquote>
+<p>这本书学会了一个很重要的做事方式&lt;凡事必先骑上虎背&gt;，在自己做一件事情犹豫不决的时候，想想这句话,在做事情的时候，需要先骑在老虎的背上。和明知山有虎，偏上虎山行差不多。在这种状态下，经常会出现骑虎难下的尴尬情况。只要不恐惧这种情况，那么在这种状态下学习就收获更多的东西。</p>
+</blockquote>
+<h2 id="一、大概的内容"><a href="#一、大概的内容" class="headerlink" title="一、大概的内容"></a>一、大概的内容</h2><p>书籍用第一人称描述计算机的各个组成如：内存、进程等，和日本的《工作细胞》动漫差不多。从底层描述描述进程、线程、cpu、内存、硬盘等。整本书籍阅读起来相当的有趣，看的时候完全当成一本小说在读，但是读到最后，确实学到很多知识，虽然很多东西都是之前学习过的，但是很多也是自己理解不够透彻的。还是推荐大家可以阅读以下，一方面可以巩固自己的知识，一方面也可以学习一些自己没接触过的东西。</p>
+<h4 id="计算机的世界"><a href="#计算机的世界" class="headerlink" title="计算机的世界"></a>计算机的世界</h4><ul>
+<li><p>进程：比如QQ运行，QQ音乐运行，微信运行，都需要一个进程去处理，一个计算机可以有多个进程。进程之间的切换实现了多个程序同时运行的效果。（理解不够透彻，需要完善）</p>
+</li>
+<li><p>线程：一个进程可以拥有多个线程</p>
+</li>
+<li><p>cpu：由寄存器和运算器组成，寄存器用来存储数据，运算器负责运算，速度特别快</p>
+</li>
+<li><p>内存：内存负责把硬盘的数据加载到内存里面，并且各种指令，执行速度一半</p>
+</li>
+<li><p>硬盘：负责把数据持久化，存储数据，防止断电，执行速度特别慢</p>
+</li>
+<li><p>汇编语言：比较难理解的语言，负责和底层的二进制（机器语言）打交道</p>
+</li>
+<li><p>高级语言： 如c、c++、java、python等。用人类方便理解的语言和汇编语言打交道</p>
+</li>
+<li><p>tcp/ip：只要解决的就是网络传输数据的问题，通过没次发送少量数据拆包，并进行失败重发的功能解决发送大量数据的问题。发送的过程中由多个路由器进行转发到目的地完成。</p>
+</li>
+</ul>
+<h4 id="java帝国"><a href="#java帝国" class="headerlink" title="java帝国"></a>java帝国</h4><ul>
+<li><p>java class : java类主要由java的类加载调用，每个线程都会有一个函数栈（栈祯），用来进行方法调用</p>
+</li>
+<li><p>JDBC ： 由一个工厂方法实现，封装了各种实现，用于和各种数据库对接，便于数据的持久化，代替的文件存储方法，提高效率。</p>
+</li>
+<li><p>jsp : java的模版套用mvc的view。用于将html和数据组合生成html页面。freemarker也是类似的，但是freemarker静态的页面也是可以浏览的。</p>
+</li>
+<li><p>JTA : 在多个数据库之间传送数据，保证数据的事务性。由一个全局事务管理器实现，统一准备和统一提交。失败案例（全局事务管理器出现问题，将无法保存数据的一致性）</p>
+</li>
+<li><p>消息队列（JMS - java message service）：为了实现分布式项目的数据传递问题。如订单服务器给物流服务器发送订单，物流服务器出现问题，暂时无法接受订单。就可以由一个消息队列处理，有订单了，由订单服务器发送订单到消息队列排队，物流服务器可以随时接收订单，就是物流服务器有事情，也不会影响到订单服务器。</p>
+</li>
+<li><p>动态代理：可以实现给一个类动态的添加新的行为。动态代理可以实现aop的切面功能。</p>
+</li>
+<li><p>java注解：注解相当于加强的注释。注解有元注解^(注解的注解)，通过注解可以减少xml文件的编写，只好的方式就是xml和注解配合一起使用。</p>
+</li>
+<li><p>泛形：泛形就是可以限制一组数据的数据类型。&lt;? extends Object&gt; 的意思就是可以传入继承了对象类的任意对象。</p>
+</li>
+<li><p>序列化：把java对象编程二进制字节流存储在硬盘上，当然还有一种办法就是把二进制字节流反序列化为java对象。</p>
+</li>
+<li><p>java程序的锁：在java中synchronized就是同步锁，每个线程需要访问锁里面的内容必须要拿到锁，没有拿到的就需要在线程池里面等待。这个是一个重量级的悲观锁（觉得线程随时都会更改数据）。另一种办法就是乐观锁（认为大部分情况多线程的情况都比较少），可以给数据添加一个版本号，每次更改数据后版本变化。在实现功能的时候，可以把数据获取出来更改之后，在修改的时候对比版本号是否一致，如果不一致则继续重新获取，直到版本号一致为止。这样就减少了同步锁导致的线程在线程里面等待所消耗的资源。</p>
+</li>
+<li><p>spring DI和IOC、AOP: 在一个大型的项目中日志、事务、登录等功能都会涉及到程序的各个层面，如果统一管理，就回出现大量冗余的代码，而去大量的代码会导致代码的臃肿。想这些经常会出现的代码，可以用模版方法和装饰者模式区封装常用的代码，但是这样很多类都需要实现接口。为了避免这种情况，于是出现了控制反转ioc，和依赖注入di（把类的依赖情况转交给spring容器）。aop利用的java动态代理实现的面向切面编程。</p>
+</li>
+</ul>
+<h4 id="web冲浪"><a href="#web冲浪" class="headerlink" title="web冲浪"></a>web冲浪</h4><ul>
+<li><p>hyperText Transfer Protocol (HTTP) : 超文本传输协议,这里的超文本就是HyperText Markup Language (HTML，一种文本的标记形语言)</p>
+</li>
+<li><p>HTTPS : 在使用HTTP在网上传输HTML的时候是使用的明文，如果中途被截取了，隐私就会被泄露。HTTPS解决了安全性问题，用对称数据加密和非对称数据加密结合解决了网络传输HTML的安全性问题。对称加密利用一个公匙和私匙，公匙加密（所有人都可以知道公私），私匙解密（对应的公私加密的文件只有对应的私匙解密）。解密的私匙是需要双方都持有的，因为双方都需要加密解密，所以在保证安全的情况下把私匙传给对方就需要非对称加密了。非对称加密需要第三方的证书＋签名，才可以完成（非对称加密还需要理解一下）。</p>
+</li>
+<li><p>SSO : 一个由很多子系统组合在一起的大型项目就需要实现在一个小的项目中登录之后，进入相关的项目就不用再次登录的单点登录功能。实现原理就是利用一个认证中心实现登录，用户首次登录时会获取到认证中心的一个cookie用于存放在浏览器端，浏览器上面存两个cookie，一个是认证中心的cookie一个是当前访问应用的cookie。用户访问另一个应用时，只需要将之前的cookie携带访问应用，后端通过应用验证cookie是否有效即可判断用户是否已经登录。</p>
+</li>
+<li><p>授权 ： 比如QQ、微信、微博第三方登录等，都是使用的授权登录方法。应用可以通过自己申请的第三方的appid和密匙，获取授权的code，授权code会有超时时间等，通过code可以获得token，最后通过token就可以实现登录逻辑。</p>
+</li>
+<li><p>负载均衡 ： 多台服务器运行相同的应用，nginx在进行接口转发时均衡的转化，不出现有的服务器严重负载，有的服务器轻松自在。</p>
+</li>
+<li><p>高可用 ： 当服务器出现故障之后，有备用的服务器顶上去，不会出现无法访问的情况。</p>
+<ol>
+<li>tomcat集群：通过多台tomcat服务器实现高可用，由nginx来进行服务转发（实现负载均衡）。</li>
+<li>redis集群：通过jedis负责分发tomcat的请求（redis cluster）。</li>
+<li>数据库读写分离：由多台数据库实现，一个master数据库可读可写已写为准，多个slave数据库进行只读操作（读时需将数据同步至slave数据库，master出现故障由slave数据库顶替）</li>
+</ol>
+</li>
+</ul>
+<h4 id="代码管理"><a href="#代码管理" class="headerlink" title="代码管理"></a>代码管理</h4><ul>
+<li><p>VCS(Version Controller System): 版本控制系统，svn采取的就是这种方式管理的代码！采用更新，提交的方式进行。</p>
+</li>
+<li><p>分支，多版本并行: 通过分支实现多版本并行，在代码开发的时候可以有多个版本并行开发，每个人在本地都有一个私有库，每个人都可以有选择性的提交不同版本的代码，最后只需进行合并即可。git就是采用的这种方式。</p>
+</li>
+<li><p>build: 代码的自动化构建。manven的pom.xml就是可以用build脚本进行自动化构建的一个工具（自动打包、编译、部署）。</p>
+</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><p>声明式编程： SQL语句就是命令式编程（只提供声明，具体实现有系统负责）</p>
+</li>
+<li><p>命令式编程： 大多数程序员使用的语言都是命令式编程（通过指令告诉计算机怎么做）。</p>
+</li>
+</ul>
+<p>end</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-code/" rel="tag"># java code</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20181109.html" rel="next" title="《java 并发编程实战》笔记">
+                <i class="fa fa-chevron-left"></i> 《java 并发编程实战》笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/docs/15597978855190.html" rel="prev" title="看《码农翻身》的一些收获">
+                看《码农翻身》的一些收获 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">300</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、大概的内容"><span class="nav-number">1.</span> <span class="nav-text">一、大概的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机的世界"><span class="nav-number">1.0.1.</span> <span class="nav-text">计算机的世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java帝国"><span class="nav-number">1.0.2.</span> <span class="nav-text">java帝国</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web冲浪"><span class="nav-number">1.0.3.</span> <span class="nav-text">web冲浪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码管理"><span class="nav-number">1.0.4.</span> <span class="nav-text">代码管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">1.0.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/docs/15597978863240.html';
+          this.page.identifier = 'docs/15597978863240.html';
+          this.page.title = '看《码农翻身》的一些收获';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

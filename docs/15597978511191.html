@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Gao Qisen" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="2018/11/23 数据库表更换(与现有表对比)   表名 新增 删除     UP_UC_CORPORATOR_ACCOUNT update_time CertificateSno  AgentCertType AgentEffDate AgentExpDate CORPORATORID   UP_UC_CORPORATOR_IDENTITY update_time    LegalCertT">
+<meta name="keywords" content="GaoQisen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Record">
+<meta property="og:url" content="https://gaoqisen.github.io/docs/15597978511191.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="2018/11/23 数据库表更换(与现有表对比)   表名 新增 删除     UP_UC_CORPORATOR_ACCOUNT update_time CertificateSno  AgentCertType AgentEffDate AgentExpDate CORPORATORID   UP_UC_CORPORATOR_IDENTITY update_time    LegalCertT">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-06T05:10:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning Record">
+<meta name="twitter:description" content="2018/11/23 数据库表更换(与现有表对比)   表名 新增 删除     UP_UC_CORPORATOR_ACCOUNT update_time CertificateSno  AgentCertType AgentEffDate AgentExpDate CORPORATORID   UP_UC_CORPORATOR_IDENTITY update_time    LegalCertT">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/docs/15597978511191.html"/>
+
+
+
+
+
+  <title> | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/docs/15597978511191.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T13:10:51+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/docs/15597978511191.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="docs/15597978511191.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="2018-11-23-数据库表更换-与现有表对比"><a href="#2018-11-23-数据库表更换-与现有表对比" class="headerlink" title="2018/11/23 数据库表更换(与现有表对比)"></a>2018/11/23 数据库表更换(与现有表对比)</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">表名</th>
+<th style="text-align:left">新增</th>
+<th style="text-align:left">删除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">UP_UC_CORPORATOR_ACCOUNT</td>
+<td style="text-align:left">update_time CertificateSno  AgentCertType AgentEffDate AgentExpDate</td>
+<td style="text-align:left">CORPORATORID</td>
+</tr>
+<tr>
+<td style="text-align:left">UP_UC_CORPORATOR_IDENTITY</td>
+<td style="text-align:left">update_time    LegalCertType</td>
+<td style="text-align:left">CORPORATORID</td>
+</tr>
+<tr>
+<td style="text-align:left">UP_UC_PROVINCE_USER</td>
+<td style="text-align:left">update_time</td>
+<td style="text-align:left">CORPORATORID</td>
+</tr>
+<tr>
+<td style="text-align:left">UP_UC_INFO_ENTERPRISE</td>
+<td style="text-align:left">update_time    CertificateSno</td>
+<td style="text-align:left">CORPORATORID</td>
+</tr>
+<tr>
+<td style="text-align:left">UP_UC_INFO_ASSOCIATION</td>
+<td style="text-align:left">update_time    CertificateSno</td>
+<td style="text-align:left">CORPORATORID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="UP-UC-CORPORATOR-ACCOUNT"><a href="#UP-UC-CORPORATOR-ACCOUNT" class="headerlink" title="UP_UC_CORPORATOR_ACCOUNT"></a>UP_UC_CORPORATOR_ACCOUNT</h2><h3 id="上行建表语句"><a href="#上行建表语句" class="headerlink" title="上行建表语句"></a>上行建表语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `up_uc_corporator_account`;</span><br><span class="line">CREATE TABLE `up_uc_corporator_account` (</span><br><span class="line">  `ID` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  `CertificateSno` varchar(64) NOT NULL COMMENT &apos;相关法人标识&apos;,</span><br><span class="line">  `AcctType` varchar(64) NOT NULL COMMENT &apos;账号类型&apos;,</span><br><span class="line">  `TrustAcctNo` varchar(64) NOT NULL COMMENT &apos;信任标识账号&apos;,</span><br><span class="line">  `TrustAcctNoKey` varchar(128) NOT NULL COMMENT &apos;信任身份标识账号散列值&apos;,</span><br><span class="line">  `AgentMobile` varchar(64) DEFAULT NULL COMMENT &apos;手机号&apos;,</span><br><span class="line">  `AgentName` varchar(64) DEFAULT NULL COMMENT &apos;姓名&apos;,</span><br><span class="line">  `AgentCert` varchar(64) DEFAULT NULL COMMENT &apos;经办人证件号码&apos;,</span><br><span class="line">  `AgentCertKey` varchar(64) DEFAULT NULL COMMENT &apos;经办人证件号码散列值&apos;,</span><br><span class="line">  `AgentCertType` varchar(12) DEFAULT NULL COMMENT &apos;经办人证件类型&apos;,</span><br><span class="line">  `AgentCertBeginDate` varchar(12) DEFAULT NULL COMMENT &apos;证件有效期起始日期&apos;,</span><br><span class="line">  `AgentCertEndDate` varchar(12) DEFAULT NULL COMMENT &apos;证件有效期到期日期&apos;,</span><br><span class="line">  `AgentChannel` varchar(6) NOT NULL,</span><br><span class="line">  `AgentEffDate` varchar(8) DEFAULT NULL COMMENT &apos;有效起始日期&apos;,</span><br><span class="line">  `AgentExpDate` varchar(8) DEFAULT NULL COMMENT &apos;有效结束日期&apos;,</span><br><span class="line">  `Cd_operation` varchar(2) NOT NULL COMMENT &apos;同步类型&apos;,</span><br><span class="line">  `Cd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;同步时间&apos;,</span><br><span class="line">  `Cd_batch` varchar(32) NOT NULL COMMENT &apos;批次号&apos;,</span><br><span class="line">  `DataSource` varchar(3) NOT NULL COMMENT &apos;数据来源&apos;,</span><br><span class="line">  PRIMARY KEY (`ID`),</span><br><span class="line">  KEY `uc_corporator_account_update_time_index` (`update_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_account_cd_time_index` (`Cd_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_account_ID_index` (`ID`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_account_Cd_batch_index` (`Cd_batch`) USING BTREE</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;法人账号信息&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="GJZWFW-原始DDL"><a href="#GJZWFW-原始DDL" class="headerlink" title="GJZWFW(原始DDL)"></a>GJZWFW(原始DDL)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot; </span><br><span class="line">   (	&quot;ID&quot; NUMBER(20,0) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPORATORID&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;ACCTTYPE&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;TRUSTACCTNO&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;TRUSTACCTNOKEY&quot; NVARCHAR2(128) NOT NULL ENABLE, </span><br><span class="line">	&quot;AGENTMOBILE&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;AGENTNAME&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;AGENTCERT&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;AGENTCERTKEY&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;AGENTCERTBEGINDATE&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;AGENTCERTENDDATE&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;AGENTCHANNEL&quot; NVARCHAR2(6) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_OPERATION&quot; NVARCHAR2(2) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_TIME&quot; DATE NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_BATCH&quot; NVARCHAR2(32) NOT NULL ENABLE, </span><br><span class="line">	&quot;DATASOURCE&quot; NVARCHAR2(3) NOT NULL ENABLE, </span><br><span class="line">	 CHECK (ID IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CorporatorId IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (AcctType IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (TrustAcctNo IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (TrustAcctNoKey IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (AgentCert IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (AgentCertKey IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (AgentChannel IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_operation IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_time IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_batch IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (DataSource IS NOT NULL) ENABLE, </span><br><span class="line">	 PRIMARY KEY (&quot;ID&quot;)</span><br><span class="line">  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS </span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot;  ENABLE</span><br><span class="line">   ) SEGMENT CREATION IMMEDIATE </span><br><span class="line">  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING</span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot; </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;CORPORATORID&quot; IS &apos;？?？?？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;ACCTTYPE&quot; IS &apos;？?？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;TRUSTACCTNOKEY&quot; IS &apos;？？？?？？？?？??？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;AGENTNAME&quot; IS &apos;？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;AGENTCERTKEY&quot; IS &apos;？?？??？??？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;AGENTCERTBEGINDATE&quot; IS &apos;？?？?？Ч？？？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;AGENTCERTENDDATE&quot; IS &apos;？?？?？Ч？??？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;CD_OPERATION&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;.&quot;DATASOURCE&quot; IS &apos;？?？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON TABLE &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_ACCOUNT&quot;  IS &apos;？？？?？？?-??？？?？？?&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="变更字段"><a href="#变更字段" class="headerlink" title="变更字段"></a>变更字段</h3><h4 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h4><p>update_time<br>CertificateSno<br>AgentCertType<br>AgentEffDate<br>AgentExpDate</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>CORPORATORID</p>
+<blockquote>
+<p>其他未更改:  CertificateSno  后期需要限制非空</p>
+</blockquote>
+<h2 id="UP-UC-CORPORATOR-IDENTITY"><a href="#UP-UC-CORPORATOR-IDENTITY" class="headerlink" title="UP_UC_CORPORATOR_IDENTITY"></a>UP_UC_CORPORATOR_IDENTITY</h2><h3 id="上行建表语句-1"><a href="#上行建表语句-1" class="headerlink" title="上行建表语句"></a>上行建表语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `up_uc_corporator_identity`;</span><br><span class="line">CREATE TABLE `up_uc_corporator_identity` (</span><br><span class="line">  `ID` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  `CorpName` varchar(256) DEFAULT NULL COMMENT &apos;法人名称&apos;,</span><br><span class="line">  `CertificateSno` varchar(128) DEFAULT NULL COMMENT &apos;法人机构代码&apos;,</span><br><span class="line">  `CertificateKey` varchar(128) NOT NULL COMMENT &apos;法人机构代码散列值&apos;,</span><br><span class="line">  `CorpType` varchar(64) NOT NULL COMMENT &apos;法人类型&apos;,</span><br><span class="line">  `LegalMobile` varchar(64) DEFAULT NULL COMMENT &apos;法定代表人手机号&apos;,</span><br><span class="line">  `LegalName` varchar(64) DEFAULT NULL COMMENT &apos;法定代表人姓名&apos;,</span><br><span class="line">  `LegalCertno` varchar(64) DEFAULT NULL COMMENT &apos;法定代表人身份证号&apos;,</span><br><span class="line">  `LegalCertType` varchar(12) DEFAULT NULL COMMENT &apos;法定代表人证件类型&apos;,</span><br><span class="line">  `LegalCertnoBeginDate` varchar(12) DEFAULT NULL COMMENT &apos;法定代表人证件有效期起始日期&apos;,</span><br><span class="line">  `LegalCertnoEndDate` varchar(12) DEFAULT NULL COMMENT &apos;法定代表人证件有效期到期日期&apos;,</span><br><span class="line">  `CorpStatus` varchar(6) DEFAULT NULL COMMENT &apos;法定状态&apos;,</span><br><span class="line">  `Cd_operation` varchar(2) NOT NULL COMMENT &apos;同步类型&apos;,</span><br><span class="line">  `Cd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;同步时间&apos;,</span><br><span class="line">  `Cd_batch` varchar(32) NOT NULL COMMENT &apos;批次号&apos;,</span><br><span class="line">  `DataSource` varchar(3) NOT NULL COMMENT &apos;数据来源&apos;,</span><br><span class="line">  PRIMARY KEY (`ID`),</span><br><span class="line">  KEY `up_uc_corporator_identity_update_time_index` (`update_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_identity_cd_time_index` (`Cd_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_identity_ID_index` (`ID`) USING BTREE,</span><br><span class="line">  KEY `up_uc_corporator_identity_Cd_batch_index` (`Cd_batch`) USING BTREE</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;法人身份信息&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="GJZWFW-原始DDL-1"><a href="#GJZWFW-原始DDL-1" class="headerlink" title="GJZWFW(原始DDL)"></a>GJZWFW(原始DDL)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot; </span><br><span class="line">   (	&quot;ID&quot; NUMBER(20,0) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPORATORID&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPNAME&quot; NVARCHAR2(256) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTIFICATESNO&quot; NVARCHAR2(128) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTIFICATEKEY&quot; NVARCHAR2(128) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPTYPE&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;LEGALMOBILE&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;LEGALNAME&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;LEGALCERTNO&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;LEGALCERTNOBEGINDATE&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;LEGALCERTNOENDDATE&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;CORPSTATUS&quot; NVARCHAR2(6), </span><br><span class="line">	&quot;CD_OPERATION&quot; NVARCHAR2(2) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_TIME&quot; DATE NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_BATCH&quot; NVARCHAR2(32) NOT NULL ENABLE, </span><br><span class="line">	&quot;DATASOURCE&quot; NVARCHAR2(3) NOT NULL ENABLE, </span><br><span class="line">	 CHECK (ID IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CorporatorId IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CorpName IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CertificateSno IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CertificateKey IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CorpType IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_operation IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_time IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_batch IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (DataSource IS NOT NULL) ENABLE, </span><br><span class="line">	 PRIMARY KEY (&quot;ID&quot;)</span><br><span class="line">  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS </span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot;  ENABLE</span><br><span class="line">   ) SEGMENT CREATION IMMEDIATE </span><br><span class="line">  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING</span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot; </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CORPORATORID&quot; IS &apos;??？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CERTIFICATESNO&quot; IS &apos;??？??????？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CERTIFICATEKEY&quot; IS &apos;??？??????？？?？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CORPTYPE&quot; IS &apos;??？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;LEGALNAME&quot; IS &apos;???????？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;LEGALCERTNOBEGINDATE&quot; IS &apos;???????？？??？Ч？？？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;LEGALCERTNOENDDATE&quot; IS &apos;???????？？??？Ч？??？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CORPSTATUS&quot; IS &apos;????？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;CD_OPERATION&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;.&quot;DATASOURCE&quot; IS &apos;？?？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON TABLE &quot;GJZWFW&quot;.&quot;UP_UC_CORPORATOR_IDENTITY&quot;  IS &apos;??？？?？？?&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="新增-1"><a href="#新增-1" class="headerlink" title="新增"></a>新增</h4><p>update_time<br>LegalCertType</p>
+<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><p>CORPORATORID</p>
+<blockquote>
+<p> update_time 不能为空</p>
+</blockquote>
+<h2 id="UP-UC-PROVINCE-USER"><a href="#UP-UC-PROVINCE-USER" class="headerlink" title="UP_UC_PROVINCE_USER"></a>UP_UC_PROVINCE_USER</h2><h3 id="上行建表语句-2"><a href="#上行建表语句-2" class="headerlink" title="上行建表语句"></a>上行建表语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `up_uc_province_user`;</span><br><span class="line">CREATE TABLE `up_uc_province_user` (</span><br><span class="line">  `ID` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  `CertType` varchar(6) DEFAULT NULL COMMENT &apos;证件类型&apos;,</span><br><span class="line">  `CertNo` varchar(64) DEFAULT NULL COMMENT &apos;证件编号&apos;,</span><br><span class="line">  `CertKey` varchar(128) NOT NULL COMMENT &apos;证件散列码&apos;,</span><br><span class="line">  `CertExpDate` varchar(8) DEFAULT NULL COMMENT &apos;证件失效日期&apos;,</span><br><span class="line">  `CertEffDate` varchar(8) DEFAULT NULL COMMENT &apos;证件有效日期&apos;,</span><br><span class="line">  `CreateTime` varchar(20) NOT NULL COMMENT &apos;注册时间&apos;,</span><br><span class="line">  `UserName` varchar(64) DEFAULT NULL COMMENT &apos;用户名称&apos;,</span><br><span class="line">  `UserMobile` varchar(64) DEFAULT NULL COMMENT &apos;用户手机号&apos;,</span><br><span class="line">  `UserRealLvl` varchar(64) NOT NULL COMMENT &apos;用户实名等级&apos;,</span><br><span class="line">  `UserBirthday` varchar(8) DEFAULT NULL COMMENT &apos;用户生日&apos;,</span><br><span class="line">  `UserSex` varchar(6) DEFAULT NULL COMMENT &apos;用户性别&apos;,</span><br><span class="line">  `UserEdu` varchar(64) DEFAULT NULL COMMENT &apos;用户学历&apos;,</span><br><span class="line">  `UserMail` varchar(64) DEFAULT NULL COMMENT &apos;用户邮箱&apos;,</span><br><span class="line">  `UserAlipay` varchar(64) DEFAULT NULL COMMENT &apos;用户支付宝&apos;,</span><br><span class="line">  `UserWeixin` varchar(64) DEFAULT NULL COMMENT &apos;用户微信&apos;,</span><br><span class="line">  `UserHomeAddress` varchar(128) DEFAULT NULL COMMENT &apos;用户户籍地址&apos;,</span><br><span class="line">  `UserLifeAddress` varchar(128) CHARACTER SET utf32 DEFAULT NULL COMMENT &apos;用户居住地址&apos;,</span><br><span class="line">  `UserWork` varchar(128) DEFAULT NULL COMMENT &apos;用户工作单位&apos;,</span><br><span class="line">  `UserRegion` varchar(6) NOT NULL COMMENT &apos;用户来源区别&apos;,</span><br><span class="line">  `UserSsiNo` varchar(64) DEFAULT NULL COMMENT &apos;社保卡号&apos;,</span><br><span class="line">  `UserSsiLocation` varchar(128) DEFAULT NULL COMMENT &apos;发卡地&apos;,</span><br><span class="line">  `Cd_operation` varchar(2) NOT NULL COMMENT &apos;同步类型&apos;,</span><br><span class="line">  `Cd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;同步时间&apos;,</span><br><span class="line">  `Cd_batch` varchar(32) NOT NULL COMMENT &apos;批次号&apos;,</span><br><span class="line">  `DataSource` varchar(3) NOT NULL COMMENT &apos;数据来源&apos;,</span><br><span class="line">  PRIMARY KEY (`ID`),</span><br><span class="line">  KEY `up_uc_province_user_update_time_index` (`update_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_province_user_cd_time_index` (`Cd_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_province_user_ID_index` (`ID`) USING BTREE,</span><br><span class="line">  KEY `up_uc_province_user_Cd_batch_index` (`Cd_batch`) USING BTREE</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;自然人信息资料表&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="GJZWFW-原始DDL-2"><a href="#GJZWFW-原始DDL-2" class="headerlink" title="GJZWFW(原始DDL)"></a>GJZWFW(原始DDL)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot; </span><br><span class="line">   (	&quot;ID&quot; NUMBER(20,0) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTTYPE&quot; NVARCHAR2(6) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTNO&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTKEY&quot; NVARCHAR2(128) NOT NULL ENABLE, </span><br><span class="line">	&quot;CERTEXPDATE&quot; NVARCHAR2(8), </span><br><span class="line">	&quot;CERTEFFDATE&quot; NVARCHAR2(8), </span><br><span class="line">	&quot;CREATETIME&quot; NVARCHAR2(20) NOT NULL ENABLE, </span><br><span class="line">	&quot;USERNAME&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;USERMOBILE&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERREALLVL&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;USERBIRTHDAY&quot; NVARCHAR2(8), </span><br><span class="line">	&quot;USERSEX&quot; NVARCHAR2(6), </span><br><span class="line">	&quot;USEREDU&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERMAIL&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERALIPAY&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERWEIXIN&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERHOMEADDRESS&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;USERLIFEADDRESS&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;USERWORK&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;USERREGION&quot; NVARCHAR2(6) NOT NULL ENABLE, </span><br><span class="line">	&quot;USERSSINO&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;USERSSILOCATION&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;CD_OPERATION&quot; NVARCHAR2(2) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_TIME&quot; DATE NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_BATCH&quot; NVARCHAR2(32) NOT NULL ENABLE, </span><br><span class="line">	&quot;DATASOURCE&quot; NVARCHAR2(3) NOT NULL ENABLE, </span><br><span class="line">	 CHECK (ID IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CertType IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CertNo IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CertKey IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CreateTime IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (UserName IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (UserRealLvl IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (UserRegion IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_operation IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_time IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_batch IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (DataSource IS NOT NULL) ENABLE, </span><br><span class="line">	 PRIMARY KEY (&quot;ID&quot;)</span><br><span class="line">  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS </span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot;  ENABLE</span><br><span class="line">   ) SEGMENT CREATION IMMEDIATE </span><br><span class="line">  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING</span><br><span class="line">  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645</span><br><span class="line">  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)</span><br><span class="line">  TABLESPACE &quot;USERS&quot; </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;CERTTYPE&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;CERTNO&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;CERTEXPDATE&quot; IS &apos;？??？Ч？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;CERTEFFDATE&quot; IS &apos;？??？Ч？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERREALLVL&quot; IS &apos;？??？？?？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERBIRTHDAY&quot; IS &apos;？??？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERSEX&quot; IS &apos;？??？??&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USEREDU&quot; IS &apos;？??？??&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERMAIL&quot; IS &apos;？??？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERALIPAY&quot; IS &apos;？??？????&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERWEIXIN&quot; IS &apos;？??？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERHOMEADDRESS&quot; IS &apos;？???????？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERLIFEADDRESS&quot; IS &apos;？???？??？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERWORK&quot; IS &apos;？????？??λ&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;USERREGION&quot; IS &apos;？????？？??&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;CD_OPERATION&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_PROVINCE_USER&quot;.&quot;DATASOURCE&quot; IS &apos;？?？?？&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="新增-2"><a href="#新增-2" class="headerlink" title="新增"></a>新增</h4><p>update_time</p>
+<h4 id="删除-2"><a href="#删除-2" class="headerlink" title="删除"></a>删除</h4><p>CORPORATORID</p>
+<blockquote>
+</blockquote>
+<h2 id="UP-UC-INFO-ENTERPRISE"><a href="#UP-UC-INFO-ENTERPRISE" class="headerlink" title="UP_UC_INFO_ENTERPRISE"></a>UP_UC_INFO_ENTERPRISE</h2><h3 id="上行建表语句-3"><a href="#上行建表语句-3" class="headerlink" title="上行建表语句"></a>上行建表语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `up_uc_info_enterprise`;</span><br><span class="line">CREATE TABLE `up_uc_info_enterprise` (</span><br><span class="line">  `ID` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  `CertificateSno` varchar(64) NOT NULL COMMENT &apos;法人标识&apos;,</span><br><span class="line">  `EnterpriseAddress` varchar(128) DEFAULT NULL COMMENT &apos;企业机构注册地址&apos;,</span><br><span class="line">  `EnterpriseCapital` varchar(12) DEFAULT NULL COMMENT &apos;企业机构注册金额&apos;,</span><br><span class="line">  `EnterpriseRange` varchar(4000) DEFAULT NULL COMMENT &apos;企业机构经营范围&apos;,</span><br><span class="line">  `EnterpriseRegisterDate` varchar(20) DEFAULT NULL COMMENT &apos;企业机构注册日期&apos;,</span><br><span class="line">  `EnterpriseIndustry` varchar(64) DEFAULT NULL COMMENT &apos;行业类型&apos;,</span><br><span class="line">  `EnterpriseSmallClass` varchar(64) DEFAULT NULL COMMENT &apos;行业小类&apos;,</span><br><span class="line">  `EnterpriseBeginDate` varchar(20) DEFAULT NULL COMMENT &apos;营业限期起始&apos;,</span><br><span class="line">  `EnterpriseEndDate` varchar(20) DEFAULT NULL COMMENT &apos;营业限期截止&apos;,</span><br><span class="line">  `EnterpriseApprovalDate` varchar(20) DEFAULT NULL COMMENT &apos;核准日期&apos;,</span><br><span class="line">  `EnterpriseApproverAgency` varchar(64) DEFAULT NULL COMMENT &apos;核准机构&apos;,</span><br><span class="line">  `CreateDate` varchar(20) NOT NULL COMMENT &apos;创建时间&apos;,</span><br><span class="line">  `Cd_operation` varchar(2) NOT NULL COMMENT &apos;同步类型&apos;,</span><br><span class="line">  `Cd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;同步时间&apos;,</span><br><span class="line">  `Cd_batch` varchar(32) NOT NULL COMMENT &apos;批次号&apos;,</span><br><span class="line">  `DataSource` varchar(3) NOT NULL COMMENT &apos;数据来源&apos;,</span><br><span class="line">  PRIMARY KEY (`ID`),</span><br><span class="line">  KEY `up_uc_info_enterprise_update_time_index` (`update_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_enterprise_cd_time_index` (`Cd_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_enterprise_ID_index` (`ID`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_enterprise_Cd_batch_index` (`Cd_batch`) USING BTREE</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;企业法人信息&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="GJZWFW-原始DDL-3"><a href="#GJZWFW-原始DDL-3" class="headerlink" title="GJZWFW(原始DDL)"></a>GJZWFW(原始DDL)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot; </span><br><span class="line">   (	&quot;ID&quot; NUMBER(20,0) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPORATORID&quot; NVARCHAR2(64) NOT NULL ENABLE, </span><br><span class="line">	&quot;ENTERPRISEADDRESS&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;ENTERPRISECAPITAL&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;ENTERPRISERANGE&quot; NVARCHAR2(256), </span><br><span class="line">	&quot;ENTERPRISEREGISTERDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;ENTERPRISEINDUSTRY&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;ENTERPRISESMALLCLASS&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;ENTERPRISEBEGINDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;ENTERPRISEENDDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;ENTERPRISEAPPROVALDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;ENTERPRISEAPPROVERAGENCY&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;CREATEDATE&quot; NVARCHAR2(20) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_OPERATION&quot; NVARCHAR2(2) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_TIME&quot; DATE, </span><br><span class="line">	&quot;CD_BATCH&quot; NVARCHAR2(32) NOT NULL ENABLE, </span><br><span class="line">	&quot;DATASOURCE&quot; NVARCHAR2(3) NOT NULL ENABLE, </span><br><span class="line">	 CHECK (ID IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CorporatorId IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (CreateDate IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_operation IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_batch IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (DataSource IS NOT NULL) ENABLE, </span><br><span class="line">	 PRIMARY KEY (&quot;ID&quot;)</span><br><span class="line">  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS NOCOMPRESS LOGGING</span><br><span class="line">  TABLESPACE &quot;USERS&quot;  ENABLE</span><br><span class="line">   ) SEGMENT CREATION DEFERRED </span><br><span class="line">  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING</span><br><span class="line">  TABLESPACE &quot;USERS&quot; </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;CORPORATORID&quot; IS &apos;??？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEADDRESS&quot; IS &apos;？？????？?？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISERANGE&quot; IS &apos;？？??????？??Χ&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEREGISTERDATE&quot; IS &apos;？？????？?？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEINDUSTRY&quot; IS &apos;？？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEBEGINDATE&quot; IS &apos;？？？？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEENDDATE&quot; IS &apos;？？？？?？?&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEAPPROVALDATE&quot; IS &apos;?？?？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;ENTERPRISEAPPROVERAGENCY&quot; IS &apos;?？?????&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;CD_OPERATION&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;.&quot;DATASOURCE&quot; IS &apos;？?？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON TABLE &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ENTERPRISE&quot;  IS &apos;？？？?？？?-？？??？？？&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="新增-3"><a href="#新增-3" class="headerlink" title="新增"></a>新增</h4><p>update_time</p>
+<p>CertificateSno</p>
+<h4 id="删除-3"><a href="#删除-3" class="headerlink" title="删除"></a>删除</h4><p>CORPORATORID</p>
+<blockquote>
+<p>EnterpriseRange 字段存储long是否可行</p>
+</blockquote>
+<h2 id="UP-UC-INFO-ASSOCIATION"><a href="#UP-UC-INFO-ASSOCIATION" class="headerlink" title="UP_UC_INFO_ASSOCIATION"></a>UP_UC_INFO_ASSOCIATION</h2><h3 id="上行建表语句-4"><a href="#上行建表语句-4" class="headerlink" title="上行建表语句"></a>上行建表语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `up_uc_info_association`;</span><br><span class="line">CREATE TABLE `up_uc_info_association` (</span><br><span class="line">  `ID` bigint(20) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  `CertificateSno` varchar(64) NOT NULL COMMENT &apos;法人标识&apos;,</span><br><span class="line">  `ActArea` varchar(64) DEFAULT NULL COMMENT &apos;活动地域&apos;,</span><br><span class="line">  `AssociationContent` varchar(2000) DEFAULT NULL COMMENT &apos;业务范围&apos;,</span><br><span class="line">  `RegAddress` varchar(128) DEFAULT NULL COMMENT &apos;住所&apos;,</span><br><span class="line">  `Industry` varchar(64) DEFAULT NULL COMMENT &apos;所属行(事)业&apos;,</span><br><span class="line">  `RegDate` varchar(20) DEFAULT NULL COMMENT &apos;登记时间&apos;,</span><br><span class="line">  `RegMoney` varchar(12) DEFAULT NULL COMMENT &apos;注册资金&apos;,</span><br><span class="line">  `AssociationOwner` varchar(64) DEFAULT NULL COMMENT &apos;法定代表人&apos;,</span><br><span class="line">  `CompetentOrg` varchar(320) DEFAULT NULL COMMENT &apos;业务主管单位&apos;,</span><br><span class="line">  `CharityOrg` varchar(6) DEFAULT NULL COMMENT &apos;是否慈善组织&apos;,</span><br><span class="line">  `SocialOrgType` varchar(6) DEFAULT NULL COMMENT &apos;社会组织类型&apos;,</span><br><span class="line">  `FundKind` varchar(6) DEFAULT NULL COMMENT &apos;基金会类型&apos;,</span><br><span class="line">  `BeginDate` varchar(20) DEFAULT NULL COMMENT &apos;证书有效期始&apos;,</span><br><span class="line">  `EndDate` varchar(20) DEFAULT NULL COMMENT &apos;证书有效期止&apos;,</span><br><span class="line">  `Cd_operation` varchar(2) NOT NULL COMMENT &apos;同步类型&apos;,</span><br><span class="line">  `Cd_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT &apos;同步时间&apos;,</span><br><span class="line">  `Cd_batch` varchar(32) NOT NULL COMMENT &apos;批次号&apos;,</span><br><span class="line">  `DataSource` varchar(3) NOT NULL COMMENT &apos;数据来源&apos;,</span><br><span class="line">  PRIMARY KEY (`ID`),</span><br><span class="line">  KEY `up_uc_info_association_update_time_index` (`update_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_association_cd_time_index` (`Cd_time`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_association_ID_index` (`ID`) USING BTREE,</span><br><span class="line">  KEY `up_uc_info_association_Cd_batch_index` (`Cd_batch`) USING BTREE</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;社会组织法人信息&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="GJZWFW-原始DDL-4"><a href="#GJZWFW-原始DDL-4" class="headerlink" title="GJZWFW(原始DDL)"></a>GJZWFW(原始DDL)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot; </span><br><span class="line">   (	&quot;ID&quot; NUMBER(20,0) NOT NULL ENABLE, </span><br><span class="line">	&quot;CORPORATORID&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;ACTAREA&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;ASSOCIATIONCONTENT&quot; NVARCHAR2(500), </span><br><span class="line">	&quot;REGADDRESS&quot; NVARCHAR2(128), </span><br><span class="line">	&quot;INDUSTRY&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;REGDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;REGMONEY&quot; NVARCHAR2(12), </span><br><span class="line">	&quot;ASSOCIATIONOWNER&quot; NVARCHAR2(64), </span><br><span class="line">	&quot;COMPETENTORG&quot; NVARCHAR2(320), </span><br><span class="line">	&quot;CHARITYORG&quot; NVARCHAR2(6), </span><br><span class="line">	&quot;SOCIALORGTYPE&quot; NVARCHAR2(6), </span><br><span class="line">	&quot;FUNDKIND&quot; NVARCHAR2(6), </span><br><span class="line">	&quot;BEGINDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;ENDDATE&quot; NVARCHAR2(20), </span><br><span class="line">	&quot;CD_OPERATION&quot; NVARCHAR2(2) NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_TIME&quot; DATE NOT NULL ENABLE, </span><br><span class="line">	&quot;CD_BATCH&quot; NVARCHAR2(32) NOT NULL ENABLE, </span><br><span class="line">	&quot;DATASOURCE&quot; NVARCHAR2(3) NOT NULL ENABLE, </span><br><span class="line">	 CHECK (ID IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_operation IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_time IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (Cd_batch IS NOT NULL) ENABLE, </span><br><span class="line">	 CHECK (DataSource IS NOT NULL) ENABLE, </span><br><span class="line">	 PRIMARY KEY (&quot;ID&quot;)</span><br><span class="line">  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS NOCOMPRESS LOGGING</span><br><span class="line">  TABLESPACE &quot;USERS&quot;  ENABLE</span><br><span class="line">   ) SEGMENT CREATION DEFERRED </span><br><span class="line">  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING</span><br><span class="line">  TABLESPACE &quot;USERS&quot; </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;CORPORATORID&quot; IS &apos;??？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;ACTAREA&quot; IS &apos;？?？？?？??Χ&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;ASSOCIATIONCONTENT&quot; IS &apos;？？？？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;REGADDRESS&quot; IS &apos;？？？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;INDUSTRY&quot; IS &apos;？？？(？)？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;REGMONEY&quot; IS &apos;？？？?？??&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;ASSOCIATIONOWNER&quot; IS &apos;？？??？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;COMPETENTORG&quot; IS &apos;？？？?？?λ&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;CHARITYORG&quot; IS &apos;？???？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;SOCIALORGTYPE&quot; IS &apos;？?？？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;BEGINDATE&quot; IS &apos;？？？？？？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;ENDDATE&quot; IS &apos;？？？？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;CD_OPERATION&quot; IS &apos;？???？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON COLUMN &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;.&quot;DATASOURCE&quot; IS &apos;？?？?？&apos;</span><br><span class="line"> </span><br><span class="line">   COMMENT ON TABLE &quot;GJZWFW&quot;.&quot;UP_UC_INFO_ASSOCIATION&quot;  IS &apos;？？？?？？?-？？??？？？&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="新增-4"><a href="#新增-4" class="headerlink" title="新增"></a>新增</h4><p>update_time<br>CertificateSno</p>
+<h4 id="删除-4"><a href="#删除-4" class="headerlink" title="删除"></a>删除</h4><p>CORPORATORID</p>
+<blockquote>
+<p>ASSOCIATIONCONTENT业务范围 为long是否可行</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/docs/15597978127454.html" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/docs/15597978511085.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">勤奋是学习的枝叶，当然很苦，智慧是学习的花朵，当然香郁。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">300</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2018-11-23-数据库表更换-与现有表对比"><span class="nav-number">1.</span> <span class="nav-text">2018/11/23 数据库表更换(与现有表对比)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UP-UC-CORPORATOR-ACCOUNT"><span class="nav-number">2.</span> <span class="nav-text">UP_UC_CORPORATOR_ACCOUNT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上行建表语句"><span class="nav-number">2.1.</span> <span class="nav-text">上行建表语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GJZWFW-原始DDL"><span class="nav-number">2.2.</span> <span class="nav-text">GJZWFW(原始DDL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变更字段"><span class="nav-number">2.3.</span> <span class="nav-text">变更字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增"><span class="nav-number">2.3.1.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">2.3.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UP-UC-CORPORATOR-IDENTITY"><span class="nav-number">3.</span> <span class="nav-text">UP_UC_CORPORATOR_IDENTITY</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上行建表语句-1"><span class="nav-number">3.1.</span> <span class="nav-text">上行建表语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GJZWFW-原始DDL-1"><span class="nav-number">3.2.</span> <span class="nav-text">GJZWFW(原始DDL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UP-UC-PROVINCE-USER"><span class="nav-number">4.</span> <span class="nav-text">UP_UC_PROVINCE_USER</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上行建表语句-2"><span class="nav-number">4.1.</span> <span class="nav-text">上行建表语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GJZWFW-原始DDL-2"><span class="nav-number">4.2.</span> <span class="nav-text">GJZWFW(原始DDL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增-2"><span class="nav-number">4.2.1.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-2"><span class="nav-number">4.2.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UP-UC-INFO-ENTERPRISE"><span class="nav-number">5.</span> <span class="nav-text">UP_UC_INFO_ENTERPRISE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上行建表语句-3"><span class="nav-number">5.1.</span> <span class="nav-text">上行建表语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GJZWFW-原始DDL-3"><span class="nav-number">5.2.</span> <span class="nav-text">GJZWFW(原始DDL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增-3"><span class="nav-number">5.2.1.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-3"><span class="nav-number">5.2.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UP-UC-INFO-ASSOCIATION"><span class="nav-number">6.</span> <span class="nav-text">UP_UC_INFO_ASSOCIATION</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上行建表语句-4"><span class="nav-number">6.1.</span> <span class="nav-text">上行建表语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GJZWFW-原始DDL-4"><span class="nav-number">6.2.</span> <span class="nav-text">GJZWFW(原始DDL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新增-4"><span class="nav-number">6.2.1.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-4"><span class="nav-number">6.2.2.</span> <span class="nav-text">删除</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/docs/15597978511191.html';
+          this.page.identifier = 'docs/15597978511191.html';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
