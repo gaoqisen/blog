@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201902/vue.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201908/20190810192702.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201908/20190810163742.png">
-<meta property="og:updated_time" content="2019-08-10T12:03:57.000Z">
+<meta property="og:updated_time" content="2019-08-10T15:29:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue学习记录">
 <meta name="twitter:description" content="一些Vue的学习记录">
@@ -400,17 +400,22 @@
       
 
       
-        <h2 id="技术来源"><a href="#技术来源" class="headerlink" title="技术来源"></a>技术来源</h2><h3 id="Vue学习之前需要了解"><a href="#Vue学习之前需要了解" class="headerlink" title="Vue学习之前需要了解:"></a>Vue学习之前需要了解:</h3><ul>
-<li><p>Node.js官网下载链接(<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a>)：运行在服务端的 JavaScript，是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
+        <h2 id="一点小知识"><a href="#一点小知识" class="headerlink" title="一点小知识"></a>一点小知识</h2><h3 id="Vue学习之前需要了解"><a href="#Vue学习之前需要了解" class="headerlink" title="Vue学习之前需要了解:"></a>Vue学习之前需要了解:</h3><ul>
+<li><p><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a>：运行在服务端的 JavaScript，是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
 </li>
-<li><p><a href="https://www.npmjs.cn/getting-started/what-is-npm/" target="_blank" rel="noopener">npm</a>(cnpm <a href="https://npm.taobao.org" target="_blank" rel="noopener">https://npm.taobao.org</a>) : npm是nodejs的包管理器，cnpm是淘宝 NPM 镜像，用来加速。</p>
+<li><p><a href="https://www.npmjs.cn/getting-started/what-is-npm/" target="_blank" rel="noopener">npm</a>、<a href="https://npm.taobao.org" target="_blank" rel="noopener">cnpm</a> : npm是nodejs的包管理器，cnpm是淘宝 NPM 镜像，用来加速。</p>
 </li>
-<li><p>webpack(<a href="https://www.webpackjs.com/" target="_blank" rel="noopener">https://www.webpackjs.com/</a>):  基于node的一个现代 JavaScript 应用程序的静态模块打包器 </p>
+<li><p><a href="https://www.webpackjs.com/" target="_blank" rel="noopener">webpack</a>:  基于node的一个现代 JavaScript 应用程序的静态模块打包器 </p>
 </li>
 <li><p><a href="https://www.w3school.com.cn/html5/index.asp" target="_blank" rel="noopener">html</a>、<a href="https://www.w3school.com.cn/css/index.asp" target="_blank" rel="noopener">css</a>、<a href="https://www.w3school.com.cn/js/index.asp" target="_blank" rel="noopener">JavaScript</a>的基础</p>
 </li>
 </ul>
-<p><a href="https://cn.vuejs.org/index.html" target="_blank" rel="noopener">vue官网:https://cn.vuejs.org/index.html</a><br><a href="https://www.kancloud.cn/dataoedu/vue/327238" target="_blank" rel="noopener">看云Vue文档:https://www.kancloud.cn/dataoedu/vue/327238</a></p>
+<ul>
+<li><p><a href="https://cn.vuejs.org/index.html" target="_blank" rel="noopener">vue官网</a>: 官方文档</p>
+</li>
+<li><p><a href="https://www.kancloud.cn/dataoedu/vue/327238" target="_blank" rel="noopener">看云Vue文档</a>: 二手文档</p>
+</li>
+</ul>
 <h3 id="渐进式JavaScript框架"><a href="#渐进式JavaScript框架" class="headerlink" title="渐进式JavaScript框架"></a>渐进式JavaScript框架</h3><p>vue官网的第一句话就是渐进式JavaScript框架，我的理解就是循序渐进可以自底向上逐层应用开发的框架，可以单独一个页面用来做表单，也可以整个项目用来做框架，可以一步一步引入vue，模块化需要那个就引入那个。</p>
 <h2 id="Vue时间轴"><a href="#Vue时间轴" class="headerlink" title="Vue时间轴"></a>Vue时间轴</h2><p><img src="https://gaoqisen.github.io/GraphBed/201908/20190810165334.png" alt="尤雨溪"></p>
 <ul>
@@ -507,7 +512,7 @@
 </li>
 </ul>
 <ul>
-<li>如果报以下的错误，就安装缺少依赖(cnpm installnpm)，全部安装完成之后就可以通过链接访问了。<br><img src="https://gaoqisen.github.io/GraphBed/201908/20190810192702.png" alt="https://gaoqisen.github.io/GraphBed/201908/20190810192702.png"></li>
+<li>如果报以下的错误，就安装缺少依赖(cnpm install)，全部安装完成之后就可以通过链接访问了。<br><img src="https://gaoqisen.github.io/GraphBed/201908/20190810192702.png" alt="https://gaoqisen.github.io/GraphBed/201908/20190810192702.png"></li>
 </ul>
 <ul>
 <li>访问<a href="http://localhost:8080出现vue标识表示安装成功" target="_blank" rel="noopener">http://localhost:8080出现vue标识表示安装成功</a></li>
@@ -731,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术来源"><span class="nav-number">1.</span> <span class="nav-text">技术来源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue学习之前需要了解"><span class="nav-number">1.1.</span> <span class="nav-text">Vue学习之前需要了解:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐进式JavaScript框架"><span class="nav-number">1.2.</span> <span class="nav-text">渐进式JavaScript框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue时间轴"><span class="nav-number">2.</span> <span class="nav-text">Vue时间轴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解Vue"><span class="nav-number">3.</span> <span class="nav-text">了解Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百科定义"><span class="nav-number">3.1.</span> <span class="nav-text">百科定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同类的技术"><span class="nav-number">3.2.</span> <span class="nav-text">同类的技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同类技术优缺点"><span class="nav-number">3.3.</span> <span class="nav-text">同类技术优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue组成方式"><span class="nav-number">3.4.</span> <span class="nav-text">Vue组成方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">4.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装方式"><span class="nav-number">4.1.</span> <span class="nav-text">安装方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">配置文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一点小知识"><span class="nav-number">1.</span> <span class="nav-text">一点小知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue学习之前需要了解"><span class="nav-number">1.1.</span> <span class="nav-text">Vue学习之前需要了解:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐进式JavaScript框架"><span class="nav-number">1.2.</span> <span class="nav-text">渐进式JavaScript框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue时间轴"><span class="nav-number">2.</span> <span class="nav-text">Vue时间轴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解Vue"><span class="nav-number">3.</span> <span class="nav-text">了解Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百科定义"><span class="nav-number">3.1.</span> <span class="nav-text">百科定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同类的技术"><span class="nav-number">3.2.</span> <span class="nav-text">同类的技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同类技术优缺点"><span class="nav-number">3.3.</span> <span class="nav-text">同类技术优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue组成方式"><span class="nav-number">3.4.</span> <span class="nav-text">Vue组成方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">4.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装方式"><span class="nav-number">4.1.</span> <span class="nav-text">安装方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">配置文件</span></a></li></ol></li></ol></div>
             
 
           </div>
