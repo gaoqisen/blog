@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="之前学习的是命令模式 对于命令模式的理解命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作 一、 对适配器模式和观察者模式的理解适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png">
+<meta property="og:updated_time" content="2019-10-23T04:54:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式－适配器与外观模式">
 <meta name="twitter:description" content="之前学习的是命令模式 对于命令模式的理解命令模式就是将操作封装为一个类（一个命令）。在通过一个控制器把命令封装进去，就像一个遥控器，最后通过不同的命令就可以实现不同的操作 一、 对适配器模式和观察者模式的理解适配器模式就是改变一个接口，实现不同的操作。就像插座转换头一样，将三孔插座转换为二孔插座。外观模式字面上就是好的形象的意识。将一些操作集合在一起，统一调用，简单又方便。就像家里面的插头到处都是">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png">
 
 
 
@@ -403,7 +403,7 @@
 <p>大插板（不让插头凌乱，外观好看）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 买了一个大插板，将电视、烤火炉、电灯的插头都插在这个大插板上面</span><br><span class="line">public class FacadeSocket &#123;</span><br><span class="line">	TV tv;</span><br><span class="line">	Light light;</span><br><span class="line">	Stove stove;</span><br><span class="line">	public FacadeSocket(TV tv,Light light,Stove stove) &#123;</span><br><span class="line">		this.tv = tv;</span><br><span class="line">		this.light = light;</span><br><span class="line">		this.stove = stove;</span><br><span class="line">	&#125;</span><br><span class="line">	// 通过外观模式统一处理</span><br><span class="line">	public void on() &#123;</span><br><span class="line">		this.tv.on();</span><br><span class="line">		this.light.on();</span><br><span class="line">		this.stove.on();</span><br><span class="line">	&#125;</span><br><span class="line">	public void off() &#123;</span><br><span class="line">		this.tv.off();</span><br><span class="line">		this.light.off();</span><br><span class="line">		this.stove.off();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>main方法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String srgs[])&#123;</span><br><span class="line">            // 外观模式</span><br><span class="line">		TV tv = new TV();</span><br><span class="line">		Light light = new Light();</span><br><span class="line">		Stove stove = new Stove();</span><br><span class="line">		// 创建大插板， 统一开关</span><br><span class="line">		FacadeSocket fs = new FacadeSocket(tv, light,stove);</span><br><span class="line">		fs.on();</span><br><span class="line">		fs.off();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开电视</span><br><span class="line">开电灯</span><br><span class="line">开火炉</span><br><span class="line">关电视</span><br><span class="line">关电灯</span><br><span class="line">关火炉</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="适配器模式"><br><img src="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="外观模式"></p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-ab7dda572d8d2fc2.png" alt="适配器模式"><br><img src="https://upload-images.jianshu.io/upload_images/7172355-7239f21a7ac2477a.png" alt="外观模式"></p>
 <h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>oo设计原则</p>
 <blockquote>
 <p>封装变化</p>
@@ -465,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20180902.html" rel="next" title="设计模式－迭代器模式">
-                <i class="fa fa-chevron-left"></i> 设计模式－迭代器模式
+              <a href="/201809017.html" rel="next" title="设计模式－工厂模式">
+                <i class="fa fa-chevron-left"></i> 设计模式－工厂模式
               </a>
             
           </div>
@@ -475,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/201809020.html" rel="prev" title="设计模式－模版方法模式">
-                设计模式－模版方法模式 <i class="fa fa-chevron-right"></i>
+              <a href="/20180902.html" rel="prev" title="设计模式－迭代器模式">
+                设计模式－迭代器模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

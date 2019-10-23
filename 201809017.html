@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="之前学的是装饰者模式 装饰者模式的优点动态地为对象增加新的功能或者撤销功能（继承就不能做到这一点） 装饰者模式的缺点会产生过多的相似的对象！ 一、对工厂模式的理解简单工厂：通过工厂类生成不同的类。工厂类返回一个父类型的类，通过if或者switch判断用户给的数据，通过不同的数据返回不同的类。工厂方法：比较重要的就是抽象类里面的一个抽象方法，所有继承了抽象类的类都必须实现该方法，之后在调用的时候利用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-5937266ecfea4c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-af03f70212447f70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-5937266ecfea4c1b.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-af03f70212447f70.png">
+<meta property="og:updated_time" content="2019-10-23T04:59:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式－工厂模式">
 <meta name="twitter:description" content="之前学的是装饰者模式 装饰者模式的优点动态地为对象增加新的功能或者撤销功能（继承就不能做到这一点） 装饰者模式的缺点会产生过多的相似的对象！ 一、对工厂模式的理解简单工厂：通过工厂类生成不同的类。工厂类返回一个父类型的类，通过if或者switch判断用户给的数据，通过不同的数据返回不同的类。工厂方法：比较重要的就是抽象类里面的一个抽象方法，所有继承了抽象类的类都必须实现该方法，之后在调用的时候利用">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png">
 
 
 
@@ -416,9 +416,9 @@
 <p>南方月饼店继承抽象月饼店<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 南方月饼店</span><br><span class="line">public class SouthMoonCakeStroe1 extends MoonCakeStore1&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public MoonCake1 createMoonCake(String type) &#123;</span><br><span class="line">		MaterailFactory mf = new SouthMaterailFactory();</span><br><span class="line">		if (type.equals(&quot;meat&quot;)) &#123;</span><br><span class="line">			return new sugar1(mf);</span><br><span class="line">		&#125; else if (type.equals(&quot;sugar&quot;)) &#123;</span><br><span class="line">			return new meat1(mf);</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class run &#123;</span><br><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">		MoonCakeStore1 mcs1 = new SouthMoonCakeStroe1();</span><br><span class="line">		</span><br><span class="line">		MoonCake1 mc12 = mcs1.orderMoonCake(&quot;meat&quot;);</span><br><span class="line">		System.out.println(mc12.getName());</span><br><span class="line">		MoonCake1 mc11 = mcs1.orderMoonCake(&quot;meat&quot;);</span><br><span class="line">		System.out.println(mc11.getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">揉面粉</span><br><span class="line">准备制作月饼了</span><br><span class="line">南方的独特制作的面粉</span><br><span class="line">南方的独特制作的芝麻</span><br><span class="line">糖陷月饼</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="简单工厂模式      "></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7172355-5937266ecfea4c1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="工厂方法模式"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7172355-af03f70212447f70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="抽象工厂模式"></p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-e25809d542ed6799.png" alt="简单工厂模式      "></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7172355-5937266ecfea4c1b.png" alt="工厂方法模式"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7172355-af03f70212447f70.png" alt="抽象工厂模式"></p>
 <h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>面向对象原则</p>
 <blockquote>
 <p>多用组合，少用继承</p>
@@ -487,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/20180902.html" rel="prev" title="设计模式－迭代器模式">
-                设计模式－迭代器模式 <i class="fa fa-chevron-right"></i>
+              <a href="/20180904.html" rel="prev" title="设计模式－适配器与外观模式">
+                设计模式－适配器与外观模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

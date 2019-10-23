@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="之前学习的是观察模式，复习观察者模式 观察者模式一般在那些地方使用：比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。 使用观察者模式的好处：第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png">
+<meta property="og:updated_time" content="2019-10-23T04:59:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式－装饰者模式">
 <meta name="twitter:description" content="之前学习的是观察模式，复习观察者模式 观察者模式一般在那些地方使用：比如我们有两个对象，一个对象依赖于另一个对象的变化而变化，此时我们可以将这两个对象抽象出来，做成接口，利用观察者模式来进行解耦，又或者，当一个对象发生变化的时候，需要通知别的对象来做出改变，但又不知道这样的对象有多少个，此时利用观察者模式非常合适。 使用观察者模式的好处：第一、观察者模式在被观察者和观察者之间建立一个抽象的耦合。被">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png">
 
 
 
@@ -403,7 +403,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[]) &#123;</span><br><span class="line">		House house  = new ChineseStyle();</span><br><span class="line">		System.out.println(house.getDescription() + &quot;***&quot; +house.cost());</span><br><span class="line">		// 英式风格的房子用 一张中式风格的桌子，和两把椅子，一把中式风格的，一把英式风格的椅子</span><br><span class="line">		House house1 = new EnglandStyle();  // 英式风格的房子</span><br><span class="line">		house1 = new ChineseDesk(house1);  </span><br><span class="line">		house1 = new ChineseChair(house1);  </span><br><span class="line">		house1 = new EnglandChair(house1);  </span><br><span class="line">		System.out.println(house1.getDescription() + &quot;***&quot; +house1.cost());</span><br><span class="line">		// 中式风格的房子用 一张中式风格的桌子，和两把椅子，一把中式风格的，一把英式风格的椅子</span><br><span class="line">		House house2 = new ChineseStyle();  // 中式风格的房子</span><br><span class="line">		house2 = new ChineseDesk(house2);  </span><br><span class="line">		house2 = new ChineseChair(house2);  </span><br><span class="line">		house2 = new EnglandChair(house2);  </span><br><span class="line">		System.out.println(house2.getDescription() + &quot;***&quot; +house2.cost());</span><br><span class="line">		// 后面就可以按照自己的喜欢装修自己的房子了</span><br><span class="line">		// 其它的家具也可以更加灵活的添加了</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">中式风格的房子***888.0</span><br><span class="line">英式风格的房子***中式风格的桌子＊＊＊中式风格的椅子＊＊＊英式风格的椅子***756.0</span><br><span class="line">中式风格的房子***中式风格的桌子＊＊＊中式风格的椅子＊＊＊英式风格的椅子***978.0</span><br></pre></td></tr></table></figure>
-<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="装饰者模式－UML"></p>
+<h2 id="三、UML类图"><a href="#三、UML类图" class="headerlink" title="三、UML类图"></a>三、UML类图</h2><p><img src="https://upload-images.jianshu.io/upload_images/7172355-b1d5a3e45c75fd9b.png" alt="装饰者模式－UML"></p>
 <h2 id="四、笔记"><a href="#四、笔记" class="headerlink" title="四、笔记"></a>四、笔记</h2><p>面向对象原则</p>
 <blockquote>
 <p>封装变化</p>

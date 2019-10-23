@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="sql数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 原因：   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的I">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png">
+<meta property="og:updated_time" content="2019-10-23T04:59:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录一次数据库迁移的失败经历">
 <meta name="twitter:description" content="sql数据结构 表一表二表三 目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格 原因：   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的I">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png">
 
 
 
@@ -392,7 +392,7 @@
 
       
         <p>sql数据结构</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表一"><br>表一<br><img src="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表二"><br>表二<br><img src="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表三"><br>表三</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7172355-8763ef5d4ce774b9.png" alt="表一"><br>表一<br><img src="https://upload-images.jianshu.io/upload_images/7172355-c87a27b65ee4a5f5.png" alt="表二"><br>表二<br><img src="https://upload-images.jianshu.io/upload_images/7172355-d7af9c1c49b8f4ca.png" alt="表三"><br>表三</p>
 <p>目标:将表一的数据迁移到表二、表三里面，一分为二。表二里面放产品主体，表三里面放多规格</p>
 <h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>   由于之前设计表的经验不足，没有考虑到产品多规格的情况，写到快完成的时候，才想到用两张表实现产品的多规格（引以为戒，以后设计表的时候，要多方面考虑）。之前用一张表的时候是用checked字段区分产品是否为多规格的，如果是单规格和多规格的主体，就存1。否则就存多规格主体的ID。最终导致现在上传了2915个产品（包括多规格）。管理很混乱，数据比较多，不可能手工重新传了的。只能做数据迁移。</p>
 <h2 id="实现思路有两种办法："><a href="#实现思路有两种办法：" class="headerlink" title="实现思路有两种办法："></a>实现思路有两种办法：</h2><h4 id="一、通过实体类迁移数据。"><a href="#一、通过实体类迁移数据。" class="headerlink" title="一、通过实体类迁移数据。"></a>一、通过实体类迁移数据。</h4><ul>
