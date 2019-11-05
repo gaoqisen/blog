@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="software" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="软件工程的一些学习笔记。">
+<meta name="keywords" content="software">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程">
+<meta property="og:url" content="https://gaoqisen.github.io/study_software.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="软件工程的一些学习笔记。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-18T04:33:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件工程">
+<meta name="twitter:description" content="软件工程的一些学习笔记。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/study_software.html"/>
+
+
+
+
+
+  <title>软件工程 | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/study_software.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件工程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-20T14:32:23+08:00">
+                2019-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件工程/" itemprop="url" rel="index">
+                    <span itemprop="name">软件工程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/study_software.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="study_software.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  软件工程的一些学习笔记。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章  绪论"></a>第一章  绪论</h2><h3 id="软件危机"><a href="#软件危机" class="headerlink" title="软件危机"></a>软件危机</h3><p>随着计算机的广泛应用，软件生产率、软件质量远远满足不了社会发展的需求，成为社会、经济发展的制约因素，人们把这种现象称为“软件危机”</p>
+<h3 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h3><p>其目的是倡导以工程的原理、原则和方法进行软件开发，以期解决“软件危机”。</p>
+<h2 id="第二章-软件需求与软件需求规约"><a href="#第二章-软件需求与软件需求规约" class="headerlink" title="第二章  软件需求与软件需求规约"></a>第二章  软件需求与软件需求规约</h2><h3 id="需求与需求获取"><a href="#需求与需求获取" class="headerlink" title="需求与需求获取"></a>需求与需求获取</h3><h4 id="需求定义"><a href="#需求定义" class="headerlink" title="需求定义"></a>需求定义</h4><ul>
+<li>一个需求是一个‘要予构造’的陈述，描述了一个待开发产品/系统应该具有的功能、性能和其他性质。</li>
+<li>单一一个需求的5个基本性质：必要的、误歧义的、可测的、可跟踪的、可测量的。</li>
+</ul>
+<h4 id="需求分类"><a href="#需求分类" class="headerlink" title="需求分类"></a>需求分类</h4><ul>
+<li>功能需求</li>
+<li>非功能需求：性能需求、外部接口需求（用户接口、硬件接口、软件接口、通信接口、内存约束、运行、地点需求）、设计约束（法规政策、硬件限制、与其他应用的接口、并发操作、审计功能、控制功能、高级语言需求、握手协议应用的关键程度、安全和保密）、质量属性</li>
+</ul>
+<h4 id="需求发现技术"><a href="#需求发现技术" class="headerlink" title="需求发现技术"></a>需求发现技术</h4><p>自悟、交谈、观察、小组会、提炼</p>
+<h3 id="需求规约"><a href="#需求规约" class="headerlink" title="需求规约"></a>需求规约</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>需求规约是一个软件／产品／系统所有需求称述的正式文档，它表达了一个软件产品／系统的概念模型。</p>
+<h4 id="满足的4个基本性质"><a href="#满足的4个基本性质" class="headerlink" title="满足的4个基本性质"></a>满足的4个基本性质</h4><ol>
+<li>重要性和稳定性程度。</li>
+<li>可修改的</li>
+<li>完整的</li>
+<li>一致的</li>
+</ol>
+<h4 id="需求规约格式"><a href="#需求规约格式" class="headerlink" title="需求规约格式"></a>需求规约格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. 引言</span><br><span class="line">    1.1 目的</span><br><span class="line">    1.2 范围</span><br><span class="line">    1.3定义，缩略语</span><br><span class="line">    1.4参考文献</span><br><span class="line">    1.5 概述</span><br><span class="line">2. 总体描述</span><br><span class="line">    2.1 产品概述</span><br><span class="line">    2.2 产品功能</span><br><span class="line">    2.3 用户特性</span><br><span class="line">    2.4 约束</span><br><span class="line">    2.5 假设和依赖</span><br><span class="line">3. 特定需求</span><br><span class="line">附录</span><br><span class="line">索引</span><br></pre></td></tr></table></figure>
+<h4 id="需求规约的表达"><a href="#需求规约的表达" class="headerlink" title="需求规约的表达"></a>需求规约的表达</h4><ol>
+<li>形式化的需求规约（自然语言）</li>
+<li>半形式化的需求规约（一半自然语言，一半正式语言）</li>
+<li>形式化规约（基于良好的数学概念的符号体系编织的）</li>
+</ol>
+<h4 id="需求规约的作用"><a href="#需求规约的作用" class="headerlink" title="需求规约的作用"></a>需求规约的作用</h4><ol>
+<li>是软件开发组织和用户之间一份事实上的技术合同书。</li>
+<li>对于项目的其余大多数工作，需求规约是一个管理控制点。</li>
+<li>对于产品／系统的设计，是一个正式的、受控的起始点</li>
+<li>是创建产品验收测试计划和用户指南的基础。</li>
+</ol>
+<blockquote>
+<p>需求规约回答交付给客户的产品／系统是什么（关注产品需求）。项目需求回答开发组要做的是什么（关注项目工作与管理）。</p>
+</blockquote>
+<h2 id="第三章-结构化方法"><a href="#第三章-结构化方法" class="headerlink" title="第三章  结构化方法"></a>第三章  结构化方法</h2><h3 id="结构化需求分析"><a href="#结构化需求分析" class="headerlink" title="结构化需求分析"></a>结构化需求分析</h3><h4 id="三大挑战"><a href="#三大挑战" class="headerlink" title="三大挑战"></a>三大挑战</h4><ol>
+<li>问题空间的理解</li>
+<li>人与人之间的通信</li>
+<li>需求的变化性</li>
+</ol>
+<h4 id="好的需求技术的基本特征"><a href="#好的需求技术的基本特征" class="headerlink" title="好的需求技术的基本特征"></a>好的需求技术的基本特征</h4><ol>
+<li>提供方便通信的机制</li>
+<li>鼓励需求分析人员使用问题空间的术语思考问题，编写文档</li>
+<li>提供定义系统边界的方法</li>
+<li>提供支持抽象的基本机制</li>
+<li>为需求分析人员提供多种可供选择的方案</li>
+<li>提供特定的技术，适应需求的变化</li>
+</ol>
+<h4 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h4><p>数据源、数据潭、数据流、加工、数据存储</p>
+<h4 id="数据流图（DFD）"><a href="#数据流图（DFD）" class="headerlink" title="数据流图（DFD）"></a>数据流图（DFD）</h4><p>为了建立系统功能模型，为此结构化分析方法给出了一种表达功能模型的工具</p>
+<h4 id="建模过程"><a href="#建模过程" class="headerlink" title="建模过程"></a>建模过程</h4><ol>
+<li>建立系统环境图，确定系统语境（顶层数据流图）</li>
+<li>自动向下，逐步求精（数据流的分派）</li>
+<li>定义数据字典（顺序结构、选择结构、重复结构）</li>
+<li>描述加工（结构化自然语言、判定表、判定树）</li>
+</ol>
+<h4 id="需求验证"><a href="#需求验证" class="headerlink" title="需求验证"></a>需求验证</h4><p>需求中发现的错误类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>百分比</th>
+<th>类型</th>
+<th>百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不正确的事实</td>
+<td>40</td>
+<td>歧义性</td>
+<td>5</td>
+</tr>
+<tr>
+<td>遗漏</td>
+<td>31</td>
+<td>错放</td>
+<td>2</td>
+</tr>
+<tr>
+<td>不一致</td>
+<td>13</td>
+<td>其他</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>发现错误的方法</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>发现错误的百分比</th>
+<th>方法</th>
+<th>发现错误的百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>审查</td>
+<td>65</td>
+<td>集成</td>
+<td>5</td>
+</tr>
+<tr>
+<td>单元测试</td>
+<td>10</td>
+<td>其他</td>
+<td>10</td>
+</tr>
+<tr>
+<td>评估</td>
+<td>10</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="结构化设计"><a href="#结构化设计" class="headerlink" title="结构化设计"></a>结构化设计</h3><h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><p>建立系统的模块结构，即系统实现所需要的软件模块—-系统中可标识的软件成分，以及这些模块之间的调用关系。</p>
+<ul>
+<li>模块： 是指软件中具有特定标识的独立成分；</li>
+<li>模块调用：指模块之间的一种使用关系</li>
+</ul>
+<h4 id="表达软件体系结构的工具"><a href="#表达软件体系结构的工具" class="headerlink" title="表达软件体系结构的工具"></a>表达软件体系结构的工具</h4><ul>
+<li>模块结构图：是一种描述软件宏观结构的图形化工具。</li>
+<li>层次图：主要描绘软件的层次结构</li>
+<li>HIPO图：层次图＋输入／处理／输出</li>
+</ul>
+<h4 id="总体设计步骤"><a href="#总体设计步骤" class="headerlink" title="总体设计步骤"></a>总体设计步骤</h4><ul>
+<li>变换型数据流图： 具有明显的输入部分和变换部分之间的界面、变换部分和输出部分之间节目的数据流图</li>
+<li>事务型数据流图：数据达到一个加工T ,改加工T根据输入数据的值，在其后的若干动作序列（一个事物）中选出一个执行。</li>
+</ul>
+<h4 id="三个阶段"><a href="#三个阶段" class="headerlink" title="三个阶段"></a>三个阶段</h4><ol>
+<li>初始设计</li>
+<li>精华设计</li>
+<li>复审阶段　</li>
+</ol>
+<h4 id="模块化及启发式规则"><a href="#模块化及启发式规则" class="headerlink" title="模块化及启发式规则"></a>模块化及启发式规则</h4><h5 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h5><ul>
+<li>是执行一个特殊任务的一个过程以及相关的数据结构</li>
+<li>把一个待开发的软件分解成若干简单的具有高内聚低耦合的模块</li>
+</ul>
+<ul>
+<li>耦合：指不同模块之间相互依赖程度的度量（内容耦合、标记耦合、控制耦合、公共耦合、数据耦合）</li>
+<li>内聚：指一个模块内部各成分之间相互关联程度的度量（偶然内聚、逻辑内聚、时间内聚、过程内聚、通信内聚、顺序内聚、功能内聚）</li>
+</ul>
+<h5 id="启发式规则"><a href="#启发式规则" class="headerlink" title="启发式规则"></a>启发式规则</h5><ol>
+<li>改进软件结构，提高模块独立性。</li>
+<li>力求模块规模适中</li>
+<li>力求深度、宽度、扇出和扇入适中。</li>
+<li>尽力使模块的作用域在其控制域之内。</li>
+<li>尽力江都模块接口的复杂度</li>
+<li>力求模块功能可以预测</li>
+</ol>
+<h4 id="详细设计"><a href="#详细设计" class="headerlink" title="详细设计"></a>详细设计</h4><p>具体描述模块结构图中的每一个模块，即给出实现模块功能的实施机制，包括一组例程和数据结构。目标是将总体设计阶段产生的系统高层结构映射为以这些术语所表达的底层结构，也是系统的最终结构。</p>
+<p>三种基本结构控制：顺序、选择、循环。</p>
+<h5 id="详细设计工具"><a href="#详细设计工具" class="headerlink" title="详细设计工具"></a>详细设计工具</h5><ol>
+<li>程序流程图（程序框图）： 历史最悠久、使用最广泛的软件设计工具。</li>
+<li>盒图（N-S图）：支持自顶向下逐步求精的详细设计</li>
+<li>PAD图：用二维树形结构图表示程序的控制流。</li>
+<li>类程序设计语言PDL（伪码）：借用某种结构化程序设计语言的关键字作为语法框架，用于定义控制结构和数据结构。</li>
+</ol>
+<h5 id="概要设计规约的主要内容"><a href="#概要设计规约的主要内容" class="headerlink" title="概要设计规约的主要内容"></a>概要设计规约的主要内容</h5><ol>
+<li>系统环境</li>
+<li>软件模块的结构</li>
+<li>模块描述</li>
+<li>文件结构和全局数据文件的逻辑结构</li>
+<li>测试需求</li>
+</ol>
+<p>详细设计规约增加了 ：1.各处理过程的算法。2.算法所涉及的全部数据结构的描述。</p>
+<h2 id="第四章-面向对象方法－－UML"><a href="#第四章-面向对象方法－－UML" class="headerlink" title="第四章 面向对象方法－－UML"></a>第四章 面向对象方法－－UML</h2><blockquote>
+<p>8个术语：类与对象、接口、协作、用况、主动类、构件、制品、节点。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软件工程/" rel="tag"># 软件工程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java_maven.html" rel="next" title="Maven学习记录">
+                <i class="fa fa-chevron-left"></i> Maven学习记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java_enum.html" rel="prev" title="枚举学习">
+                枚举学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">纵自天涯各一侧，当效蜉蝣尽歌。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章-绪论"><span class="nav-number">1.</span> <span class="nav-text">第一章  绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件危机"><span class="nav-number">1.1.</span> <span class="nav-text">软件危机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件工程"><span class="nav-number">1.2.</span> <span class="nav-text">软件工程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-软件需求与软件需求规约"><span class="nav-number">2.</span> <span class="nav-text">第二章  软件需求与软件需求规约</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求与需求获取"><span class="nav-number">2.1.</span> <span class="nav-text">需求与需求获取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求定义"><span class="nav-number">2.1.1.</span> <span class="nav-text">需求定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求分类"><span class="nav-number">2.1.2.</span> <span class="nav-text">需求分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求发现技术"><span class="nav-number">2.1.3.</span> <span class="nav-text">需求发现技术</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求规约"><span class="nav-number">2.2.</span> <span class="nav-text">需求规约</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#满足的4个基本性质"><span class="nav-number">2.2.2.</span> <span class="nav-text">满足的4个基本性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求规约格式"><span class="nav-number">2.2.3.</span> <span class="nav-text">需求规约格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求规约的表达"><span class="nav-number">2.2.4.</span> <span class="nav-text">需求规约的表达</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求规约的作用"><span class="nav-number">2.2.5.</span> <span class="nav-text">需求规约的作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-结构化方法"><span class="nav-number">3.</span> <span class="nav-text">第三章  结构化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化需求分析"><span class="nav-number">3.1.</span> <span class="nav-text">结构化需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三大挑战"><span class="nav-number">3.1.1.</span> <span class="nav-text">三大挑战</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#好的需求技术的基本特征"><span class="nav-number">3.1.2.</span> <span class="nav-text">好的需求技术的基本特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本术语"><span class="nav-number">3.1.3.</span> <span class="nav-text">基本术语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据流图（DFD）"><span class="nav-number">3.1.4.</span> <span class="nav-text">数据流图（DFD）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建模过程"><span class="nav-number">3.1.5.</span> <span class="nav-text">建模过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需求验证"><span class="nav-number">3.1.6.</span> <span class="nav-text">需求验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化设计"><span class="nav-number">3.2.</span> <span class="nav-text">结构化设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目标"><span class="nav-number">3.2.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达软件体系结构的工具"><span class="nav-number">3.2.2.</span> <span class="nav-text">表达软件体系结构的工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总体设计步骤"><span class="nav-number">3.2.3.</span> <span class="nav-text">总体设计步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三个阶段"><span class="nav-number">3.2.4.</span> <span class="nav-text">三个阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化及启发式规则"><span class="nav-number">3.2.5.</span> <span class="nav-text">模块化及启发式规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模块化"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启发式规则"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">启发式规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#详细设计"><span class="nav-number">3.2.6.</span> <span class="nav-text">详细设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#详细设计工具"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">详细设计工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#概要设计规约的主要内容"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">概要设计规约的主要内容</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四章-面向对象方法－－UML"><span class="nav-number">4.</span> <span class="nav-text">第四章 面向对象方法－－UML</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/study_software.html';
+          this.page.identifier = 'study_software.html';
+          this.page.title = '软件工程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
