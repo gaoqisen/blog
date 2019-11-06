@@ -82,15 +82,19 @@
 <meta name="description" content="关于token的一些整理，以及用json web token实现token功能。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="token">
+<meta property="og:title" content="了解token并用JWT实现">
 <meta property="og:url" content="https://gaoqisen.github.io/java/web_json_token.html">
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="关于token的一些整理，以及用json web token实现token功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-06T09:10:01.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201911/20191106172702.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201911/20191106174115.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/201911/20191106172940.png">
+<meta property="og:updated_time" content="2019-11-06T09:42:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="token">
+<meta name="twitter:title" content="了解token并用JWT实现">
 <meta name="twitter:description" content="关于token的一些整理，以及用json web token实现token功能。">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/201911/20191106172702.png">
 
 
 
@@ -126,7 +130,7 @@
 
 
 
-  <title>token | Learning Record</title>
+  <title>了解token并用JWT实现 | Learning Record</title>
   
 
 
@@ -304,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">token</h1>
+          <h1 class="post-title" itemprop="name headline">了解token并用JWT实现</h1>
         
 
         <div class="post-meta">
@@ -392,7 +396,8 @@
 
       
         <h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>token是服务器端生成的一串字符串，作为服务端访问服务端的一个令牌。第一次登录的的是就为客服端生成一个token，后期用户登录的时候就传递这个token用于验证，无需带上用户的用户的帐号和密码。</p>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><blockquote>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p><img src="https://gaoqisen.github.io/GraphBed/201911/20191106172702.png" alt="https://gaoqisen.github.io/GraphBed/201911/20191106172702.png"></p>
+<blockquote>
 <p>APP登录的时候发送加密的用户名和密码到服务器，服务器验证用户名和密码，如果成功，以某种方式比如随机生成32位的字符串作为token，存储到服务器中，并返回token到APP，以后APP请求时，凡是需要验证的地方都要带上该token，然后服务器端验证token，成功返回所需要的结果，失败返回错误信息，让他重新登录。其中服务器上token设置一个有效期，每次APP请求的时候都验证token和有效期。</p>
 </blockquote>
 <ol>
@@ -406,7 +411,7 @@
 <h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
 <li><p>无状态、可扩展: 在客户端存储的Tokens是无状态的，并且能够被扩展。基于这种无状态和不存储Session信息，负载均衡器能够将用户信息从一个服务传到其他服务器上。如果我们将已验证的用户的信息保存在Session中，则每次请求都需要用户向已验证的服务器发送验证信息(称为Session亲和性)，用户量大时，可能会造成  一些拥堵。然而tokens的无状态性完美解决了这个问题。</p>
 </li>
-<li><p>安全性: 请求中发送token而不再是发送cookie能够防止CSRF(跨站请求伪造)。即使在客户端使用cookie存储token，cookie也仅仅是一个存储机制而不是用于认证。不将信息存储在Session中，让我们少了对session操作。token是有时效的，一段时间之后用户需要重新验证。我们也不一定需要等到token自动失效，token有撤回的操作，通过token revocataion可以使一个特定的token或是一组有相同认证的token无效。</p>
+<li><p>安全性: 请求中发送token而不再是发送cookie能够防止CSRF(跨站请求伪造)。即使在客户端使用cookie存储token，cookie也仅仅是一个存储机制而不是用于认证。不将信息存储在Session中，让我们少了对session操作。token是有时效的，一段时间之后用户需要重新验证。我们也不一定需要等到token自动失效，token有撤回的操作，通过token revocataion可以使一个特定的token或是一组有相同认证的token无效。<br>  <img src="https://gaoqisen.github.io/GraphBed/201911/20191106174115.png" alt="https://gaoqisen.github.io/GraphBed/201911/20191106174115.png"></p>
 </li>
 <li><p>可扩展性: Tokens能够创建与其它程序共享权限的程序。个人理解就是自己可以提供一个类似第三方登录的功能，其他程序集成自己的登录，通过token授权</p>
 </li>
@@ -423,6 +428,8 @@
 </li>
 </ul>
 <h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>JWT返回的token分为3段，Header（头部），Payload（负载），Signature（签名）。分别用 . 隔开（Header.Payload.Signature）。如(点后面没有回车)：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eyJhbGciOiJIUzI1NiJ9.</span><br><span class="line">eyJqdGkiOiJpbnNwdXIiLCJpYXQiOjE1NzMwMzAwNjQsInN1YiI6InFCMmNiNUFuMkg5WGovWEF5SVhucWc9PVxyXG4iLCJleHAiOjE1NzMxMTY0NjR9.</span><br><span class="line">eUIzHeBqYKtWM9owo36FzFaJByn0K1MP2n_rXSm4Xa4</span><br></pre></td></tr></table></figure></p>
+<p>JSON 对象使用 Base64URL 算法解密后</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/201911/20191106172940.png" alt="https://gaoqisen.github.io/GraphBed/201911/20191106172940.png"></p>
 <ul>
 <li><p>Header：描述 JWT 的元数据（JSON 对象使用 Base64URL 算法）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;alg&quot;: &quot;HS256&quot;,</span><br><span class="line">  &quot;typ&quot;: &quot;JWT&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -836,7 +843,7 @@
         var disqus_config = function () {
           this.page.url = 'https://gaoqisen.github.io/java/web_json_token.html';
           this.page.identifier = 'java/web_json_token.html';
-          this.page.title = 'token';
+          this.page.title = '了解token并用JWT实现';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
