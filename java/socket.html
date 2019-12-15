@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaSocket" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="关于JavaSocket的一些学习整理">
+<meta name="keywords" content="JavaSocket">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSocket">
+<meta property="og:url" content="https://gaoqisen.github.io/java/socket.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="关于JavaSocket的一些学习整理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-26T10:02:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaSocket">
+<meta name="twitter:description" content="关于JavaSocket的一些学习整理">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/java/socket.html"/>
+
+
+
+
+
+  <title>JavaSocket | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/java/socket.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaSocket</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T14:36:18+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/java/socket.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="java/socket.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  关于JavaSocket的一些学习整理
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaSocket"><a href="#JavaSocket" class="headerlink" title="JavaSocket"></a><center>JavaSocket</center></h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><blockquote>
+<p>解决网络通信问题。可以直接使用这些类和接口，来专注于解决问题，而不用关注通信细节。</p>
+</blockquote>
+<h3 id="百科定义"><a href="#百科定义" class="headerlink" title="百科定义"></a>百科定义</h3><p>套接字（socket）是一个抽象层，应用程序可以通过它发送或接收数据，可对其进行像对文件一样的打开、读写和关闭等操作。套接字允许应用程序将I/O插入到网络中，并与网络中的其他应用程序进行通信。网络套接字是IP地址与端口的组合。</p>
+<h3 id="简单调用方式"><a href="#简单调用方式" class="headerlink" title="简单调用方式"></a>简单调用方式</h3><ul>
+<li>客服端</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * java.net.Socket</span></span><br><span class="line"><span class="comment"> * 封装了TCP协议</span></span><br><span class="line"><span class="comment"> * 使用它可以与远程计算机连接并进行</span></span><br><span class="line"><span class="comment"> * 数据交换,实现通讯的目的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 初始化Socket。初始化需要传入两个参数</span></span><br><span class="line"><span class="comment">         * 参数1:远端计算机IP地址</span></span><br><span class="line"><span class="comment">         * 参数2:远端计算机的服务端口</span></span><br><span class="line"><span class="comment">         * IP地址用来找到服务端所在的计算机端口用来连接上该计算机上的服务端应用程序</span></span><br><span class="line"><span class="comment">         * 实例化Socket的过程就是连接的过程若远端计算机没有响应会抛出异常</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        System.out.println(<span class="string">"正在连接服务端..."</span>);</span><br><span class="line">        Socket socket = <span class="keyword">new</span> Socket(</span><br><span class="line">                <span class="string">"localhost"</span>,<span class="number">8088</span></span><br><span class="line">        );</span><br><span class="line">        System.out.println(<span class="string">"与服务端建立连接!"</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * Socket的方法:</span></span><br><span class="line"><span class="comment">         * OutputStream getOutputStream()</span></span><br><span class="line"><span class="comment">         * 用于获取一个输出流,通过该输出流写出的字节会发送至远端计算机.而远端计算机可以通过</span></span><br><span class="line"><span class="comment">         * 输入流读取.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        OutputStream out = socket.getOutputStream();</span><br><span class="line">        OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(out,<span class="string">"UTF-8"</span>);</span><br><span class="line">        PrintWriter pw = <span class="keyword">new</span> PrintWriter(osw,<span class="keyword">true</span>);</span><br><span class="line">        pw.println(<span class="string">"你好!服务端!"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>服务端</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *	java.net.ServerSocket</span></span><br><span class="line"><span class="comment"> *  运行在服务端的ServerSocket的主要</span></span><br><span class="line"><span class="comment"> *  作用是:</span></span><br><span class="line"><span class="comment"> *  1:向OS申请服务端口(客户端通过该端口</span></span><br><span class="line"><span class="comment"> *    与服务端建立连接)</span></span><br><span class="line"><span class="comment"> *  2:监听服务端口,等待客户端连接,一旦一个</span></span><br><span class="line"><span class="comment"> *    客户端连接后,就会创建一个Socket实例</span></span><br><span class="line"><span class="comment"> *    与该客户端进行交互.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 初始化ServerSocket需要指定服务端口若该端口已经被其他应用程序占用则会</span></span><br><span class="line"><span class="comment">         * 抛出异常</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        ServerSocket server = <span class="keyword">new</span> ServerSocket(<span class="number">8088</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * ServerSocket的方法</span></span><br><span class="line"><span class="comment">         * Socket accept()该方法用来监听申请的服务端口,该方法是一个阻塞方法,直到一个</span></span><br><span class="line"><span class="comment">         * 客户端通过该端口与服务端建立连接,这里便会自动创建一个Socket</span></span><br><span class="line"><span class="comment">         * 并返回,通过该Socket可以与刚连接的客户端进行交互.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        System.out.println(<span class="string">"等待客户端连接..."</span>);</span><br><span class="line">        Socket socket = server.accept();</span><br><span class="line">        System.out.println(<span class="string">"一个客户端连接了!"</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * Socket提供的方法:</span></span><br><span class="line"><span class="comment">         * InputStream getInputStream()</span></span><br><span class="line"><span class="comment">         * 通过获取的输入流可以读取远端计算机</span></span><br><span class="line"><span class="comment">         * 发送过来的数据</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        InputStream in = socket.getInputStream();</span><br><span class="line">        InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(in,<span class="string">"UTF-8"</span>);</span><br><span class="line">        BufferedReader br = <span class="keyword">new</span> BufferedReader(isr);</span><br><span class="line">        String message = br.readLine();</span><br><span class="line">        System.out.println(<span class="string">"客户端说:"</span>+message);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        System.out.println(<span class="string">"服务端启动失败!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="简单聊天室"><a href="#简单聊天室" class="headerlink" title="简单聊天室"></a>简单聊天室</h2><ul>
+<li>服务端</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> study.base;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> Server</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> gaoqisen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2019-11-26</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Server</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *	java.net.ServerSocket</span></span><br><span class="line"><span class="comment">     *  运行在服务端的ServerSocket的主要</span></span><br><span class="line"><span class="comment">     *  作用是:</span></span><br><span class="line"><span class="comment">     *  1:向OS申请服务端口(客户端通过该端口</span></span><br><span class="line"><span class="comment">     *    与服务端建立连接)</span></span><br><span class="line"><span class="comment">     *  2:监听服务端口,等待客户端连接,一旦一个</span></span><br><span class="line"><span class="comment">     *    客户端连接后,就会创建一个Socket实例</span></span><br><span class="line"><span class="comment">     *    与该客户端进行交互.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> ServerSocket server;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 共享集合,用于存放所有客户端的输出流</span></span><br><span class="line"><span class="comment">     * 以便广播消息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;PrintWriter&gt; allOut;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Server</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 初始化ServerSocket需要指定服务端口</span></span><br><span class="line"><span class="comment">         * 若该端口已经被其他应用程序占用则会</span></span><br><span class="line"><span class="comment">         * 抛出异常</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        server = <span class="keyword">new</span> ServerSocket(<span class="number">8088</span>);</span><br><span class="line">        allOut = <span class="keyword">new</span> ArrayList&lt;PrintWriter&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将给定的输出流存入共享集合</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> out</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">addOut</span><span class="params">(PrintWriter out)</span></span>&#123;</span><br><span class="line">        allOut.add(out);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从共享集合中将给定输出流删除</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> out</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">removeOut</span><span class="params">(PrintWriter out)</span></span>&#123;</span><br><span class="line">        allOut.remove(out);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将给定的消息发送至所有客户端</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; allOut.size(); i++) &#123;</span><br><span class="line">            allOut.get(i).println(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * ServerSocket的方法</span></span><br><span class="line"><span class="comment">                 * Socket accept()</span></span><br><span class="line"><span class="comment">                 * 该方法用来监听申请的服务端口,</span></span><br><span class="line"><span class="comment">                 * 该方法是一个阻塞方法,直到一个</span></span><br><span class="line"><span class="comment">                 * 客户端通过该端口与服务端建立</span></span><br><span class="line"><span class="comment">                 * 连接,这里便会自动创建一个Socket</span></span><br><span class="line"><span class="comment">                 * 并返回,通过该Socket可以与刚连接</span></span><br><span class="line"><span class="comment">                 * 的客户端进行交互.</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                System.out.println(<span class="string">"等待客户端连接..."</span>);</span><br><span class="line">                Socket socket = server.accept();</span><br><span class="line">                System.out.println(<span class="string">"一个客户端连接了!"</span>);</span><br><span class="line">                <span class="comment">//启动一个线程来处理该客户端的交互</span></span><br><span class="line">                ClientHandler handler = <span class="keyword">new</span> ClientHandler(socket);</span><br><span class="line">                Thread t = <span class="keyword">new</span> Thread(handler);</span><br><span class="line">                t.start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 该线程的任务是与指定的客户端进行交互</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> adminitartor</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ClientHandler</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="comment">//该线程通过该Socket与指定客户端交互</span></span><br><span class="line">        <span class="keyword">private</span> Socket socket;</span><br><span class="line">        <span class="comment">//客户端地址信息</span></span><br><span class="line">        <span class="keyword">private</span> String host;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ClientHandler</span><span class="params">(Socket socket)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.socket = socket;</span><br><span class="line">            <span class="comment">//获取该客户端的地址信息</span></span><br><span class="line">            InetAddress address = socket.getInetAddress();</span><br><span class="line">            <span class="comment">//获取其IP地址的字符串形式</span></span><br><span class="line">            host = address.getHostAddress();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            PrintWriter pw = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * 获取输出流,用于将服务端的消息通过该流</span></span><br><span class="line"><span class="comment">                 * 发送给客户端</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                OutputStream out = socket.getOutputStream();</span><br><span class="line">                OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(out,<span class="string">"UTF-8"</span>);</span><br><span class="line">                pw = <span class="keyword">new</span> PrintWriter(osw,<span class="keyword">true</span>);</span><br><span class="line">                addOut(pw);</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * Socket提供的方法:</span></span><br><span class="line"><span class="comment">                 * InputStream getInputStream()</span></span><br><span class="line"><span class="comment">                 * 通过获取的输入流可以读取远端计算机</span></span><br><span class="line"><span class="comment">                 * 发送过来的数据</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                InputStream in = socket.getInputStream();</span><br><span class="line">                InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(in,<span class="string">"UTF-8"</span>);</span><br><span class="line">                BufferedReader br = <span class="keyword">new</span> BufferedReader(isr);</span><br><span class="line">                String message = <span class="keyword">null</span>;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * 在读取客户端发送过来的消息这里,由于客户端</span></span><br><span class="line"><span class="comment">                 * 所在操作系统不同,当客户端断开连接时,这里</span></span><br><span class="line"><span class="comment">                 * br.readLine的反应也不同:</span></span><br><span class="line"><span class="comment">                 * linux的客户端断开时:</span></span><br><span class="line"><span class="comment">                 * 	br.readLine方法会返回null.</span></span><br><span class="line"><span class="comment">                 *</span></span><br><span class="line"><span class="comment">                 * windows的客户端断开连接时:</span></span><br><span class="line"><span class="comment">                 *  br.readLine方法会直接抛出异常</span></span><br><span class="line"><span class="comment">                 *</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                <span class="keyword">while</span>((message = br.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">					<span class="comment">// System.out.println(host+"说:"+message);</span></span><br><span class="line">                    sendMessage(host+<span class="string">"说:"</span>+message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            &#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="comment">//处理客户端断开连接后的操作</span></span><br><span class="line">                    System.out.println(host+<span class="string">"下线了"</span>);</span><br><span class="line">                    removeOut(pw);</span><br><span class="line">                    <span class="comment">//将Socket关闭</span></span><br><span class="line">                    socket.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Server server = <span class="keyword">new</span> Server();</span><br><span class="line">            server.start();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(<span class="string">"服务端启动失败!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>客服端</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> study.base;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"><span class="keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> Client</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> gaoqisen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2019-11-26</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * java.net.Socket</span></span><br><span class="line"><span class="comment">     * 封装了TCP协议</span></span><br><span class="line"><span class="comment">     * 使用它可以与远程计算机连接并进行</span></span><br><span class="line"><span class="comment">     * 数据交换,实现通讯的目的</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Socket socket;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造方法,用来初始化客户端</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> UnknownHostException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Client</span><span class="params">()</span> <span class="keyword">throws</span> UnknownHostException, IOException</span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 初始化Socket</span></span><br><span class="line"><span class="comment">         * 初始化需要传入两个参数</span></span><br><span class="line"><span class="comment">         * 参数1:远端计算机IP地址</span></span><br><span class="line"><span class="comment">         * 参数2:远端计算机的服务端口</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * IP地址用来找到服务端所在的计算机</span></span><br><span class="line"><span class="comment">         * 端口用来连接上该计算机上的服务端</span></span><br><span class="line"><span class="comment">         * 应用程序</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * 实例化Socket的过程就是连接的过程</span></span><br><span class="line"><span class="comment">         * 若远端计算机没有响应会抛出异常</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        System.out.println(<span class="string">"正在连接服务端..."</span>);</span><br><span class="line">        socket = <span class="keyword">new</span> Socket(<span class="string">"localhost"</span>,<span class="number">8088</span>);</span><br><span class="line">        System.out.println(<span class="string">"与服务端建立连接!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 客户端开始工作的方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//启动读取服务端消息的线程</span></span><br><span class="line">            ServerHandler handler = <span class="keyword">new</span> ServerHandler();</span><br><span class="line">            Thread t = <span class="keyword">new</span> Thread(handler);</span><br><span class="line">            t.start();</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             * Socket的方法:</span></span><br><span class="line"><span class="comment">             * OutputStream getOutputStream()</span></span><br><span class="line"><span class="comment">             * 用于获取一个输出流,通过该输出流写出的字节</span></span><br><span class="line"><span class="comment">             * 会发送至远端计算机.而远端计算机可以通过</span></span><br><span class="line"><span class="comment">             * 输入流读取.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            OutputStream out = socket.getOutputStream();</span><br><span class="line">            OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(out,<span class="string">"UTF-8"</span>);</span><br><span class="line">            PrintWriter pw = <span class="keyword">new</span> PrintWriter(osw,<span class="keyword">true</span>);</span><br><span class="line">            String message = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">                message = scanner.nextLine();</span><br><span class="line">                pw.println(message);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Client client = <span class="keyword">new</span> Client();</span><br><span class="line">            client.start();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(<span class="string">"客户端运行失败!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 该线程的任务是读取服务端发送过来的</span></span><br><span class="line"><span class="comment">     * 每一条消息,并输出到控制台</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> adminitartor</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ServerHandler</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                InputStream in</span><br><span class="line">                        = socket.getInputStream();</span><br><span class="line">                InputStreamReader isr</span><br><span class="line">                        = <span class="keyword">new</span> InputStreamReader(in,<span class="string">"UTF-8"</span>);</span><br><span class="line">                BufferedReader br</span><br><span class="line">                        = <span class="keyword">new</span> BufferedReader(isr);</span><br><span class="line">                String message = <span class="keyword">null</span>;</span><br><span class="line">                <span class="comment">//读取服务端发送的每一条消息并输出</span></span><br><span class="line">                <span class="keyword">while</span>((message=br.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                    System.out.println(message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-JavaSocket/" rel="tag"># java JavaSocket</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/network/TCPIP.html" rel="next" title="TCP/IP">
+                <i class="fa fa-chevron-left"></i> TCP/IP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/network/OSI.html" rel="prev" title="OSI参考模型">
+                OSI参考模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">纵自天涯各一侧，当效蜉蝣尽歌。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaSocket"><span class="nav-number">1.</span> <span class="nav-text">JavaSocket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#含义"><span class="nav-number">1.1.</span> <span class="nav-text">含义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百科定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">百科定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单调用方式"><span class="nav-number">1.1.2.</span> <span class="nav-text">简单调用方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单聊天室"><span class="nav-number">1.2.</span> <span class="nav-text">简单聊天室</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/java/socket.html';
+          this.page.identifier = 'java/socket.html';
+          this.page.title = 'JavaSocket';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

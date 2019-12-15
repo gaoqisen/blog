@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="SpringCloud学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:updated_time" content="2019-11-11T08:45:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud学习">
 <meta name="twitter:description" content="SpringCloud学习">
@@ -391,7 +391,99 @@
       
 
       
-        <h2 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h2><p>dependences(依赖管理) &gt; config(配置中心) &gt; eureka(服务注册与发现) &gt; zipkin(链路追踪) &gt; </p>
+        <h2 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h2><table>
+<thead>
+<tr>
+<th>Spring Boot</th>
+<th>Spring Cloud</th>
+<th>Spring Cloud Alibaba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1.x</td>
+<td>Greenwich</td>
+<td>0.9.x</td>
+</tr>
+<tr>
+<td>2.0.x</td>
+<td>Finchley</td>
+<td>0.2.x</td>
+</tr>
+<tr>
+<td>1.5.x</td>
+<td>Edgware</td>
+<td>0.1.x</td>
+</tr>
+<tr>
+<td>1.5.x</td>
+<td>Dalston</td>
+<td>0.1.x</td>
+</tr>
+</tbody>
+</table>
+<h2 id="SpringCloud-vs-SpringCloudAlibaba"><a href="#SpringCloud-vs-SpringCloudAlibaba" class="headerlink" title="SpringCloud vs SpringCloudAlibaba"></a>SpringCloud vs SpringCloudAlibaba</h2><table>
+<thead>
+<tr>
+<th>基于SpringBoot  2.x</th>
+<th>Finchley</th>
+<th>SpringCloudAlibaba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>版本</td>
+<td>Finchley</td>
+<td>2.x</td>
+</tr>
+<tr>
+<td>服务注册与发现</td>
+<td>Eureka</td>
+<td>Nacos</td>
+</tr>
+<tr>
+<td>路由网关</td>
+<td>Gateway(zuul-Dalston版本)</td>
+<td>Gateway</td>
+</tr>
+<tr>
+<td>配置中心</td>
+<td>config</td>
+<td>Nacos</td>
+</tr>
+<tr>
+<td>熔断机制(限流、 降级、重试)</td>
+<td>Hystix</td>
+<td>Sentinel</td>
+</tr>
+<tr>
+<td>消息总线</td>
+<td>Bus</td>
+<td>Bus</td>
+</tr>
+<tr>
+<td>链路追踪</td>
+<td>Sleuth</td>
+<td>Sleuth</td>
+</tr>
+<tr>
+<td>聚合监控</td>
+<td>Turbine</td>
+<td>Turbine</td>
+</tr>
+<tr>
+<td>服务消费</td>
+<td>Feign/Ribbon</td>
+<td>Nacos</td>
+</tr>
+<tr>
+<td>负载均衡</td>
+<td>Feign/Ribbon</td>
+<td>Dubbo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h2><p>dependences(依赖管理) &gt; config(配置中心) &gt; eureka(服务注册与发现) &gt; zipkin(链路追踪) &gt; </p>
 <p>分布式配置中心 &gt; 服务注册中心  &gt; 服务提供者 &gt; 服务消费者 &gt; API网关</p>
 <h3 id="服务注册中心-Eureka"><a href="#服务注册中心-Eureka" class="headerlink" title="服务注册中心(Eureka)"></a>服务注册中心(Eureka)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">    </span><br><span class="line">// yml 配置</span><br><span class="line">spring:</span><br><span class="line"> application:</span><br><span class="line">   name: hello-spring-cloud-eureka</span><br><span class="line">server:</span><br><span class="line"> port: 8761</span><br><span class="line">eureka:</span><br><span class="line"> instance:</span><br><span class="line">   hostname: localhost</span><br><span class="line"> client:</span><br><span class="line">   registerWithEureka: false</span><br><span class="line">   fetchRegistry: false</span><br><span class="line">   serviceUrl:</span><br><span class="line">     defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure>
 <h3 id="分布式配置中心"><a href="#分布式配置中心" class="headerlink" title="分布式配置中心"></a>分布式配置中心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 服务端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// 客户端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">// 配置服务端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      label: master</span><br><span class="line">      server:</span><br><span class="line">        git:</span><br><span class="line">          uri: https://github.com/topsale/spring-cloud-config</span><br><span class="line">          search-paths: respo</span><br><span class="line">          username:</span><br><span class="line">          password:</span><br><span class="line">// 客户端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config-client</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      uri: http://localhost:8888</span><br><span class="line">      name: config-client</span><br><span class="line">      label: master</span><br><span class="line">      profile: dev</span><br></pre></td></tr></table></figure>
@@ -474,8 +566,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/other/online_utils.html" rel="prev" title="在线工具收藏">
-                在线工具收藏 <i class="fa fa-chevron-right"></i>
+              <a href="/linux/command.html" rel="prev" title="linux常用命令">
+                linux常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -575,7 +667,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +678,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -597,7 +689,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -646,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动顺序"><span class="nav-number">1.</span> <span class="nav-text">启动顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册中心-Eureka"><span class="nav-number">1.1.</span> <span class="nav-text">服务注册中心(Eureka)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式配置中心"><span class="nav-number">1.2.</span> <span class="nav-text">分布式配置中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务提供者"><span class="nav-number">1.3.</span> <span class="nav-text">服务提供者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务消费者"><span class="nav-number">1.4.</span> <span class="nav-text">服务消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API网关"><span class="nav-number">1.5.</span> <span class="nav-text">API网关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器防止服务雪崩"><span class="nav-number">2.</span> <span class="nav-text">熔断器防止服务雪崩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器仪表盘监控"><span class="nav-number">3.</span> <span class="nav-text">熔断器仪表盘监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务链路追踪"><span class="nav-number">4.</span> <span class="nav-text">服务链路追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-Admin"><span class="nav-number">5.</span> <span class="nav-text">Spring Boot Admin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本对应"><span class="nav-number">1.</span> <span class="nav-text">版本对应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud-vs-SpringCloudAlibaba"><span class="nav-number">2.</span> <span class="nav-text">SpringCloud vs SpringCloudAlibaba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动顺序"><span class="nav-number">3.</span> <span class="nav-text">启动顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册中心-Eureka"><span class="nav-number">3.1.</span> <span class="nav-text">服务注册中心(Eureka)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式配置中心"><span class="nav-number">3.2.</span> <span class="nav-text">分布式配置中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务提供者"><span class="nav-number">3.3.</span> <span class="nav-text">服务提供者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务消费者"><span class="nav-number">3.4.</span> <span class="nav-text">服务消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API网关"><span class="nav-number">3.5.</span> <span class="nav-text">API网关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器防止服务雪崩"><span class="nav-number">4.</span> <span class="nav-text">熔断器防止服务雪崩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器仪表盘监控"><span class="nav-number">5.</span> <span class="nav-text">熔断器仪表盘监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务链路追踪"><span class="nav-number">6.</span> <span class="nav-text">服务链路追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-Admin"><span class="nav-number">7.</span> <span class="nav-text">Spring Boot Admin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>
