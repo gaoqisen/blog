@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Gao Qisen" />
+  <meta name="keywords" content="JavaNIO" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JavaNIO简介 在高并发的环境下，线程数量会比较多，System load也会比较高，于是就有了NIO  Java NIO 是 java 1.4 之后新出的一套IO接口，这里的的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，不单纯是New。  它支持面向缓冲的，基于通道的I/O操作方法">
-<meta name="keywords" content="GaoQisen">
+<meta name="description" content="关于JavaNIO的一些学习整理">
+<meta name="keywords" content="JavaNIO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Learning Record">
+<meta property="og:title" content="JavaNIO">
 <meta property="og:url" content="https://gaoqisen.github.io/java/nio.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="JavaNIO简介 在高并发的环境下，线程数量会比较多，System load也会比较高，于是就有了NIO  Java NIO 是 java 1.4 之后新出的一套IO接口，这里的的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，不单纯是New。  它支持面向缓冲的，基于通道的I/O操作方法">
+<meta property="og:description" content="关于JavaNIO的一些学习整理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T09:25:46.000Z">
+<meta property="og:updated_time" content="2019-12-15T07:09:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Learning Record">
-<meta name="twitter:description" content="JavaNIO简介 在高并发的环境下，线程数量会比较多，System load也会比较高，于是就有了NIO  Java NIO 是 java 1.4 之后新出的一套IO接口，这里的的新是相对于原有标准的Java IO和Java Networking接口。NIO提供了一种完全不同的操作方式。NIO中的N可以理解为Non-blocking，不单纯是New。  它支持面向缓冲的，基于通道的I/O操作方法">
+<meta name="twitter:title" content="JavaNIO">
+<meta name="twitter:description" content="关于JavaNIO的一些学习整理">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title> | Learning Record</title>
+  <title>JavaNIO | Learning Record</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">JavaNIO</h1>
         
 
         <div class="post-meta">
@@ -316,7 +316,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T13:15:51+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T14:36:18+08:00">
                 2019-11-13
               </time>
             
@@ -326,6 +326,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -350,6 +372,10 @@
 
           
 
+          
+              <div class="post-description">
+                  关于JavaNIO的一些学习整理
+              </div>
           
 
         </div>
@@ -392,6 +418,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/java-JavaNIO/" rel="tag"># java JavaNIO</a>
+          
+        </div>
+      
 
       
       
@@ -401,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/java/netty.html" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/network/TCPIP.html" rel="next" title="TCP/IP">
+                <i class="fa fa-chevron-left"></i> TCP/IP
               </a>
             
           </div>
@@ -411,8 +443,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/network/TCPIP.html" rel="prev" title="TCP/IP">
-                TCP/IP <i class="fa fa-chevron-right"></i>
+              <a href="/java/socket.html" rel="prev" title="JavaSocket">
+                JavaSocket <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -502,7 +534,7 @@
                 alt="Gao Qisen" />
             
               <p class="site-author-name" itemprop="name">Gao Qisen</p>
-              <p class="site-description motion-element" itemprop="description">纵自天涯各一侧，当效蜉蝣尽歌。</p>
+              <p class="site-description motion-element" itemprop="description">现实很近又很冷，梦想很远却很温暖。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -534,7 +566,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -753,7 +785,7 @@
         var disqus_config = function () {
           this.page.url = 'https://gaoqisen.github.io/java/nio.html';
           this.page.identifier = 'java/nio.html';
-          this.page.title = '';
+          this.page.title = 'JavaNIO';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
