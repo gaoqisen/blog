@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="network" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="计算机网络原理-第二章网络应用的习题">
+<meta name="keywords" content="network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络原理(二)">
+<meta property="og:url" content="https://gaoqisen.github.io/study/computerNetworkTheory2.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="计算机网络原理-第二章网络应用的习题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202002/20200212104414.png">
+<meta property="og:updated_time" content="2020-02-12T04:15:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络原理(二)">
+<meta name="twitter:description" content="计算机网络原理-第二章网络应用的习题">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/202002/20200212104414.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/study/computerNetworkTheory2.html"/>
+
+
+
+
+
+  <title>计算机网络原理(二) | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/study/computerNetworkTheory2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络原理(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T12:53:40+08:00">
+                2019-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">network</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/study/computerNetworkTheory2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="study/computerNetworkTheory2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  计算机网络原理-第二章网络应用的习题
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？"><a href="#计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？" class="headerlink" title="计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？"></a>计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？</h2><p>从体系结构角度可以分为：客户/服务器(C/S)结构、纯P2P结构和混合结构3种类型</p>
+<p>客户/服务器(C/S)结构的特点：客户和客户之间不直接进行通信，客户只是与服务器进行通信。<br>纯P2P结构的特点：所有通信都是在对等的通信方之间直接进行，通信双方没有传统意义上的客户与服务器之分。<br>混合结构的特点：将C/S应用与P2P应用相结合，既有中心服务器的存在，又有对等端间的直接通信。</p>
+<h2 id="为什么说客户-服务器通信方式是网络应用通信的基本方式？"><a href="#为什么说客户-服务器通信方式是网络应用通信的基本方式？" class="headerlink" title="为什么说客户/服务器通信方式是网络应用通信的基本方式？"></a>为什么说客户/服务器通信方式是网络应用通信的基本方式？</h2><p>因为主动发起通信的一方就是客户，被动接受通信的一方就是服务器。人们平时使用就是这种网络</p>
+<h2 id="网络应用通信过程中，需要用哪些信息标识一个应用进程？"><a href="#网络应用通信过程中，需要用哪些信息标识一个应用进程？" class="headerlink" title="网络应用通信过程中，需要用哪些信息标识一个应用进程？"></a>网络应用通信过程中，需要用哪些信息标识一个应用进程？</h2><p>通过运行的主机 IP地址以及套接字所绑定的端口标识应用进程</p>
+<h2 id="简述域名系统的层次结构"><a href="#简述域名系统的层次结构" class="headerlink" title="简述域名系统的层次结构"></a>简述域名系统的层次结构</h2><ol>
+<li>名字空间是层次结构的，类似Windows的文件名。它可看作是一个树状结构，域名系统不区分树内节点和叶子节点，而统称为节点，不同节点可以使用相同的标记。</li>
+<li>一个节点的域名是由从该节点到根的所有节点的标记连接组成的，中间以点分隔。</li>
+<li>第二层节点的域名称为二级域名，依此类推</li>
+</ol>
+<h2 id="请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？"><a href="#请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？" class="headerlink" title="请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？"></a>请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？</h2><p>递归解析过程：在进行域名查询时，本地域名服务器如果没有被查询域名的信息，则代理主机查询根域名服务器或其他服务器，直到得到被查询域名的IP地址，最后将解析结果发送给主机。<br>迭代解析过程：提供迭代查询服务的域名服务器不会代理客户的查询请求，而是将最终的结果或者下一步要查询的域名服务器直接响应给查询客户。</p>
+<h2 id="什么是本地域名服务器？主机是如何确定本地域名服务器的？"><a href="#什么是本地域名服务器？主机是如何确定本地域名服务器的？" class="headerlink" title="什么是本地域名服务器？主机是如何确定本地域名服务器的？"></a>什么是本地域名服务器？主机是如何确定本地域名服务器的？</h2><p>默认域名服务器就是本地域名服务器。是主机在进行域名查询过程中首先被查询的域名服务器。需要域名解析的时候会先去本地域名服务器查询，如果查询到了就直接返回结果，如果没有查询到才会查询其他的域名服务器。</p>
+<h2 id="简述HTTP1-0获取一引用10个小JPEG图片网页的通信过程"><a href="#简述HTTP1-0获取一引用10个小JPEG图片网页的通信过程" class="headerlink" title="简述HTTP1.0获取一引用10个小JPEG图片网页的通信过程"></a>简述HTTP1.0获取一引用10个小JPEG图片网页的通信过程</h2><ol>
+<li>建立TCP连接</li>
+<li>在建立的TCP连接基础上向服务器发送一个HTTP请求报文</li>
+<li>服务器接收到报文之后从指定的路径中检索出html的文件并封装到一个HTTP响应报文中，发送给客户进程</li>
+<li>服务器进程通知TCP断开TCP连接</li>
+<li>客户端接收到响应报文后，断开TCP连接</li>
+<li>之后引入10个图片，重复前4个步骤</li>
+</ol>
+<h2 id="什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。"><a href="#什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。" class="headerlink" title="什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。"></a>什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。</h2><ol>
+<li>非持久连接是指HTTP客户与HTTP服务端建立TCP连接之后，通过该链接发送HTTP请求报文，接收HTTP响应报文，然后断开链接。</li>
+<li>非流水方式的持久：客户端在通过持久连接收到前一个响应报文后，才能发出对下一个对象的请求报文。</li>
+<li>流水方式的持久：在通过持久连接接收到前一个对象的响应报文之前，连续依次发送对后续对象的请求报文，然后再通过该链接依次接收服务器发回的响应报文。</li>
+</ol>
+<h2 id="假设你在浏览某网页时点击了一个超链接，URL为“https-www-kicker-com-cn-index-html-”，且该URL对应的IP地址在你的计算机上没有缓存；文件index-html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题："><a href="#假设你在浏览某网页时点击了一个超链接，URL为“https-www-kicker-com-cn-index-html-”，且该URL对应的IP地址在你的计算机上没有缓存；文件index-html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题：" class="headerlink" title="假设你在浏览某网页时点击了一个超链接，URL为“https://www.kicker.com.cn/index.html ”，且该URL对应的IP地址在你的计算机上没有缓存；文件index.html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题："></a>假设你在浏览某网页时点击了一个超链接，URL为“<a href="https://www.kicker.com.cn/index.html" target="_blank" rel="noopener">https://www.kicker.com.cn/index.html</a> ”，且该URL对应的IP地址在你的计算机上没有缓存；文件index.html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题：</h2><ol>
+<li>你的浏览器解析到URL对应的IP地址的最短时间是多少？最长时间是多少？</li>
+<li>若浏览器没有配置并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容（包括引用的图像，下同）需要多长时间（不包括域名解析时间，下同）？</li>
+<li>若浏览器配置5个并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容需要多长时间？</li>
+<li>若浏览器没有配置并行TCP连接，则基于非流水模式的HTTP1.1获取URL链接Web页完整内容需要多长时间？基于流水模式的HTTP1.1获取URL链接Web页完整内容需要多长时间？<br>答</li>
+<li>浏览器解析到URL对应的IP地址的最短时间是：RTTd；（2分）最长时间是：5RTTd。（2分）</li>
+<li>若浏览器没有配置并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容需要的时间：18RTTh。（2分）</li>
+<li>若浏览器配置5个并行TCP连接，则基于HTTP1.0获取URL链接Web页完整内容需要的时间：6RTTh。（2分）</li>
+<li>若浏览器没有配置并行TCP连接，则基于非流水模式的HTTP1.1获取URL链接Web页完整内容需要的时间：10RTTh；（2分）基于流水模式的HTTP1.1获取URL链接Web页完整内容需要的时间：3RTTh。（2分）</li>
+</ol>
+<h2 id="电子邮价主要由哪几部分构成？"><a href="#电子邮价主要由哪几部分构成？" class="headerlink" title="电子邮价主要由哪几部分构成？"></a>电子邮价主要由哪几部分构成？</h2><ol>
+<li>邮件服务器</li>
+<li>简单邮件传输协议（SMTP）</li>
+<li>用户代理</li>
+<li>邮件读取协议</li>
+</ol>
+<h2 id="简述SMTP发送邮件过程"><a href="#简述SMTP发送邮件过程" class="headerlink" title="简述SMTP发送邮件过程"></a>简述SMTP发送邮件过程</h2><ol>
+<li>首先请求与服务器端的25端口建立TCP链接</li>
+<li>通过3个阶段的应用层交互完成邮件的传输<ol>
+<li>握手阶段：声明自己的身份</li>
+<li>邮件传输阶段：向服务器通告邮件发送者与邮件接收者的邮箱地址然后开始邮件数据的传输</li>
+<li>关闭阶段：关闭TCP链接</li>
+</ol>
+</li>
+</ol>
+<h2 id="FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？"><a href="#FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？" class="headerlink" title="FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？"></a>FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？</h2><p>FTP专门使用一个独立的控制连接传输控制信息，与传输文件信息进行分离，所以将FTP这种控制信息的传送方式称为带外控制。</p>
+<p>控制连接在整个回话假期一直保持打开<br>数据连接用于实际传送文件内容</p>
+<h2 id="考虑向N个对等方（用户）分发F-15Gb的一个文件。该服务器具有us-30Mbps的上传速率，每个对等方的下载速率di-2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N-10、100和1000以及u-500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。"><a href="#考虑向N个对等方（用户）分发F-15Gb的一个文件。该服务器具有us-30Mbps的上传速率，每个对等方的下载速率di-2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N-10、100和1000以及u-500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。" class="headerlink" title="考虑向N个对等方（用户）分发F=15Gb的一个文件。该服务器具有us=30Mbps的上传速率，每个对等方的下载速率di=2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N=10、100和1000以及u=500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。"></a>考虑向N个对等方（用户）分发F=15Gb的一个文件。该服务器具有us=30Mbps的上传速率，每个对等方的下载速率di=2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N=10、100和1000以及u=500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。</h2><p>（注：k=103、M=106、G=10^9）</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202002/20200212104414.png" alt="https://gaoqisen.github.io/GraphBed/202002/20200212104414.png"></p>
+<h2 id="简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。"><a href="#简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。" class="headerlink" title="简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。"></a>简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。</h2><ol>
+<li>调用socket()函数创建SOCK_STREAM类型的主套接字ms</li>
+<li>调用bind()函数绑定本地端点地址</li>
+<li>嗲用listen()函数置主套接字ms为监听模式</li>
+<li>调用accpt()函数通过主套接字调用成功，返回(创建)连接套接字ss</li>
+</ol>
+<h2 id="简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。"><a href="#简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。" class="headerlink" title="简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。"></a>简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。</h2><ol>
+<li>调用socket()函数创建SOCK_DGRAM类型的主套接字ums</li>
+<li>调用bind()函数绑定本地端点地址</li>
+<li>客户程序运行后，创建本地SOCK_DGRAM类型的套接字ucs</li>
+<li>客户端与服务器程序通过调用sendto()和recvfrom()函数实现数据发送接收。</li>
+<li>通信结束后，客服程序通过调用close()函数释放套接字ucs</li>
+<li>服务器程序继续调用recvfrom()函数，通过套接字ums接收下一个客户发送过来的数据报</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/network/" rel="tag"># network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/enum.html" rel="next" title="枚举学习">
+                <i class="fa fa-chevron-left"></i> 枚举学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/study/computerNetworkTheory1.html" rel="prev" title="计算机网络原理(一)">
+                计算机网络原理(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg"
+                alt="Gao Qisen" />
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">现实很近又很冷，梦想很远却很温暖。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？"><span class="nav-number">1.</span> <span class="nav-text">计算机网络应用可以分为哪几种体系结构的应用类型？各种应用类型的特点是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么说客户-服务器通信方式是网络应用通信的基本方式？"><span class="nav-number">2.</span> <span class="nav-text">为什么说客户/服务器通信方式是网络应用通信的基本方式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络应用通信过程中，需要用哪些信息标识一个应用进程？"><span class="nav-number">3.</span> <span class="nav-text">网络应用通信过程中，需要用哪些信息标识一个应用进程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述域名系统的层次结构"><span class="nav-number">4.</span> <span class="nav-text">简述域名系统的层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？"><span class="nav-number">5.</span> <span class="nav-text">请举例说明，什么是DNS递归解析过程？什么是DNS迭代解析过程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是本地域名服务器？主机是如何确定本地域名服务器的？"><span class="nav-number">6.</span> <span class="nav-text">什么是本地域名服务器？主机是如何确定本地域名服务器的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述HTTP1-0获取一引用10个小JPEG图片网页的通信过程"><span class="nav-number">7.</span> <span class="nav-text">简述HTTP1.0获取一引用10个小JPEG图片网页的通信过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。"><span class="nav-number">8.</span> <span class="nav-text">什么是非持久的HTTP？什么是非流水方式的持久HTTP？什么是流水方式的持久HTTP？简述交互过程。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设你在浏览某网页时点击了一个超链接，URL为“https-www-kicker-com-cn-index-html-”，且该URL对应的IP地址在你的计算机上没有缓存；文件index-html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题："><span class="nav-number">9.</span> <span class="nav-text">假设你在浏览某网页时点击了一个超链接，URL为“https://www.kicker.com.cn/index.html ”，且该URL对应的IP地址在你的计算机上没有缓存；文件index.html引用了8个小图像。域名解析过程中，无等待的一次DNS解析请求与响应时间记为RTTd，HTTP请求传输Web对象过程的一次往返时间记为RTTh。请回答下列问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮价主要由哪几部分构成？"><span class="nav-number">10.</span> <span class="nav-text">电子邮价主要由哪几部分构成？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述SMTP发送邮件过程"><span class="nav-number">11.</span> <span class="nav-text">简述SMTP发送邮件过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？"><span class="nav-number">12.</span> <span class="nav-text">FTP的“外带控制”特性是什么含义？控制连接和数据连接各有什么特点？用途分别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑向N个对等方（用户）分发F-15Gb的一个文件。该服务器具有us-30Mbps的上传速率，每个对等方的下载速率di-2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N-10、100和1000以及u-500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。"><span class="nav-number">13.</span> <span class="nav-text">考虑向N个对等方（用户）分发F=15Gb的一个文件。该服务器具有us=30Mbps的上传速率，每个对等方的下载速率di=2Mbps，上传速率为u。请分别针对客户-服务器分发模式和P2P分发模式两种情况，对于N=10、100和1000以及u=500kbps、1Mbps和2Mbps的每种组合，绘制最小分发时间图表。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。"><span class="nav-number">14.</span> <span class="nav-text">简述TCP客户端与TCP服务器程序的socketAPI基本函数调用过程。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。"><span class="nav-number">15.</span> <span class="nav-text">简述UDP客户端与UDP服务器的socketAPI基本函数调用过程。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/study/computerNetworkTheory2.html';
+          this.page.identifier = 'study/computerNetworkTheory2.html';
+          this.page.title = '计算机网络原理(二)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

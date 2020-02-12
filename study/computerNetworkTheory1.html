@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="SpringCloud" />
+  <meta name="keywords" content="network" />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="SpringCloud学习">
-<meta name="keywords" content="SpringCloud">
+<meta name="description" content="计算机网络原理-第一章计算机网络概述的习题">
+<meta name="keywords" content="network">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud学习">
-<meta property="og:url" content="https://gaoqisen.github.io/spring/spring_cloud.html">
+<meta property="og:title" content="计算机网络原理(一)">
+<meta property="og:url" content="https://gaoqisen.github.io/study/computerNetworkTheory1.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="SpringCloud学习">
+<meta property="og:description" content="计算机网络原理-第一章计算机网络概述的习题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-11T08:45:23.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202002/20200212101314.png">
+<meta property="og:updated_time" content="2020-02-12T02:46:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud学习">
-<meta name="twitter:description" content="SpringCloud学习">
+<meta name="twitter:title" content="计算机网络原理(一)">
+<meta name="twitter:description" content="计算机网络原理-第一章计算机网络概述的习题">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/202002/20200212101314.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/spring/spring_cloud.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/study/computerNetworkTheory1.html"/>
 
 
 
 
 
-  <title>SpringCloud学习 | Learning Record</title>
+  <title>计算机网络原理(一) | Learning Record</title>
   
 
 
@@ -287,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/spring/spring_cloud.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/study/computerNetworkTheory1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -304,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud学习</h1>
+          <h1 class="post-title" itemprop="name headline">计算机网络原理(一)</h1>
         
 
         <div class="post-meta">
@@ -316,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T15:13:52+08:00">
-                2019-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T12:53:40+08:00">
+                2019-10-23
               </time>
             
 
@@ -339,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringCloud</span>
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">network</span>
                   </a>
                 </span>
 
@@ -357,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/spring/spring_cloud.html#comments" itemprop="discussionUrl">
+                <a href="/study/computerNetworkTheory1.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="spring/spring_cloud.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="study/computerNetworkTheory1.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +376,7 @@
 
           
               <div class="post-description">
-                  SpringCloud学习
+                  计算机网络原理-第一章计算机网络概述的习题
               </div>
           
 
@@ -391,141 +393,113 @@
       
 
       
-        <h2 id="版本对应"><a href="#版本对应" class="headerlink" title="版本对应"></a>版本对应</h2><table>
-<thead>
-<tr>
-<th>Spring Boot</th>
-<th>Spring Cloud</th>
-<th>Spring Cloud Alibaba</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2.1.x</td>
-<td>Greenwich</td>
-<td>0.9.x</td>
-</tr>
-<tr>
-<td>2.0.x</td>
-<td>Finchley</td>
-<td>0.2.x</td>
-</tr>
-<tr>
-<td>1.5.x</td>
-<td>Edgware</td>
-<td>0.1.x</td>
-</tr>
-<tr>
-<td>1.5.x</td>
-<td>Dalston</td>
-<td>0.1.x</td>
-</tr>
-</tbody>
-</table>
-<h2 id="SpringCloud-vs-SpringCloudAlibaba"><a href="#SpringCloud-vs-SpringCloudAlibaba" class="headerlink" title="SpringCloud vs SpringCloudAlibaba"></a>SpringCloud vs SpringCloudAlibaba</h2><table>
-<thead>
-<tr>
-<th>基于SpringBoot  2.x</th>
-<th>Finchley</th>
-<th>SpringCloudAlibaba</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>版本</td>
-<td>Finchley</td>
-<td>2.x</td>
-</tr>
-<tr>
-<td>服务注册与发现</td>
-<td>Eureka</td>
-<td>Nacos</td>
-</tr>
-<tr>
-<td>路由网关</td>
-<td>Gateway(zuul-Dalston版本)</td>
-<td>Gateway</td>
-</tr>
-<tr>
-<td>配置中心</td>
-<td>config</td>
-<td>Nacos</td>
-</tr>
-<tr>
-<td>熔断机制(限流、 降级、重试)</td>
-<td>Hystix</td>
-<td>Sentinel</td>
-</tr>
-<tr>
-<td>消息总线</td>
-<td>Bus</td>
-<td>Bus</td>
-</tr>
-<tr>
-<td>链路追踪</td>
-<td>Sleuth</td>
-<td>Sleuth</td>
-</tr>
-<tr>
-<td>聚合监控</td>
-<td>Turbine</td>
-<td>Turbine</td>
-</tr>
-<tr>
-<td>服务消费</td>
-<td>Feign/Ribbon</td>
-<td>Nacos</td>
-</tr>
-<tr>
-<td>负载均衡</td>
-<td>Feign/Ribbon</td>
-<td>Dubbo</td>
-</tr>
-</tbody>
-</table>
-<h2 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h2><p>dependences(依赖管理) &gt; config(配置中心) &gt; eureka(服务注册与发现) &gt; zipkin(链路追踪) &gt; </p>
-<p>分布式配置中心 &gt; 服务注册中心  &gt; 服务提供者 &gt; 服务消费者 &gt; API网关</p>
-<h3 id="服务注册中心-Eureka"><a href="#服务注册中心-Eureka" class="headerlink" title="服务注册中心(Eureka)"></a>服务注册中心(Eureka)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">    </span><br><span class="line">// yml 配置</span><br><span class="line">spring:</span><br><span class="line"> application:</span><br><span class="line">   name: hello-spring-cloud-eureka</span><br><span class="line">server:</span><br><span class="line"> port: 8761</span><br><span class="line">eureka:</span><br><span class="line"> instance:</span><br><span class="line">   hostname: localhost</span><br><span class="line"> client:</span><br><span class="line">   registerWithEureka: false</span><br><span class="line">   fetchRegistry: false</span><br><span class="line">   serviceUrl:</span><br><span class="line">     defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure>
-<h3 id="分布式配置中心"><a href="#分布式配置中心" class="headerlink" title="分布式配置中心"></a>分布式配置中心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 服务端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// 客户端pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">// 配置服务端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      label: master</span><br><span class="line">      server:</span><br><span class="line">        git:</span><br><span class="line">          uri: https://github.com/topsale/spring-cloud-config</span><br><span class="line">          search-paths: respo</span><br><span class="line">          username:</span><br><span class="line">          password:</span><br><span class="line">// 客户端yml配置</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: hello-spring-cloud-config-client</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      uri: http://localhost:8888</span><br><span class="line">      name: config-client</span><br><span class="line">      label: master</span><br><span class="line">      profile: dev</span><br></pre></td></tr></table></figure>
-<h3 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// ribbon服务提供者</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yml配置</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8761/eureka/</span><br></pre></td></tr></table></figure>
-<h3 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// ribbon服务消费</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-ribbon&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">//Feign服务消费</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yml配置</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8761/eureka/</span><br></pre></td></tr></table></figure>
-<h3 id="API网关"><a href="#API网关" class="headerlink" title="API网关"></a>API网关</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// zuul配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">// yum 配置</span><br><span class="line">zuul:</span><br><span class="line">  routes:</span><br><span class="line">    api-a:</span><br><span class="line">      path: /api/a/**</span><br><span class="line">      serviceId: hello-spring-cloud-web-admin-ribbon</span><br><span class="line">    api-b:</span><br><span class="line">      path: /api/b/**</span><br><span class="line">      serviceId: hello-spring-cloud-web-admin-feign</span><br></pre></td></tr></table></figure>
-<h2 id="熔断器防止服务雪崩"><a href="#熔断器防止服务雪崩" class="headerlink" title="熔断器防止服务雪崩"></a>熔断器防止服务雪崩</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// pom 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// yum配置</span><br><span class="line">feign:</span><br><span class="line">  hystrix:</span><br><span class="line">    enabled: true</span><br><span class="line">// application里面添加@EnableHystrix注解，调用方法上面增加@HystrixCommand(fallbackMethod = &quot;hiError&quot;)注解</span><br></pre></td></tr></table></figure>
-<h2 id="熔断器仪表盘监控"><a href="#熔断器仪表盘监控" class="headerlink" title="熔断器仪表盘监控"></a>熔断器仪表盘监控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-hystrix-dashboard&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// application中添加@EnableHystrixDashboard注解</span><br><span class="line">//创建 hystrix.stream 的 Servlet 配置</span><br><span class="line">@Configuration</span><br><span class="line">public class HystrixDashboardConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public ServletRegistrationBean getServlet() &#123;</span><br><span class="line">        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();</span><br><span class="line">        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);</span><br><span class="line">        registrationBean.setLoadOnStartup(1);</span><br><span class="line">        registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);</span><br><span class="line">        registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);</span><br><span class="line">        return registrationBean;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="服务链路追踪"><a href="#服务链路追踪" class="headerlink" title="服务链路追踪"></a>服务链路追踪</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// pom.xml 配置</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;zipkin-autoconfigure-ui&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// aplication添加@EnableZipkinServer注解</span><br><span class="line">// yml配置</span><br><span class="line">management:</span><br><span class="line">  metrics:</span><br><span class="line">    web:</span><br><span class="line">      server:</span><br><span class="line">        auto-time-requests: false</span><br></pre></td></tr></table></figure>
-<h2 id="Spring-Boot-Admin"><a href="#Spring-Boot-Admin" class="headerlink" title="Spring Boot Admin"></a>Spring Boot Admin</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 服务端pom.xml依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jolokia&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// 客户端pom.xml依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jolokia&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jolokia-core&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">// application添加@EnableAdminServer依赖</span><br><span class="line">// 服务端yml配置</span><br><span class="line">management:</span><br><span class="line">  endpoint:</span><br><span class="line">    health:</span><br><span class="line">      show-details: always</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: health,info</span><br><span class="line">// 客户端yml配置</span><br><span class="line">spring:</span><br><span class="line">  boot:</span><br><span class="line">    admin:</span><br><span class="line">      client:</span><br><span class="line">        url: http://localhost:8084</span><br></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li>Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中传播状态变化，可与Spring Cloud Config联合实现热部署。</li>
-</ul>
+        <h2 id="什么是计算机网络"><a href="#什么是计算机网络" class="headerlink" title="什么是计算机网络"></a>什么是计算机网络</h2><p>将有独立功能的多台计算机，通过通信设备线路链接起来，在网络软件的支持下，实现彼此之间资源共享和数据通信的整个系统。</p>
+<h2 id="网络协议的三要素是什么？每个要素的含义是什么？"><a href="#网络协议的三要素是什么？每个要素的含义是什么？" class="headerlink" title="网络协议的三要素是什么？每个要素的含义是什么？"></a>网络协议的三要素是什么？每个要素的含义是什么？</h2><p>协议三要素: 语法、语义、时序</p>
+<ol>
+<li>语法：定义实体之间交换信息的格式与结构，或定义实体之间传递信息的电平等。</li>
+<li>语义：定义实体之间交换的信息中需要发送哪些控制信息，这些控制信息的具体含义，以及针对不同含义的控制信息，接受信息端应如何响应。</li>
+<li>时序：也成为同步，定义实体之间交换信息的顺序以及如何匹配或适应彼此的速度。</li>
+</ol>
+<h2 id="计算机网络的功能是什么"><a href="#计算机网络的功能是什么" class="headerlink" title="计算机网络的功能是什么"></a>计算机网络的功能是什么</h2><p>在不同主机之间实现快速的信息交换。通过信息交换，计算机网络可实现资源共享这一核心功能，包括硬件资源共享，软件资源共享和信息资源共享。</p>
+<h2 id="按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？"><a href="#按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？" class="headerlink" title="按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？"></a>按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？</h2><p>有个域网、局域网、城域网、广域网</p>
+<ol>
+<li>个域网：个人设备通过无线通信技术构成的小范围网络，实现个人设备间的数据传输，比如蓝牙技术实现个人设备的互连等（1-10m左右的范围）。</li>
+<li>局域网：部署在办公室、办公楼、厂区、校园等局部区域内。采用高速有线或者无线连接主机。（10m-1km）</li>
+<li>城域网：覆盖一个城市范围的网络（5-50km）</li>
+<li>广域网：覆盖范围在几十到几千千米，跨越更大的地理空间，可以实现异地城域网或局域网的互连。</li>
+</ol>
+<h2 id="按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？"><a href="#按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？" class="headerlink" title="按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？"></a>按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？</h2><p>有星形拓扑结构、总线型拓扑结构、环形拓扑结构、网状拓扑结构、树状拓扑结构、混合拓扑结构。</p>
+<ol>
+<li>星形拓扑结构：包括一个中央节点、网络中的主机通过点对点的通信链路与中央节点连接</li>
+<li>总线形拓扑结构：采用一条广播信道作为公共传输介质，称为总线，所有节点都和总线连接，节点间的通信都通过共享的总线进行</li>
+<li>环形拓扑结构：所有的节点连成一个闭合的环，环中的数据传输通常是单向（也可双向）传输</li>
+<li>网状拓扑结构：通过多条链路与不同的节点直接连接</li>
+<li>树状拓扑结构：总线形和星形拓扑的网络扩展。</li>
+<li>混合拓扑结构：由两种以上简单的拓扑结构网络混合连接而成的网络</li>
+</ol>
+<h2 id="计算机网络结构主要包括哪几部分？每部分的主要功能是什么？"><a href="#计算机网络结构主要包括哪几部分？每部分的主要功能是什么？" class="headerlink" title="计算机网络结构主要包括哪几部分？每部分的主要功能是什么？"></a>计算机网络结构主要包括哪几部分？每部分的主要功能是什么？</h2><p>网络边缘、接入网络、网络核心</p>
+<ol>
+<li>网络边缘：连接到网络上的所有端系统</li>
+<li>接入网络：是实现网络边缘的端系统与网络核心连接与接入的网络</li>
+<li>网络核心：通信链路互连的分组交换设备构成的网络，是实现网络边缘中主机之间的数据中继与转发</li>
+</ol>
+<h2 id="简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？"><a href="#简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？" class="headerlink" title="简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？"></a>简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？</h2><ol>
+<li>电话拨号接入：用电话网络接入，方便实现分散的家庭用户接入网络。但是宽带有限</li>
+<li>非对称用户线路ADSL：用现有的电话网络的用户线路接入，主要用于家庭用户接入。上行宽带比下行宽带小</li>
+<li>混合光钎同轴电缆HFC接入网络：有限电视网络接入，当用户数量较大时，HFC没有ADSL接入速率快</li>
+<li>局域网：企业、学校等机构组建的网络，光钎到户之后，很多家庭也采用局域网实现网络接入</li>
+<li>移动接入网络：只要利用移动通信网络，智能手机移动终端等接入网络。</li>
+</ol>
+<h2 id="请简述电路交换工作过程以及电路交换的特点。"><a href="#请简述电路交换工作过程以及电路交换的特点。" class="headerlink" title="请简述电路交换工作过程以及电路交换的特点。"></a>请简述电路交换工作过程以及电路交换的特点。</h2><p>过程：建立电路、传输数据、拆除电路<br>特点：有连接的，在通信时需要先建立电路连接，在通信过程中独占一个信道，通信结束后拆除电路连接。优点是实时性高，时延和时延抖动都较小。缺点是：对于突发性数据传输，信道利用率低，传输速率单一。</p>
+<h2 id="什么是报文交换？什么是分组交换？试比较两者的优势。"><a href="#什么是报文交换？什么是分组交换？试比较两者的优势。" class="headerlink" title="什么是报文交换？什么是分组交换？试比较两者的优势。"></a>什么是报文交换？什么是分组交换？试比较两者的优势。</h2><ol>
+<li><p>报文交换：发送方把要发送的信息附加上发送／接受主机的地址以及其他控制信息，构成一个完整的报文。然后以报文为单位在交换网络的各结点之间以存储－转发的方式传送</p>
+<pre><code>优点：线路利用率高。不会出现通信双方空闲时信道也要被占用的情况。
+</code></pre></li>
+<li><p>分组交换：将报文分割成较小的数据块，每个数据块附加上地址、序号等控制信息构成数据分组，每个分组独立传输到目的地，目的地将收到的分组重新组装，还原为报文</p>
+<pre><code>优点：交换设备存储容量要求低、交换速度快、可靠传输效率高、更加公平
+</code></pre></li>
+</ol>
+<h2 id="OSI参考模型包括几层？每层的主要功能是什么？"><a href="#OSI参考模型包括几层？每层的主要功能是什么？" class="headerlink" title="OSI参考模型包括几层？每层的主要功能是什么？"></a>OSI参考模型包括几层？每层的主要功能是什么？</h2><p>包括七层</p>
+<ol>
+<li>物理层：传输介质上实现无结构比特流传输</li>
+<li>数据链路层：相邻结点之间数据可靠而有效的传输</li>
+<li>网络层：将分组通过交换网络传输至目的地的主机</li>
+<li>传输层：端到端的层次，两个主机的进程之间</li>
+<li>会话层：用户与用户之间的连接</li>
+<li>表示层：处理应用实体间交换数据的语法</li>
+</ol>
+<h2 id="TCP-IP参考模型包括几层？每层主要包括哪些协议？"><a href="#TCP-IP参考模型包括几层？每层主要包括哪些协议？" class="headerlink" title="TCP/IP参考模型包括几层？每层主要包括哪些协议？"></a>TCP/IP参考模型包括几层？每层主要包括哪些协议？</h2><p>包括四层</p>
+<ol>
+<li>应用层： TCP/IP</li>
+<li>传输层： UDP</li>
+<li>网络互联层：ICMP、IGMP、BGP、OSPF、RIP、路由协议</li>
+<li>网络接口层</li>
+</ol>
+<h2 id="考虑两台主机A和主机B由一条宽带为R-bi-s-、长度为D-m-的链路互连，信号传播速率为V-m-s-。假设主机A从t-0时刻开始向主机B发送分组，分组长度为L位。试求"><a href="#考虑两台主机A和主机B由一条宽带为R-bi-s-、长度为D-m-的链路互连，信号传播速率为V-m-s-。假设主机A从t-0时刻开始向主机B发送分组，分组长度为L位。试求" class="headerlink" title="考虑两台主机A和主机B由一条宽带为R(bi/s)、长度为D(m)的链路互连，信号传播速率为V(m/s)。假设主机A从t=0时刻开始向主机B发送分组，分组长度为L位。试求:"></a>考虑两台主机A和主机B由一条宽带为R(bi/s)、长度为D(m)的链路互连，信号传播速率为V(m/s)。假设主机A从t=0时刻开始向主机B发送分组，分组长度为L位。试求:</h2><ol>
+<li>传播延迟(时延)dp：传播时延dp = 信道长度(m) / 电磁波在信道上的传播速率(m/s) = D / V</li>
+<li>传输延迟dt = 数据帧长度(b) / 信道带宽(b/s) = L / R</li>
+<li>总延迟de = 传播时延 + 传输延迟 = D / V + L / R</li>
+<li>dp &gt; dt意味着最早发送的信号没有到达目的主机之前，数据分组的最后一个比特已经发送出来了，所以分组的第一个比特在距离主机的V * dt米的链路上</li>
+<li>时延带宽积 = 传播时延 <em> 带宽 = D / V </em> R = 512，解之得D = 1280米</li>
+</ol>
+<h2 id="假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1-500kbps，R2-2Mbps，R3-1Mbps。试求："><a href="#假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1-500kbps，R2-2Mbps，R3-1Mbps。试求：" class="headerlink" title="假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1=500kbps，R2=2Mbps，R3=1Mbps。试求："></a>假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1=500kbps，R2=2Mbps，R3=1Mbps。试求：</h2><ol>
+<li><p>假设网络没有其他流量，则传送该文件的吞吐量是多少？</p>
 <ul>
-<li>Spring Cloud Netflix：针对多种Netflix组件提供的开发工具包，其中包括Eureka、Hystrix、Zuul、Archaius等。</li>
+<li>假定网络中没有其他流量，R = min{R1+R2+R3} = min{500kbps,2Mbps,1Mbps} = 500kbps</li>
 </ul>
+</li>
+<li><p>假设文件大小为4MB，则传输该文件到主机B大约需要多少时间？</p>
 <ul>
-<li><p>Netflix Eureka：云端负载均衡，一个基于REST 的服务，用于定位服务，以实现云端的负载均衡和中间层服务器的故障转移。</p>
-</li>
-<li><p>Netflix Hystrix：容错管理工具，旨在通过控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。</p>
-</li>
-<li><p>Netflix Zuul：边缘服务工具，是提供动态路由，监控，弹性，安全等的边缘服务。</p>
-</li>
-<li><p>Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</p>
-</li>
-<li><p>Spring Cloud for Cloud Foundry：通过Oauth2协议绑定服务到CloudFoundry，CloudFoundry是VMware推出的开源PaaS云平台。</p>
-</li>
-<li><p>Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin和HTrace操作。 </p>
-</li>
-<li><p>Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</p>
-</li>
-<li><p>Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要是指OAuth2。</p>
-</li>
-<li><p>Spring Cloud Consul：封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。</p>
-</li>
-<li><p>Spring Cloud Zookeeper：操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。</p>
-</li>
-<li><p>Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。</p>
-</li>
-<li><p>Spring Cloud CLI：基于 SpringBoot CLI，可以让你以命令行方式快速建立云组件。</p>
-</li>
+<li>T = 4MB/R = 4*10^3/500kbps = 64s</li>
 </ul>
+</li>
+</ol>
+<h2 id="计算机网络-时延、发送时延、传输时延、处理时延、排队时延、时延带宽积"><a href="#计算机网络-时延、发送时延、传输时延、处理时延、排队时延、时延带宽积" class="headerlink" title="计算机网络 时延、发送时延、传输时延、处理时延、排队时延、时延带宽积"></a>计算机网络 时延、发送时延、传输时延、处理时延、排队时延、时延带宽积</h2><p>时延：指数据从网络的一端传送到另一端所需的时间</p>
+<p>发送时延（传输时延）：是主机或路由器发送数据帧所需要的时间，也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需的时间，发送时延 = 数据帧长度(b) / 信道带宽(b/s)</p>
+<p>传播时延：是电磁波在信道中传播一定的距离需要花费的时间，传播时延 = 信道长度(m) / 电磁波在信道上的传播速率(m/s)</p>
+<p>发送时延（传输时延）发生在机器的内部的发送器中，而传播时延则发生在机器外部的传输信道媒体上。</p>
+<p>处理时延：主机或路由器在收到分组时要花费一定的时间进行处理，例如分析分组的首部、从分组中提取数据部分、进行差错或查找适当的路由等等</p>
+<p>排队时延：分组在经过网络传输时，要经过许多的路由器。但分组在进入路由器后要现在输入队列中排队等待处理。在路由器确定了转发接口后，还要在输出队列中排队等待转发</p>
+<p>数据在网络中经历的总时延就是以上四种时延之和：总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延</p>
+<p>时延带宽积：时延带宽积 = 传播时延 * 带宽</p>
+<h2 id="假设主机A向主机B发送一个L-1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1-5000km、D2-4000km、D3-1000km-每段链路的传输速率均为R-2Mbit-s-信号传播速率为V-250000km-s-分组交换机处理每个分组的时延为dc-3ms-试求："><a href="#假设主机A向主机B发送一个L-1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1-5000km、D2-4000km、D3-1000km-每段链路的传输速率均为R-2Mbit-s-信号传播速率为V-250000km-s-分组交换机处理每个分组的时延为dc-3ms-试求：" class="headerlink" title="假设主机A向主机B发送一个L=1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1=5000km、D2=4000km、D3=1000km;每段链路的传输速率均为R=2Mbit/s,信号传播速率为V=250000km/s,分组交换机处理每个分组的时延为dc=3ms,试求："></a>假设主机A向主机B发送一个L=1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1=5000km、D2=4000km、D3=1000km;每段链路的传输速率均为R=2Mbit/s,信号传播速率为V=250000km/s,分组交换机处理每个分组的时延为dc=3ms,试求：</h2><ol>
+<li><p>若以存储－转发的分组交换方式，则该分组从主机A到达主机B的端到端时延是多少？</p>
+<p> 链路时延：D / V ＝ (5000km+4000km+1000km)/250000km/s=0.04s<br> 总时延为：链路时延＋2<em>分组时延 ＝ 40ms </em>+ 2 * 3ms = 46ms</p>
+</li>
+<li><p>若dc=0, 且不采取存储－转发的分组交换方式，而是分组交换机直接转发收到的每个分组（即直通交换），则该分组从主机A到达主机B的端到端时延是多少？</p>
+<p>时延： D / V ＝ (5000km+4000km+1000km)/250000km/s=0.04s=40ms</p>
+</li>
+</ol>
+<h2 id="如图所示网络。A在t-0时刻开始向C发送一个2Mbits的文件；B在t-0-1-e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。"><a href="#如图所示网络。A在t-0时刻开始向C发送一个2Mbits的文件；B在t-0-1-e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。" class="headerlink" title="如图所示网络。A在t=0时刻开始向C发送一个2Mbits的文件；B在t=0.1+e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。"></a>如图所示网络。A在t=0时刻开始向C发送一个2Mbits的文件；B在t=0.1+e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。</h2><p><img src="https://gaoqisen.github.io/GraphBed/202002/20200212101314.png" alt="https://gaoqisen.github.io/GraphBed/202002/20200212101314.png"></p>
+<p>请回答下列问题：</p>
+<ol>
+<li>如果图中网络采用存储-转发方式的报文交换，则A将2Mbits的文件交付给C需要多长时间？B将1Mbits的文件交付给D需要多长时间？</li>
+<li>如果图中网络采用存储-转发方式的分组交换，分组长度为等长的1kbits，且忽略分组头开销以及报文的拆装开销，则A将2Mbits的文件交付给C需要大约多长时间？B将1Mbits的文件交付给D需要大约多长时间？</li>
+<li>报文交换与分组交换相比，哪种交换方式更公平？（即传输数据量小用时少，传输数据量大用时长）<br>答</li>
+<li>由于A先发报文所以，A的报文在路由器的队列中排在B的报文前面，所以A交付2Mbits报文需要时间为：2/10+2/20+2/10=0.5s=500ms；（3分）<br> B将1Mbits的文件交付给D需要时间为：1/10+2/20(排队时间)        +1/20+1/10=0.35s=350ms。（3分）</li>
+<li>从t=0时刻到t=0.1s，A发送了1000个分组，用时：1000×1000/10000000=0.1s，<br>从t=0.1s时刻起与B共享连接路由器的链路，平均各共享到带宽10Mbps，A大约再用时：1/10+2×1000/10000000=0.1002s交付剩余的1000个分组，故A向C交付2Mbits文件大约需要(0.1+0.1002)s≈0.2s；（3分）<br>B向D交付1Mbits文件需要时间大约为：1/10+2×1000/10000000=0.1002s≈0.1s。（3分）</li>
+<li>分组交换比报文交换更公平。（2分）</li>
+</ol>
 
       
     </div>
@@ -543,7 +517,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringCloud/" rel="tag"># SpringCloud</a>
+            <a href="/tags/network/" rel="tag"># network</a>
           
         </div>
       
@@ -556,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/linux/vi.html" rel="next" title="vi 快捷键记录">
-                <i class="fa fa-chevron-left"></i> vi 快捷键记录
+              <a href="/study/computerNetworkTheory2.html" rel="next" title="计算机网络原理(二)">
+                <i class="fa fa-chevron-left"></i> 计算机网络原理(二)
               </a>
             
           </div>
@@ -566,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux/command.html" rel="prev" title="linux常用命令">
-                linux常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/study/java.html" rel="prev" title="Java线程实验程序">
+                Java线程实验程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -667,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -689,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -738,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本对应"><span class="nav-number">1.</span> <span class="nav-text">版本对应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloud-vs-SpringCloudAlibaba"><span class="nav-number">2.</span> <span class="nav-text">SpringCloud vs SpringCloudAlibaba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动顺序"><span class="nav-number">3.</span> <span class="nav-text">启动顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务注册中心-Eureka"><span class="nav-number">3.1.</span> <span class="nav-text">服务注册中心(Eureka)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式配置中心"><span class="nav-number">3.2.</span> <span class="nav-text">分布式配置中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务提供者"><span class="nav-number">3.3.</span> <span class="nav-text">服务提供者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务消费者"><span class="nav-number">3.4.</span> <span class="nav-text">服务消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API网关"><span class="nav-number">3.5.</span> <span class="nav-text">API网关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器防止服务雪崩"><span class="nav-number">4.</span> <span class="nav-text">熔断器防止服务雪崩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熔断器仪表盘监控"><span class="nav-number">5.</span> <span class="nav-text">熔断器仪表盘监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务链路追踪"><span class="nav-number">6.</span> <span class="nav-text">服务链路追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot-Admin"><span class="nav-number">7.</span> <span class="nav-text">Spring Boot Admin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是计算机网络"><span class="nav-number">1.</span> <span class="nav-text">什么是计算机网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络协议的三要素是什么？每个要素的含义是什么？"><span class="nav-number">2.</span> <span class="nav-text">网络协议的三要素是什么？每个要素的含义是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络的功能是什么"><span class="nav-number">3.</span> <span class="nav-text">计算机网络的功能是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？"><span class="nav-number">4.</span> <span class="nav-text">按网络覆盖范围划分，主要有哪几类计算机网络？各有什么特点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？"><span class="nav-number">5.</span> <span class="nav-text">按网络拓扑划分，主要有哪几类计算机网络？各有什么特点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络结构主要包括哪几部分？每部分的主要功能是什么？"><span class="nav-number">6.</span> <span class="nav-text">计算机网络结构主要包括哪几部分？每部分的主要功能是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？"><span class="nav-number">7.</span> <span class="nav-text">简要描述你了解的接入网络，这些接入网络都有什么特点？经常使用的是那类接入网络？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请简述电路交换工作过程以及电路交换的特点。"><span class="nav-number">8.</span> <span class="nav-text">请简述电路交换工作过程以及电路交换的特点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是报文交换？什么是分组交换？试比较两者的优势。"><span class="nav-number">9.</span> <span class="nav-text">什么是报文交换？什么是分组交换？试比较两者的优势。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI参考模型包括几层？每层的主要功能是什么？"><span class="nav-number">10.</span> <span class="nav-text">OSI参考模型包括几层？每层的主要功能是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP参考模型包括几层？每层主要包括哪些协议？"><span class="nav-number">11.</span> <span class="nav-text">TCP/IP参考模型包括几层？每层主要包括哪些协议？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑两台主机A和主机B由一条宽带为R-bi-s-、长度为D-m-的链路互连，信号传播速率为V-m-s-。假设主机A从t-0时刻开始向主机B发送分组，分组长度为L位。试求"><span class="nav-number">12.</span> <span class="nav-text">考虑两台主机A和主机B由一条宽带为R(bi/s)、长度为D(m)的链路互连，信号传播速率为V(m/s)。假设主机A从t=0时刻开始向主机B发送分组，分组长度为L位。试求:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1-500kbps，R2-2Mbps，R3-1Mbps。试求："><span class="nav-number">13.</span> <span class="nav-text">假设主机A向主机B以存储-转发的分组交换方式发送一个大文件。主机A到达主机B的路径上有3段链路，其速率分别是R1=500kbps，R2=2Mbps，R3=1Mbps。试求：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络-时延、发送时延、传输时延、处理时延、排队时延、时延带宽积"><span class="nav-number">14.</span> <span class="nav-text">计算机网络 时延、发送时延、传输时延、处理时延、排队时延、时延带宽积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设主机A向主机B发送一个L-1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1-5000km、D2-4000km、D3-1000km-每段链路的传输速率均为R-2Mbit-s-信号传播速率为V-250000km-s-分组交换机处理每个分组的时延为dc-3ms-试求："><span class="nav-number">15.</span> <span class="nav-text">假设主机A向主机B发送一个L=1500B的分组，主机A到达主机B的路径上有3端链路、2个分组交换机，3段链路长度分别为D1=5000km、D2=4000km、D3=1000km;每段链路的传输速率均为R=2Mbit/s,信号传播速率为V=250000km/s,分组交换机处理每个分组的时延为dc=3ms,试求：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如图所示网络。A在t-0时刻开始向C发送一个2Mbits的文件；B在t-0-1-e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。"><span class="nav-number">16.</span> <span class="nav-text">如图所示网络。A在t=0时刻开始向C发送一个2Mbits的文件；B在t=0.1+e秒（e为无限趋近于0的小正实数）向D发送一个1Mbits的文件。忽略传播延迟和结点处理延迟。</span></a></li></ol></div>
             
 
           </div>
@@ -906,9 +880,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/spring/spring_cloud.html';
-          this.page.identifier = 'spring/spring_cloud.html';
-          this.page.title = 'SpringCloud学习';
+          this.page.url = 'https://gaoqisen.github.io/study/computerNetworkTheory1.html';
+          this.page.identifier = 'study/computerNetworkTheory1.html';
+          this.page.title = '计算机网络原理(一)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
