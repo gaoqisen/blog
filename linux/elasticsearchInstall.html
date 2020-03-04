@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="在linux环境装了一个elasticsearch，遇到了好几个问题，记录一下，后面以后安装的时候方便快速解决。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-25T09:50:38.000Z">
+<meta property="og:updated_time" content="2020-02-29T12:43:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux安装elasticsearch遇到的问题">
 <meta name="twitter:description" content="在linux环境装了一个elasticsearch，遇到了好几个问题，记录一下，后面以后安装的时候方便快速解决。">
@@ -391,8 +391,10 @@
       
 
       
-        <h2 id="版本问题"><a href="#版本问题" class="headerlink" title="版本问题"></a>版本问题</h2><p>下载了一个最新的elasticsearch 7.6安装提示java版本必须11，服务器上面安装的jdk为8，因此重新下载了一个6.8.6的版本，解决问题</p>
-<h2 id="root用户无法启动"><a href="#root用户无法启动" class="headerlink" title="root用户无法启动"></a>root用户无法启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 增加elasticsearch用户</span><br><span class="line">adduser elasticsearch</span><br><span class="line">// 设置密码</span><br><span class="line">passwd elasticsearch</span><br><span class="line">// 更改文件的所属用户</span><br><span class="line">chown -R elasticsearch filename</span><br><span class="line">// 切换用户</span><br><span class="line">su elasticsearch</span><br><span class="line">// 后台启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
+        <p>最近在服务器上面安装了一个elasticsearch，之前使用docker-compose安装的，请求松松的就安装成功了。这次在官网上面下载了安装包在服务器上面安装的时候出现了好几个问题，这次纪录下来，方便下次安装的时候快速排查到问题所在。</p>
+<h2 id="版本问题"><a href="#版本问题" class="headerlink" title="版本问题"></a>版本问题</h2><p>下载了一个最新的elasticsearch 7.6安装提示java版本必须11，服务器上面安装的jdk为8，因此重新下载了一个6.8.6的版本，解决问题</p>
+<h2 id="root用户无法启动"><a href="#root用户无法启动" class="headerlink" title="root用户无法启动"></a>root用户无法启动</h2><p>elasticsearch默认root帐号无法启动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 增加elasticsearch用户</span><br><span class="line">adduser elasticsearch</span><br><span class="line">// 设置密码</span><br><span class="line">passwd elasticsearch</span><br><span class="line">// 更改文件的所属用户</span><br><span class="line">chown -R elasticsearch filename</span><br><span class="line">// 切换用户</span><br><span class="line">su elasticsearch</span><br><span class="line">// 后台启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
 <h2 id="外网无法访问"><a href="#外网无法访问" class="headerlink" title="外网无法访问"></a>外网无法访问</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim config/elasticsearch.yml</span><br><span class="line">// 增加下面配置</span><br><span class="line">network.host: 0.0.0.0</span><br></pre></td></tr></table></figure>
 <h2 id="启动报错"><a href="#启动报错" class="headerlink" title="启动报错"></a>启动报错</h2><ul>
 <li><p>[kSH2rCN] node validation exception bootstrap checks failed<br>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p>
