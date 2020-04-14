@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包 选择路径，点击finish即可    2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux+nginx+tomcat的java项目打包war部署">
 <meta property="og:url" content="https://gaoqisen.github.io/java/war.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta property="og:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包 选择路径，点击finish即可    2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png">
-<meta property="og:updated_time" content="2019-10-23T04:58:52.000Z">
+<meta property="og:updated_time" content="2020-04-08T06:28:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux+nginx+tomcat的java项目打包war部署">
-<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包  选择路径，点击finish即可 2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以直接">
+<meta name="twitter:description" content="环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境) 1.将java代码进行war打包 eclipse打包 选择路径，点击finish即可    2.将war包移动到tomcat的webapps目录下面通过ftp或者scp可以">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png">
 
 
@@ -391,36 +391,24 @@
       
         <p> 环境：linux centos 7 系统、jdk8+tomcat8+nginx-1.12.1+mysql-5.7.16(jdk,tomcat,mysql是通过阿里云的java环境一键部署的，非阿里云的服务器可以自己搭建环境)</p>
 <h3 id="1-将java代码进行war打包"><a href="#1-将java代码进行war打包" class="headerlink" title="1.将java代码进行war打包"></a>1.将java代码进行war打包</h3><ul>
-<li><p>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png" alt="打包war.png"></p>
-<ul>
-<li><p>选择路径，点击finish即可</p>
-<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><p>通过ftp或者scp可以直接将本地的代码放到linux服务器上面<br>scp命令：scp 文件名 root@地址:/root   （scp test.war <a href="mailto:root@107.1.0.1" target="_blank" rel="noopener">root@107.1.0.1</a>:/root）</p>
-</li>
+<li>eclipse打包<br><img src="https://upload-images.jianshu.io/upload_images/7172355-63099a395fe193c5.png" alt="打包war.png"><ul>
+<li>选择路径，点击finish即可</li>
 </ul>
 </li>
 </ul>
-<h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
+<h3 id="2-将war包移动到tomcat的webapps目录下面"><a href="#2-将war包移动到tomcat的webapps目录下面" class="headerlink" title="2.将war包移动到tomcat的webapps目录下面"></a>2.将war包移动到tomcat的webapps目录下面</h3><pre><code>通过ftp或者scp可以直接将本地的代码放到linux服务器上面
+scp命令：scp 文件名 root@地址:/root   （scp test.war root@107.1.0.1:/root）
+</code></pre><h3 id="3-启动tomcat"><a href="#3-启动tomcat" class="headerlink" title="3.启动tomcat"></a>3.启动tomcat</h3><p>会出现地址被占用</p>
 <ul>
 <li>可以用命令：netstat -ltunp    。查看所有的端口号使用情况</li>
 <li>如果有（tomcat默认使用8080、8009、8005）端口运行；直接用命令：kill -9 端口号</li>
 <li>重启<h3 id="4-安装nginx-1-12-1"><a href="#4-安装nginx-1-12-1" class="headerlink" title="4.安装nginx-1.12.1"></a>4.安装nginx-1.12.1</h3></li>
 <li>安装的sh脚本如下</li>
 </ul>
-<pre><code>#!/bin/sh
-yum install pcre-devel -y
-yum install openssl-devel -y
-yum install zlib-devel -y
-wget http://nginx.org/download/nginx-1.12.1.tar.gz
-tar -zvxf nginx-1.12.1.tar.gz
-cd nginx-1.12.1
-./configure
-make
-make install
-cd /usr/local/nginx/sbin/
-./nginx -t
-/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
-</code></pre><p>详情：<a href="https://www.jianshu.com/p/73efd33b9da4" target="_blank" rel="noopener">https://www.jianshu.com/p/73efd33b9da4</a></p>
-<ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">!/bin/sh</span><br><span class="line">yum install pcre-devel -y</span><br><span class="line">yum install openssl-devel -y</span><br><span class="line">yum install zlib-devel -y</span><br><span class="line">wget http://nginx.org/download/nginx-1.12.1.tar.gz</span><br><span class="line">tar -zvxf nginx-1.12.1.tar.gz</span><br><span class="line">cd nginx-1.12.1</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx -t</span><br><span class="line">/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+
+    详情：https://www.jianshu.com/p/73efd33b9da4
+</code></pre><ul>
 <li>配置nginx.conf文件</li>
 </ul>
 <pre><code>server_name  自己的域名
@@ -587,7 +575,7 @@ location ^~ /自己的项目 {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -598,7 +586,7 @@ location ^~ /自己的项目 {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
