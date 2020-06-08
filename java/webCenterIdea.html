@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java," />
+  <meta name="keywords" content="java springBoot" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="时间过的很快，什么都没学习到。就已经过去了大半的时间。这次是需要好好理解一下复合模式mvc。在java web开发中经常会用到mvc模式，总是大概的了解，没有弄懂最重要的东西。这次好好的学习一下mvc模式，用表格归纳一下常见的mvc模式。     模型 视图 控制器     mvc model view controller   java中常见的mvc java bean jsp servlet">
-<meta name="keywords" content="java">
+<meta name="description" content="开发这么久了，一直在学习各种各样的技术，也一直在遗忘自己所学到的技术。为了能遗忘的稍微慢些，于是想写一个Web项目提升自己的技能，也方便自己以后可以有复制代码的仓库。">
+<meta name="keywords" content="java springBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式－mvc模式">
-<meta property="og:url" content="https://gaoqisen.github.io/patterm/mvc.html">
+<meta property="og:title" content="关于WebCenter的一些想法">
+<meta property="og:url" content="https://gaoqisen.github.io/java/webCenterIdea.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="时间过的很快，什么都没学习到。就已经过去了大半的时间。这次是需要好好理解一下复合模式mvc。在java web开发中经常会用到mvc模式，总是大概的了解，没有弄懂最重要的东西。这次好好的学习一下mvc模式，用表格归纳一下常见的mvc模式。     模型 视图 控制器     mvc model view controller   java中常见的mvc java bean jsp servlet">
+<meta property="og:description" content="开发这么久了，一直在学习各种各样的技术，也一直在遗忘自己所学到的技术。为了能遗忘的稍微慢些，于是想写一个Web项目提升自己的技能，也方便自己以后可以有复制代码的仓库。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:updated_time" content="2020-06-07T13:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式－mvc模式">
-<meta name="twitter:description" content="时间过的很快，什么都没学习到。就已经过去了大半的时间。这次是需要好好理解一下复合模式mvc。在java web开发中经常会用到mvc模式，总是大概的了解，没有弄懂最重要的东西。这次好好的学习一下mvc模式，用表格归纳一下常见的mvc模式。     模型 视图 控制器     mvc model view controller   java中常见的mvc java bean jsp servlet">
+<meta name="twitter:title" content="关于WebCenter的一些想法">
+<meta name="twitter:description" content="开发这么久了，一直在学习各种各样的技术，也一直在遗忘自己所学到的技术。为了能遗忘的稍微慢些，于是想写一个Web项目提升自己的技能，也方便自己以后可以有复制代码的仓库。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/patterm/mvc.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/java/webCenterIdea.html"/>
 
 
 
 
 
-  <title>设计模式－mvc模式 | Learning Record</title>
+  <title>关于WebCenter的一些想法 | Learning Record</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/patterm/mvc.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/java/webCenterIdea.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式－mvc模式</h1>
+          <h1 class="post-title" itemprop="name headline">关于WebCenter的一些想法</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T22:50:11+08:00">
-                2018-10-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-07T20:23:12+08:00">
+                2020-06-07
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/patterm/" itemprop="url" rel="index">
-                    <span itemprop="name">patterm</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -357,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/patterm/mvc.html#comments" itemprop="discussionUrl">
+                <a href="/java/webCenterIdea.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="patterm/mvc.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="java/webCenterIdea.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,6 +372,10 @@
 
           
 
+          
+              <div class="post-description">
+                  开发这么久了，一直在学习各种各样的技术，也一直在遗忘自己所学到的技术。为了能遗忘的稍微慢些，于是想写一个Web项目提升自己的技能，也方便自己以后可以有复制代码的仓库。
+              </div>
           
 
         </div>
@@ -387,38 +391,18 @@
       
 
       
-        <p>时间过的很快，什么都没学习到。就已经过去了大半的时间。这次是需要好好理解一下复合模式mvc。在java web开发中经常会用到mvc模式，总是大概的了解，没有弄懂最重要的东西。这次好好的学习一下mvc模式，用表格归纳一下常见的mvc模式。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">模型</th>
-<th style="text-align:center">视图</th>
-<th style="text-align:center">控制器</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">mvc</td>
-<td style="text-align:center">model</td>
-<td style="text-align:center">view</td>
-<td style="text-align:center">controller</td>
-</tr>
-<tr>
-<td style="text-align:center">java中常见的mvc</td>
-<td style="text-align:center">java bean</td>
-<td style="text-align:center">jsp</td>
-<td style="text-align:center">servlet</td>
-</tr>
-<tr>
-<td style="text-align:center">mvc复合模式</td>
-<td style="text-align:center">观察者模式</td>
-<td style="text-align:center">组合模式</td>
-<td style="text-align:center">策略模式</td>
-</tr>
-</tbody>
-</table>
-<h2 id="一、对MVC模式的理解"><a href="#一、对MVC模式的理解" class="headerlink" title="一、对MVC模式的理解"></a>一、对MVC模式的理解</h2>
+        <p>在前一家公司上班的时候写了两个官网和一个教育类型的网站这种网站都需要一个后台的管理系统用来管理后台用户、权限、角色，这些功能都差不多是一样的，后台的UI框架结构也是一样的。开始的时候是用jQuery+html写了头部、菜单栏、底部这些公用的html，之后又用Vue写了头部、菜单栏、底部。基本上每个后台管理项目都需要写这些公用的模块，前前后后都写了好多次这种代码。在空闲的时候想了一下，如果后面还有这种类似的网站的话，也是避免不了会写这种重复的代码，感觉会有如下几种弊端:</p>
+<ol>
+<li>为了简化开发直接复制之前的代码，在复制代码之后需要花大量的时间去调试程序排查是否有复制遗漏的地方。</li>
+<li>每次都重写这种代码的话，工作量势必会增加，而且还是重复性的工作。</li>
+</ol>
+<p>想利用了面向对象三大特征之一的封装特征，把这些公用的功能都封装在一起。以后就不用在写这种重复的代码了。这段时间公司也在使用XXL-JOB分布式调度工具，XXL-JOB就是一个服务端和多个客服端的模式，服务端负责调度其他的客户端。于是就想有一个服务端专门负责管理用户、权限、角色、菜单这些功能。然后客服端去调用服务端提供的接口就可以实现这些重复的功能了。<br>于是在空闲的时候就开发了一个乞丐版的Webcenter如下:</p>
+<ol>
+<li>服务端：提供SSO单点登录功能、用户管理、角色管理、系统管理、菜单管理、权限管理等功能。</li>
+<li>客户端脚手架: 用来初始化SpringBoot项目和Vue后台项目，目的就是为了不写重复的代码。</li>
+</ol>
+<p>有了这个服务端之后，以后开发后台管理系统只需要启动服务端，然后利用客服端脚手架即可快速创建后台管理系统。在已经安装了redis和mysql的情况下基本上只需要10分钟就可以进行自己业务逻辑的开发了。<br>也不知道功能怎么样，希望大家提供宝贵的意见。<br>项目地址：<a href="https://github.com/gaoqisen/gqs-webcenter" target="_blank" rel="noopener">https://github.com/gaoqisen/gqs-webcenter</a></p>
+
       
     </div>
     
@@ -448,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/patterm/proxy.html" rel="next" title="设计模式 - 代理模式">
-                <i class="fa fa-chevron-left"></i> 设计模式 - 代理模式
+              <a href="/java/command.html" rel="next" title="java 的一些基础命令">
+                <i class="fa fa-chevron-left"></i> java 的一些基础命令
               </a>
             
           </div>
@@ -457,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/tool/mindoc.html" rel="prev" title="CentOS7部署MinDoc API在线文档管理系统">
-                CentOS7部署MinDoc API在线文档管理系统 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,17 +510,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -559,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">96</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,7 +541,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -581,7 +552,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -620,22 +591,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对MVC模式的理解"><span class="nav-number">1.</span> <span class="nav-text">一、对MVC模式的理解</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -798,9 +753,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/patterm/mvc.html';
-          this.page.identifier = 'patterm/mvc.html';
-          this.page.title = '设计模式－mvc模式';
+          this.page.url = 'https://gaoqisen.github.io/java/webCenterIdea.html';
+          this.page.identifier = 'java/webCenterIdea.html';
+          this.page.title = '关于WebCenter的一些想法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
