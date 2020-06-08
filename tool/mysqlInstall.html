@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="下载mysql的repo源 1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  安装mysql-community-release-el7-5.noarch.rpm包 1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm   3.安装mysql 1su">
+<meta name="description" content="一、下载mysql的repo源1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm 二、安装mysql-community-release-el7-5.noarch.rpm包1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm 三、安装mysql1sudo">
 <meta name="keywords" content="mysql CentOS7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7 安装mysql">
 <meta property="og:url" content="https://gaoqisen.github.io/tool/mysqlInstall.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="下载mysql的repo源 1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  安装mysql-community-release-el7-5.noarch.rpm包 1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm   3.安装mysql 1su">
+<meta property="og:description" content="一、下载mysql的repo源1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm 二、安装mysql-community-release-el7-5.noarch.rpm包1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm 三、安装mysql1sudo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:updated_time" content="2020-06-08T08:34:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 安装mysql">
-<meta name="twitter:description" content="下载mysql的repo源 1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  安装mysql-community-release-el7-5.noarch.rpm包 1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm   3.安装mysql 1su">
+<meta name="twitter:description" content="一、下载mysql的repo源1wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm 二、安装mysql-community-release-el7-5.noarch.rpm包1sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm 三、安装mysql1sudo">
 
 
 
@@ -387,24 +387,16 @@
       
 
       
-        <ol>
-<li><p>下载mysql的repo源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装mysql-community-release-el7-5.noarch.rpm包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>3.安装mysql</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mysql-server</span><br></pre></td></tr></table></figure>
-<p>4.进入mysql</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br></pre></td></tr></table></figure>
-<p>5.报错ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘ (2)，原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：</p>
+        <h2 id="一、下载mysql的repo源"><a href="#一、下载mysql的repo源" class="headerlink" title="一、下载mysql的repo源"></a>一、下载mysql的repo源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="二、安装mysql-community-release-el7-5-noarch-rpm包"><a href="#二、安装mysql-community-release-el7-5-noarch-rpm包" class="headerlink" title="二、安装mysql-community-release-el7-5.noarch.rpm包"></a>二、安装mysql-community-release-el7-5.noarch.rpm包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="三、安装mysql"><a href="#三、安装mysql" class="headerlink" title="三、安装mysql"></a>三、安装mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mysql-server</span><br></pre></td></tr></table></figure>
+<h2 id="四、进入mysql"><a href="#四、进入mysql" class="headerlink" title="四、进入mysql"></a>四、进入mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql</span><br></pre></td></tr></table></figure>
+<h2 id="五、报错"><a href="#五、报错" class="headerlink" title="五、报错"></a>五、报错</h2><blockquote>
+<p>ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘ (2)，原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R root:root /var/lib/mysql</span><br></pre></td></tr></table></figure>
-<p>6.重启mysql</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
-<p>7.更改密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user set password=password(&apos;123456&apos;) where user=&apos;root&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="六、重启mysql"><a href="#六、重启mysql" class="headerlink" title="六、重启mysql"></a>六、重启mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
+<h2 id="七、更改密码"><a href="#七、更改密码" class="headerlink" title="七、更改密码"></a>七、更改密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user set password=password(&apos;123456&apos;) where user=&apos;root&apos;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -517,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,7 +538,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -548,7 +549,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -559,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -598,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、下载mysql的repo源"><span class="nav-number">1.</span> <span class="nav-text">一、下载mysql的repo源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装mysql-community-release-el7-5-noarch-rpm包"><span class="nav-number">2.</span> <span class="nav-text">二、安装mysql-community-release-el7-5.noarch.rpm包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、安装mysql"><span class="nav-number">3.</span> <span class="nav-text">三、安装mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、进入mysql"><span class="nav-number">4.</span> <span class="nav-text">四、进入mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、报错"><span class="nav-number">5.</span> <span class="nav-text">五、报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、重启mysql"><span class="nav-number">6.</span> <span class="nav-text">六、重启mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、更改密码"><span class="nav-number">7.</span> <span class="nav-text">七、更改密码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
