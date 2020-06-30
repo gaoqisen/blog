@@ -88,7 +88,7 @@
 <meta property="og:description" content="JVM在运行java程序的时候，会把内存分为很多个区域，之前一直没有了解过JVM，这次好好学习一下。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200612094240.png">
-<meta property="og:updated_time" content="2020-06-12T02:44:12.000Z">
+<meta property="og:updated_time" content="2020-06-30T01:39:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习">
 <meta name="twitter:description" content="JVM在运行java程序的时候，会把内存分为很多个区域，之前一直没有了解过JVM，这次好好学习一下。">
@@ -403,7 +403,7 @@
 <li>堆(Heap)</li>
 <li>方法区(Method Area)</li>
 </ul>
-<h2 id="二、名词解释"><a href="#二、名词解释" class="headerlink" title="二、名词解释"></a>二、名词解释</h2><h3 id="2-1-程序计数器"><a href="#2-1-程序计数器" class="headerlink" title="2.1 程序计数器"></a>2.1 程序计数器</h3><p>指向当前线程所执行的字节码指令的行号(地址)，是一块较小的内存空间。是线程在让出时间片的时候记录的行号，下次线程获取到时间片之后就可以从程序计数器记录的行号处执行程序。各个线程之间的程序计数器独立存储互不影响，是唯一一个不会出现内存溢出的区域</p>
+<h2 id="二、名词解释"><a href="#二、名词解释" class="headerlink" title="二、名词解释"></a>二、名词解释</h2><h3 id="2-1-程序计数器"><a href="#2-1-程序计数器" class="headerlink" title="2.1 程序计数器"></a>2.1 程序计数器</h3><p>指向当前线程所执行的字节码指令的行号(地址)，是一块较小的内存空间。是线程在让出时间片的时候记录的行号，下次线程获取到时间片之后就可以从程序计数器记录的行号处执行程序。各个线程之间的程序计数器独立存储互不影响，是唯一一个不会出现内存溢出的区域，字节码解释器通过改变程序计数器来依次读取指令,从而实现代码的流程控制。</p>
 <h3 id="2-2-本地方法栈"><a href="#2-2-本地方法栈" class="headerlink" title="2.2 本地方法栈"></a>2.2 本地方法栈</h3><p>和虚拟机栈类似，区别就是虚拟机栈执行的是java方法服务，本地方法栈执行的Native方法服务。</p>
 <h3 id="2-3-虚拟机栈"><a href="#2-3-虚拟机栈" class="headerlink" title="2.3 虚拟机栈"></a>2.3 虚拟机栈</h3><p>也叫java栈，由多个栈帧组成。栈帧是虚拟机进行方法调用和执行的数据结构。一个方法从调用开始到执行完成，就是一个栈帧在虚拟机中的入栈到出栈的过程。每个栈帧都包含局部变量表、方法出口、操作数栈、动态链接。</p>
 <ul>
@@ -416,7 +416,7 @@
 <ul>
 <li>新生代：新生代又分为伊甸园和幸存区<ul>
 <li>伊甸园(eden)：新生的对象都存放到此区域，在进行一次垃圾回收(minor GC)之后就会将对象的年龄加1，并把对象移动到幸存区</li>
-<li>幸存区有两个为了在进行一次垃圾清理之后把幸存的对象存放在另一块区域From Survivor、To Suvrivor。每次清理都会将对象的年龄加1，默认对象的年龄达到15岁之后就会把对象移动到老年代</li>
+<li>幸存区有两个为了在进行一次垃圾清理之后把幸存的对象存放在另一块区域From Survivor、To Suvrivor。每次清理都会将对象的年龄加1，默认对象的年龄达到15岁(通过参数 - XX:MaxTenuringThreshold设置)之后就会把对象移动到老年代</li>
 </ul>
 </li>
 <li>老年代：老年代中的对象生命周期长、存活率高、回收的速度就比较慢(major GC)。但是当老年代的内存满了之后就会出发一次完整的垃圾回收(full gc 新生代老年代的完整回收会造成STW)</li>
@@ -504,7 +504,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux/logstash.html" rel="prev" title="logstash安装学习">
+              <a href="/tool/logstash.html" rel="prev" title="logstash安装学习">
                 logstash安装学习 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -605,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +616,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -627,7 +627,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

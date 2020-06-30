@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="elasticsearch" />
+  <meta name="keywords" content="gc" />
 
 
 
@@ -79,18 +79,27 @@
 
 
 
-<meta name="description" content="在linux环境装了一个elasticsearch，遇到了好几个问题，还有一些笔记，记录一下，后面以后安装的时候方便快速解决。">
-<meta name="keywords" content="elasticsearch">
+<meta name="description" content="学习一下gc垃圾回收">
+<meta name="keywords" content="gc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="elasticsearch遇到的问题">
-<meta property="og:url" content="https://gaoqisen.github.io/linux/elasticsearch.html">
+<meta property="og:title" content="GC学习笔记">
+<meta property="og:url" content="https://gaoqisen.github.io/java/gc.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="在linux环境装了一个elasticsearch，遇到了好几个问题，还有一些笔记，记录一下，后面以后安装的时候方便快速解决。">
+<meta property="og:description" content="学习一下gc垃圾回收">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-24T04:49:43.000Z">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200627172523.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200627174125.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200627173653.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200627174302.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630101205.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630103223.png">
+<meta property="og:updated_time" content="2020-06-30T02:52:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elasticsearch遇到的问题">
-<meta name="twitter:description" content="在linux环境装了一个elasticsearch，遇到了好几个问题，还有一些笔记，记录一下，后面以后安装的时候方便快速解决。">
+<meta name="twitter:title" content="GC学习笔记">
+<meta name="twitter:description" content="学习一下gc垃圾回收">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/202006/20200627172523.png">
 
 
 
@@ -120,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://gaoqisen.github.io/linux/elasticsearch.html"/>
+  <link rel="canonical" href="https://gaoqisen.github.io/java/gc.html"/>
 
 
 
 
 
-  <title>elasticsearch遇到的问题 | Learning Record</title>
+  <title>GC学习笔记 | Learning Record</title>
   
 
 
@@ -287,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/linux/elasticsearch.html">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/java/gc.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gao Qisen">
@@ -304,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">elasticsearch遇到的问题</h1>
+          <h1 class="post-title" itemprop="name headline">GC学习笔记</h1>
         
 
         <div class="post-meta">
@@ -316,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-25T16:11:32+08:00">
-                2020-02-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:30:19+08:00">
+                2020-06-28
               </time>
             
 
@@ -339,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -357,9 +366,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linux/elasticsearch.html#comments" itemprop="discussionUrl">
+                <a href="/java/gc.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="linux/elasticsearch.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="java/gc.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +383,7 @@
 
           
               <div class="post-description">
-                  在linux环境装了一个elasticsearch，遇到了好几个问题，还有一些笔记，记录一下，后面以后安装的时候方便快速解决。
+                  学习一下gc垃圾回收
               </div>
           
 
@@ -391,38 +400,69 @@
       
 
       
-        <h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><h2 id="1-1-下载安装"><a href="#1-1-下载安装" class="headerlink" title="1.1 下载安装"></a>1.1 下载安装</h2><ul>
-<li>下载安装包地址: <a href="https://www.elastic.co/cn/downloads/elasticsearch" target="_blank" rel="noopener">https://www.elastic.co/cn/downloads/elasticsearch</a></li>
-<li><p>修改config/elasticsearch.yml配置</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># 集群名称</span><br><span class="line">cluster.name: web-application</span><br><span class="line"># ------------------------------------ Node ------------------------------------</span><br><span class="line"># 节点名称</span><br><span class="line">node.name: node-1</span><br><span class="line"># 增加一个自定义属性</span><br><span class="line">#node.attr.rack: r1</span><br><span class="line"># ----------------------------------- Paths ------------------------------------</span><br><span class="line"># 存储数据的目录(用逗号分隔)</span><br><span class="line">#path.data: /path/to/data</span><br><span class="line"># 日志路径</span><br><span class="line">#path.logs: /path/to/logs</span><br><span class="line"># ----------------------------------- Memory -----------------------------------</span><br><span class="line"># 启动时锁定内存:</span><br><span class="line">#bootstrap.memory_lock: true</span><br><span class="line">bootstrap.memory_lock: false</span><br><span class="line">bootstrap.system_call_filter: false</span><br><span class="line"># ---------------------------------- Network -----------------------------------</span><br><span class="line"># 设置外网可以访问</span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"># 自定义端口</span><br><span class="line">#http.port: 9200</span><br><span class="line"># --------------------------------- Discovery ----------------------------------</span><br><span class="line">#</span><br><span class="line"># 启动后去发现list里面主机节点是否启动 默认列表[&quot;127.0.0.1&quot;, &quot;[::1]&quot;]</span><br><span class="line">#discovery.seed_hosts: [&quot;host1&quot;, &quot;host2&quot;]</span><br><span class="line"># 初始化主节点</span><br><span class="line">cluster.initial_master_nodes: [&quot;node-1&quot;]</span><br><span class="line"># ---------------------------------- Gateway -----------------------------------</span><br><span class="line"># 整个集群启动之后</span><br><span class="line">#gateway.recover_after_nodes: 3</span><br><span class="line"># ---------------------------------- Various -----------------------------------</span><br><span class="line"># 删除索引时需要显示名称</span><br><span class="line">#action.destructive_requires_name: true</span><br><span class="line"># 启动输入密码访问</span><br><span class="line">xpack.security.transport.ssl.enabled: true</span><br><span class="line">xpack.security.enabled: true</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627172523.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627172523.png"></p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ol>
+<li>serial(新): 一个CPU或一条GC线程进行垃圾回收,会出现STW。采用复制算法</li>
+<li>parNew(新): serial的多线程版本,多条gc线程去回收(降低gc时间)。采用复制算法</li>
+<li>parallel shavenge(新): 并行的多线程(追求CPU吞吐量)。采用复制算法</li>
+<li>serial old(老): 单线程收集。标记-整理算法</li>
+<li>parallel old(老): 多线程回收(追求CPU吞吐量)。标记-整理算法</li>
+<li>CMS(老): 多线程回收(追求最短停顿时间)。标记-清除算法</li>
+<li>G1(java9默认): 没有分代概念，将java堆分为相同的Region，回收最多垃圾数据的Regio</li>
+<li>ZGC: java11, 暂停时间不超过10ms,支持 4TB,JDK13 到了 16TB!</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> JDK版本默认垃圾收集器</span><br><span class="line"><span class="meta">#</span> jdk1.7 默认垃圾收集器Parallel Scavenge（新生代）+Serial Old（老年代）</span><br><span class="line"><span class="meta">#</span> jdk1.8 默认垃圾收集器Parallel Scavenge（新生代）+Serial Old（老年代）</span><br><span class="line"><span class="meta">#</span> jdk1.9 默认垃圾收集器G1</span><br><span class="line"><span class="meta">#</span> jdk10 默认垃圾收集器G1</span><br><span class="line"><span class="meta">#</span> 查看当前使用的是哪种回收策略，-XX:+Use后面的就是 -XX:+PrintGCDetails 亦可通过打印的GC日志的新生代、老年代名称判断</span><br><span class="line">java -XX:+PrintCommandLineFlags -version</span><br></pre></td></tr></table></figure>
+<h2 id="二、垃圾回收算法"><a href="#二、垃圾回收算法" class="headerlink" title="二、垃圾回收算法"></a>二、垃圾回收算法</h2><h3 id="2-1-标记-清除"><a href="#2-1-标记-清除" class="headerlink" title="2.1 标记-清除"></a>2.1 标记-清除</h3><p>首先标记出所有需要回收的对象,在标记完成后统一回收所有被标记的 对象。它是最基础的收集算法,后续的算法都是对其不足进行改进得到。这种垃圾收集算法会带来两个明显的问题: 1. 效率问题。2. 空间问题(标记清除后会产生大量不连续的碎片)</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627174125.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627174125.png"></p>
+<h3 id="2-2-标记-整理"><a href="#2-2-标记-整理" class="headerlink" title="2.2 标记-整理"></a>2.2 标记-整理</h3><p>根据老年代的特点特出的一种标记算法,标记过程仍然与“标记-清除”算法一样,但后续步骤不是直接<br>对可回收对象回收,而是让所有存活的对象向一端移动,然后直接清理掉端边界以外的内存</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627173653.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627173653.png"></p>
+<h3 id="2-3-复制"><a href="#2-3-复制" class="headerlink" title="2.3 复制"></a>2.3 复制</h3><p>为了解决效率问题,“复制”收集算法出现了。它可以将内存分为大小相同的两块,每次使用其中的一 块。当这一块的内存使用完后,就将还存活的对象复制到另一块去,然后再把使用的空间一次清理掉。 这样就使每次的内存回收都是对内存区间的一半进行回收。</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627174302.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627174302.png"></p>
+<h3 id="2-4-分代收集"><a href="#2-4-分代收集" class="headerlink" title="2.4 分代收集"></a>2.4 分代收集</h3><p>当前虚拟机的垃圾收集都采用分代收集算法,只是根据对象存活周期的不 同将内存分为几块。一般将java堆分为新生代和老年代,这样我们就可以根据各个年代的特点选择合适的垃圾收集算法。比如在新生代中,每次收集都会有大量对象死去,所以可以选择复制算法,只需要付出少量对象的复制 成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的,而且没有额外的空间对它进行分 配担保,所以我们必须选择“标记-清除”或“标记-整理”算法进行垃圾收集。</p>
+<h2 id="三、垃圾收集器详解"><a href="#三、垃圾收集器详解" class="headerlink" title="三、垃圾收集器详解"></a>三、垃圾收集器详解</h2><h3 id="3-1-serial"><a href="#3-1-serial" class="headerlink" title="3.1 serial"></a>3.1 serial</h3><p>Serial(串行新生代)，serial old(老年代)收集器收集器是最基本、历史最悠久的垃圾收集器了。大家看名字就知道这个收集器是 一个单线程收集器了。它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收 集工作,更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程( “Stop The World” ),直到它收集结束。</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200630101205.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200630101205.png"></p>
+<p>Serial收集器由于没有线程交互的开销,可以获得很高的单线程收集效率。Serial收集器对于运行在Client模式下的虚拟机来说是个不错的选择,简单而且高效。</p>
+<h3 id="3-2-parNew"><a href="#3-2-parNew" class="headerlink" title="3.2 parNew"></a>3.2 parNew</h3><p>ParNew收集器其实就是Serial收集器的多线程版本,除了使用多线程进行垃圾收集外,其余行为(控制参数、收集算法、回收策略等等)和Serial收集器完全一样。新生代采用复制算法,老年代采用标记-整理算法。它是许多运行在Server模式下的虚拟机的首要选择,除了Serial收集器外,只有它能与CMS收集器(真 正意义上的并发收集器,后面会介绍到)配合工作。新生代采用复制算法,老年代采用标记-整理算法。</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png"></p>
+<h3 id="3-3-Parallel-Scavenge"><a href="#3-3-Parallel-Scavenge" class="headerlink" title="3.3 Parallel Scavenge"></a>3.3 Parallel Scavenge</h3><p>Parallel Scavenge 收集器类似于ParNew 收集器。Parallel Scavenge收集器关注点是吞吐量(高效率的利用CPU)。CMS等垃圾收集器的关注点更多的是 用户线程的停顿时间(提高用户体验)。所谓吞吐量就是CPU中用于运行用户代码的时间与CPU总消耗时 间的比值。 Parallel Scavenge收集器提供了很多参数供用户找到最合适的停顿时间或最大吞吐量,如 果对于收集器运作不太了解的话,手工优化存在的话可以选择把内存管理优化交给虚拟机去完成也是一 个不错的选择。</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png"></p>
+<h3 id="3-4-Serial-Old"><a href="#3-4-Serial-Old" class="headerlink" title="3.4 Serial Old"></a>3.4 Serial Old</h3><p>Serial收集器的老年代版本,它同样是一个单线程收集器。它主要有两大用途:一种用途是在JDK1.5以<br>及以前的版本中与Parallel Scavenge收集器搭配使用,另一种用途是作为CMS收集器的后备方案。</p>
+<h3 id="3-5-Parallel-Old"><a href="#3-5-Parallel-Old" class="headerlink" title="3.5 Parallel Old"></a>3.5 Parallel Old</h3><p>Parallel Scavenge收集器的老年代版本。使用多线程和“标记-整理”算法。在注重吞吐量以及CPU资源 的场合,都可以优先考虑 Parallel Scavenge收集器和Parallel Old收集器。</p>
+<h3 id="3-6-CMS"><a href="#3-6-CMS" class="headerlink" title="3.6 CMS"></a>3.6 CMS</h3><p>Concurrent Mark Sweep 收集器是一种以获取最短回收停顿时间为目标的收集器。它而非常符合<br>在注重用户体验的应用上使用。是HotSpot虚拟机第一款真正意义上的并发收集器,它第一次实 现了让垃圾收集线程与用户线程(基本上)同时工作， “标记-清除”算法实现。运行分为四个步骤初始标记、并发标记、重新标记、并发清除:</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200630103223.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200630103223.png"></p>
 <ul>
-<li><p>操作命令</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 增加elasticsearch用户</span><br><span class="line">adduser elasticsearch</span><br><span class="line">// 设置密码</span><br><span class="line">passwd elasticsearch</span><br><span class="line">// 更改文件的所属用户</span><br><span class="line">chown -R elasticsearch filename</span><br><span class="line">// 切换用户</span><br><span class="line">su elasticsearch</span><br><span class="line">// 解压</span><br><span class="line">tar -zxf XXX.tar.gz</span><br><span class="line">// 后台启动</span><br><span class="line">./elasticsearch -d</span><br><span class="line">// 修改密码，为多个用户分别设置密码</span><br><span class="line">bin/elasticsearch-setup-passwords interactive</span><br></pre></td></tr></table></figure>
+<li><p>初始标记: 暂停所有线程，记录所有与根(root)对象相连的对象，速度特别快</p>
 </li>
-<li><p>验证:，浏览器访问<a href="http://ip:9200输入帐号密码后返回json串表示启动成功。" target="_blank" rel="noopener">http://ip:9200输入帐号密码后返回json串表示启动成功。</a></p>
+<li><p>并发标记: 同时开启GC和用户线程,用一个闭包结构去记录可达对象。但在这个阶段结束,这个闭包结构并不能保证包含当前所有的可达对象。因为用户线程可能会不断的更新引用域,所以 GC线程无法保证可达性分析的实时性。所以这个算法里会跟踪记录这些发生引用更新的地方。</p>
 </li>
-</ul>
-<h3 id="1-2-安装遇到的问题"><a href="#1-2-安装遇到的问题" class="headerlink" title="1.2 安装遇到的问题"></a>1.2 安装遇到的问题</h3><h4 id="1-2-1-外网无法访问"><a href="#1-2-1-外网无法访问" class="headerlink" title="1.2.1 外网无法访问"></a>1.2.1 外网无法访问</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim config/elasticsearch.yml</span><br><span class="line">// 增加下面配置</span><br><span class="line">network.host: 0.0.0.0</span><br></pre></td></tr></table></figure>
-<h4 id="1-2-2-启动报错"><a href="#1-2-2-启动报错" class="headerlink" title="1.2.2 启动报错"></a>1.2.2 启动报错</h4><ul>
-<li><p>system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk。 因为Centos6不支持SecComp，而ES5.2.1默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。解决方法：在elasticsearch.yml中配置bootstrap.system_call_filter为false，注意要在Memory下面:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: false</span><br><span class="line">bootstrap.system_call_filter: false</span><br></pre></td></tr></table></figure>
+<li><p>重新标记: 重新标记阶段就是为了修正并发标记期间因为用户程序继续运行而导致标记产生变 动的那一部分对象的标记记录,这个阶段的停顿时间一般会比初始标记阶段的时间稍⻓,远远比 并发标记阶段时间短</p>
+</li>
+<li><p>并发清除: 开启用户线程,同时GC线程开始对为标记的区域做清扫。</p>
 </li>
 </ul>
+<p>  优点: 并发收集，低停顿。</p>
+<p>  缺点: 对CPU资源敏感，无法处理浮动垃圾，标记清除算法会导致大量空间碎片。</p>
+<h3 id="3-7-G1"><a href="#3-7-G1" class="headerlink" title="3.7 G1"></a>3.7 G1</h3><p>java9默认的收集器是一款面向服务器的垃圾收集器,主要针对配备多颗处理器及大容量内存的机器.<br>以极高概率满足GC停顿时间要求的同时,还具备高吞吐量性能特征。筛选回收进化特征：</p>
 <ul>
-<li><p>max number of threads [1024] for user [elasticsearch] is too low, increase to at least [4096] 最大线程数[1024]太低，至少增加到[4096]。 修改/etc/security/limits.d/90-nproc.conf文件里面1024为4096</p>
-</li>
-<li><p>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144] 最大虚拟内存区域vm.max_map_count [65530]太低，至少增加到[262144]</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysctl.conf</span><br><span class="line">// 增加下面配置</span><br><span class="line">vm.max_map_count=655360</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>max file descriptors [65535] for elasticsearch process is too low, increase to at least[65536]。由于给帐号的最大打开文件个数或者最大打开线程数的限制，一直会报错，因此改一下限制(/etc/security/limits.conf)即可</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 增加下面配置</span><br><span class="line"> * soft nofile 65536</span><br><span class="line"> * hard nofile 131072</span><br><span class="line"> * soft nproc 2048</span><br><span class="line"> * hard nproc 4096</span><br><span class="line"> // 退出帐号重新登录(退出重新登录生效)</span><br></pre></td></tr></table></figure>
-</li>
+<li>并行与并发:G1能充分利用CPU、多核环境下的硬件优势,使用多个CPU(CPU或者CPU核心)来缩 短Stop-The-World停顿时间。部分其他收集器原本需要停顿Java线程执行的GC动作,G1收集器仍 然可以通过并发的方式让java程序继续执行。</li>
+<li>分代收集:虽然G1可以不需要其他收集器配合就能独立管理整个GC堆,但是还是保留了分代的概 念。</li>
+<li>空间整合:与CMS的“标记–清理”算法不同,G1从整体来看是基于“标记整理”算法实现的收集 器;从局部上来看是基于“复制”算法实现的。</li>
+<li>可预测的停顿:这是G1相对于CMS的另一个大优势,降低停顿时间是G1 和 CMS 共同的关注点, 但G1 除了追求低停顿外,还能建立可预测的停顿时间模型,能让使用者明确指定在一个⻓度为M 毫秒的时间片段内。</li>
 </ul>
-<h2 id="二、常用语法"><a href="#二、常用语法" class="headerlink" title="二、常用语法"></a>二、常用语法</h2><h3 id="2-1-基本操作"><a href="#2-1-基本操作" class="headerlink" title="2.1 基本操作"></a>2.1 基本操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># &lt;REST Verb&gt; http://localhost:9200/&lt;Index&gt;/&lt;Type&gt;/&lt;ID&gt;</span><br><span class="line"># &lt;請求類型&gt;   &lt;请求地址&gt;/&lt;索引名&gt;/&lt;文档类型&gt;/&lt;文档ID&gt;</span><br><span class="line"># 数据库：数据库  表   行    列</span><br><span class="line"># el：   索引    类型 文档  字段</span><br><span class="line"># 检查集群的健康 Authorization 從/獲取</span><br><span class="line">GET /_cat/health?v</span><br><span class="line"># 查看索引返回：health status index uuid pri rep docs.count docs.deleted store.size pri.store.size 表明我们还没有索引在集群中</span><br><span class="line">GET /_cat/indices?v</span><br><span class="line"># 集群中的节点列表</span><br><span class="line">GET /_cat/nodes?v</span><br><span class="line"># 创建一个索引叫做&quot;customer&quot;</span><br><span class="line">PUT /customer?pretty</span><br><span class="line"># 索引一个简单的customer文档到customer索引，external类型，ID是1</span><br><span class="line">PUT /customer/external/1?pretty</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;John Doe&quot;</span><br><span class="line">&#125;</span><br><span class="line"># 删除一个索引</span><br><span class="line">DELETE /customer?pretty</span><br><span class="line"># 删除全部索引</span><br><span class="line">DELETE /_all</span><br><span class="line"># 删除 多个索引</span><br><span class="line">DELETE /customer,customer1,customer2</span><br><span class="line"># 删除 模糊匹配</span><br><span class="line">DELETE /customer*</span><br><span class="line"># 删除一个文档</span><br><span class="line">DELETE /customer/external/2?pretty</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-search查询条件详解"><a href="#2-2-search查询条件详解" class="headerlink" title="2.2 search查询条件详解"></a>2.2 search查询条件详解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"># 查询出所有问题文档匹配某个查询</span><br><span class="line">GET /centent/_search?q=title:123</span><br><span class="line"># 有多少文档匹配某个查询</span><br><span class="line">GET /centent/_search?q=title:123*&amp;size=0</span><br><span class="line"># 有没有文档匹配某个查询(terminated_early)</span><br><span class="line">GET /centent/_search?q=title:1234*&amp;size=0&amp;terminate_after=1</span><br><span class="line"># match和term的区别：match查询的时候,elasticsearch会根据你给定的字段提供合适的分析器,而term查询不会有分析器分析的过程，match查询相当于模糊匹配,只包含其中一部分关键词就行</span><br><span class="line">GET /_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;_source&quot;: false,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;term&quot; : &#123; &quot;title&quot; : &quot;123&quot; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 查询全部</span><br><span class="line">GET /book/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 排序</span><br><span class="line">GET /book/_search </span><br><span class="line">&#123;&quot;query&quot; : &#123;</span><br><span class="line">        &quot;match&quot; : &#123;</span><br><span class="line">            &quot;name&quot; : &quot; java&quot;</span><br><span class="line">        &#125;&#125;,</span><br><span class="line">    &quot;sort&quot;: [</span><br><span class="line">        &#123; &quot;price&quot;: &quot;desc&quot; &#125;</span><br><span class="line">    ]&#125;</span><br><span class="line"># 分页</span><br><span class="line">GET  /book/_search </span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">  &quot;from&quot;: 0,</span><br><span class="line">  &quot;size&quot;: 1</span><br><span class="line">&#125;</span><br><span class="line"># 指定返回的字段</span><br><span class="line">GET /book/_search </span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">  &quot;_source&quot;: [&quot;name&quot;, &quot;studymodel&quot;]</span><br><span class="line">&#125;</span><br><span class="line"># 匹配指定条件查询</span><br><span class="line">GET /test_index/_search </span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;test_field&quot;: &quot;test&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-返回数据详解"><a href="#2-3-返回数据详解" class="headerlink" title="2.3 返回数据详解"></a>2.3 返回数据详解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;took&quot; : 97, #请求耗时多少毫秒</span><br><span class="line">  &quot;timed_out&quot; : false, #是否超时。默认情况下没有超时机制，也就是客户端等待Elasticsearch搜索结束（无论执行多久），提供超时机制的话，Elasticsearch则在指定时长内处理搜索，在指定时长结束的时候，将搜索的结果直接返回（无论是否搜索结束）。指定超时的方式是传递参数，参数单位是：毫秒-ms。秒-s。分钟-m。</span><br><span class="line">  &quot;_shards&quot; : &#123; # 分片</span><br><span class="line">    &quot;total&quot; : 1, #请求发送到多少个shard上</span><br><span class="line">    &quot;successful&quot; : 1, #成功返回搜索结果的shard</span><br><span class="line">    &quot;skipped&quot; : 0, #停止服务的shard</span><br><span class="line">    &quot;failed&quot; : 0 #失败的shard</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;hits&quot; : &#123; #匹配记录数</span><br><span class="line">    &quot;total&quot; : &#123; #返回了多少结果</span><br><span class="line">      &quot;value&quot; : 3,</span><br><span class="line">      &quot;relation&quot; : &quot;eq&quot; # 关系</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;max_score&quot; : 1.0, #搜索结果中，最大的相关度分数，相关度越大分数越高，_score越大，排位越靠前</span><br><span class="line">    &quot;hits&quot; : [ #搜索到的结果集合，默认查询前10条数据。</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;centent&quot;, #数据所在索引</span><br><span class="line">        &quot;_type&quot; : &quot;centent&quot;, #数据所在类型</span><br><span class="line">        &quot;_id&quot; : &quot;4&quot;, #数据的id</span><br><span class="line">        &quot;_score&quot; : 1.0, #数据的搜索相关度分数</span><br><span class="line">        &quot;_source&quot; : &#123; # 数据的具体内容。</span><br><span class="line">          &quot;id&quot; : 4,</span><br><span class="line">          &quot;title&quot; : &quot;***&quot;,</span><br><span class="line">          &quot;content&quot; : &quot;***&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>G1收集器在后台维护了一个优先列表,每次根据允许的收集时间,优先选择回收价值最大的Region(这 也就是它的名字Garbage-First的由来)。这种使用Region划分内存空间以及有优先级的区域回收方式, 保证了GF收集器在有限时间内可以尽可能高的收集效率(把内存化整为零)，G1收集过程。</p>
+<ul>
+<li>初始标记 标记与GC Roots直接关联的对象,停止所有用户线程,只启动一条初始标记线程,这个过程很快.</li>
+<li>并发标记 进行全面的可达性分析,开启一条并发标记线程与用户线程并行执行.这个过程比较长.</li>
+<li>最终标记 标记出并发标记过程中用户线程新产生的垃圾.停止所有用户线程,并使用多条最终标记线程并行执行.</li>
+<li>筛选回收 回收废弃的对象.此时也需要停止一切用户线程,并使用多条筛选回收线程并行执行.</li>
+</ul>
+<h3 id="3-8-ZGC"><a href="#3-8-ZGC" class="headerlink" title="3.8 ZGC"></a>3.8 ZGC</h3><p>ZGC是从JDK11中引入的一种新的<strong>支持弹性伸缩</strong>和<strong>低延迟</strong>垃圾收集器，ZGC可以工作在KB~TB的内存之下，作为一种并发的垃圾收集器，ZGC保证应用延迟不会超过10毫秒(即便在堆内存很大的情况下)，在JDK11中是以实验阶段的特性被发布出来的，到JDK13时，ZGC可以支持到16TB的堆内存，并且可以将<strong>未提交的内存归还给操作系统</strong>。</p>
+<h2 id="四、参考"><a href="#四、参考" class="headerlink" title="四、参考"></a>四、参考</h2><ul>
+<li>垃圾回收算法: <a href="https://www.jianshu.com/p/114bf4d9e59e" target="_blank" rel="noopener">https://www.jianshu.com/p/114bf4d9e59e</a></li>
+<li>垃圾收集器: <a href="https://cloud.tencent.com/developer/article/163396" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/163396</a></li>
+<li>ZGC: <a href="https://zhuanlan.zhihu.com/p/43608166" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/43608166</a></li>
+<li>z</li>
+</ul>
 
       
     </div>
@@ -440,7 +480,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/elasticsearch/" rel="tag"># elasticsearch</a>
+            <a href="/tags/java-gc/" rel="tag"># java gc</a>
           
         </div>
       
@@ -453,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/database/msqlStoredProcedure.html" rel="next" title="Mysql存储过程 －学习笔记">
-                <i class="fa fa-chevron-left"></i> Mysql存储过程 －学习笔记
+              <a href="/java/reference.html" rel="next" title="对象的引用学习笔记">
+                <i class="fa fa-chevron-left"></i> 对象的引用学习笔记
               </a>
             
           </div>
@@ -462,10 +502,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/java/command.html" rel="prev" title="java 的一些基础命令">
-                java 的一些基础命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +611,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -586,7 +622,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -635,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装"><span class="nav-number">1.</span> <span class="nav-text">一、安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-下载安装"><span class="nav-number">2.</span> <span class="nav-text">1.1 下载安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装遇到的问题"><span class="nav-number">2.1.</span> <span class="nav-text">1.2 安装遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-外网无法访问"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.2.1 外网无法访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-启动报错"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.2.2 启动报错</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、常用语法"><span class="nav-number">3.</span> <span class="nav-text">二、常用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-search查询条件详解"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 search查询条件详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-返回数据详解"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 返回数据详解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、简介"><span class="nav-number">1.</span> <span class="nav-text">一、简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、垃圾回收算法"><span class="nav-number">2.</span> <span class="nav-text">二、垃圾回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-标记-清除"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 标记-清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-标记-整理"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 标记-整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-复制"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-分代收集"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 分代收集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、垃圾收集器详解"><span class="nav-number">3.</span> <span class="nav-text">三、垃圾收集器详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-serial"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 serial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-parNew"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 parNew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Parallel-Scavenge"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Parallel Scavenge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Serial-Old"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 Serial Old</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-Parallel-Old"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 Parallel Old</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-CMS"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 CMS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-G1"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 G1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-ZGC"><span class="nav-number">3.8.</span> <span class="nav-text">3.8 ZGC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、参考"><span class="nav-number">4.</span> <span class="nav-text">四、参考</span></a></li></ol></div>
             
 
           </div>
@@ -803,9 +839,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://gaoqisen.github.io/linux/elasticsearch.html';
-          this.page.identifier = 'linux/elasticsearch.html';
-          this.page.title = 'elasticsearch遇到的问题';
+          this.page.url = 'https://gaoqisen.github.io/java/gc.html';
+          this.page.identifier = 'java/gc.html';
+          this.page.title = 'GC学习笔记';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
