@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、简介1.1 优势二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期key进行删除的话，cpu的负载就很大)； 惰性删除: 定期删除可能有一些数据过期了但是没有被删除掉。惰性删除就是等系统查询过数据之后在进行数据删除。  2.2 内存淘汰机制 volatile-lru：从已设置过期时间的数据集（serv">
+<meta name="description" content="一、简介1.1 优势 单点吞吐量特别高单点TPS(服务器每秒处理的事务数)达到8万/秒，QPS(对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准)达到10万/秒。 存储类型多: string、map、list、set、stored-set   二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期k">
 <meta name="keywords" content="redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis学习">
 <meta property="og:url" content="https://gaoqisen.github.io/tool/redis.html">
 <meta property="og:site_name" content="Learning Record">
-<meta property="og:description" content="一、简介1.1 优势二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期key进行删除的话，cpu的负载就很大)； 惰性删除: 定期删除可能有一些数据过期了但是没有被删除掉。惰性删除就是等系统查询过数据之后在进行数据删除。  2.2 内存淘汰机制 volatile-lru：从已设置过期时间的数据集（serv">
+<meta property="og:description" content="一、简介1.1 优势 单点吞吐量特别高单点TPS(服务器每秒处理的事务数)达到8万/秒，QPS(对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准)达到10万/秒。 存储类型多: string、map、list、set、stored-set   二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期k">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-29T10:00:01.000Z">
+<meta property="og:updated_time" content="2020-07-05T15:14:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis学习">
-<meta name="twitter:description" content="一、简介1.1 优势二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期key进行删除的话，cpu的负载就很大)； 惰性删除: 定期删除可能有一些数据过期了但是没有被删除掉。惰性删除就是等系统查询过数据之后在进行数据删除。  2.2 内存淘汰机制 volatile-lru：从已设置过期时间的数据集（serv">
+<meta name="twitter:description" content="一、简介1.1 优势 单点吞吐量特别高单点TPS(服务器每秒处理的事务数)达到8万/秒，QPS(对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准)达到10万/秒。 存储类型多: string、map、list、set、stored-set   二、redis常见问题2.1 数据的过期时间到了如何处理 定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期k">
 
 
 
@@ -387,7 +387,12 @@
       
 
       
-        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-1-优势"><a href="#1-1-优势" class="headerlink" title="1.1 优势"></a>1.1 优势</h3><h2 id="二、redis常见问题"><a href="#二、redis常见问题" class="headerlink" title="二、redis常见问题"></a>二、redis常见问题</h2><h3 id="2-1-数据的过期时间到了如何处理"><a href="#2-1-数据的过期时间到了如何处理" class="headerlink" title="2.1 数据的过期时间到了如何处理"></a>2.1 数据的过期时间到了如何处理</h3><ol>
+        <h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-1-优势"><a href="#1-1-优势" class="headerlink" title="1.1 优势"></a>1.1 优势</h3><ol>
+<li>单点吞吐量特别高单点TPS(服务器每秒处理的事务数)达到8万/秒，QPS(对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准)达到10万/秒。</li>
+<li>存储类型多: string、map、list、set、stored-set</li>
+<li></li>
+</ol>
+<h2 id="二、redis常见问题"><a href="#二、redis常见问题" class="headerlink" title="二、redis常见问题"></a>二、redis常见问题</h2><h3 id="2-1-数据的过期时间到了如何处理"><a href="#2-1-数据的过期时间到了如何处理" class="headerlink" title="2.1 数据的过期时间到了如何处理"></a>2.1 数据的过期时间到了如何处理</h3><ol>
 <li>定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期key进行删除的话，cpu的负载就很大)；</li>
 <li>惰性删除: 定期删除可能有一些数据过期了但是没有被删除掉。惰性删除就是等系统查询过数据之后在进行数据删除。</li>
 </ol>
@@ -630,7 +635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -641,7 +646,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -652,7 +657,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

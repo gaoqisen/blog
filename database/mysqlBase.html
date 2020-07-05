@@ -88,7 +88,7 @@
 <meta property="og:description" content="mysql的一些笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202007/20200701153343.png">
-<meta property="og:updated_time" content="2020-07-01T07:37:35.000Z">
+<meta property="og:updated_time" content="2020-07-01T08:23:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql －学习笔记">
 <meta name="twitter:description" content="mysql的一些笔记">
@@ -650,6 +650,9 @@
 <p><img src="https://gaoqisen.github.io/GraphBed/202007/20200701153343.png" alt="https://gaoqisen.github.io/GraphBed/202007/20200701153343.png"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">type</span>, <span class="keyword">avg</span>(salary) sa <span class="keyword">from</span> dept <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">type</span> <span class="keyword">having</span> sa &gt; <span class="number">2000</span>;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：FirstName, LastName, City, State</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Person</span><br><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| FirstName   | varchar |</span><br><span class="line">| LastName    | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line"># PersonId 是上表主键</span><br><span class="line"># Address</span><br><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| AddressId   | int     |</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| City        | varchar |</span><br><span class="line">| State       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line"># AddressId 是上表主键</span><br><span class="line"># sql</span><br><span class="line">select Person.FirstName, Person.LastName, Address.City, Address.State from Person left join Address on Person.PersonId = Address.PersonId</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -792,7 +795,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -803,7 +806,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -814,7 +817,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

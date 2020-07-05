@@ -287,6 +287,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/patterm/strategy.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/patterm/strategy.html" itemprop="url">设计模式－策略模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T22:50:11+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/patterm/" itemprop="url" rel="index">
+                    <span itemprop="name">patterm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/patterm/strategy.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="patterm/strategy.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最近在读head frist 的设计模式。之前就了解过这本书的，感觉还不错，于是就在淘宝上购买了一本。书有500多页挺厚的一本，内容都是很容易上手的，当成漫画看就可以了。本着学习的态度，我想认认真真的把设计模式好好学习一下。设计模式很多，一个一个的学，学完一个，我就在这里纪录一下自己的学习成果、自己对设计模式的理解、以及一些笔记、代码就是自己想一个显示生活中的例子模拟实现。
+一、对策略模式的理解&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/patterm/strategy.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/tool/redis.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,12 +551,13 @@
       
         
           
-          一、简介1.1 优势二、redis常见问题2.1 数据的过期时间到了如何处理
-定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期key进行删除的话，cpu的负载就很大)；
-惰性删除: 定期删除可能有一些数据过期了但是没有被删除掉。惰性删除就是等系统查询过数据之后在进行数据删除。
+          一、简介1.1 优势
+单点吞吐量特别高单点TPS(服务器每秒处理的事务数)达到8万/秒，QPS(对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准)达到10万/秒。
+存储类型多: string、map、list、set、stored-set
 
-2.2 内存淘汰机制
-volatile-lru：从已设置过期时间的数据集（serv
+
+二、redis常见问题2.1 数据的过期时间到了如何处理
+定期删除: 默认100ms就随机抽取一些过期的key(如果没隔100秒就是遍历所有过期k
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -494,7 +655,7 @@ volatile-lru：从已设置过期时间的数据集（serv
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +666,7 @@ volatile-lru：从已设置过期时间的数据集（serv
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -516,7 +677,7 @@ volatile-lru：从已设置过期时间的数据集（serv
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
