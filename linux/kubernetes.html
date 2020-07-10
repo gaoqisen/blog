@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="k8s命令记录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-07T06:56:01.000Z">
+<meta property="og:updated_time" content="2020-07-09T04:58:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s命令记录">
 <meta name="twitter:description" content="k8s命令记录。">
@@ -391,7 +391,12 @@
       
 
       
-        <h2 id="一、名词介绍"><a href="#一、名词介绍" class="headerlink" title="一、名词介绍"></a>一、名词介绍</h2><ul>
+        <h2 id="一、来源"><a href="#一、来源" class="headerlink" title="一、来源"></a>一、来源</h2><ul>
+<li>Infrastructure as a Service 基础设施即服务(IaaS)</li>
+<li>platform as a Service 平台即服务(PaaS)</li>
+<li>Software as a Service 软件即服务(SaaS)</li>
+</ul>
+<h2 id="一、名词介绍"><a href="#一、名词介绍" class="headerlink" title="一、名词介绍"></a>一、名词介绍</h2><ul>
 <li><p><strong>kubernetes</strong>: 开源的 Docker 容器编排系统，它可以调度计算集群的节点，动态管理上面的作业，保证它们按用户期望的状态运行。通过使用「labels」和「pods」的概念，Kubernetes 将应用按逻辑单元进行分组，方便管理和服务发现。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">优势:</span><br><span class="line">1. 快速创建、部署、扩展应用</span><br><span class="line">2. 开发和运行相分离，资源隔离，资源利用更高效</span><br><span class="line">3. 无缝对接新的功能</span><br><span class="line">4. 节省资源，优化硬件资源的使用</span><br><span class="line">5. 自动重启、自动部署、自动复制、自动扩缩容</span><br><span class="line">6. 模块化、插件化、可挂载、可组合</span><br><span class="line">7. 持续开发、集成和部署</span><br><span class="line">8. 开发，测试和生产环境一致性</span><br><span class="line">9. 分布式，弹性，微服务化</span><br></pre></td></tr></table></figure>
 </li>
@@ -631,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、名词介绍"><span class="nav-number">1.</span> <span class="nav-text">一、名词介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、集群安装"><span class="nav-number">2.</span> <span class="nav-text">二、集群安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装必备工具"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 安装必备工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-kubeadm安装"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 kubeadm安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-常用命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、部署"><span class="nav-number">3.</span> <span class="nav-text">三、部署</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、来源"><span class="nav-number">1.</span> <span class="nav-text">一、来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、名词介绍"><span class="nav-number">2.</span> <span class="nav-text">一、名词介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、集群安装"><span class="nav-number">3.</span> <span class="nav-text">二、集群安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-安装必备工具"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 安装必备工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-kubeadm安装"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 kubeadm安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-常用命令"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、部署"><span class="nav-number">4.</span> <span class="nav-text">三、部署</span></a></li></ol></div>
             
 
           </div>

@@ -88,7 +88,7 @@
 <meta property="og:description" content="mysql的一些笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202007/20200701153343.png">
-<meta property="og:updated_time" content="2020-07-01T08:23:49.000Z">
+<meta property="og:updated_time" content="2020-07-09T15:28:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql －学习笔记">
 <meta name="twitter:description" content="mysql的一些笔记">
@@ -393,36 +393,105 @@
       
 
       
-        <h2 id="一、优化方法"><a href="#一、优化方法" class="headerlink" title="一、优化方法"></a>一、优化方法</h2><ol>
-<li>sql优化<ol>
-<li>索引优化<ol>
-<li>重复索引</li>
-<li>删除多余索引</li>
-</ol>
+        <h2 id="一、优化方法"><a href="#一、优化方法" class="headerlink" title="一、优化方法"></a>一、优化方法</h2><h3 id="1-1-sql优化"><a href="#1-1-sql优化" class="headerlink" title="1.1. sql优化"></a>1.1. sql优化</h3><h4 id="1-1-1-索引优化"><a href="#1-1-1-索引优化" class="headerlink" title="1.1.1 索引优化"></a>1.1.1 索引优化</h4><ol>
+<li>重复索引: MySQL需要单独维护重复的索引，并且优化器在优化查询的时候也需要逐个地进行考虑，这会影响性能,建议删除多余索引</li>
+<li>联合索引符合最左原则: key index(a,b,c)相当于创建了三个索引a,ab,abc。不支持bc索引</li>
+<li>那些情况下不会使用索引<ul>
+<li>索引不会包含有NULL值的列: 只要列中包含有NULL值都将不会被包含在索引中，复合索引中只要有一列含有NULL值，那么这一列对于此复合索引就是无效的。所以我们在数据库设计时不要让字段的默认值为NULL</li>
+<li>条件中有or: 要想使用or，又想让索引生效，只能将or条件中的每个列都加上索引</li>
+<li>like查询是以%开头</li>
+<li>存在索引列的数据类型隐形转换: 如列类型是字符串，那一定要在条件中将数据使用引号引用起来,否则不使用索引</li>
+<li>where 子句里对索引列上有数学运算，用不上索引</li>
+<li>where 子句里对有索引列使用函数</li>
+<li>数据量极少: 如果mysql估计使用全表扫描要比使用索引快</li>
+<li>Join的字段类型不相同: 如果你要把DECIMAL字段和一个INT字段Join在一起，MySQL就无法使用它们的索引。</li>
+</ul>
 </li>
-<li>慢查询优化<ol>
-<li>慢查询统计工具</li>
-</ol>
+<li>不推荐使用索引<ul>
+<li>数据唯一性差（一个字段的取值只有几种时）的字段不要使用索引</li>
+<li>频繁更新的字段不要使用索引</li>
+<li>字段不在where语句出现时不要添加索引,如果where后含IS NULL /IS NOT NULL/ like ‘%输入符%’等条件，不建议使用索引</li>
+<li>where 子句里对索引列使用不等于（&lt;&gt;），使用索引效果一般</li>
+</ul>
 </li>
-<li>limit优化</li>
-<li>子句优化</li>
 </ol>
+<h4 id="1-1-2-慢查询优化"><a href="#1-1-2-慢查询优化" class="headerlink" title="1.1.2 慢查询优化"></a>1.1.2 慢查询优化</h4><p>通过记录慢查询日志，找到查询慢的sql进行优化(增加索引等)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 慢查询报表生成工具</span><br><span class="line">pt-query-digest slow-log &gt; text.log</span><br><span class="line">-- 索引维护工具</span><br><span class="line">pt-duplicate-key-checker  -u root -p &apos;123456&apos;</span><br><span class="line">-- 查询不使用的索引</span><br><span class="line">pt-index-usage -uroot -p &apos;123456&apos; mysql-slow.log</span><br></pre></td></tr></table></figure>
+<h4 id="1-1-3-语句优化"><a href="#1-1-3-语句优化" class="headerlink" title="1.1.3 语句优化"></a>1.1.3 语句优化</h4><ul>
+<li>避免 SELECT *，(1)，读出越多的数据，那么查询就会变得越慢。(2)，加网络传输的负载</li>
+<li>不使用ORDER BY RAND()，MySQL会去执行RAND()函数（很耗CPU时间），而且这是为了每一行记录去记行，然后再对其排序</li>
+<li>使用ENUM而不是VARCHAR： ENUM保存的是TINYINT，但其外表上显示为字符串。这样一来，用这个字段来做一些选项列表变得相当的完美。如果你有一个字段，比如“性别”，“国家”，“民族”，“状态”或“部门”，你知道这些字段的取值是有限而且固定的，那么，你应该使用ENUM而不是VARCHAR</li>
+<li>拆分大的DELETE或INSERT语句： DELETE和INSERT会进行锁表，如果生产环境操作的话，可能会造成服务无法使用的情况。建议使用limit 1000循环删除数据，删除的时候也sleep一下。</li>
+<li>当只需要一条数据时使用<strong>LIMIT 1</strong>：这样MySQL数据库引擎会在找到一条数据后停止搜索，而不是继续往后查少下一条符合记录的数据</li>
+</ul>
+<h4 id="1-1-5-EXPLAIN"><a href="#1-1-5-EXPLAIN" class="headerlink" title="1.1.5 EXPLAIN"></a>1.1.5 <strong>EXPLAIN</strong></h4><p>explain不会考虑的情况: 触发器、存储过程的信息或用户自定义函数对查询的影响情况、各种Cache、显示MySQL在执行查询时所作的优化工作、部分统计信息是估算的，并非精确值、只能解释SELECT操作，其他操作要重写为SELECT后查看执行计划</p>
+<p>b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- mysql执行计划</span><br><span class="line">mysql&gt; explain select * from servers;</span><br><span class="line">+----+-------------+---------+------+---------------+------+---------+------+------+-------+</span><br><span class="line">| id | select_type | table   | type | possible_keys | key  | key_len | ref  | rows | Extra |</span><br><span class="line">+----+-------------+---------+------+---------------+------+---------+------+------+-------+</span><br><span class="line">|  1 | SIMPLE      | servers | ALL  | NULL          | NULL | NULL    | NULL |    1 | NULL  |</span><br><span class="line">+----+-------------+---------+------+---------------+------+---------+------+------+-------+</span><br><span class="line">1 row in set (0.03 sec)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>id: 执行编号，标识select所属的行。如果在语句中没子查询或关联查询，只有唯一的select，每行都将显示1。否则，内层的select语句一般会顺序编号，对应于其在原始语句中的位置</p>
 </li>
-<li>表结构优化<ol>
-<li>尽量设置小的类型</li>
-<li>not null约束</li>
-<li>日期类型或者存储ip字段优化</li>
+<li><p>select_type: 显示本行是简单或复杂select。</p>
+<p>| SIMPLE               | 简单SELECT,不使用UNION或子查询等                           |<br>| ——————– | ———————————————————- |<br>| PRIMARY              | 查询中若包含任何复杂的子部分,最外层的select被标记为PRIMARY |<br>| UNION                | UNION中的第二个或后面的SELECT语句                          |<br>| DEPENDENT UNION      | UNION中的第二个或后面的SELECT语句，取决于外面的查询        |<br>| UNION RESULT         | UNION的结果                                                |<br>| SUBQUERY             | 子查询中的第一个SELECT                                     |<br>| DEPENDENT SUBQUERY   | 子查询中的第一个SELECT，取决于外面的查询                   |<br>| DERIVED              | 派生表的SELECT, FROM子句的子查询                           |<br>| UNCACHEABLE SUBQUERY | 一个子查询的结果不能被缓存，必须重新评估外链接的第一行     |</p>
+</li>
+<li><p>table: 显示这一行的数据是关于哪张表的，有时不是真实的表名字,看到的是derivedx(x为数字，应该是第几步的意思)</p>
+</li>
+<li><p>type: 数据访问/读取操作类型(<strong>从上到下，性能从差到好</strong>)</p>
+<p>| ALL           | Full Table Scan， MySQL将遍历全表以找到匹配的行              |<br>| ————- | ———————————————————— |<br>| index         | Full Index Scan，index与ALL区别为index类型只遍历索引树       |<br>| range         | 只检索给定范围的行，使用一个索引来选择行                     |<br>| ref           | 表示上述表的连接匹配条件，即哪些列或常量被用于查找索引列上的值 |<br>| eq_ref        | 使用的索引是唯一索引，对于每个索引键值，表中只有一条记录匹配，简单来说，就是多表连接中使用primary key或者 unique key作为关联条件 |<br>| const、system | 当MySQL对查询某部分进行优化，并转换为一个常量时，使用这些类型访问。如将主键置于where列表中，MySQL就能将该查询转换为一个常量,system是const类型的特例，当查询的表只有一行的情况下，使用system |<br>| NULL          | MySQL在优化过程中分解语句，执行时甚至不用访问表或索引，例如从一个索引列里选取最小值可以通过单独索引查找完成 |</p>
+</li>
+<li><p>possible_keys: MySQL能使用哪个索引在表中找到记录，查询涉及到的字段上若存在索引，则该索引将被列出，但不一定被查询使用</p>
+</li>
+<li><p>key: 显示mysql决定采用哪个索引来优化查询</p>
+</li>
+<li><p>key_len: 表示索引中使用的字节数，可通过该列计算查询中使用的索引的长度（key_len显示的值为索引字段的最大可能长度，并非实际使用长度，即key_len是根据表定义计算而得，不是通过表内检索出的）</p>
+</li>
+<li><p>ref: 显示了之前的表在key列记录的索引中查找值所用的列或常量</p>
+</li>
+<li><p>rows: 为了找到所需的行而需要读取的行数，估算值，不精确。通过把所有rows列值相乘，可粗略估算整个查询会检查的行数</p>
+</li>
+<li><p>Extra: 包含MySQL解决查询的详细信息</p>
+<ul>
+<li><p>Using where:列数据是从仅仅使用了索引中的信息而没有读取实际的行动的表返回的，这发生在对表的全部的请求列都是同一个索引的部分的时候，表示mysql服务器将在存储引擎检索行后再进行过滤</p>
+</li>
+<li><p>Using temporary：表示MySQL需要使用临时表来存储结果集，常见于排序和分组查询</p>
+</li>
+<li><p>Using filesort：MySQL中无法利用索引完成的排序操作称为“文件排序”</p>
+</li>
+<li><p>Using join buffer：改值强调了在获取连接条件时没有使用索引，并且需要连接缓冲区来存储中间结果。如果出现了这个值，那应该注意，根据查询的具体情况可能需要添加索引来改进能。</p>
+</li>
+<li><p>Impossible where：这个值强调了where语句会导致没有符合条件的行。</p>
+</li>
+<li><p>Select tables optimized away：这个值意味着仅通过使用索引，优化器可能仅从聚合函数结果中返回一行</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-表结构优化"><a href="#1-2-表结构优化" class="headerlink" title="1.2. 表结构优化"></a>1.2. 表结构优化</h3><ol>
+<li>类型选择: 尽量设置小的类型, 数据库90%以上的时间都是在IO上，尽量少的IO读写就会提高数据库性能。时间类型尽量使用TIMESTAMP类型，只需要精确到某一天的数据类型，建议使用DATE(3个字节)类型 。数字类型尽量不要使用DOUBLE(长度问题和精度问题)。字符串类型尽量不要用TEXT类型，建议使用 CHAR 类型，不定长字段尽量使用 VARCHAR。反对在数据库中使用 LOB 类型数据，应该使用其他工具存储大数据。</li>
+<li>能增加not null约束的一定要加上：NULL 类型比较特殊，SQL 难优化。虽然 MySQL NULL类型和 Oracle 的NULL 有差异，会进入索引中，但如果是一个组合索引，那么这个NULL 类型的字段会极大影响整个索引的效率。此外，NULL 在索引中的处理也是特殊的，也会占用额外的存放空间</li>
+<li>日期类型或者存储ip字段优化：把IP地址存成UNSIGNED INT</li>
 </ol>
+<h3 id="1-3-服务器优化"><a href="#1-3-服务器优化" class="headerlink" title="1.3 服务器优化"></a>1.3 服务器优化</h3><ol>
+<li><p>mysql配置优化</p>
+<ul>
+<li><strong>存储引擎</strong>: InnoDB(<strong>支持事务，行锁,支持外键</strong>)，MyISAM(<strong>表级锁、不支持事务和全文索引</strong>)</li>
+<li><strong>back_log</strong>:  MySql的连接数据达到max_connections时，新来的请求将会被存在堆栈中，<br>以等待某一连接释放资源，该堆栈的数量即back_log，如果等待连接的数量超过back_log，<br>将不不被授予连接资源。查看mysql 当前系统默认back_log值，<br>命令：show variables like ‘back_log’;</li>
+<li><strong>wait_timeout</strong>: 可以减少wait的连接数(wait_timeout=1800) show variables like ‘wait_timeout’;</li>
+<li><strong>max_connections</strong>: 最大链接数，show variables like ‘max_connections’;</li>
+<li><strong>thread_concurrency</strong>: 目前默认的8，可以修改为thread_concurrency=64，thread_concurrency应设为CPU核数的2倍，比如有1个双核的CPU，那thread_concurrency 的应该为4，2个双核的cpu thread_concurrency的值应为8。show variables like ‘thread_concurrency’;</li>
+<li><strong>max_connect_errors</strong>: 这个参数负责阻止客户端尝试暴力破解密码，当某台主机错误连接次数达到该值时，该主机无法再尝试登陆。解决方法是重启mysql，或者把该值改大一点</li>
+<li><strong>query_cache_type</strong>: query_cache_type=1 开启缓存，显示为ON。大多数的MySQL服务器都开启了查询缓存。利用变量代替函数去执行sql，CURDATE(),NOW(),RAND()这些时间函数都不会开启查询缓存。</li>
+</ul>
 </li>
-<li>服务器优化</li>
-<li>mysql配置优化</li>
-<li>硬件优化<ol>
-<li>Disk IO 优化</li>
+<li><p>硬件优化</p>
+<ol>
+<li>配置较大的内存。足够大的内存,是提高 MYSQL数据库性能的方法之一。内存的速度 比磁盘I/O快得多,可以通过增加系统的缓冲区容量,使数据在内存停留的时间更长,以减少磁盘I/O。</li>
+<li>配置高速磁盘系统,以减少读盘的等待时间,提高响应速度</li>
+<li>合理分布磁盘I/O,把磁盘IO分散在多个设备上,以减少资源竞争,提高并行操作能力</li>
+<li>配置多处理器, MYSQL是多线程的数据库,多处理器可同时执行多个线程。</li>
 <li>cpu并不是越多越好,mysql5.5是的服务器不要超过32核,偏向选择单核频率更快的cpu;</li>
 </ol>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 慢查询报表生成工具</span><br><span class="line">pt-query-digest slow-log &gt; text.log</span><br><span class="line">-- mysql执行计划</span><br><span class="line">explain select * from user;</span><br><span class="line">-- 索引维护工具</span><br><span class="line">pt-duplicate-key-checker  -u root -p &apos;123456&apos;</span><br><span class="line">-- 查询不使用的索引</span><br><span class="line">pt-index-usage -uroot -p &apos;123456&apos; mysql-slow.log</span><br></pre></td></tr></table></figure>
 <h2 id="二、基本操作"><a href="#二、基本操作" class="headerlink" title="二、基本操作"></a>二、基本操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">-- 查看mysql锁表信息</span><br><span class="line">show status like &apos;%lock%&apos;;</span><br><span class="line">show OPEN TABLES where In_use &gt; 0;</span><br><span class="line">-- 显示哪些线程正在运行</span><br><span class="line">show processlist;</span><br><span class="line">-- kill线程</span><br><span class="line">kill 16557290;</span><br><span class="line">-- 获取锁表信息</span><br><span class="line">select *  from information_schema.processlist where db = &apos;tablename&apos;;</span><br><span class="line">-- 批量kill线程语句生成</span><br><span class="line">select CONCAT(&apos;kill &apos;,ID,&apos;;&apos;)  from information_schema.processlist where db = &apos;tablename&apos; and info like &apos;***%&apos;;</span><br><span class="line">-- mysql 启动、停止、重启（5.0版本）</span><br><span class="line">service mysqld start</span><br><span class="line">service mysqld stop</span><br><span class="line">service mysqld restart </span><br><span class="line">-- mysql 启动、停止、重启（5.5.7版本）</span><br><span class="line">service mysql start</span><br><span class="line">service mysql stop</span><br><span class="line">service mysql restart</span><br><span class="line">-- 脚本启动、停止、重启</span><br><span class="line">/etc/inint.d/mysqld start</span><br><span class="line">/etc/inint.d/mysqld stop</span><br><span class="line">/etc/inint.d/mysqld restart</span><br><span class="line">-- 链接</span><br><span class="line">mysql -uroot -p   // 回车输入密码即可</span><br><span class="line">-- 查看表的当前自增ID</span><br><span class="line">select auto_increment from information_schema.tables where table_schema=&apos;bsp&apos; and table_name=&apos;sys_menu&apos;;</span><br><span class="line">-- 修改表的当前自增ID</span><br><span class="line">alter table sys_menu AUTO_INCREMENT=100;</span><br><span class="line">-- 查看表信息</span><br><span class="line">SHOW TABLE STATUS;</span><br><span class="line">-- 慢查询日志分析统计工具</span><br><span class="line">mysqldumpslow</span><br></pre></td></tr></table></figure>
 <h2 id="三、库操作"><a href="#三、库操作" class="headerlink" title="三、库操作"></a>三、库操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 查看当前数据库</span><br><span class="line">SELECT DATABASE();</span><br><span class="line">-- 显示当前时间、用户名、数据库版本</span><br><span class="line">SELECT now(), user(), version();</span><br><span class="line">-- 创建库</span><br><span class="line">CREATE DATABASE[ IF NOT EXISTS] databasesname 数据库选项</span><br><span class="line">        数据库选项：</span><br><span class="line">        CHARACTER SET charset_name</span><br><span class="line">        COLLATE collation_name</span><br><span class="line">-- 查看当前库信息</span><br><span class="line">    SHOW CREATE DATABASE databasesname</span><br><span class="line">-- 修改库的选项信息</span><br><span class="line">    ALTER DATABASE databasesname 选项信息</span><br><span class="line">-- 修改数据库的编码，可使用上一条语句查看是否修改成功</span><br><span class="line">alter database databasesname default character set gbk collate gbk_bin;</span><br><span class="line">-- 删除库</span><br><span class="line">    DROP DATABASE[ IF EXISTS] databasesname // 同时删除该数据库相关的目录及其目录内容</span><br></pre></td></tr></table></figure>
 <h2 id="四、数据类型-列类型"><a href="#四、数据类型-列类型" class="headerlink" title="四、数据类型(列类型)"></a>四、数据类型(列类型)</h2><h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><ul>
@@ -652,6 +721,10 @@
 </li>
 <li><p>编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：FirstName, LastName, City, State</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Person</span><br><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| FirstName   | varchar |</span><br><span class="line">| LastName    | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line"># PersonId 是上表主键</span><br><span class="line"># Address</span><br><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| AddressId   | int     |</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| City        | varchar |</span><br><span class="line">| State       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line"># AddressId 是上表主键</span><br><span class="line"># sql</span><br><span class="line">select Person.FirstName, Person.LastName, Address.City, Address.State from Person left join Address on Person.PersonId = Address.PersonId</span><br></pre></td></tr></table></figure>
+<h2 id="八、参考"><a href="#八、参考" class="headerlink" title="八、参考"></a>八、参考</h2><ul>
+<li>索引: <a href="https://blog.csdn.net/kaka1121/article/details/53395587" target="_blank" rel="noopener">https://blog.csdn.net/kaka1121/article/details/53395587</a></li>
+<li>explain: <a href="https://www.cnblogs.com/xuanzhi201111/p/4175635.html" target="_blank" rel="noopener">https://www.cnblogs.com/xuanzhi201111/p/4175635.html</a></li>
+</ul>
 </li>
 </ol>
 
@@ -866,7 +939,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、优化方法"><span class="nav-number">1.</span> <span class="nav-text">一、优化方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、基本操作"><span class="nav-number">2.</span> <span class="nav-text">二、基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、库操作"><span class="nav-number">3.</span> <span class="nav-text">三、库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、数据类型-列类型"><span class="nav-number">4.</span> <span class="nav-text">四、数据类型(列类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型"><span class="nav-number">4.1.</span> <span class="nav-text">数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型"><span class="nav-number">4.2.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期时间类型"><span class="nav-number">4.3.</span> <span class="nav-text">日期时间类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举和集合"><span class="nav-number">4.4.</span> <span class="nav-text">枚举和集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、列属性-列约束"><span class="nav-number">5.</span> <span class="nav-text">五、列属性(列约束)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、建表规范"><span class="nav-number">6.</span> <span class="nav-text">六、建表规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、SQL实战"><span class="nav-number">7.</span> <span class="nav-text">七、SQL实战</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、优化方法"><span class="nav-number">1.</span> <span class="nav-text">一、优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-sql优化"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. sql优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-索引优化"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 索引优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-慢查询优化"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 慢查询优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3-语句优化"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.1.3 语句优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-5-EXPLAIN"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.1.5 EXPLAIN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-表结构优化"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 表结构优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-服务器优化"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 服务器优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、基本操作"><span class="nav-number">2.</span> <span class="nav-text">二、基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、库操作"><span class="nav-number">3.</span> <span class="nav-text">三、库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、数据类型-列类型"><span class="nav-number">4.</span> <span class="nav-text">四、数据类型(列类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型"><span class="nav-number">4.1.</span> <span class="nav-text">数值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型"><span class="nav-number">4.2.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期时间类型"><span class="nav-number">4.3.</span> <span class="nav-text">日期时间类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举和集合"><span class="nav-number">4.4.</span> <span class="nav-text">枚举和集合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、列属性-列约束"><span class="nav-number">5.</span> <span class="nav-text">五、列属性(列约束)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、建表规范"><span class="nav-number">6.</span> <span class="nav-text">六、建表规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、SQL实战"><span class="nav-number">7.</span> <span class="nav-text">七、SQL实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、参考"><span class="nav-number">8.</span> <span class="nav-text">八、参考</span></a></li></ol></div>
             
 
           </div>
