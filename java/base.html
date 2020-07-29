@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="一些之前没有仔细了解过，或忘记的java 基础。这次写出来，加深自己的记忆与理解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-05T05:26:34.000Z">
+<meta property="og:updated_time" content="2020-07-12T09:35:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 笔记">
 <meta name="twitter:description" content="一些之前没有仔细了解过，或忘记的java 基础。这次写出来，加深自己的记忆与理解。">
@@ -391,7 +391,7 @@
       
 
       
-        <h3 id="java方法中参数的传递-java中只有值传递-："><a href="#java方法中参数的传递-java中只有值传递-：" class="headerlink" title="java方法中参数的传递(java中只有值传递)："></a>java方法中参数的传递(java中只有值传递)：</h3><ul>
+        <h2 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h2><h3 id="1-1-java方法中参数的传递-java中只有值传递-："><a href="#1-1-java方法中参数的传递-java中只有值传递-：" class="headerlink" title="1.1 java方法中参数的传递(java中只有值传递)："></a>1.1 java方法中参数的传递(java中只有值传递)：</h3><ul>
 <li><p>一个方法不能修改一个基本数据类型的参数（即数值型或布尔型)(方法中改变基本类型数据，不会影响到之前的数据。相当于拷贝数据)</p>
 </li>
 <li><p>一个方法可以改变一个对象参数的状态。(对象: 方法中改变对象的数据，原始的对象的值会跟着改变。)</p>
@@ -399,7 +399,7 @@
 <li><p>一个方法不能让对象参数引用一个新的对象</p>
 </li>
 </ul>
-<h3 id="与equals的区别"><a href="#与equals的区别" class="headerlink" title="==与equals的区别"></a>==与equals的区别</h3><p>== 判断的是是否是对象的地址，即判断连个对象是不是同一个地址。（基本数据类型对比的是值，引用数据类型对比的是对象地址）</p>
+<h3 id="1-2-与equals的区别"><a href="#1-2-与equals的区别" class="headerlink" title="1.2 ==与equals的区别"></a>1.2 ==与equals的区别</h3><p>== 判断的是是否是对象的地址，即判断连个对象是不是同一个地址。（基本数据类型对比的是值，引用数据类型对比的是对象地址）</p>
 <p>equals 判断的是值是否相同（对象没有覆盖equals方法相当于== ，否则通过覆盖的equals判断对象的值是否相等）</p>
 <ul>
 <li><p>如果对象需要用equals对比，需要重写equals方法。</p>
@@ -409,7 +409,7 @@
 <li><p>当创建string类型对象的时候，虚拟机会在常量池中找是否有相同的对象，如果有就把它赋给当前引用，否则就新创建对象</p>
 </li>
 </ul>
-<h3 id="hashCode与equals"><a href="#hashCode与equals" class="headerlink" title="hashCode与equals"></a>hashCode与equals</h3><ul>
+<h3 id="1-3-hashCode与equals"><a href="#1-3-hashCode与equals" class="headerlink" title="1.3 hashCode与equals"></a>1.3 hashCode与equals</h3><ul>
 <li><p>hashCode的作用就是获取哈西码。它实际返回的是一个int整数。这个哈西码的作用就是确定索引的位置（可以快速找到所需要的对象）。</p>
 </li>
 <li><p>hashCode在map中的作用就是为了减少equals的执行次数,相应就提高了执行速度。</p>
@@ -417,7 +417,17 @@
 <li><p>如果不同的对象拥有相同的hashCode值，他们也不一定是相等的。如果相同的情况下，就像HashSet一样，会使用equals去对比值是否相同。</p>
 </li>
 </ul>
-<h3 id="java-io"><a href="#java-io" class="headerlink" title="java io"></a>java io</h3><h3 id="java-jvm"><a href="#java-jvm" class="headerlink" title="java jvm"></a>java jvm</h3><h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3>
+<h2 id="二、事务"><a href="#二、事务" class="headerlink" title="二、事务"></a>二、事务</h2><h3 id="2-1-transactional注解在什么情况下会失效"><a href="#2-1-transactional注解在什么情况下会失效" class="headerlink" title="2.1 @transactional注解在什么情况下会失效"></a>2.1 @transactional注解在什么情况下会失效</h3><ol>
+<li>只能应用到public修饰符上，其它修饰符不起作用，但不报错</li>
+<li>数据库引擎不支持事务(Mysql的MyISAM不支持事务)</li>
+<li>没有被 Spring 管理</li>
+<li>数据源没有配置事务管理器</li>
+<li>异常捕获之后不抛出。try{}catch(Exception e){}</li>
+<li>@Transactional 注解属性 propagation 设置错误，如：<code>TransactionDefinition.PROPAGATION_SUPPORTS</code>：如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。 <code>TransactionDefinition.PROPAGATION_NOT_SUPPORTED</code>：以非事务方式运行，如果当前存在事务，则把当前事务挂起。 <code>TransactionDefinition.PROPAGATION_NEVER</code>：以非事务方式运行，如果当前存在事务，则抛出异常。这3种设置都会滚。</li>
+<li>@Transactional 注解属性 rollbackFor 设置错误（抛出异常如果不是运行时异常需要添加注解@Transactional(rollbackFor = Exception.class)）</li>
+<li>同一个类中方法调用，导致@Transactional失效。比如有一个类Test，它的一个方法A，A再调用本类的方法B（不论方法B是用public还是private修饰），但方法A没有声明注解事务，而B方法有。则外部调用方法A之后，方法B的事务是不会起作用的（只有当事务方法被当前类以外的代码调用时，才会由<code>Spring</code>生成的代理对象来管理）</li>
+</ol>
+
       
     </div>
     
@@ -558,7 +568,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java方法中参数的传递-java中只有值传递-："><span class="nav-number">1.</span> <span class="nav-text">java方法中参数的传递(java中只有值传递)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与equals的区别"><span class="nav-number">2.</span> <span class="nav-text">==与equals的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode与equals"><span class="nav-number">3.</span> <span class="nav-text">hashCode与equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-io"><span class="nav-number">4.</span> <span class="nav-text">java io</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-jvm"><span class="nav-number">5.</span> <span class="nav-text">java jvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-number">6.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">7.</span> <span class="nav-text">集合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基础"><span class="nav-number">1.</span> <span class="nav-text">一、基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-java方法中参数的传递-java中只有值传递-："><span class="nav-number">1.1.</span> <span class="nav-text">1.1 java方法中参数的传递(java中只有值传递)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-与equals的区别"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 ==与equals的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-hashCode与equals"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 hashCode与equals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、事务"><span class="nav-number">2.</span> <span class="nav-text">二、事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-transactional注解在什么情况下会失效"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 @transactional注解在什么情况下会失效</span></a></li></ol></li></ol></div>
             
 
           </div>

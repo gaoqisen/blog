@@ -82,14 +82,14 @@
 <meta name="description" content="一些algorithm学习，后期自己努力的方向。">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法学习">
+<meta property="og:title" content="Learning Record">
 <meta property="og:url" content="https://gaoqisen.github.io/study/algorithm.html">
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="一些algorithm学习，后期自己努力的方向。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-10T10:12:18.000Z">
+<meta property="og:updated_time" content="2020-07-19T14:34:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法学习">
+<meta name="twitter:title" content="Learning Record">
 <meta name="twitter:description" content="一些algorithm学习，后期自己努力的方向。">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>算法学习 | Learning Record</title>
+  <title> | Learning Record</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法学习</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -392,26 +392,16 @@
 
       
         <h2 id="一、基本概念"><a href="#一、基本概念" class="headerlink" title="一、基本概念"></a>一、基本概念</h2><ul>
-<li><p>数据结构: 存储数据的不同方式如：数组、链表、</p>
-</li>
-<li><p>算法: 同一个问题的不同解决方法,算法往往是针对特定数据结构的</p>
-</li>
-<li><p>时间测量：计算算法时间差、幅度不够循环来凑(扩大数据量)</p>
-</li>
-<li><p>空间测算: 数据占用的空间越小越好</p>
-</li>
-<li><p>时间复杂度(Big O): 时间复杂度为O(n)随着处理数据量的增加，处理时间也会增加。时间复杂度为O(1)表示随着处理数据的规模增大但是处理的时间没有变化。</p>
-</li>
-<li><p>对数器: 检查算法是否正确，用足够多的样本和正确的算法计算结果样本去对比被验证的算法结果(用已有的排序算法和自己写的排序算法都去处理数据，之后将处理的结果对比一下是否一致)</p>
-</li>
-<li><p>O(1): 表示操作一次之后就可以获取目标元素</p>
-</li>
-<li><p>O(n): 表示要检查n个元素来搜索目标</p>
-</li>
-<li><p>O(log n): 从数组的中间选择一个随机点进行查找，然后重复这个过程</p>
-</li>
-<li><p>O(n ^2^ ):  </p>
-</li>
+<li>数据结构: 存储数据的不同方式如：数组、链表、</li>
+<li>算法: 同一个问题的不同解决方法,算法往往是针对特定数据结构的</li>
+<li>时间测量：计算算法时间差、幅度不够循环来凑(扩大数据量)</li>
+<li>空间测算: 数据占用的空间越小越好</li>
+<li>时间复杂度(Big O): 时间复杂度为O(n)随着处理数据量的增加，处理时间也会增加。时间复杂度为O(1)表示随着处理数据的规模增大但是处理的时间没有变化。</li>
+<li>对数器: 检查算法是否正确，用足够多的样本和正确的算法计算结果样本去对比被验证的算法结果(用已有的排序算法和自己写的排序算法都去处理数据，之后将处理的结果对比一下是否一致)</li>
+<li>O(1): 表示操作一次之后就可以获取目标元素</li>
+<li>O(n): 表示要检查n个元素来搜索目标</li>
+<li>O(log n): 从数组的中间选择一个随机点进行查找，然后重复这个过程</li>
+<li>O(n2): 一个算法时bai间的消耗是和其计du算步数成平方增长的</li>
 </ul>
 <h2 id="二、排序算法"><a href="#二、排序算法" class="headerlink" title="二、排序算法"></a>二、排序算法</h2><h3 id="2-1-选择排序O-n2"><a href="#2-1-选择排序O-n2" class="headerlink" title="2.1 选择排序O(n2)"></a>2.1 选择排序O(n2)</h3><p>先找到最小的数字然后把它放在列表的最前面。最简单最没用的排序算法，有优化空间,不稳定(没用)。原理是找到最小的数把它放在最前面。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">8</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 排序算法，每次找到最小的数字放在最前面</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minVal = i;</span><br><span class="line">            <span class="comment">// 找到最小数字的下标</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j] &lt; arr[minVal]) &#123;</span><br><span class="line">                    minVal = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将最小的数字放在最前面</span></span><br><span class="line">            <span class="keyword">int</span> tmp = arr[minVal];</span><br><span class="line">            arr[minVal] = arr[i];</span><br><span class="line">            arr[i] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -573,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -814,7 +804,7 @@
         var disqus_config = function () {
           this.page.url = 'https://gaoqisen.github.io/study/algorithm.html';
           this.page.identifier = 'study/algorithm.html';
-          this.page.title = '算法学习';
+          this.page.title = '';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

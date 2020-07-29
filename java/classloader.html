@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202007/20200710125152.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202007/20200710162520.png">
-<meta property="og:updated_time" content="2020-07-10T13:55:43.000Z">
+<meta property="og:updated_time" content="2020-07-13T14:07:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java类加载的学习">
 <meta name="twitter:description" content="关于类加载的一些学习。">
@@ -394,7 +394,8 @@
       
 
       
-        <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p><img src="https://gaoqisen.github.io/GraphBed/202007/20200710125152.png" alt="https://gaoqisen.github.io/GraphBed/202007/20200710125152.png"></p>
+        <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>类加载过程</p>
+<p><img src="https://gaoqisen.github.io/GraphBed/202007/20200710125152.png" alt="https://gaoqisen.github.io/GraphBed/202007/20200710125152.png"></p>
 <ol>
 <li><p>加载: 通过类加载器查找和导入Class文件</p>
 </li>
@@ -407,7 +408,7 @@
 </li>
 <li><p>初始化: 类的静态变量，静态代码块等执行，类的构造器初始化操作等。虚拟机定义了5种会触发初始化的场景。</p>
 <ul>
-<li><p>遇到new、getstatic、putstatic或invokestatic这四条字节码指令时，如果累没有进行初始化，则要先触发初始化；    </p>
+<li><p>遇到new、getstatic、putstatic或invokestatic这四条字节码指令时，如果类没有进行初始化，则要先触发初始化；    </p>
 </li>
 <li><p>使用java.lang.reflect包中的方法对类进行反射调用的时候；</p>
 </li>
@@ -504,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/study/interview.html" rel="prev" title="一些面试题">
+                一些面试题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -602,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

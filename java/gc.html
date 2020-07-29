@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630101848.png">
 <meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200630103223.png">
-<meta property="og:updated_time" content="2020-06-30T03:16:10.000Z">
+<meta property="og:updated_time" content="2020-07-13T16:02:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GC学习笔记">
 <meta name="twitter:description" content="学习一下GC的垃圾回收算法，以及现有的垃圾回收器。">
@@ -418,7 +418,7 @@
 <p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627173653.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627173653.png"></p>
 <h3 id="2-3-复制"><a href="#2-3-复制" class="headerlink" title="2.3 复制"></a>2.3 复制</h3><p>为了解决效率问题,“复制”收集算法出现了。它可以将内存分为大小相同的两块,每次使用其中的一 块。当这一块的内存使用完后,就将还存活的对象复制到另一块去,然后再把使用的空间一次清理掉。 这样就使每次的内存回收都是对内存区间的一半进行回收。</p>
 <p><img src="https://gaoqisen.github.io/GraphBed/202006/20200627174302.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200627174302.png"></p>
-<h3 id="2-4-分代收集"><a href="#2-4-分代收集" class="headerlink" title="2.4 分代收集"></a>2.4 分代收集</h3><p>当前虚拟机的垃圾收集都采用分代收集算法,只是根据对象存活周期的不 同将内存分为几块。一般将java堆分为新生代和老年代,这样我们就可以根据各个年代的特点选择合适的垃圾收集算法。比如在新生代中,每次收集都会有大量对象死去,所以可以选择复制算法,只需要付出少量对象的复制 成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的,而且没有额外的空间对它进行分 配担保,所以我们必须选择“标记-清除”或“标记-整理”算法进行垃圾收集。</p>
+<h3 id="2-4-分代收集"><a href="#2-4-分代收集" class="headerlink" title="2.4 分代收集"></a>2.4 分代收集</h3><p>当前虚拟机的垃圾收集都采用分代收集算法,只是根据对象存活周期的不 同将内存分为几块。一般将java堆分为新生代和老年代,这样我们就可以根据各个年代的特点选择合适的垃圾收集算法。比如在新生代中,每次收集都会有大量对象死去,所以可以选择复制算法,只需要付出少量对象的复制 成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的,而且没有额外的空间对它进行分配担保,所以我们必须选择“标记-清除”或“标记-整理”算法进行垃圾收集。</p>
 <h2 id="三、垃圾收集器详解"><a href="#三、垃圾收集器详解" class="headerlink" title="三、垃圾收集器详解"></a>三、垃圾收集器详解</h2><h3 id="3-1-serial"><a href="#3-1-serial" class="headerlink" title="3.1 serial"></a>3.1 serial</h3><p>Serial(串行新生代)，serial old(老年代)收集器收集器是最基本、历史最悠久的垃圾收集器了。大家看名字就知道这个收集器是 一个单线程收集器了。它的 “单线程” 的意义不仅仅意味着它只会使用一条垃圾收集线程去完成垃圾收 集工作,更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程( “Stop The World” ),直到它收集结束。</p>
 <p><img src="https://gaoqisen.github.io/GraphBed/202006/20200630101205.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200630101205.png"></p>
 <p>Serial收集器由于没有线程交互的开销,可以获得很高的单线程收集效率。Serial收集器对于运行在Client模式下的虚拟机来说是个不错的选择,简单而且高效。</p>
@@ -502,8 +502,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/study/algorithm.html" rel="prev" title="算法学习">
-                算法学习 <i class="fa fa-chevron-right"></i>
+              <a href="/study/algorithm.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,7 +603,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
