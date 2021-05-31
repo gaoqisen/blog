@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java springBoot">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理和登录。">
+<meta name="keywords" content="java springBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单的权限管理小工具">
+<meta property="og:url" content="https://gaoqisen.github.io/java/webcenter.html">
+<meta property="og:site_name" content="Learning Record">
+<meta property="og:description" content="GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理和登录。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202006/20200602095927.png">
+<meta property="og:image" content="https://gaoqisen.github.io/GraphBed/202005/20200527215308.png">
+<meta property="og:updated_time" content="2020-06-11T18:44:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单的权限管理小工具">
+<meta name="twitter:description" content="GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理和登录。">
+<meta name="twitter:image" content="https://gaoqisen.github.io/GraphBed/202006/20200602095927.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://gaoqisen.github.io/java/webcenter.html">
+
+
+
+
+
+  <title>简单的权限管理小工具 | Learning Record</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Learning Record</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome to Gao Qisen's blog.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gaoqisen.github.io/java/webcenter.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gao Qisen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Learning Record">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">简单的权限管理小工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T20:50:11+08:00">
+                2020-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/java/webcenter.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="java/webcenter.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理和登录。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p align="center"><br>    </p><h3 align="center">GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理(乞丐版)<br><p></p>
+
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h3><p>之前开发了好几个后台的管理系统，每次都需要写一遍登录逻辑、菜单路由、用户管理、角色管理、权限管理这些功能。为了以后再开发这种系统的时候不用再写这些重复的程序，就把这些通用的功能抽象成为了一个简单的权限管理服务(WebCenter)，WebCenter专门负责单点登录、权限管理、菜单配置、用户管理、角色管理、系统管理等。为了在创建系统的时候更简单，于是开发了一个gqs-webcenter-client.jar并上传到了中央仓库，之后创建系统的时候只需要引入这个jar包就可以集成WebCenter。每次创建项目的时候后端都需要添加配置引入jar包，前端都需要配置动态路由，为了简化到都不用复制重复的代码，于是开发了一个web-cli的npm<a href="#jsjjs">脚手架</a>。在安装脚手架之后就可以直接初始化项目并进行业务逻辑的开发。</p>
+<h3 id="1-2-特性"><a href="#1-2-特性" class="headerlink" title="1.2 特性"></a>1.2 特性</h3><ol>
+<li>简单：安装好WebCenter服务端后，后端项目引入gqs_webcenter_client.jar。前端利用webc脚手架初始化项目，即可进行业务逻辑的开发。</li>
+<li>动态：服务端可以动态配置各个系统的菜单、菜单图标、角色、权限、以及REST接口的权限。</li>
+</ol>
+<h3 id="1-3-功能"><a href="#1-3-功能" class="headerlink" title="1.3 功能"></a>1.3 功能</h3><ol>
+<li>用户管理：增加多个用户，管理用户的账号密码等</li>
+<li>角色管理：动态分配角色的权限，前端页面进行权限控制之后，可以实现不同的角色登录展示不同的菜单。</li>
+<li>REST接口管理：各个系统注册到服务端后可以配置接口的调用权限（所有人可以访问、登录后可以访问、必须有权限才可以访问）</li>
+<li>系统管理：给各个系统分配clientId和密匙，用于系统的单点登录</li>
+<li>菜单管理：管理各个系统的菜单、路由、图标等。</li>
+</ol>
+<h3 id="1-4-下载"><a href="#1-4-下载" class="headerlink" title="1.4 下载"></a>1.4 下载</h3><table>
+<thead>
+<tr>
+<th>介绍</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后端</td>
+<td><a href="https://github.com/gaoqisen/gqs-webcenter" target="_blank" rel="noopener">https://github.com/gaoqisen/gqs-webcenter</a></td>
+</tr>
+<tr>
+<td>前端</td>
+<td><a href="https://github.com/gaoqisen/webcenter-vue-cli" target="_blank" rel="noopener">https://github.com/gaoqisen/webcenter-vue-cli</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-5-环境"><a href="#1-5-环境" class="headerlink" title="1.5 环境"></a>1.5 环境</h3><p>Maven3+<br>Jdk1.8+<br>Mysql5.7+<br>Vue3.10.0+<br>Webpack4.0.0+ </p>
+<h2 id="二、快速入门"><a href="#二、快速入门" class="headerlink" title="二、快速入门"></a>二、快速入门</h2><h3 id="2-1-运行Webcenter服务端"><a href="#2-1-运行Webcenter服务端" class="headerlink" title="2.1 运行Webcenter服务端"></a>2.1 运行Webcenter服务端</h3><h4 id="2-1-1-方式一-docker-推荐"><a href="#2-1-1-方式一-docker-推荐" class="headerlink" title="2.1.1 方式一(docker 推荐)"></a>2.1.1 方式一(docker 推荐)</h4><blockquote>
+<p>先执行 docker network create net_webcenter 创建网络。该docker-compose安装了redis、mysql和webcenter3个服务，是否暴露端口可以自行修改。如果本地已经安装了mysql和redis可以只安装my_webcenter容器，安装的时候需要将容器之前的容器名改为db_mysql和db_redis并创建net_webcenter网络将db_mysql和db_redis加入到该网络中。启动成功之后将sql导入到数据库中访问 <a href="http://localhost:8000" target="_blank" rel="noopener">http://localhost:8000</a> 即可。docker容器通信可以参考: <a href="https://www.cnblogs.com/kevingrace/p/6590319.html" target="_blank" rel="noopener">https://www.cnblogs.com/kevingrace/p/6590319.html</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">version: &apos;2.0&apos;</span><br><span class="line">services:</span><br><span class="line">  db_mysql:</span><br><span class="line">    restart: always</span><br><span class="line">    image: mysql:5.7.22</span><br><span class="line">    container_name: db_mysql</span><br><span class="line">    ports:</span><br><span class="line">      - 3306:3306</span><br><span class="line">    environment:</span><br><span class="line">      TZ: Asia/Shanghai</span><br><span class="line">      MYSQL_ROOT_PASSWORD: 123456</span><br><span class="line">    command:</span><br><span class="line">      --character-set-server=utf8mb4</span><br><span class="line">      --collation-server=utf8mb4_general_ci</span><br><span class="line">      --explicit_defaults_for_timestamp=true</span><br><span class="line">      --lower_case_table_names=1</span><br><span class="line">      --max_allowed_packet=128M</span><br><span class="line">      --sql-mode=&quot;STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./mysqldata:/var/lib/mysql</span><br><span class="line">    networks:</span><br><span class="line">      - net</span><br><span class="line">  db_redis:</span><br><span class="line">    image: redis</span><br><span class="line">    container_name: db_redis</span><br><span class="line">    command: redis-server --requirepass 123456</span><br><span class="line">    restart: always</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;6379:6379&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./redisdata:/data</span><br><span class="line">    networks:</span><br><span class="line">      - net</span><br><span class="line">  my_webcenter:</span><br><span class="line">    image: registry.cn-hangzhou.aliyuncs.com/gqs/webcenter:1.0.1</span><br><span class="line">    container_name: my_webcenter</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8000:8000&quot;</span><br><span class="line">    networks:</span><br><span class="line">      - net</span><br><span class="line">networks:</span><br><span class="line">  net:</span><br><span class="line">    external: </span><br><span class="line">      # 请先创建net_webcenter网络</span><br><span class="line">      name: net_webcenter</span><br></pre></td></tr></table></figure>
+<h4 id="2-1-2-方式二-jar包"><a href="#2-1-2-方式二-jar包" class="headerlink" title="2.1.2 方式二(jar包)"></a>2.1.2 方式二(jar包)</h4><ol>
+<li><p>环境准备</p>
+<ul>
+<li>请先安装Redis、Mysql、JDK1.8。</li>
+<li>获取 “WebCenter数据库初始化SQL脚本(/db/<a href="https://github.com/gaoqisen/gqs-webcenter/blob/master/db/webcenter.sql" target="_blank" rel="noopener">webcenter.sql</a>)” 并执行。</li>
+</ul>
+</li>
+<li><p>获取jar包</p>
+<ul>
+<li>github: <a href="https://github.com/gaoqisen/gqs-webcenter/releases" target="_blank" rel="noopener">https://github.com/gaoqisen/gqs-webcenter/releases</a></li>
+<li>gitee: <a href="https://gitee.com/gaoqisen/gqs-webcenter/releases" target="_blank" rel="noopener">https://gitee.com/gaoqisen/gqs-webcenter/releases</a></li>
+<li>网盘: <a href="https://c-t.work/s/8db595c7ac4f44" target="_blank" rel="noopener">https://c-t.work/s/8db595c7ac4f44</a>   密码: 7x8yr4</li>
+</ul>
+</li>
+<li><p>启动jar包</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 默认mysql密码123456，redis密码123456启动</span><br><span class="line">nohub jara -Xms1024m -Xmx1024m -jar webcenter-console-1.0.0.jar</span><br><span class="line">// 修改mysql密码，redis密码</span><br><span class="line">nohup java -Xms1024m -Xmx1024m -jar webcenter-console-1.0.0.jar --spring.database.username=root --spring.database.password=23456 --spring.redis.password=23456</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>即可访问<a href="http://localhost:8000" target="_blank" rel="noopener">http://localhost:8000</a> 。</p>
+<h3 id="2-2-客户端搭建"><a href="#2-2-客户端搭建" class="headerlink" title="2.2 客户端搭建"></a>2.2 客户端搭建</h3><h4 id="2-1-方式一-前后端不分离"><a href="#2-1-方式一-前后端不分离" class="headerlink" title="2.1 方式一(前后端不分离)"></a>2.1 方式一(前后端不分离)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 全局安装webcenter客服端脚手架</span><br><span class="line">npm install webc-cli -g</span><br><span class="line">// 之前有安装的需要更新到1.0.3版本</span><br><span class="line">npm update webc-cli -g</span><br><span class="line">// 安装成功之后执行webc命令, 查看是否安装成功</span><br><span class="line">webc </span><br><span class="line">// 快速搭建项目(搭建的直接就是SpringBoot项目,通过IntelliJ IDEA可以直接运行，前端Vue代码放在src/main/resources/webpage目录下)</span><br><span class="line">webc boot</span><br><span class="line">// 进入到前端目录</span><br><span class="line">cd demo/src/main/resources/webpage</span><br><span class="line">// 安装依赖，如果没有安装cnpm需要先安装：npm install cnpm</span><br><span class="line">cnpm install</span><br><span class="line">// 启动前端服务</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p><img src="https://gaoqisen.github.io/GraphBed/202006/20200602095927.png" alt="https://gaoqisen.github.io/GraphBed/202006/20200602095927.png"></p>
+<ul>
+<li>快速搭建的项目main方法启动之后接口通过<a href="http://localhost:8001/ArtifactID" target="_blank" rel="noopener">http://localhost:8001/ArtifactID</a> 访问</li>
+<li>前端项目启动后，开发环境通过<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 访问即可</li>
+<li>本地开发时将webcenter.client.forestage配置设置为true，方便本地vue开发。打包上线时改为false。</li>
+<li>打包上线运行时，需要先在/src/main/resources/webpage目录下npm run build(将vue静态文件打包到resources/public里面)之后在maven clean install。</li>
+<li>打包上线后ArtifactID就是上下文路径，通过<a href="http://localhost:8001/ArtifactID" target="_blank" rel="noopener">http://localhost:8001/ArtifactID</a> 进行访问，如：<a href="http://localhost:8001/demo" target="_blank" rel="noopener">http://localhost:8001/demo</a></li>
+<li>前后端不分离搭建后，打包为一个jar包，静态文件通过SpringBoot内置的tomcat访问。前后端分离的项目前端静态文件可以用nginx进行代理。(前后端不分离的搭建成功之后就可以开发业务逻辑了)<ul>
+<li>开发环境搭建完成之后，需要启动3个服务。（Webcenter服务端:8000, Vue前端8080，Maven后端8001）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>IntelliJ IDEA打开vue的node_modules会出现假死现象，<a href="https://www.dvy.com.cn/2017/11/22/4535.html" target="_blank" rel="noopener">解决办法</a>： Editor&gt;&gt;File Types&gt;&gt;在Ignore files and folders中添加;node_modules</p>
+</blockquote>
+<h4 id="2-2-方式二-前后端分离"><a href="#2-2-方式二-前后端分离" class="headerlink" title="2.2 方式二(前后端分离)"></a>2.2 方式二(前后端分离)</h4><p><img src="https://gaoqisen.github.io/GraphBed/202005/20200527215308.png" alt="https://gaoqisen.github.io/GraphBed/202005/20200527215308.png"></p>
+<h5 id="2-2-1-创建Maven后端"><a href="#2-2-1-创建Maven后端" class="headerlink" title="2.2.1 创建Maven后端"></a>2.2.1 创建Maven后端</h5><blockquote>
+<p>创建出springBoot项目之后可以把配置文件改为yml格式，因为后面的配置都是基于yml的。如果需要用properties格式的话可以在<a href="https://www.toyaml.com/index.html" target="_blank" rel="noopener">https://www.toyaml.com/index.html</a> 里面进行转换。创建成功之后引入maven依赖、添加配置、创建WebCenterConfig.java即可。</p>
+</blockquote>
+<ol>
+<li><p>Maven引入依赖</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.gaoqisen&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;gqs-webcenter-client&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">### pom.xml测试用例</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.2.2.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.example&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;demo&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;name&gt;demo&lt;/name&gt;</span><br><span class="line">	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">			&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.github.gaoqisen&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;gqs-webcenter-client&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;1.0.0&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加application.yml的配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8001</span><br><span class="line">  servlet:</span><br><span class="line">    context-path: /sample</span><br><span class="line">spring:</span><br><span class="line">  jackson:</span><br><span class="line">    default-property-inclusion: non_null</span><br><span class="line">    date-format: yyyy-MM-dd HH:mm:ss</span><br><span class="line">    time-zone: GMT+8</span><br><span class="line">  application:</span><br><span class="line">    name: webcenter-sample</span><br><span class="line">  ### 需要和服务端的redis是同一个</span><br><span class="line">  redis:</span><br><span class="line">    host: localhost</span><br><span class="line">    password: 123456</span><br><span class="line">    port: 6379</span><br><span class="line">    timeout: 60000</span><br><span class="line">webcenter:</span><br><span class="line">  # 服务端</span><br><span class="line">  server:</span><br><span class="line">    host: localhost</span><br><span class="line">    # 如果服务端端口改了的话，此处的端口应保持一致</span><br><span class="line">    port: 8000</span><br><span class="line">    # 通过服务端的系统管理里面获取</span><br><span class="line">    clientid: WZUIIXWZUIIX</span><br><span class="line">    secretkey: qOIWRbzeFvOnXUYTspfSt2ibfJPe1vtG</span><br><span class="line">  ### 客服端配置，是否前后端分离，用于单点登录的地址跳转。forestage为false时，host和port可以不写</span><br><span class="line">  client:</span><br><span class="line">    forestage: true</span><br><span class="line">    host: localhost</span><br><span class="line">    port: 8080</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建WebCenterConfig.java文件，用于将客户端交给spring管理</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class WebCenterConfig extends WebMvcConfigurerAdapter &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public SecurityInterceptor securityInterceptor() &#123;</span><br><span class="line">        return new SecurityInterceptor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void addInterceptors(InterceptorRegistry registry) &#123;</span><br><span class="line">        registry.addInterceptor(securityInterceptor()).excludePathPatterns(&quot;/static/*&quot;)</span><br><span class="line">                .excludePathPatterns(&quot;/error&quot;).addPathPatterns(&quot;/**&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    @Bean</span><br><span class="line">    @DependsOn(&quot;webCenterConsole&quot;)</span><br><span class="line">    public WebCenterClientBeanFactory springClientBeanFactory() &#123;</span><br><span class="line">        return new WebCenterClientBeanFactory();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public WebCenterInitializing webCenterInitializing() &#123;</span><br><span class="line">        return new WebCenterInitializing();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public WebCenterConsole webCenterConsole()&#123;</span><br><span class="line">        WebCenterConsole webCenterConsole = new WebCenterConsole();</span><br><span class="line">        return webCenterConsole;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    @DependsOn(&quot;redisConnectionFactory&quot;)</span><br><span class="line">    public ApiController apiController() &#123;</span><br><span class="line">        return new ApiController();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public RedisTemplate&lt;String, String&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory) &#123;</span><br><span class="line">        StringRedisTemplate template = new StringRedisTemplate(redisConnectionFactory);</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="2-2-2-创建Vue前端"><a href="#2-2-2-创建Vue前端" class="headerlink" title="2.2.2 创建Vue前端"></a>2.2.2 创建Vue前端</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 全局安装webcenter客服端脚手架</span><br><span class="line">npm install webc-cli -g</span><br><span class="line">// 安装成功之后执行webc命令, 查看是否安装成功</span><br><span class="line">webc </span><br><span class="line">// 查看所有的脚手架</span><br><span class="line">webc list</span><br><span class="line">// 初始化一个名为sample的前端项目（集成了动态菜单和单点登录）</span><br><span class="line">webc init webcenter sample</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>完成上面的搭建之后，启动Maven后端和Vue前端就可以直接开发自己的业务逻辑了。</p>
+</blockquote>
+<h2 id="三、功能介绍"><a href="#三、功能介绍" class="headerlink" title="三、功能介绍"></a>三、功能介绍</h2><h3 id="3-1-系统配置"><a href="#3-1-系统配置" class="headerlink" title="3.1 系统配置"></a>3.1 系统配置</h3><p>给各个系统分配clientId和密匙，应用名称必须和客户端的spring.application.name一致。每新建一个系统都需要生成不同的clientId和密钥，并更改系统的配置。</p>
+<h3 id="3-2-权限配置"><a href="#3-2-权限配置" class="headerlink" title="3.2 权限配置"></a>3.2 权限配置</h3><p>权限配置在新建角色的时候进行配置，如果需要修改权限要在修改角色里面进行修改（修改操作是将之前角色和权限的关联信息全部删除之后，新增选择的权限）。修改角色的权限之后，需要用户退出后重新登陆生效。前端的页面权限用如下代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 权限将斜杠改为冒号即可。@PathVariable类型的接口去掉/&#123;*&#125;如:</span><br><span class="line">// sys/menu/save, sys:menu:save</span><br><span class="line">// sys/menu/info/&#123;id&#125;, sys:menu:info</span><br><span class="line">&lt;el-button v-if=&quot;isAuth(&apos;sys:menu:save&apos;)&quot; &gt;新增&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-菜单配置"><a href="#3-3-菜单配置" class="headerlink" title="3.3 菜单配置"></a>3.3 菜单配置</h3><p>菜单分为目录和菜单两种，需要单独给每个系统添加菜单和目录，目录可以多层级。路由就是创建的.vue文件的路径。如:/sys/log, 就在views/sys里面创建log.vue。动态路由就会自动路由到log.vue里面。菜单创建好之后需要给对应的角色赋予菜单权限，子系统退出后重新登录生效。</p>
+<h3 id="3-4-REST接口配置"><a href="#3-4-REST接口配置" class="headerlink" title="3.4 REST接口配置"></a>3.4 REST接口配置</h3><ul>
+<li>后端接口通过@ApiOperation注解标识接口名称，如：@ApiOperation(“接口备注”)</li>
+<li>rest接口有3种权限：公开、登录、权限。客户端启动之后自动注册接口到服务端默认为公开所有人都可以访问的权限。改为登录接口之后，访问的权限就必须登录之后才可以访问。需要权限的接口级别最高必须在权限里面给角色配置了权限才可以访问。</li>
+</ul>
+<h2 id="四、脚手架介绍"><a href="#四、脚手架介绍" class="headerlink" title="四、脚手架介绍"></a>四、<span id="jsjjs">脚手架介绍</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 命令</span><br><span class="line">webc -h // 查看命令帮助</span><br><span class="line">webc -V // 查看版本号</span><br><span class="line">webc add // 增加模版</span><br><span class="line">webc list // 查看所有的模版</span><br><span class="line">webc init webcenter sample  // 通过webcenter模版创建一个名为sample的项目</span><br><span class="line">webc boot // 快速创建一个springBoot项目</span><br></pre></td></tr></table></figure>
+<ul>
+<li>webc add: 可以自己写前端的脚手架。会替换package.json里面用户信息描述等。</li>
+<li>webc boot: 创建的是一个固定的格式，包含springBoot和Vue前端的代码。vue代码在resources/webpage里面。在本地开发的时候可以启动两个端口如：8001后端代码，8080前端代码。后面打包的时候在webpage目录下运行npm run build就会把前端的静态代码打包到resources/public里面，在项目根目录下运行maven clean install就可以把前端代码和后端代码打成一个包，开发的时候可以是前后端分离的开发模式，打包之后就是一个jar包，简化了前后端分离的nginx配置。如果需要前后端分离部署的话，只需要把resources/public里面的静态文件拷贝到其他目录下面，nginx指定路径就可以了。</li>
+</ul>
+<h2 id="五、结构"><a href="#五、结构" class="headerlink" title="五、结构"></a>五、结构</h2><h3 id="4-1-Webcenter项目结构"><a href="#4-1-Webcenter项目结构" class="headerlink" title="4.1 Webcenter项目结构"></a>4.1 Webcenter项目结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">──gqs-webcenter</span><br><span class="line">  ├── db  // 数据库</span><br><span class="line">  │   └── webcenter.sql // 数据库初始化脚本</span><br><span class="line">  ├── gqs-webcenter-client  // 客服端</span><br><span class="line">  ├── gqs-webcenter-common  // 通用工具</span><br><span class="line">  ├── gqs-webcenter-component  // 通用组件</span><br><span class="line">  │   ├── gqs-webcenter-redis  // redis组件</span><br><span class="line">  │   ├── gqs-webcenter-webapi  // swagger组件</span><br><span class="line">  ├── gqs-webcenter-console  // 控制台，需要编译打包的模块</span><br><span class="line">  ├── gqs-webcenter-sample  // 简单的客服端例子</span><br><span class="line">  ├── gqs-webcenter-service  // 服务层，数据访问层</span><br><span class="line">  ├── gqs-webcenter-webpage  // 前端项目,build之后将静态文件打包到了 gqs-webcenter-console的resource/public里面</span><br><span class="line">  └── readme.md  // 项目介绍</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-数据库结构"><a href="#4-2-数据库结构" class="headerlink" title="4.2 数据库结构"></a>4.2 数据库结构</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>表名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sys_code</td>
+<td>系统编码表</td>
+<td>用来保存系统信息、clientId、密匙等</td>
+</tr>
+<tr>
+<td>sys_code_menu</td>
+<td>系统菜单关联表</td>
+<td>系统和菜单的对应关系</td>
+</tr>
+<tr>
+<td>sys_menu</td>
+<td>菜单表</td>
+<td>保存菜单和目录信息</td>
+</tr>
+<tr>
+<td>sys_rest</td>
+<td>rest接口表</td>
+<td>保存各个系统的REST接口和权限</td>
+</tr>
+<tr>
+<td>sys_role</td>
+<td>角色表</td>
+<td>角色的相关信息</td>
+</tr>
+<tr>
+<td>sys_role_menu</td>
+<td>角色菜单关联表</td>
+<td>角色可以查看的菜单</td>
+</tr>
+<tr>
+<td>sys_role_rest</td>
+<td>角色接口关联表</td>
+<td>角色可以访问的接口</td>
+</tr>
+<tr>
+<td>sys_user</td>
+<td>用户表</td>
+<td>用户的相关信息</td>
+</tr>
+<tr>
+<td>sys_user_role</td>
+<td>角色表</td>
+<td>用户关联的角色，一个用户对应多个角色</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-3-Vue项目引入的主要插件。"><a href="#4-3-Vue项目引入的主要插件。" class="headerlink" title="4.3 Vue项目引入的主要插件。"></a>4.3 Vue项目引入的主要插件。</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>介绍</th>
+<th>版本</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element-ui</td>
+<td>饿了么后端UI框架</td>
+<td>2.8.2</td>
+<td><a href="https://element.eleme.cn/2.8/#/zh-CN/component/installation" target="_blank" rel="noopener">https://element.eleme.cn/2.8/#/zh-CN/component/installation</a></td>
+</tr>
+<tr>
+<td>fortawesome</td>
+<td>图标库</td>
+<td>5.13</td>
+<td><a href="http://www.fontawesome.com.cn/faicons/" target="_blank" rel="noopener">http://www.fontawesome.com.cn/faicons/</a></td>
+</tr>
+<tr>
+<td>vue-router</td>
+<td>路由</td>
+<td>3.0.7</td>
+<td><a href="https://cn.vuejs.org/v2/guide/routing.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/routing.html</a></td>
+</tr>
+<tr>
+<td>vuex</td>
+<td>状态管理</td>
+<td>3.3.0</td>
+<td><a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">https://vuex.vuejs.org/zh/</a></td>
+</tr>
+<tr>
+<td>axios</td>
+<td>HTTP库</td>
+<td>0.19.2</td>
+<td><a href="http://www.axios-js.com/zh-cn/docs/" target="_blank" rel="noopener">http://www.axios-js.com/zh-cn/docs/</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-4-Vue结构"><a href="#4-4-Vue结构" class="headerlink" title="4.4 Vue结构"></a>4.4 Vue结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">├── build  // 构建</span><br><span class="line">├── config  // 配置文件</span><br><span class="line">├── index.html  // 入口文件</span><br><span class="line">├── node_modules  // 依赖下载的包</span><br><span class="line">├── package.json // 依赖</span><br><span class="line">├── src </span><br><span class="line"> |  ├── App.vue  // 入口</span><br><span class="line"> |  ├── assets  // 静态文件</span><br><span class="line"> |  ├── components  // 组件</span><br><span class="line"> |  ├── main.js  // 入口js文件</span><br><span class="line"> |  ├── router  // 路由</span><br><span class="line"> |  ├── store  // 状态状态管理</span><br><span class="line"> |  ├── utils  // 工具</span><br><span class="line"> |   └── views  // 视图，需要开发的代码位置</span><br><span class="line">└── static  // 静态文件</span><br></pre></td></tr></table></figure>
+<h2 id="六、问答"><a href="#六、问答" class="headerlink" title="六、问答"></a>六、问答</h2><ol>
+<li>SpringBoot项目依赖了webcenter-client.jar后集成了那些功能？<br> 答:  提供了单点登录、动态菜单、动态权限功能。</li>
+<li>前端Vue通过脚手架初始化之后有那些功能？<br> 答：实现了动态路由，菜单直接在服务端的菜单管理里面进行配置。</li>
+<li>客服端与服务端之间如何通信？<br> 答: 之间的通信通过Redis的异步消息队列实现。</li>
+</ol>
+<h2 id="七、参考"><a href="#七、参考" class="headerlink" title="七、参考"></a>七、参考</h2><ul>
+<li>动态路由：<a href="https://github.com/renrenio/renren-fast-vue" target="_blank" rel="noopener">https://github.com/renrenio/renren-fast-vue</a></li>
+<li>脚手架开发：<a href="https://juejin.im/post/5c94fef7f265da60fd0c15e8" target="_blank" rel="noopener">https://juejin.im/post/5c94fef7f265da60fd0c15e8</a></li>
+<li>Maven上传jar包: <a href="https://www.sojson.com/blog/250.html" target="_blank" rel="noopener">https://www.sojson.com/blog/250.html</a></li>
+</ul>
+</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-springBoot/" rel="tag"># java springBoot</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/command.html" rel="next" title="java 的一些基础命令">
+                <i class="fa fa-chevron-left"></i> java 的一些基础命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/webCenterIdea.html" rel="prev" title="关于WebCenter的一些想法">
+                关于WebCenter的一些想法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://ku.90sjimg.com/element_origin_min_pic/16/12/22/61a01c9132884760d78c4207a532e346.jpg" alt="Gao Qisen">
+            
+              <p class="site-author-name" itemprop="name">Gao Qisen</p>
+              <p class="site-description motion-element" itemprop="description">现实很近又很冷，梦想很远却很温暖。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/gaoqisen" target="_blank" rel="external nofollow" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jasongaogg@gmail.com" target="_blank" rel="external nofollow" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">GQS-WEBCENTER, 一个轻量级的WEB中心，简单的权限管理(乞丐版)
+
+一、简介1.1 概述之前开发了好几个后台的管理系统，每次都需要写一遍登录逻辑、菜单路由、用户管理、角色管理、权限管理这些功能。为了以后再开发这种系统的时候不用再写这些重复的程序，就把这些通用的功能抽象成为了一个简单的权限管理服务(WebCenter)，WebCenter专门负责单点登录、权限管理、菜单配置、用户管理、角色管理、系统管理等。为了在创建系统的时候更简单，于是开发了一个gqs-webcenter-client.jar并上传到了中央仓库，之后创建系统的时候只需要引入这个jar包就可以集成WebCenter。每次创建项目的时候后端都需要添加配置引入jar包，前端都需要配置动态路由，为了简化到都不用复制重复的代码，于是开发了一个web-cli的npm脚手架。在安装脚手架之后就可以直接初始化项目并进行业务逻辑的开发。
+1.2 特性
+简单：安装好WebCenter服务端后，后端项目引入gqs_webcenter_client.jar。前端利用webc脚手架初始化项目，即可进行业务逻辑的开发。
+动态：服务端可以动态配置各个系统的菜单、菜单图标、角色、权限、以及REST接口的权限。
+
+1.3 功能
+用户管理：增加多个用户，管理用户的账号密码等
+角色管理：动态分配角色的权限，前端页面进行权限控制之后，可以实现不同的角色登录展示不同的菜单。
+REST接口管理：各个系统注册到服务端后可以配置接口的调用权限（所有人可以访问、登录后可以访问、必须有权限才可以访问）
+系统管理：给各个系统分配clientId和密匙，用于系统的单点登录
+菜单管理：管理各个系统的菜单、路由、图标等。
+
+1.4 下载
+
+
+介绍
+地址
+
+
+
+
+后端
+https://github.com/gaoqisen/gqs-webcenter
+
+
+前端
+https://github.com/gaoqisen/webcenter-vue-cli
+
+
+
+1.5 环境Maven3+Jdk1.8+Mysql5.7+Vue3.10.0+Webpack4.0.0+ 
+二、快速入门2.1 运行Webcenter服务端2.1.1 方式一(docker 推荐)
+先执行 docker network create net_webcenter 创建网络。该docker-compose安装了redis、mysql和webcenter3个服务，是否暴露端口可以自行修改。如果本地已经安装了mysql和redis可以只安装my_webcenter容器，安装的时候需要将容器之前的容器名改为db_mysql和db_redis并创建net_webcenter网络将db_mysql和db_redis加入到该网络中。启动成功之后将sql导入到数据库中访问 http://localhost:8000 即可。docker容器通信可以参考: https://www.cnblogs.com/kevingrace/p/6590319.html
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445version: &#39;2.0&#39;services:  db_mysql:    restart: always    image: mysql:5.7.22    container_name: db_mysql    ports:      - 3306:3306    environment:      TZ: Asia/Shanghai      MYSQL_ROOT_PASSWORD: 123456    command:      --character-set-server=utf8mb4      --collation-server=utf8mb4_general_ci      --explicit_defaults_for_timestamp=true      --lower_case_table_names=1      --max_allowed_packet=128M      --sql-mode=&quot;STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO&quot;    volumes:      - ./mysqldata:/var/lib/mysql    networks:      - net  db_redis:    image: redis    container_name: db_redis    command: redis-server --requirepass 123456    restart: always    ports:      - &quot;6379:6379&quot;    volumes:      - ./redisdata:/data    networks:      - net  my_webcenter:    image: registry.cn-hangzhou.aliyuncs.com/gqs/webcenter:1.0.1    container_name: my_webcenter    ports:      - &quot;8000:8000&quot;    networks:      - netnetworks:  net:    external:       # 请先创建net_webcenter网络      name: net_webcenter
+2.1.2 方式二(jar包)
+环境准备
+
+请先安装Redis、Mysql、JDK1.8。
+获取 “WebCenter数据库初始化SQL脚本(/db/webcenter.sql)” 并执行。
+
+
+获取jar包
+
+github: https://github.com/gaoqisen/gqs-webcenter/releases
+gitee: https://gitee.com/gaoqisen/gqs-webcenter/releases
+网盘: https://c-t.work/s/8db595c7ac4f44   密码: 7x8yr4
+
+
+启动jar包
+ 1234// 默认mysql密码123456，redis密码123456启动nohub jara -Xms1024m -Xmx1024m -jar webcenter-console-1.0.0.jar// 修改mysql密码，redis密码nohup java -Xms1024m -Xmx1024m -jar webcenter-console-1.0.0.jar --spring.database.username=root --spring.database.password=23456 --spring.redis.password=23456
+
+
+即可访问http://localhost:8000 。
+2.2 客户端搭建2.1 方式一(前后端不分离)1234567891011121314// 全局安装webcenter客服端脚手架npm install webc-cli -g// 之前有安装的需要更新到1.0.3版本npm update webc-cli -g// 安装成功之后执行webc命令, 查看是否安装成功webc // 快速搭建项目(搭建的直接就是SpringBoot项目,通过IntelliJ IDEA可以直接运行，前端Vue代码放在src/main/resources/webpage目录下)webc boot// 进入到前端目录cd demo/src/main/resources/webpage// 安装依赖，如果没有安装cnpm需要先安装：npm install cnpmcnpm install// 启动前端服务npm run dev
+
+
+快速搭建的项目main方法启动之后接口通过http://localhost:8001/ArtifactID 访问
+前端项目启动后，开发环境通过http://localhost:8080 访问即可
+本地开发时将webcenter.client.forestage配置设置为true，方便本地vue开发。打包上线时改为false。
+打包上线运行时，需要先在/src/main/resources/webpage目录下npm run build(将vue静态文件打包到resources/public里面)之后在maven clean install。
+打包上线后ArtifactID就是上下文路径，通过http://localhost:8001/ArtifactID 进行访问，如：http://localhost:8001/demo
+前后端不分离搭建后，打包为一个jar包，静态文件通过SpringBoot内置的tomcat访问。前后端分离的项目前端静态文件可以用nginx进行代理。(前后端不分离的搭建成功之后就可以开发业务逻辑了)
+开发环境搭建完成之后，需要启动3个服务。（Webcenter服务端:8000, Vue前端8080，Maven后端8001）
+
+
+
+
+IntelliJ IDEA打开vue的node_modules会出现假死现象，解决办法： Editor&gt;&gt;File Types&gt;&gt;在Ignore files and folders中添加;node_modules
+
+2.2 方式二(前后端分离)
+2.2.1 创建Maven后端
+创建出springBoot项目之后可以把配置文件改为yml格式，因为后面的配置都是基于yml的。如果需要用properties格式的话可以在https://www.toyaml.com/index.html 里面进行转换。创建成功之后引入maven依赖、添加配置、创建WebCenterConfig.java即可。
+
+
+Maven引入依赖
+ 1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;dependency&gt;    &lt;groupId&gt;com.github.gaoqisen&lt;/groupId&gt;    &lt;artifactId&gt;gqs-webcenter-client&lt;/artifactId&gt;    &lt;version&gt;1.0.1&lt;/version&gt;&lt;/dependency&gt;### pom.xml测试用例&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;	xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;	&lt;parent&gt;		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;		&lt;version&gt;2.2.2.RELEASE&lt;/version&gt;		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;	&lt;/parent&gt;	&lt;groupId&gt;com.example&lt;/groupId&gt;	&lt;artifactId&gt;demo&lt;/artifactId&gt;	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;	&lt;name&gt;demo&lt;/name&gt;	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;	&lt;properties&gt;		&lt;java.version&gt;1.8&lt;/java.version&gt;	&lt;/properties&gt;	&lt;dependencies&gt;		&lt;dependency&gt;			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;		&lt;/dependency&gt;		&lt;dependency&gt;			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;			&lt;scope&gt;test&lt;/scope&gt;		&lt;/dependency&gt;		&lt;dependency&gt;			&lt;groupId&gt;com.github.gaoqisen&lt;/groupId&gt;			&lt;artifactId&gt;gqs-webcenter-client&lt;/artifactId&gt;			&lt;version&gt;1.0.0&lt;/version&gt;		&lt;/dependency&gt;	&lt;/dependencies&gt;&lt;/project&gt;
+
+添加application.yml的配置
+ 12345678910111213141516171819202122232425262728293031server:  port: 8001  servlet:    context-path: /samplespring:  jackson:    default-property-inclusion: non_null    date-format: yyyy-MM-dd HH:mm:ss    time-zone: GMT+8  application:    name: webcenter-sample  ### 需要和服务端的redis是同一个  redis:    host: localhost    password: 123456    port: 6379    timeout: 60000webcenter:  # 服务端  server:    host: localhost    # 如果服务端端口改了的话，此处的端口应保持一致    port: 8000    # 通过服务端的系统管理里面获取    clientid: WZUIIXWZUIIX    secretkey: qOIWRbzeFvOnXUYTspfSt2ibfJPe1vtG  ### 客服端配置，是否前后端分离，用于单点登录的地址跳转。forestage为false时，host和port可以不写  client:    forestage: true    host: localhost    port: 8080
+
+创建WebCenterConfig.java文件，用于将客户端交给spring管理
+ 1234567891011121314151617181920212223242526272829303132333435363738394041424344@Configurationpublic class WebCenterConfig extends WebMvcConfigurerAdapter {    @Bean    public SecurityInterceptor securityInterceptor() {        return new SecurityInterceptor();    }    @Override    public void addInterceptors(InterceptorRegistry registry) {        registry.addInterceptor(securityInterceptor()).excludePathPatterns(&quot;/static/*&quot;)                .excludePathPatterns(&quot;/error&quot;).addPathPatterns(&quot;/**&quot;);    }    @Bean    @DependsOn(&quot;webCenterConsole&quot;)    public WebCenterClientBeanFactory springClientBeanFactory() {        return new WebCenterClientBeanFactory();    }    @Bean    public WebCenterInitializing webCenterInitializing() {        return new WebCenterInitializing();    }    @Bean    public WebCenterConsole webCenterConsole(){        WebCenterConsole webCenterConsole = new WebCenterConsole();        return webCenterConsole;    }    @Bean    @DependsOn(&quot;redisConnectionFactory&quot;)    public ApiController apiController() {        return new ApiController();    }    @Bean    public RedisTemplate&lt;String, String&gt; redisTemplate(RedisConnectionFactory redisConnectionFactory) {        StringRedisTemplate template = new StringRedisTemplate(redisConnectionFactory);        template.afterPropertiesSet();        return template;    }}
+
+
+2.2.2 创建Vue前端12345678// 全局安装webcenter客服端脚手架npm install webc-cli -g// 安装成功之后执行webc命令, 查看是否安装成功webc // 查看所有的脚手架webc list// 初始化一个名为sample的前端项目（集成了动态菜单和单点登录）webc init webcenter sample
+
+完成上面的搭建之后，启动Maven后端和Vue前端就可以直接开发自己的业务逻辑了。
+
+三、功能介绍3.1 系统配置给各个系统分配clientId和密匙，应用名称必须和客户端的spring.application.name一致。每新建一个系统都需要生成不同的clientId和密钥，并更改系统的配置。
+3.2 权限配置权限配置在新建角色的时候进行配置，如果需要修改权限要在修改角色里面进行修改（修改操作是将之前角色和权限的关联信息全部删除之后，新增选择的权限）。修改角色的权限之后，需要用户退出后重新登陆生效。前端的页面权限用如下代码实现：
+1234// 权限将斜杠改为冒号即可。@PathVariable类型的接口去掉/{*}如:// sys/menu/save, sys:menu:save// sys/menu/info/{id}, sys:menu:info&lt;el-button v-if=&quot;isAuth(&#39;sys:menu:save&#39;)&quot; &gt;新增&lt;/el-button&gt;
+3.3 菜单配置菜单分为目录和菜单两种，需要单独给每个系统添加菜单和目录，目录可以多层级。路由就是创建的.vue文件的路径。如:/sys/log, 就在views/sys里面创建log.vue。动态路由就会自动路由到log.vue里面。菜单创建好之后需要给对应的角色赋予菜单权限，子系统退出后重新登录生效。
+3.4 REST接口配置
+后端接口通过@ApiOperation注解标识接口名称，如：@ApiOperation(“接口备注”)
+rest接口有3种权限：公开、登录、权限。客户端启动之后自动注册接口到服务端默认为公开所有人都可以访问的权限。改为登录接口之后，访问的权限就必须登录之后才可以访问。需要权限的接口级别最高必须在权限里面给角色配置了权限才可以访问。
+
+四、脚手架介绍1234567// 命令webc -h // 查看命令帮助webc -V // 查看版本号webc add // 增加模版webc list // 查看所有的模版webc init webcenter sample  // 通过webcenter模版创建一个名为sample的项目webc boot // 快速创建一个springBoot项目
+
+webc add: 可以自己写前端的脚手架。会替换package.json里面用户信息描述等。
+webc boot: 创建的是一个固定的格式，包含springBoot和Vue前端的代码。vue代码在resources/webpage里面。在本地开发的时候可以启动两个端口如：8001后端代码，8080前端代码。后面打包的时候在webpage目录下运行npm run build就会把前端的静态代码打包到resources/public里面，在项目根目录下运行maven clean install就可以把前端代码和后端代码打成一个包，开发的时候可以是前后端分离的开发模式，打包之后就是一个jar包，简化了前后端分离的nginx配置。如果需要前后端分离部署的话，只需要把resources/public里面的静态文件拷贝到其他目录下面，nginx指定路径就可以了。
+
+五、结构4.1 Webcenter项目结构12345678910111213──gqs-webcenter  ├── db  // 数据库  │   └── webcenter.sql // 数据库初始化脚本  ├── gqs-webcenter-client  // 客服端  ├── gqs-webcenter-common  // 通用工具  ├── gqs-webcenter-component  // 通用组件  │   ├── gqs-webcenter-redis  // redis组件  │   ├── gqs-webcenter-webapi  // swagger组件  ├── gqs-webcenter-console  // 控制台，需要编译打包的模块  ├── gqs-webcenter-sample  // 简单的客服端例子  ├── gqs-webcenter-service  // 服务层，数据访问层  ├── gqs-webcenter-webpage  // 前端项目,build之后将静态文件打包到了 gqs-webcenter-console的resource/public里面  └── readme.md  // 项目介绍
+4.2 数据库结构
+
+
+名称
+表名
+描述
+
+
+
+
+sys_code
+系统编码表
+用来保存系统信息、clientId、密匙等
+
+
+sys_code_menu
+系统菜单关联表
+系统和菜单的对应关系
+
+
+sys_menu
+菜单表
+保存菜单和目录信息
+
+
+sys_rest
+rest接口表
+保存各个系统的REST接口和权限
+
+
+sys_role
+角色表
+角色的相关信息
+
+
+sys_role_menu
+角色菜单关联表
+角色可以查看的菜单
+
+
+sys_role_rest
+角色接口关联表
+角色可以访问的接口
+
+
+sys_user
+用户表
+用户的相关信息
+
+
+sys_user_role
+角色表
+用户关联的角色，一个用户对应多个角色
+
+
+
+4.3 Vue项目引入的主要插件。
+
+
+名称
+介绍
+版本
+地址
+
+
+
+
+element-ui
+饿了么后端UI框架
+2.8.2
+https://element.eleme.cn/2.8/#/zh-CN/component/installation
+
+
+fortawesome
+图标库
+5.13
+http://www.fontawesome.com.cn/faicons/
+
+
+vue-router
+路由
+3.0.7
+https://cn.vuejs.org/v2/guide/routing.html
+
+
+vuex
+状态管理
+3.3.0
+https://vuex.vuejs.org/zh/
+
+
+axios
+HTTP库
+0.19.2
+http://www.axios-js.com/zh-cn/docs/
+
+
+
+4.4 Vue结构123456789101112131415├── build  // 构建├── config  // 配置文件├── index.html  // 入口文件├── node_modules  // 依赖下载的包├── package.json // 依赖├── src  |  ├── App.vue  // 入口 |  ├── assets  // 静态文件 |  ├── components  // 组件 |  ├── main.js  // 入口js文件 |  ├── router  // 路由 |  ├── store  // 状态状态管理 |  ├── utils  // 工具 |   └── views  // 视图，需要开发的代码位置└── static  // 静态文件
+六、问答
+SpringBoot项目依赖了webcenter-client.jar后集成了那些功能？ 答:  提供了单点登录、动态菜单、动态权限功能。
+前端Vue通过脚手架初始化之后有那些功能？ 答：实现了动态路由，菜单直接在服务端的菜单管理里面进行配置。
+客服端与服务端之间如何通信？ 答: 之间的通信通过Redis的异步消息队列实现。
+
+七、参考
+动态路由：https://github.com/renrenio/renren-fast-vue
+脚手架开发：https://juejin.im/post/5c94fef7f265da60fd0c15e8
+Maven上传jar包: https://www.sojson.com/blog/250.html
+
+</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#一、简介"><span class="nav-number"></span> <span class="nav-text">一、简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-概述"><span class="nav-number">1.</span> <span class="nav-text">1.1 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-特性"><span class="nav-number">2.</span> <span class="nav-text">1.2 特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-功能"><span class="nav-number">3.</span> <span class="nav-text">1.3 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-下载"><span class="nav-number">4.</span> <span class="nav-text">1.4 下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-环境"><span class="nav-number">5.</span> <span class="nav-text">1.5 环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、快速入门"><span class="nav-number"></span> <span class="nav-text">二、快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-运行Webcenter服务端"><span class="nav-number">1.</span> <span class="nav-text">2.1 运行Webcenter服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-方式一-docker-推荐"><span class="nav-number">1.1.</span> <span class="nav-text">2.1.1 方式一(docker 推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-方式二-jar包"><span class="nav-number">1.2.</span> <span class="nav-text">2.1.2 方式二(jar包)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-客户端搭建"><span class="nav-number">2.</span> <span class="nav-text">2.2 客户端搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-方式一-前后端不分离"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 方式一(前后端不分离)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-方式二-前后端分离"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 方式二(前后端分离)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-创建Maven后端"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 创建Maven后端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-创建Vue前端"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 创建Vue前端</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、功能介绍"><span class="nav-number"></span> <span class="nav-text">三、功能介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-系统配置"><span class="nav-number">1.</span> <span class="nav-text">3.1 系统配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-权限配置"><span class="nav-number">2.</span> <span class="nav-text">3.2 权限配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-菜单配置"><span class="nav-number">3.</span> <span class="nav-text">3.3 菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-REST接口配置"><span class="nav-number">4.</span> <span class="nav-text">3.4 REST接口配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、脚手架介绍"><span class="nav-number"></span> <span class="nav-text">四、脚手架介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、结构"><span class="nav-number"></span> <span class="nav-text">五、结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Webcenter项目结构"><span class="nav-number">1.</span> <span class="nav-text">4.1 Webcenter项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-数据库结构"><span class="nav-number">2.</span> <span class="nav-text">4.2 数据库结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Vue项目引入的主要插件。"><span class="nav-number">3.</span> <span class="nav-text">4.3 Vue项目引入的主要插件。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-Vue结构"><span class="nav-number">4.</span> <span class="nav-text">4.4 Vue结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、问答"><span class="nav-number"></span> <span class="nav-text">六、问答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、参考"><span class="nav-number"></span> <span class="nav-text">七、参考</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gao Qisen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Copyright © 2018 gaoqisen All Rights Reserved.</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://gaoqisen.github.io/java/webcenter.html';
+          this.page.identifier = 'java/webcenter.html';
+          this.page.title = '简单的权限管理小工具';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
