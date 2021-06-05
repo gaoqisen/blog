@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="代码整洁之道里面的比较重要的一些点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-05T05:05:43.743Z">
+<meta property="og:updated_time" content="2021-06-05T10:44:08.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《代码整洁之道》">
 <meta name="twitter:description" content="代码整洁之道里面的比较重要的一些点。">
@@ -410,7 +410,192 @@
 </ol>
 <h4 id="2-4-说“是”的成本"><a href="#2-4-说“是”的成本" class="headerlink" title="2.4 说“是”的成本"></a>2.4 说“是”的成本</h4><p>大多数情况下，我们都希望说是。一个故事：部门招标1个月时间做一个系统，然后a公司中标了。b成员负责项目的开发，时间特别赶b成员同意做此项目。他没日没夜的加班，没有全部用硬编码方式完成了这个项目，自己还沾沾自喜的认为干了一件特别了不起的事情。结果之后部门来了个新领导砍掉了这个项目，而去在项目开发期间还加了一些其他的功能。</p>
 <h4 id="2-5-如何写出好代码"><a href="#2-5-如何写出好代码" class="headerlink" title="2.5 如何写出好代码"></a>2.5 如何写出好代码</h4><p>有可能写出好的代码吗？有可能坚守专业主义的精神吗？在项目特别赶的情况下就可以硬编码，不管设计原则吗？其实想要写出好的代码就需要学会如何说“不”。</p>
-<h3 id="第三章-说“是”"><a href="#第三章-说“是”" class="headerlink" title="第三章 说“是”"></a>第三章 说“是”</h3><p>​         </p>
+<h3 id="第三章-说“是”"><a href="#第三章-说“是”" class="headerlink" title="第三章 说“是”"></a>第三章 说“是”</h3><h4 id="3-1-承诺用语"><a href="#3-1-承诺用语" class="headerlink" title="3.1 承诺用语"></a>3.1 承诺用语</h4><p>做出承诺的步骤</p>
+<ol>
+<li>口头上说</li>
+<li>心里认真对待做出的承诺</li>
+<li>真正付诸行动</li>
+</ol>
+<h5 id="3-1-1-识别“缺乏承诺”的征兆"><a href="#3-1-1-识别“缺乏承诺”的征兆" class="headerlink" title="3.1.1 识别“缺乏承诺”的征兆"></a>3.1.1 识别“缺乏承诺”的征兆</h5><ol>
+<li>需要/应当：我需要减肥。有人应当负责某某事情</li>
+<li>希望/但愿：希望明天能完成任务。但愿明天有时间</li>
+<li>让我们：让我们把事情做完</li>
+</ol>
+<h5 id="3-1-2-真正的承诺是怎样的"><a href="#3-1-2-真正的承诺是怎样的" class="headerlink" title="3.1.2 真正的承诺是怎样的"></a>3.1.2 真正的承诺是怎样的</h5><p>我将在…之前…完成任务。</p>
+<ol>
+<li>之所以没有成功，是因为我寄需求于某某去做这件事：比如这件事依赖于其他团队，这种情况应该提前就采取行动，提前预估风险</li>
+<li>之所以没有成功，是因为我不太确信是否正的能够完成：即使目标无法完成，你任然要不留余力的前进，离目标要更近一些</li>
+<li>之所以没有成功，是因为有些时候我真的无能为力：遇到这种情况的时候要及时向承诺对象发出预警<strong>越夸越好</strong>！</li>
+</ol>
+<h4 id="3-2-学习如何说“是”"><a href="#3-2-学习如何说“是”" class="headerlink" title="3.2 学习如何说“是”"></a>3.2 学习如何说“是”</h4><ol>
+<li>“试试”的另一面：试试意味着“仍然有余力可施”</li>
+<li>坚守原则：彻底不要出现“如果…或许…”，也不要冒险放弃原则，比如不写测试用例等。专业人士对自己的能力极限了如指掌，清楚的知道如果保持效率的加班能持续多久，也明白要付出的代价</li>
+</ol>
+<p>专人人士不需要对所有请求都回答“是”。不过，他们应该努力寻找创新的方法，尽可能做到有求必应。如果给出了肯定的回答，就要使用正式的承诺。</p>
+<h3 id="第四章-编码"><a href="#第四章-编码" class="headerlink" title="第四章 编码"></a>第四章 编码</h3><h4 id="4-1-做好准备"><a href="#4-1-做好准备" class="headerlink" title="4.1 做好准备"></a>4.1 做好准备</h4><ol>
+<li>代码必须能够正常工作</li>
+<li>代码必须能够帮助你解决客户提出的问题</li>
+<li>代码必须和现有的系统结合的天衣无缝</li>
+<li>其他程序必须能看懂你写的代码</li>
+</ol>
+<ul>
+<li>凌晨3点写出的代码：疲劳的时候千万不要写代码，要确保自己已经将睡眠、健康和生活方式调整到最好的状况</li>
+<li>焦虑时写下的代码：焦虑的时候建议可以花点时间让自己安静下来，不要硬逼自己写代码，不然很容易写出以后不得不抛弃的代码</li>
+</ul>
+<h4 id="4-2-流态区"><a href="#4-2-流态区" class="headerlink" title="4.2 流态区"></a>4.2 流态区</h4><p>高效率状态会出现“绝无错误”的误区，这种状态会为了追求所谓的速度理性思考的能力会下降。建议可以结对编程</p>
+<ul>
+<li>音乐：听音乐并没有帮助“我”专注编码，反而会消耗一部分脑力资源</li>
+<li>中断：中断无法避免，发生这种情况的时候要想一下，自己也可能回去打扰别人，乐于助人的态度就是专注的态度。</li>
+</ul>
+<h4 id="4-3-阻塞"><a href="#4-3-阻塞" class="headerlink" title="4.3 阻塞"></a>4.3 阻塞</h4><p>无法写出代码的时候建议结对编程会有意想不到的收获</p>
+<ul>
+<li>创造性输入：广泛阅读各种资料来激励自己去创造</li>
+</ul>
+<h4 id="4-4-调试"><a href="#4-4-调试" class="headerlink" title="4.4 调试"></a>4.4 调试</h4><p>真正调试的时候往往是大于编码的时间的，建议使用“测试驱动开发”可以有效的减少调试时间。医生不喜欢重新打开病人的胸腔去修复此前犯下的错误、律师不喜欢复杂之前搞砸过的案子、同样写代码如果写的更多的是bug也是不专业的</p>
+<h4 id="4-5-保持节奏"><a href="#4-5-保持节奏" class="headerlink" title="4.5 保持节奏"></a>4.5 保持节奏</h4><p>知道何止应该离开一会： 当遇到问题感到疲倦的时候可以离开一会，调整一下精力后才会更好。</p>
+<h4 id="4-6-进度延迟"><a href="#4-6-进度延迟" class="headerlink" title="4.6 进度延迟"></a>4.6 进度延迟</h4><p>管理延迟的诀窍： 早期检测和保持透明</p>
+<ol>
+<li>期望：如果计划的是12天开发周期，那么不要期望自己能10天完成，否则期望会导致大麻烦。不要让其他任何人对此抱有期望</li>
+<li>盲目冲刺：快速冲刺是做不到的，要明确的告诉老板，让他们不要有这种期望</li>
+<li>加班加点：如果没有加班失败的后备方案，建议不要同意接受加班方案</li>
+<li>交付失误：明知道没有完成任务却说完成了任务</li>
+<li>定义完成：要说清楚完成的情况，是代码编写完成了还是自测完成，还是对接完成了</li>
+</ol>
+<h4 id="4-7-帮助"><a href="#4-7-帮助" class="headerlink" title="4.7 帮助"></a>4.7 帮助</h4><ol>
+<li>帮助他人： 互相帮助是每个程序员的指责所在，要以能帮助他人为荣</li>
+<li>接受让人的帮助：如果有人向你伸出援手，要诚挚接受，心怀感激的接受帮助并诚意合作。不要应该自己压力大而推开伸来的援手。</li>
+<li>辅导：向深资导师寻求辅导也是程序员的专业指责</li>
+</ol>
+<h3 id="第五章-测试驱动开发"><a href="#第五章-测试驱动开发" class="headerlink" title="第五章 测试驱动开发"></a>第五章 测试驱动开发</h3><h4 id="5-1-此事已有定论"><a href="#5-1-此事已有定论" class="headerlink" title="5.1 此事已有定论"></a>5.1 此事已有定论</h4><p>TDD不仅仅是一种用于缩短编码周期的简单技巧。结论很清楚，每个开发人员都需要掌握TDD</p>
+<h4 id="5-2-TDD的三项法则"><a href="#5-2-TDD的三项法则" class="headerlink" title="5.2 TDD的三项法则"></a>5.2 TDD的三项法则</h4><ol>
+<li>在写好失败的单元测试之前，不要写任何产品代码</li>
+<li>只要有一个单元测试失败了就不要写测试代码了，无法通过编译的也是失败的情况</li>
+<li>产品代码恰好能够让当前失败的单元测试代码通过即可，无需多写</li>
+</ol>
+<h4 id="5-3-TDD的优势"><a href="#5-3-TDD的优势" class="headerlink" title="5.3 TDD的优势"></a>5.3 TDD的优势</h4><ol>
+<li>确定性： 代码有任何修改，都需要运行全部测试</li>
+<li>缺陷注入率：有不少研究称TDD能显著较低缺陷</li>
+<li>勇气：看到有坏味道的代码就可以马上修改，应该TDD给你了勇气</li>
+<li>文档：单元测试就是文档，每个单元测试都是一个调用示例</li>
+<li>设计：遵循三项法则能够产生一种驱动力，促使你做出松耦合的设计</li>
+</ol>
+<h4 id="5-4-局限"><a href="#5-4-局限" class="headerlink" title="5.4 局限"></a>5.4 局限</h4><p>在某些情况下的三项法则是不切实际的，这种情况很少，如果弊大于利就不要使用它</p>
+<h3 id="第六章-练习"><a href="#第六章-练习" class="headerlink" title="第六章 练习"></a>第六章 练习</h3><h4 id="6-1-引子"><a href="#6-1-引子" class="headerlink" title="6.1 引子"></a>6.1 引子</h4><p>没门编程语言都它的hello world。这也是第一个练习，练习能够带来协调的开发节奏。无论是搏斗还是编程，速度都来源于练习</p>
+<h4 id="6-2-编程柔道场"><a href="#6-2-编程柔道场" class="headerlink" title="6.2 编程柔道场"></a>6.2 编程柔道场</h4><ol>
+<li>卡塔：类似于编程小游戏，训练自己</li>
+<li>自由练习：不限制形式的搏击</li>
+</ol>
+<h4 id="6-3-自身经验拓展"><a href="#6-3-自身经验拓展" class="headerlink" title="6.3 自身经验拓展"></a>6.3 自身经验拓展</h4><ol>
+<li>开源：可以在开源网址上去贡献代码</li>
+<li>练习的职业道德：不要在上班的时候进行练习，老板的职责不包括避免你的技术落伍</li>
+</ol>
+<p>无论何时，专业人士都需要练习。</p>
+<h3 id="第七章-验收测试"><a href="#第七章-验收测试" class="headerlink" title="第七章 验收测试"></a>第七章 验收测试</h3><h4 id="7-1-需求的沟通"><a href="#7-1-需求的沟通" class="headerlink" title="7.1 需求的沟通"></a>7.1 需求的沟通</h4><ol>
+<li>过早精细化：经常愿意花大代价追求这种不现实的精确性<ul>
+<li>不确定原则：需求完成的越精细，就越容易被忽视。业务想看到和开发看到的不一致</li>
+<li>预估焦虑：需求是一定会变化的，追求精确性是徒劳的</li>
+</ul>
+</li>
+<li>迟来的模糊性：需求的不确定性会让开发和测试都搞错需求</li>
+</ol>
+<h4 id="7-2-验收测试"><a href="#7-2-验收测试" class="headerlink" title="7.2 验收测试"></a>7.2 验收测试</h4><ol>
+<li>完成的定义：不同的团队的完成对定义是不相同的</li>
+<li>沟通：验收测试的目的是沟通、澄清、精确化。开发方、业务方、测试方都要达成共识</li>
+<li>自动化：验收测试都应该自动进行，手动执行的都要考虑成本</li>
+<li>额外工作：大量的测试用例不是额外的工作，只有确定了细节指标才可以避免开发误入岐途</li>
+<li>验收测试什么时候写，由谁写：通常会交给业务分析人员、QA或者开发人员。如果是开发人员尽量不让写代码的人和开发的人是同一个人</li>
+<li>开发人员的角色：开发人员有责任吧验收测试与系统联系起来，让测试通过</li>
+<li>测试的协商与被动推进：测试也是普通人，也会犯错误。如果发现测试用例有问题要及时沟通改进</li>
+<li>验收测试和单元测试：验收测试是业务方写给业务方的。单元测试是程序员写给程序员的。</li>
+<li>图形界面及其他复杂因素：尽可能减少GUI测试，GUI测试越多后期维护的难度就越大</li>
+<li>持续集成：持续集成不应该失败，如果失败了团队所有人应该都要停止干活，先让测试先通过</li>
+</ol>
+<h3 id="第八章-测试策略"><a href="#第八章-测试策略" class="headerlink" title="第八章 测试策略"></a>第八章 测试策略</h3><h4 id="8-1-QA应该找不到任何错误"><a href="#8-1-QA应该找不到任何错误" class="headerlink" title="8.1 QA应该找不到任何错误"></a>8.1 QA应该找不到任何错误</h4><p>开发小组应该把【QA找不到任何错误】当成努力的目标</p>
+<ol>
+<li>QA也是团队的一部分：他是团队中需求定义者和特性描述者</li>
+<li>需求规约定义者：编写针对极端情况、边界状态、异常路径的测试</li>
+</ol>
+<h4 id="8-2-自动化测试金字塔"><a href="#8-2-自动化测试金字塔" class="headerlink" title="8.2 自动化测试金字塔"></a>8.2 自动化测试金字塔</h4><p>人工探索式测试 &gt; 系统测试 &gt; 集成测试 &gt; 组件测试 &gt; 单元测试</p>
+<ol>
+<li>单元测试：程序员自己编写的测试，应该要接近100%的覆盖率，通常要达到90%以上</li>
+<li>组件测试： 针对系统的各个组件编写的，封装了业务规则（QA 和业务人员编写）</li>
+<li>集成测试：对组件很多的大型系统才有意义</li>
+<li>系统测试： 对整个集成完毕的系统进行的自动化测试包含吞吐率和性能测试等</li>
+<li>人工探索式测试： 确保在人工操作下表现良好，同时有创造性的尽可能多的找到“古怪之处”</li>
+</ol>
+<h3 id="第九章-时间管理"><a href="#第九章-时间管理" class="headerlink" title="第九章 时间管理"></a>第九章 时间管理</h3><h4 id="9-1-会议"><a href="#9-1-会议" class="headerlink" title="9.1 会议"></a>9.1 会议</h4><p>会议是必须的、会议浪费了大量的时间</p>
+<ol>
+<li>拒绝： 理智的使用时间，谨慎的选择需要参加的会议，礼貌的拒绝一些不必要的会议</li>
+<li>离席：如果你明白继续待在会议室会浪费时间可以找合适的机会商量如何离席</li>
+<li>确认议程与目标：务必弄清楚议题是什么，花多长时间，取得什么成果</li>
+<li>立会：每个人回答不超过1分钟（昨天干了什么，今天打算干什么，遇到了什么问题）</li>
+<li>迭代计划会议：会议的节奏要快，每个任务应该限制在5-10分钟之内，如果不够应该另选时间专人专门讨论</li>
+<li>迭代回顾和demo展示： 看最新的工作成果的demo可以在最后一周的最后一天下班前45分钟召开，前20分钟回顾，后25分钟展示</li>
+<li>争论/反对：如果观点无法在5-30分钟之内达成一致，就永远无法达成一致，出路是用数据说话</li>
+</ol>
+<h4 id="9-2-注意力点数"><a href="#9-2-注意力点数" class="headerlink" title="9.2 注意力点数"></a>9.2 注意力点数</h4><p>注意力是稀缺的资源如果注意力用光了需要1个小时或更多的时间去补充，可以在注意力不够的时候做其他事情。</p>
+<ol>
+<li>睡眠：充足的睡眠可以保证好的注意力</li>
+<li>咖啡因：适当的咖啡可以保持注意力</li>
+<li>恢复： 注意力耗尽可以自己沉思一会，或者小睡一会</li>
+<li>肌肉注意力：转移注意力到肌肉注意力上面可以提升心智注意力</li>
+</ol>
+<h4 id="9-3-时间拆分和番茄工作法"><a href="#9-3-时间拆分和番茄工作法" class="headerlink" title="9.3 时间拆分和番茄工作法"></a>9.3 时间拆分和番茄工作法</h4><p>给自己设定25分钟，25分钟之内无论什么干扰都需要在25分钟之后在处理，没4个番茄时间段之后休息30分钟</p>
+<h4 id="9-4-要避免的行为"><a href="#9-4-要避免的行为" class="headerlink" title="9.4 要避免的行为"></a>9.4 要避免的行为</h4><p>专业开发人员会评估每个任务的优先级，排除个人的喜好和需要，按照正式的紧急程度来执行任务</p>
+<h4 id="9-5-死胡同"><a href="#9-5-死胡同" class="headerlink" title="9.5 死胡同"></a>9.5 死胡同</h4><p>比如选择了走不通的技术道路越是坚持浪费的时间就越多，专业的开发人员会保持开放的头脑来听取其他意见 ，即使走到尽头，他们仍然有其他选择</p>
+<h4 id="9-6-泥潭"><a href="#9-6-泥潭" class="headerlink" title="9.6 泥潭"></a>9.6 泥潭</h4><p>专业人员时刻留意显露出来的泥潭，然后各种努力，尽快脱身。在泥潭中继续前进时不易察觉的，要及时修正设计。</p>
+<h3 id="第十章-预估"><a href="#第十章-预估" class="headerlink" title="第十章 预估"></a>第十章 预估</h3><h4 id="10-1-什么是预估"><a href="#10-1-什么是预估" class="headerlink" title="10.1 什么是预估"></a>10.1 什么是预估</h4><p>开发认为预估是猜测，业务认为预估是承诺</p>
+<ol>
+<li>承诺：如果你承诺某事，就必须按时完成，不兑现承诺就是一种欺骗</li>
+<li>预估：它不包含任何承诺</li>
+<li>暗示性承诺：试试看就是暗示性承诺，尽量不要使用</li>
+</ol>
+<h4 id="10-2-PERT"><a href="#10-2-PERT" class="headerlink" title="10.2 PERT"></a>10.2 PERT</h4><p>一种避免乐观的项目估计的合理方法</p>
+<h4 id="10-3-预估任务"><a href="#10-3-预估任务" class="headerlink" title="10.3 预估任务"></a>10.3 预估任务</h4><p>一组人集合起来重复进行讨论-预估的过程，知道意见统一</p>
+<ol>
+<li>亮手指： 用大家的手指精细预估</li>
+<li>规划扑克：用成员的扑克点数进行预估</li>
+<li>关联预估：任务写在卡片上按照规则进行预估</li>
+<li>三元预估： 用三种预估得出概率分布的一种方法</li>
+</ol>
+<h4 id="10-4-大数定律"><a href="#10-4-大数定律" class="headerlink" title="10.4 大数定律"></a>10.4 大数定律</h4><p>把大任务分成多个小任务，分开预估在加总，结果会比单独评估大任务要准确很多</p>
+<h3 id="第十一章-压力"><a href="#第十一章-压力" class="headerlink" title="第十一章 压力"></a>第十一章 压力</h3><h4 id="11-1-避免压力"><a href="#11-1-避免压力" class="headerlink" title="11.1 避免压力"></a>11.1 避免压力</h4><ol>
+<li>承诺：如果没有兑现承诺导致业务失败的压力</li>
+<li>保持整洁：代码设计的整洁可以避免压力，混乱会降低速度，导致工期延误、承诺失信</li>
+<li>危机中的纪律：当困境降临时，不要改好的行为。如：赶工期的时候要保证代码质量</li>
+</ol>
+<h4 id="11-2-应对压力"><a href="#11-2-应对压力" class="headerlink" title="11.2 应对压力"></a>11.2 应对压力</h4><ol>
+<li>不要惊慌失措：放松下来，多想一下问题，努力寻找就会带来好的结果</li>
+<li>沟通：请求团队其他成员或者主管，避免产生惊恐</li>
+<li>依靠你的纪律原则：战胜压力的方式就是依靠你已经知道的切实有效的东西-纪律</li>
+<li>需求帮助：结对编程可以制止你的精神错乱</li>
+</ol>
+<h3 id="第十二章-协作"><a href="#第十二章-协作" class="headerlink" title="第十二章 协作"></a>第十二章 协作</h3><h4 id="12-1-程序员与人"><a href="#12-1-程序员与人" class="headerlink" title="12.1 程序员与人"></a>12.1 程序员与人</h4><ol>
+<li>程序员与雇主：要端正态度，准守规章制度</li>
+<li>程序员与程序员<ul>
+<li>代码个体所有：自己的代码自己维护和其他同事不沟通，拥有大量重复的代码</li>
+<li>协作性的代码共有权：打破隔断，相互合作</li>
+<li>结对：结对编程是复查代码最好的方式</li>
+</ul>
+</li>
+</ol>
+<p>一定要学会交流–和大家交流</p>
+<h3 id="第十三章-团队与项目"><a href="#第十三章-团队与项目" class="headerlink" title="第十三章 团队与项目"></a>第十三章 团队与项目</h3><h4 id="13-1-只是简单混合吗"><a href="#13-1-只是简单混合吗" class="headerlink" title="13.1 只是简单混合吗"></a>13.1 只是简单混合吗</h4><ol>
+<li>有凝聚力的团队<ul>
+<li>发酵期：一起计划、一起解决问题、一起面对问题、一起搞定一切</li>
+<li>团队和项目，何者为先：专业的开发组织把项目分配给有凝聚力的团队</li>
+</ul>
+</li>
+<li>如何管理有凝聚力的团队：可以给团队设置目标值</li>
+</ol>
+<h3 id="第十四章-辅导、学徒期与技艺"><a href="#第十四章-辅导、学徒期与技艺" class="headerlink" title="第十四章 辅导、学徒期与技艺"></a>第十四章 辅导、学徒期与技艺</h3><p>软件学徒期</p>
+<ol>
+<li>大师：一半拥有10年以上的从业经验，他们懂得如何领导和协调多个团队，他们是熟练的设计师和架构师</li>
+<li>熟练工：能胜任工作，并且精力充沛，他们会学习如何在团队中卓越的工作和成为团队的领导者</li>
+<li>学徒/实习生：刚开始进入自己的职业生涯，他们需要熟练工的督导。他们应该至少持续一年的实习期</li>
+</ol>
+<p>技艺中包含着价值观、原则、技术、态度、正见。工匠知道何时该说不，他们懂得如何做出承诺，成熟的工匠才能算是专业人士。</p>
+<p>​         </p>
 
       
     </div>
@@ -617,7 +802,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章-专业主义"><span class="nav-number">1.</span> <span class="nav-text">第一章 专业主义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1清楚你要什么"><span class="nav-number">1.1.</span> <span class="nav-text">1.1清楚你要什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-担当责任"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 担当责任</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-职业道德"><span class="nav-number">1.3.</span> <span class="nav-text">1.3  职业道德</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章-说“不”"><span class="nav-number">2.</span> <span class="nav-text">第二章 说“不”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-对抗角色"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 对抗角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-高风险是时刻"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 高风险是时刻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-要有团队精神"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 要有团队精神</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-说“是”的成本"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 说“是”的成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-如何写出好代码"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 如何写出好代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章-说“是”"><span class="nav-number">3.</span> <span class="nav-text">第三章 说“是”</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章-专业主义"><span class="nav-number">1.</span> <span class="nav-text">第一章 专业主义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1清楚你要什么"><span class="nav-number">1.1.</span> <span class="nav-text">1.1清楚你要什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-担当责任"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 担当责任</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-职业道德"><span class="nav-number">1.3.</span> <span class="nav-text">1.3  职业道德</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章-说“不”"><span class="nav-number">2.</span> <span class="nav-text">第二章 说“不”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-对抗角色"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 对抗角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-高风险是时刻"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 高风险是时刻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-要有团队精神"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 要有团队精神</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-说“是”的成本"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 说“是”的成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-如何写出好代码"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 如何写出好代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章-说“是”"><span class="nav-number">3.</span> <span class="nav-text">第三章 说“是”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-承诺用语"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 承诺用语</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-1-识别“缺乏承诺”的征兆"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1 识别“缺乏承诺”的征兆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-2-真正的承诺是怎样的"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 真正的承诺是怎样的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-学习如何说“是”"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 学习如何说“是”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章-编码"><span class="nav-number">4.</span> <span class="nav-text">第四章 编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-做好准备"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 做好准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-流态区"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 流态区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-阻塞"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 阻塞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-调试"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-保持节奏"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 保持节奏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-6-进度延迟"><span class="nav-number">4.6.</span> <span class="nav-text">4.6 进度延迟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-7-帮助"><span class="nav-number">4.7.</span> <span class="nav-text">4.7 帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五章-测试驱动开发"><span class="nav-number">5.</span> <span class="nav-text">第五章 测试驱动开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-此事已有定论"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 此事已有定论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-TDD的三项法则"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 TDD的三项法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-TDD的优势"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 TDD的优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-局限"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 局限</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六章-练习"><span class="nav-number">6.</span> <span class="nav-text">第六章 练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-引子"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-编程柔道场"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 编程柔道场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-3-自身经验拓展"><span class="nav-number">6.3.</span> <span class="nav-text">6.3 自身经验拓展</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第七章-验收测试"><span class="nav-number">7.</span> <span class="nav-text">第七章 验收测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-需求的沟通"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 需求的沟通</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-验收测试"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 验收测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第八章-测试策略"><span class="nav-number">8.</span> <span class="nav-text">第八章 测试策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-QA应该找不到任何错误"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 QA应该找不到任何错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-自动化测试金字塔"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 自动化测试金字塔</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第九章-时间管理"><span class="nav-number">9.</span> <span class="nav-text">第九章 时间管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#9-1-会议"><span class="nav-number">9.1.</span> <span class="nav-text">9.1 会议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-2-注意力点数"><span class="nav-number">9.2.</span> <span class="nav-text">9.2 注意力点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-3-时间拆分和番茄工作法"><span class="nav-number">9.3.</span> <span class="nav-text">9.3 时间拆分和番茄工作法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-4-要避免的行为"><span class="nav-number">9.4.</span> <span class="nav-text">9.4 要避免的行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-5-死胡同"><span class="nav-number">9.5.</span> <span class="nav-text">9.5 死胡同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-6-泥潭"><span class="nav-number">9.6.</span> <span class="nav-text">9.6 泥潭</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十章-预估"><span class="nav-number">10.</span> <span class="nav-text">第十章 预估</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#10-1-什么是预估"><span class="nav-number">10.1.</span> <span class="nav-text">10.1 什么是预估</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-2-PERT"><span class="nav-number">10.2.</span> <span class="nav-text">10.2 PERT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-3-预估任务"><span class="nav-number">10.3.</span> <span class="nav-text">10.3 预估任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-4-大数定律"><span class="nav-number">10.4.</span> <span class="nav-text">10.4 大数定律</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十一章-压力"><span class="nav-number">11.</span> <span class="nav-text">第十一章 压力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#11-1-避免压力"><span class="nav-number">11.1.</span> <span class="nav-text">11.1 避免压力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-2-应对压力"><span class="nav-number">11.2.</span> <span class="nav-text">11.2 应对压力</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十二章-协作"><span class="nav-number">12.</span> <span class="nav-text">第十二章 协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1-程序员与人"><span class="nav-number">12.1.</span> <span class="nav-text">12.1 程序员与人</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十三章-团队与项目"><span class="nav-number">13.</span> <span class="nav-text">第十三章 团队与项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#13-1-只是简单混合吗"><span class="nav-number">13.1.</span> <span class="nav-text">13.1 只是简单混合吗</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第十四章-辅导、学徒期与技艺"><span class="nav-number">14.</span> <span class="nav-text">第十四章 辅导、学徒期与技艺</span></a></li></ol></div>
             
 
           </div>
