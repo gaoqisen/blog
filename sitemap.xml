@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gaoqisen.github.io/java/tomcatService.html</loc>
+    <loc>https://gaoqisen.github.io/book/CodeDiligenceWay.html</loc>
     
-    <lastmod>2021-06-06T07:36:41.062Z</lastmod>
+    <lastmod>2021-06-26T12:57:54.114Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/study/train.html</loc>
+    
+    <lastmod>2021-06-20T01:39:46.249Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://gaoqisen.github.io/java/commom.html</loc>
     
-    <lastmod>2021-06-06T07:35:52.325Z</lastmod>
+    <lastmod>2021-06-16T14:41:44.282Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/java/tomcatService.html</loc>
+    
+    <lastmod>2021-06-06T07:36:41.062Z</lastmod>
     
   </url>
   
@@ -618,6 +632,20 @@
   </url>
   
   <url>
+    <loc>https://gaoqisen.github.io/english/memory.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/patterm/bridge.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
@@ -646,6 +674,13 @@
   </url>
   
   <url>
+    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
@@ -667,28 +702,7 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/english/memory.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://gaoqisen.github.io/web/jqueryForm.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -709,14 +723,14 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/categories/index.html</loc>
+    <loc>https://gaoqisen.github.io/tags/index.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/tags/index.html</loc>
+    <loc>https://gaoqisen.github.io/categories/index.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
