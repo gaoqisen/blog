@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="整理了一下代码精进之路每章的大致内容，加深一下映像。每次都记不住，看了就忘。按照书的目录整理一下，希望自己能有所收获。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-26T12:57:54.114Z">
+<meta property="og:updated_time" content="2021-07-04T03:47:43.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《代码精进之路》">
 <meta name="twitter:description" content="整理了一下代码精进之路每章的大致内容，加深一下映像。每次都记不住，看了就忘。按照书的目录整理一下，希望自己能有所收获。">
@@ -406,7 +406,7 @@
 </li>
 <li><p>保持一致，一旦选中就要持续遵循，可以提高代码的可读性，从而简化复杂度</p>
 <ul>
-<li><p>每个概率一个词如：create新增，add添加，remove删除，update修改，get获取单个结果，list获取多个结果，page分页查询，count统计</p>
+<li><p>每个概念一个词如：create新增，add添加，remove删除，update修改，get获取单个结果，list获取多个结果，page分页查询，count统计</p>
 </li>
 <li><p>使用对仗词：add/remove, increment/decrement, open/close, begin/end, insert/delete, show/hide, create/destroy, lock/unlock, source/target, first/last, min/max, start/stop, get/set, next/previous, up/down, old/new</p>
 </li>
@@ -445,14 +445,14 @@
 </li>
 <li>埋点规范：数据采集可以沉淀数据</li>
 <li>架构规范：架构有约束，需要遵从这些约束，才能符合架构要求，否则架构就失去了意义</li>
-<li>防止破窗：不要做“搭破第一扇窗的人”，发现“破窗”后及时修复，不要让事情进一步恶化。整洁的代码需要没有一个人精心维护</li>
+<li>防止破窗：不要做“打破第一扇窗的人”，发现“破窗”后及时修复，不要让事情进一步恶化。整洁的代码需要每一个人精心维护</li>
 </ol>
 <p>制定规范是为了从无序走向有序，减少认知成本。</p>
 <h3 id="1-3-函数"><a href="#1-3-函数" class="headerlink" title="1.3 函数"></a>1.3 函数</h3><p>好的函数能够大大降低阅读代码的困难度，提升代码的可读性。在通往匠人的路上，好的函数必不可少。</p>
 <ol>
 <li><p>什么是函数：“凡此变数中函彼变数者，则此为彼之函数”</p>
 </li>
-<li><p>软件中的函数：函数是一组代码的集合，是程序中最小的功能模块。面对对象中叫方法。</p>
+<li><p>软件中的函数：函数是一组代码的集合，是程序中最小的功能模块。面向对象中叫方法。</p>
 </li>
 <li><p>封装判断：将判断封装起来能让代码更容易理解</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不明确的业务逻辑</span></span><br><span class="line"><span class="keyword">if</span>(xxx.equals(xxx) &amp;&amp; yyy.equels(yyy))&#123;</span><br><span class="line">	<span class="comment">// 业务逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 明确的业务逻辑</span></span><br><span class="line"><span class="keyword">if</span>(isEquals())&#123;</span><br><span class="line">  <span class="comment">// 业务逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isEqueals</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!xxx.equals(xxx))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!yyy.equels(yyy))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -470,7 +470,7 @@
 <li>优雅降级：比如Spring Cloud Hystrix提供的优雅降级方案</li>
 </ul>
 </li>
-<li><p>组合函数模式：将大函数拆分为多个步骤，并组合在一起。利用入口函数（入口函数读起来向执行步骤一样），将一个大函数拆分为多个自函数的集合。</p>
+<li><p>组合函数模式：将大函数拆分为多个步骤，并组合在一起。利用入口函数（入口函数读起来向执行步骤一样），将一个大函数拆分为多个子函数的集合。</p>
 </li>
 <li><p>SLAP(抽象层次一致性): 函数体中的内容必须在同一个抽象层次上。如：不要在入口函数里面通过判断执行相同的函数，可以在函数里面通过类型进行区分</p>
 </li>
@@ -485,7 +485,7 @@
 <li>0（OCP）开闭原则：对扩展开放，对修改关闭</li>
 <li>L（LSP）里氏替换原则: 父类型都应该可以正确地被子类型替换<ol>
 <li>有强制类型转换和需要通过instanceof判断子类型的地方都不满足LSP</li>
-<li>子类覆盖了父类的方法，改变的含义，这样会出现意想不到的问题</li>
+<li>子类覆盖了父类的方法，改变了含义，这样会出现意想不到的问题</li>
 </ol>
 </li>
 <li>I（LSP）接口隔离原则: 用多个专门的接口比使用一个宽泛用途的接口好</li>
@@ -567,7 +567,7 @@
 <li>为什么饱受争议<ul>
 <li>照搬概念： 没有领会精髓就在项目中加入概念</li>
 <li>抽象的灵活性：不合理的抽象不如没有抽象，不同的人看问题的角度和对业务的理解各有不同</li>
-<li>领域层的边界：如何划分Application层逻辑和Domain层逻辑事很模糊的，不容易找到边界</li>
+<li>领域层的边界：如何划分Application层逻辑和Domain层逻辑是很模糊的，不容易找到边界</li>
 </ul>
 </li>
 </ol>
@@ -614,7 +614,7 @@
 </li>
 <li><p>批判性思维：不被动全盘接受，也不刻意反驳一个观点。明知道对方乱说，却无法找到反驳的理由就需要批判性思维。</p>
 </li>
-<li><p>成长型思维: 把失败当成学习的机会，积极主动的去学习和寻找解决方案。工作遇到挫折和挑战的时候要有【成长型思维】去面对</p>
+<li><p>成长型思维: 把失败当成学习的机会，积极主动的去学习和寻找解决方案。工作遇到挫折和挑战的时候要用【成长型思维】去面对</p>
 </li>
 <li><p>结构化思维：无法把一件事情说明白就是没有结构化思维，这就是我所欠缺的。</p>
 <ul>
@@ -672,7 +672,7 @@
 <li>团队特色：寻找自己团队的特色（差异化部分）</li>
 </ul>
 </li>
-<li>推理阶梯：不要轻易对员工做推理。在做决定之前一定要问问自己“此事是否可能知识我的推理，实际情况并非如此”。</li>
+<li>推理阶梯：不要轻易对员工做推理。在做决定之前一定要问问自己“此事是否可能只是我的推理，实际情况并非如此”。</li>
 <li>Leader和Manager的区别：Manager是控制和权威,Leader是引领和激发。<strong>“我们不需要那么多‘高高在上’，‘指点江山”的技术Manager,而是需要能深入系统，深入技术细节，给团队带来改变的技术Leader</strong></li>
 <li>视人为人：对待上级-有胆量，对待平级-有肺腑，对待下级-有心肝。</li>
 </ol>
@@ -745,8 +745,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/study/train.html" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/book/TheCleanCoder.html" rel="next" title="《代码整洁之道》">
+                <i class="fa fa-chevron-left"></i> 《代码整洁之道》
               </a>
             
           </div>
@@ -754,6 +754,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/study/train.html" rel="prev" title="练吧">
+                练吧 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
