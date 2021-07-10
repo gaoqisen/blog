@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://gaoqisen.github.io/tool/alfred.html</loc>
+    <lastmod>2021-07-10</lastmod>
+  </url>
+  <url>
     <loc>https://gaoqisen.github.io/life/chengdu.html</loc>
     <lastmod>2021-07-07</lastmod>
   </url>
@@ -365,11 +369,11 @@
     <lastmod>2019-10-23</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/english/memory.html</loc>
+    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
+    <loc>https://gaoqisen.github.io/english/memory.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
