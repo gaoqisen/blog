@@ -369,19 +369,15 @@
     <lastmod>2019-10-23</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
-    <lastmod>2019-06-05</lastmod>
-  </url>
-  <url>
     <loc>https://gaoqisen.github.io/english/memory.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/bridge.html</loc>
+    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/chain_of_responsibility.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/bridge.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
@@ -393,7 +389,7 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/mediator.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
@@ -401,11 +397,15 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/mediator.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/chain_of_responsibility.html</loc>
+    <lastmod>2019-06-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
