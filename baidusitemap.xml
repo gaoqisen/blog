@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gaoqisen.github.io/book/LearnQuestion.html</loc>
-    <lastmod>2021-07-10</lastmod>
+    <lastmod>2021-07-11</lastmod>
   </url>
   <url>
     <loc>https://gaoqisen.github.io/tool/alfred.html</loc>
@@ -401,11 +401,11 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
