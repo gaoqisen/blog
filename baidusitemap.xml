@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gaoqisen.github.io/book/CriticalThinking.html</loc>
-    <lastmod>2021-07-12</lastmod>
+    <lastmod>2021-07-14</lastmod>
   </url>
   <url>
     <loc>https://gaoqisen.github.io/book/LearnQuestion.html</loc>
@@ -389,15 +389,11 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/component.html</loc>
-    <lastmod>2019-06-05</lastmod>
-  </url>
-  <url>
     <loc>https://gaoqisen.github.io/patterm/chain_of_responsibility.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/component.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
@@ -405,7 +401,11 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
+    <lastmod>2019-06-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
@@ -413,7 +413,7 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
