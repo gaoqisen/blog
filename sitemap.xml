@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gaoqisen.github.io/book/EffectiveJava.html</loc>
+    
+    <lastmod>2021-07-19T08:07:46.101Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/java/commomUse.html</loc>
     
     <lastmod>2021-07-19T07:58:23.102Z</lastmod>
@@ -667,13 +674,6 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/english/memory.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
@@ -681,7 +681,14 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/component.html</loc>
+    <loc>https://gaoqisen.github.io/english/memory.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/patterm/bridge.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -695,7 +702,7 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/mediator.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/component.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -703,6 +710,13 @@
   
   <url>
     <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/patterm/mediator.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -730,7 +744,7 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/bridge.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/observable.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -744,7 +758,7 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/observable.html</loc>
+    <loc>https://gaoqisen.github.io/categories/index.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -752,13 +766,6 @@
   
   <url>
     <loc>https://gaoqisen.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/categories/index.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
