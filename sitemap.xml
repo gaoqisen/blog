@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gaoqisen.github.io/java/command.html</loc>
+    
+    <lastmod>2021-07-19T07:53:48.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/java/commomUse.html</loc>
+    
+    <lastmod>2021-07-19T07:53:30.103Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/java/annotation.html</loc>
+    
+    <lastmod>2021-07-19T07:52:08.520Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/java/easyCodeTemplate.html</loc>
+    
+    <lastmod>2021-07-19T07:43:25.460Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/book/CriticalThinking.html</loc>
     
     <lastmod>2021-07-18T13:45:22.594Z</lastmod>
@@ -72,13 +100,6 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/java/commom.html</loc>
-    
-    <lastmod>2021-07-02T07:52:07.933Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://gaoqisen.github.io/java/tomcatService.html</loc>
     
     <lastmod>2021-06-06T07:36:41.062Z</lastmod>
@@ -138,13 +159,6 @@
     <loc>https://gaoqisen.github.io/java/view_flow.html</loc>
     
     <lastmod>2021-05-31T14:31:05.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/java/annotation.html</loc>
-    
-    <lastmod>2021-05-31T13:15:46.617Z</lastmod>
     
   </url>
   
@@ -499,13 +513,6 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/java/command.html</loc>
-    
-    <lastmod>2020-06-12T05:35:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://gaoqisen.github.io/java/webcenter.html</loc>
     
     <lastmod>2020-06-11T18:44:10.000Z</lastmod>
@@ -695,6 +702,13 @@
   </url>
   
   <url>
+    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/patterm/mediator.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
@@ -710,13 +724,6 @@
   
   <url>
     <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/patterm/interpreter.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
