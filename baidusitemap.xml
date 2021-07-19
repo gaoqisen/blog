@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gaoqisen.github.io/java/command.html</loc>
-    <lastmod>2021-07-19</lastmod>
-  </url>
-  <url>
     <loc>https://gaoqisen.github.io/java/commomUse.html</loc>
     <lastmod>2021-07-19</lastmod>
   </url>
   <url>
     <loc>https://gaoqisen.github.io/java/annotation.html</loc>
+    <lastmod>2021-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gaoqisen.github.io/java/command.html</loc>
     <lastmod>2021-07-19</lastmod>
   </url>
   <url>
@@ -409,11 +409,11 @@
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>
-    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     <lastmod>2019-06-05</lastmod>
   </url>
   <url>

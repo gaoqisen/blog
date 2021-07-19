@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Learning Record">
 <meta property="og:description" content="java自定义注解的一些使用方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-19T07:52:08.520Z">
+<meta property="og:updated_time" content="2021-07-19T07:56:22.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Annotation学习">
 <meta name="twitter:description" content="java自定义注解的一些使用方法">
@@ -399,6 +399,7 @@
 <li>Annotation其实是一种接口。通过Java的反射机制相关的API来访问Annotation信息。相关类（框架或工具中的类即使用注解的类）根据这些信息来决定如何使用该程序元素或改变它们的行为。</li>
 <li>Annoation和程序代码的隔离性：Annotation是不会影响程序代码的执行，无论Annotation怎么变化，代码都始终如一地执行。</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @Before 切入点开始处切入内容</span></span><br><span class="line"><span class="comment">// @After 切入点结尾处切入内容</span></span><br><span class="line"><span class="comment">// @AfterReturning 切入点return内容之后切入内容</span></span><br><span class="line"><span class="comment">// @Around在切入点前后切入内容，并自己控制何时执行切入点自身的内容</span></span><br><span class="line"><span class="comment">// @AfterThrowing用来处理当切入内容部分抛出异常之后的处理逻辑</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;  </span><br><span class="line">     <span class="keyword">try</span>&#123;  </span><br><span class="line">         doBefore();<span class="comment">//对应@Before注解的方法切面逻辑  </span></span><br><span class="line">         method.invoke();  </span><br><span class="line">     &#125;<span class="keyword">finally</span>&#123;  </span><br><span class="line">         doAfter();<span class="comment">//对应@After注解的方法切面逻辑  </span></span><br><span class="line">     &#125;  </span><br><span class="line">     doAfterReturning();<span class="comment">//对应@AfterReturning注解的方法切面逻辑  </span></span><br><span class="line"> &#125;<span class="keyword">catch</span>(Exception e)&#123;  </span><br><span class="line">      doAfterThrowing();<span class="comment">//对应@AfterThrowing注解的方法切面逻辑  </span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="三、元注解"><a href="#三、元注解" class="headerlink" title="三、元注解"></a>三、元注解</h2><h3 id="3-1-Target：注解的作用目标"><a href="#3-1-Target：注解的作用目标" class="headerlink" title="3.1 @Target：注解的作用目标"></a>3.1 @Target：注解的作用目标</h3><ul>
 <li>ElementType.TYPE：允许被修饰的注解作用在类、接口和枚举上</li>
 <li>ElementType.FIELD：允许作用在属性字段上</li>
