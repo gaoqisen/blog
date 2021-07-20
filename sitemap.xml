@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gaoqisen.github.io/book/CriticalThinking.html</loc>
+    
+    <lastmod>2021-07-20T14:40:15.353Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gaoqisen.github.io/book/EffectiveJava.html</loc>
     
     <lastmod>2021-07-19T08:07:46.101Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://gaoqisen.github.io/java/easyCodeTemplate.html</loc>
     
     <lastmod>2021-07-19T07:43:25.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gaoqisen.github.io/book/CriticalThinking.html</loc>
-    
-    <lastmod>2021-07-18T13:45:22.594Z</lastmod>
     
   </url>
   
@@ -674,14 +674,14 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
+    <loc>https://gaoqisen.github.io/english/memory.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/english/memory.html</loc>
+    <loc>https://gaoqisen.github.io/english/sort_out.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -723,13 +723,6 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
-    
-    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://gaoqisen.github.io/patterm/proxy.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
@@ -737,7 +730,7 @@
   </url>
   
   <url>
-    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
+    <loc>https://gaoqisen.github.io/patterm/prototype.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
@@ -745,6 +738,13 @@
   
   <url>
     <loc>https://gaoqisen.github.io/patterm/observable.html</loc>
+    
+    <lastmod>2019-06-05T21:26:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://gaoqisen.github.io/patterm/state.html</loc>
     
     <lastmod>2019-06-05T21:26:34.000Z</lastmod>
     
